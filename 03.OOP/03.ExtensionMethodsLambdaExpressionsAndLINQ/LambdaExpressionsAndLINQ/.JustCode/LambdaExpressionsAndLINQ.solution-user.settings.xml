@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0" Timestamp="d7bb848a-3807-46c4-b5c6-10e82a26cb35">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings Version="2">
+      <FilePath>
+        <FileRelativePath>Tests/LinqTests.cs</FileRelativePath>
+        <ProjectRelativePath>Tests/Tests.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>12659702019902726335</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>
