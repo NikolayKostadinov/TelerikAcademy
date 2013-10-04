@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsCommon", "AbstractsAndClassDiagrams\StudentsCommon\StudentsCommon.csproj", "{8F203C09-5094-49BC-9785-0186E747BF6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestStudentCommon", "AbstractsAndClassDiagrams\TestStudentCommon\TestStudentCommon.csproj", "{CDF447BA-6670-40C7-B577-C87250B0E6FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F203C09-5094-49BC-9785-0186E747BF6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F203C09-5094-49BC-9785-0186E747BF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F203C09-5094-49BC-9785-0186E747BF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F203C09-5094-49BC-9785-0186E747BF6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF447BA-6670-40C7-B577-C87250B0E6FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF447BA-6670-40C7-B577-C87250B0E6FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF447BA-6670-40C7-B577-C87250B0E6FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF447BA-6670-40C7-B577-C87250B0E6FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

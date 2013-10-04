@@ -1,0 +1,8 @@
+List of words with their count found in text
+============================================
+
+       not =>    56
+       set =>    14
+      fail =>     7
+     QUICK =>     2
+      test =>     0

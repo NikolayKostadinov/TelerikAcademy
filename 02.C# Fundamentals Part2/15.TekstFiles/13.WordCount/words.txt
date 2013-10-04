@@ -1,0 +1,5 @@
+test
+fail
+set
+not
+QUICK

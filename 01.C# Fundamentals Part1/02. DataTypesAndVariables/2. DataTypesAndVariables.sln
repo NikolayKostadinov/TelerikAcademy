@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExperimentWithFloatingPoint", "ExperimentWithFloatingPoint\ExperimentWithFloatingPoint.csproj", "{570CBD3E-2EB8-4F42-8B00-4D6477576FB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExperimentWithDecimal", "ExperimentWithDecimal\ExperimentWithDecimal.csproj", "{53469D14-4669-4986-9F34-9883880258DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Declarations", "Declarations\Declarations.csproj", "{72C28BFF-1B79-447E-87D0-740DC8D98D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrowingHard", "DrowingHard\DrowingHard.csproj", "{AFBE6C2B-C7E9-4F93-B6F1-BFDD45CEF620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawTriangle", "DrawTriangle\DrawTriangle.csproj", "{D42A1403-2425-4835-9869-7A4F0517B78C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefiningDatabase", "DefiningDatabase\DefiningDatabase.csproj", "{CDC1028D-D2FA-4243-9B8E-F638D42AF14F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueChange", "ValueChange\ValueChange.csproj", "{4523F07C-6D6D-4179-B8EA-3314D11515EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapingSequences", "EscapingSequences\EscapingSequences.csproj", "{91646BA4-BD10-4582-AD47-84C185337132}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{570CBD3E-2EB8-4F42-8B00-4D6477576FB2}.Debug|x86.ActiveCfg = Debug|x86
+		{570CBD3E-2EB8-4F42-8B00-4D6477576FB2}.Debug|x86.Build.0 = Debug|x86
+		{570CBD3E-2EB8-4F42-8B00-4D6477576FB2}.Release|x86.ActiveCfg = Release|x86
+		{570CBD3E-2EB8-4F42-8B00-4D6477576FB2}.Release|x86.Build.0 = Release|x86
+		{53469D14-4669-4986-9F34-9883880258DA}.Debug|x86.ActiveCfg = Debug|x86
+		{53469D14-4669-4986-9F34-9883880258DA}.Debug|x86.Build.0 = Debug|x86
+		{53469D14-4669-4986-9F34-9883880258DA}.Release|x86.ActiveCfg = Release|x86
+		{53469D14-4669-4986-9F34-9883880258DA}.Release|x86.Build.0 = Release|x86
+		{72C28BFF-1B79-447E-87D0-740DC8D98D8B}.Debug|x86.ActiveCfg = Debug|x86
+		{72C28BFF-1B79-447E-87D0-740DC8D98D8B}.Debug|x86.Build.0 = Debug|x86
+		{72C28BFF-1B79-447E-87D0-740DC8D98D8B}.Release|x86.ActiveCfg = Release|x86
+		{72C28BFF-1B79-447E-87D0-740DC8D98D8B}.Release|x86.Build.0 = Release|x86
+		{AFBE6C2B-C7E9-4F93-B6F1-BFDD45CEF620}.Debug|x86.ActiveCfg = Debug|x86
+		{AFBE6C2B-C7E9-4F93-B6F1-BFDD45CEF620}.Debug|x86.Build.0 = Debug|x86
+		{AFBE6C2B-C7E9-4F93-B6F1-BFDD45CEF620}.Release|x86.ActiveCfg = Release|x86
+		{AFBE6C2B-C7E9-4F93-B6F1-BFDD45CEF620}.Release|x86.Build.0 = Release|x86
+		{D42A1403-2425-4835-9869-7A4F0517B78C}.Debug|x86.ActiveCfg = Debug|x86
+		{D42A1403-2425-4835-9869-7A4F0517B78C}.Debug|x86.Build.0 = Debug|x86
+		{D42A1403-2425-4835-9869-7A4F0517B78C}.Release|x86.ActiveCfg = Release|x86
+		{D42A1403-2425-4835-9869-7A4F0517B78C}.Release|x86.Build.0 = Release|x86
+		{CDC1028D-D2FA-4243-9B8E-F638D42AF14F}.Debug|x86.ActiveCfg = Debug|x86
+		{CDC1028D-D2FA-4243-9B8E-F638D42AF14F}.Debug|x86.Build.0 = Debug|x86
+		{CDC1028D-D2FA-4243-9B8E-F638D42AF14F}.Release|x86.ActiveCfg = Release|x86
+		{CDC1028D-D2FA-4243-9B8E-F638D42AF14F}.Release|x86.Build.0 = Release|x86
+		{4523F07C-6D6D-4179-B8EA-3314D11515EC}.Debug|x86.ActiveCfg = Debug|x86
+		{4523F07C-6D6D-4179-B8EA-3314D11515EC}.Debug|x86.Build.0 = Debug|x86
+		{4523F07C-6D6D-4179-B8EA-3314D11515EC}.Release|x86.ActiveCfg = Release|x86
+		{4523F07C-6D6D-4179-B8EA-3314D11515EC}.Release|x86.Build.0 = Release|x86
+		{91646BA4-BD10-4582-AD47-84C185337132}.Debug|x86.ActiveCfg = Debug|x86
+		{91646BA4-BD10-4582-AD47-84C185337132}.Debug|x86.Build.0 = Debug|x86
+		{91646BA4-BD10-4582-AD47-84C185337132}.Release|x86.ActiveCfg = Release|x86
+		{91646BA4-BD10-4582-AD47-84C185337132}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
