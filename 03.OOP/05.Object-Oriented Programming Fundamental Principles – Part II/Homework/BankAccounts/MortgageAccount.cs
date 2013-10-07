@@ -7,7 +7,11 @@
         protected MortgageAccount(Customer awner, decimal balance, decimal mountlyInterestRate) 
             : base (awner,balance, mountlyInterestRate)  
         {
-            this.interestCalculator = new MortgageDepositCalculator();
+        }
+
+        public override decimal CalculateInterestForPerion(int months)
+        {
+            throw new NotImplementedException();
         }
     }
 }

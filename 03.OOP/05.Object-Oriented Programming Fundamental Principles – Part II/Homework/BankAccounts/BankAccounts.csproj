@@ -43,15 +43,12 @@
     <Compile Include="CompanyCustomer.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Deposit.cs" />
-    <Compile Include="DepositInterestCalculatior.cs" />
     <Compile Include="ICalculatable.cs" />
     <Compile Include="IDepositable.cs" />
     <Compile Include="IDrawable.cs" />
     <Compile Include="IndividualCustomer.cs" />
     <Compile Include="LoanAccount.cs" />
-    <Compile Include="LoanInterestCalculator.cs" />
     <Compile Include="MortgageAccount.cs" />
-    <Compile Include="MortgageDepositCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

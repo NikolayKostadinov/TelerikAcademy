@@ -7,7 +7,6 @@
         private decimal balance;
         private Customer awner;
         private decimal mouthlyInterestRate;
-        protected ICalculatable interestCalculator;
 
         protected Account( Customer awner, decimal balance, decimal mountlyInterestRate)
         {
@@ -68,10 +67,7 @@
             }
         }
 
-        public decimal CalculateInterestForPerion(int months) 
-        {
-            return this.interestCalculator.CalculateInterestForPerion(months);
-        }
+        public abstract decimal CalculateInterestForPerion(int months);
 
         public void MakeDeposit(decimal depositeSum)
         {

@@ -3,7 +3,7 @@
   <Class Name="BankAccounts.Account">
     <Position X="7.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAKACAAABAAAAAAAAgACAAIAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AgAKACAAAAAAAAAAAAgACAAIAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Account.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -29,7 +29,7 @@
   <Class Name="BankAccounts.MortgageAccount">
     <Position X="5.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MortgageAccount.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -53,30 +53,6 @@
       <HashCode>CAAAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>CompanyCustomer.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="BankAccounts.DepositInterestCalculatior">
-    <Position X="12.25" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DepositInterestCalculatior.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="BankAccounts.LoanInterestCalculator">
-    <Position X="14" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>LoanInterestCalculator.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="BankAccounts.MortgageDepositCalculator">
-    <Position X="15.75" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MortgageDepositCalculator.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="BankAccounts.ICalculatable">
     <Position X="10.5" Y="0.75" Width="1.5" />
