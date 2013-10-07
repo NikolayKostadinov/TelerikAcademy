@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BankAccounts
+﻿namespace BankAccounts
 {
+    using System;
+
     public class MortgageAccount : Account
     {
-        public MortgageDepositCalculator MortgageDepositCalculator
+        protected MortgageAccount(Customer awner, decimal balance, decimal mountlyInterestRate) 
+            : base (awner,balance, mountlyInterestRate)  
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            this.interestCalculator = new MortgageDepositCalculator();
         }
     }
 }

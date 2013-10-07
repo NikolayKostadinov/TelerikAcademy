@@ -21,39 +21,17 @@
   </Class>
   <Class Name="BankAccounts.LoanAccount">
     <Position X="7.25" Y="4.25" Width="1.5" />
-    <AssociationLine Name="LoanInterestCalculator" Type="BankAccounts.LoanInterestCalculator" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="8.438" Y="5.247" />
-        <Point X="8.438" Y="5.728" />
-        <Point X="14.562" Y="5.728" />
-        <Point X="14.562" Y="5.353" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LoanAccount.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="LoanInterestCalculator" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="BankAccounts.MortgageAccount">
     <Position X="5.5" Y="4.25" Width="1.5" />
-    <AssociationLine Name="MortgageDepositCalculator" Type="BankAccounts.MortgageDepositCalculator" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6.625" Y="5.247" />
-        <Point X="6.625" Y="5.853" />
-        <Point X="16.5" Y="5.853" />
-        <Point X="16.5" Y="5.353" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MortgageAccount.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="MortgageDepositCalculator" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="BankAccounts.Customer">
     <Position X="2" Y="0.75" Width="1.5" />

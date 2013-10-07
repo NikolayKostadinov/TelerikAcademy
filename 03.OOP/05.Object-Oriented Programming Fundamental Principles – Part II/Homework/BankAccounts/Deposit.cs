@@ -3,7 +3,13 @@
     using System;
 
     public class DepositAccount : Account, IDrawable
-    {    
+    {
+        protected DepositAccount(Customer awner, decimal balance, decimal mountlyInterestRate) 
+            : base (awner,balance, mountlyInterestRate)  
+        {
+            this.interestCalculator = new DepositInterestCalculatior();
+        }
+ 
         public void DrawMoney(decimal drawedSum)
         {
             if (drawedSum <= 0) 

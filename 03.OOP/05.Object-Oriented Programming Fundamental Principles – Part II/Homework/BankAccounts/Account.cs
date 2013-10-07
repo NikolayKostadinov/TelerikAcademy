@@ -9,12 +9,20 @@
         private decimal mouthlyInterestRate;
         protected ICalculatable interestCalculator;
 
+        protected Account( Customer awner, decimal balance, decimal mountlyInterestRate)
+        {
+            this.Awner = awner;
+            this.Balance = balance;
+            this.MounthlyInterestRate = mountlyInterestRate;
+        }
+
         public decimal Balance
         {
             get
             {
                 return this.balance;
             }
+
             set
             {
                 if (value < 0)
@@ -32,6 +40,7 @@
             {
                 return this.mouthlyInterestRate;
             }
+
             set
             {
                 if (value < 0)
