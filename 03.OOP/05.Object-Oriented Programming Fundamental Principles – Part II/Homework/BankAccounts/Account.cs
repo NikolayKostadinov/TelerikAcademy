@@ -59,6 +59,8 @@
                 {
                     throw new ArgumentNullException("Account awner cannot be null!!");
                 }
+
+                this.awner = value;
             }
         }
 

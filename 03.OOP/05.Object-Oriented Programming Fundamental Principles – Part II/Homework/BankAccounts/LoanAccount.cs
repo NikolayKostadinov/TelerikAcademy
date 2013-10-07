@@ -15,9 +15,13 @@
             {
                 months -= months < 3 ? months : 3;
             }
-            else 
+            else if (this.Awner is IndividualCustomer)
             {
                 months -= 2;
+            }
+            else 
+            {
+                throw new ArgumentException("Unknowd Account Type");
             }
 
             return months * this.MounthlyInterestRate * this.Balance;

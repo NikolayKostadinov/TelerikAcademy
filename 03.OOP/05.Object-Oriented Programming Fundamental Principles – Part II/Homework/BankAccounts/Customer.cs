@@ -8,17 +8,11 @@
         private string address;
         private string phoneNumber;
 
-        public string PhoneNumber
+        public Customer(string id, string address, string phone) 
         {
-            get 
-            { 
-                return this.phoneNumber; 
-            }
-            
-            set 
-            { 
-                this.phoneNumber = value; 
-            }
+            this.Id = id;
+            this.Address = address;
+            this.PhoneNumber = phone;
         }
 
         public string Id
@@ -30,6 +24,12 @@
 
             set
             {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArithmeticException("The field Id cannot be empty");
+                }
+
+                this.id = value;
             }
         }
 
@@ -37,12 +37,36 @@
         {
             get
             {
-                return this.Address;
+                return this.address;
             }
 
             set
             {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArithmeticException("The field Address cannot be empty");
+                }
+
+                this.address = value;
             }
-        }   
+        }
+
+        public string PhoneNumber
+        {
+            get 
+            { 
+                return this.phoneNumber; 
+            }
+            
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArithmeticException("The field First Name cannot be empty");
+                }
+
+                this.phoneNumber = value; 
+            }
+        }       
     }
 }
