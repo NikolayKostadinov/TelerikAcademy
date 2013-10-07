@@ -5,9 +5,8 @@
     public class DepositAccount : Account, IDrawable
     {
         protected DepositAccount(Customer awner, decimal balance, decimal mountlyInterestRate) 
-            : base (awner,balance, mountlyInterestRate)  
+            : base(awner, balance, mountlyInterestRate)  
         {
-            this.interestCalculator = new DepositInterestCalculatior();
         }
  
         public void DrawMoney(decimal drawedSum)
@@ -23,6 +22,19 @@
             }
 
             this.Balance -= drawedSum;
+        }
+
+        public override decimal CalculateInterestForPerion(int months)
+        {
+            // Deposit accounts have no interest if their balance is positive and less than 1000.
+            if (this.Balance > 1000)
+            {
+                return months * this.MounthlyInterestRate * this.Balance;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

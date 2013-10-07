@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BankAccounts
+﻿namespace BankAccounts
 {
+    using System;
+
     public class CompanyCustomer : Customer
     {
         private string companyName;
@@ -16,6 +13,7 @@ namespace BankAccounts
             {
                 throw new System.NotImplementedException();
             }
+
             set
             {
             }
@@ -27,6 +25,7 @@ namespace BankAccounts
             {
                 throw new System.NotImplementedException();
             }
+
             set
             {
             }

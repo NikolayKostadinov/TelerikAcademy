@@ -1,20 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BankAccounts
+﻿namespace BankAccounts
 {
+    using System;
+
     public class LoanAccount : Account
     {
         protected LoanAccount(Customer awner, decimal balance, decimal mountlyInterestRate) 
-            : base (awner,balance, mountlyInterestRate)  
+            : base(awner, balance, mountlyInterestRate)  
         {
         }
 
         public override decimal CalculateInterestForPerion(int months)
         {
-            throw new NotImplementedException();
+            if (this.Awner is CompanyCustomer)
+            {
+                months -= months < 3 ? months : 3;
+            }
+            else 
+            {
+                months -= 2;
+            }
+
+            return months * this.MounthlyInterestRate * this.Balance;
         }
     }
 }

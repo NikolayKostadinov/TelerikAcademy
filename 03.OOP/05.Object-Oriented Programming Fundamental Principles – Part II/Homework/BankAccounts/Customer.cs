@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BankAccounts
+﻿namespace BankAccounts
 {
+    using System;
+
     public abstract class Customer
     {
         private string id;
@@ -15,12 +12,12 @@ namespace BankAccounts
         {
             get 
             { 
-                return phoneNumber; 
+                return this.phoneNumber; 
             }
             
             set 
             { 
-                phoneNumber = value; 
+                this.phoneNumber = value; 
             }
         }
 
@@ -46,8 +43,6 @@ namespace BankAccounts
             set
             {
             }
-        }
-
-       
+        }   
     }
 }

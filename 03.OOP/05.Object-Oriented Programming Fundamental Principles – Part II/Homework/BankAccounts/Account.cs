@@ -8,7 +8,7 @@
         private Customer awner;
         private decimal mouthlyInterestRate;
 
-        protected Account( Customer awner, decimal balance, decimal mountlyInterestRate)
+        protected Account(Customer awner, decimal balance, decimal mountlyInterestRate)
         {
             this.Awner = awner;
             this.Balance = balance;
@@ -24,11 +24,6 @@
 
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Balance must be positive ot 0.");
-                }
-
                 this.balance = value;
             }
         }
@@ -77,7 +72,6 @@
             }
 
             this.balance += depositeSum;
-
         }
     }
 }
