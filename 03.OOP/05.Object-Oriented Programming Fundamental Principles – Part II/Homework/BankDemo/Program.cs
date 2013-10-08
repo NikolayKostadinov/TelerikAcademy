@@ -3,9 +3,10 @@
     using System;
     using System.Collections.Generic;
     using BankAccounts;
-    class Program
+
+    public class Program
     {
-        static void Main()
+       public static void Main()
         {
             Customer client1 = 
                 new IndividualCustomer(
@@ -44,8 +45,7 @@
                 new DepositAccount(
                     client1,
                     1200M,
-                    0.05M
-                    ),
+                    0.05M),
 
                 new DepositAccount(
                     client3,

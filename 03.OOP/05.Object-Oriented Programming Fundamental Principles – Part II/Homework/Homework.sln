@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccounts", "BankAccount
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankDemo", "BankDemo\BankDemo.csproj", "{D421D899-C413-49D5-8F9E-F8859994783D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvalidRangeException", "InvalidRangeException\InvalidRangeException.csproj", "{A8FA02BF-C568-46DD-8984-EB05CE08E323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationExceptionDemo", "ApplicationExceptionDemo\ApplicationExceptionDemo.csproj", "{31D999C1-6B60-4C91-AD06-698221D4E03B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{D421D899-C413-49D5-8F9E-F8859994783D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D421D899-C413-49D5-8F9E-F8859994783D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D421D899-C413-49D5-8F9E-F8859994783D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8FA02BF-C568-46DD-8984-EB05CE08E323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8FA02BF-C568-46DD-8984-EB05CE08E323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8FA02BF-C568-46DD-8984-EB05CE08E323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8FA02BF-C568-46DD-8984-EB05CE08E323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31D999C1-6B60-4C91-AD06-698221D4E03B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31D999C1-6B60-4C91-AD06-698221D4E03B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31D999C1-6B60-4C91-AD06-698221D4E03B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31D999C1-6B60-4C91-AD06-698221D4E03B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
