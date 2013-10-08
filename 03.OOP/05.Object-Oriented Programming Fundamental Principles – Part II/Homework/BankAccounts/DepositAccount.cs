@@ -4,7 +4,7 @@
 
     public class DepositAccount : Account, IDrawable
     {
-        protected DepositAccount(Customer awner, decimal balance, decimal mountlyInterestRate) 
+        public DepositAccount(Customer awner, decimal balance, decimal mountlyInterestRate) 
             : base(awner, balance, mountlyInterestRate)  
         {
         }

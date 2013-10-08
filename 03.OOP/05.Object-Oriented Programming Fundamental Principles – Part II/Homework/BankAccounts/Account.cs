@@ -55,7 +55,7 @@
 
             set
             {
-                if (this.awner == null)
+                if (value == null)
                 {
                     throw new ArgumentNullException("Account awner cannot be null!!");
                 }

@@ -4,7 +4,7 @@
 
     public class LoanAccount : Account
     {
-        protected LoanAccount(Customer awner, decimal balance, decimal mountlyInterestRate) 
+        public LoanAccount(Customer awner, decimal balance, decimal mountlyInterestRate) 
             : base(awner, balance, mountlyInterestRate)  
         {
         }
