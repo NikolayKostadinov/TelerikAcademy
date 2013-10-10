@@ -1,12 +1,14 @@
 ﻿namespace BitArray64
 {
     using System;
+    using System.Collections.Generic;
+    using System.Collections;
 
     // Define a class BitArray64 to hold 64 bit values inside an ulong value. 
     // Implement IEnumerable<int> and Equals(…), 
     // GetHashCode(), [], == and !=.
 
-    public class BitArray64
+    public class BitArray64 : IEnumerable<int>
     {
         private ulong bitContainer = 0;
         
@@ -38,6 +40,67 @@
             {
                 this.bitContainer = value;
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+ 	        return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int result = 17;
+                result = result * 23 + this.bitContainer.GetHashCode();
+                return result;
+            }
+        }
+        
+        public static bool operator ==(BitArray64 bc1, BitArray64 bc2)
+        {
+            return BitArray64.Equals(bc1, bc2);
+        }
+        
+        public static bool operator !=(BitArray64 bc1, BitArray64 bc2)
+        {
+            return !BitArray64.Equals(bc1, bc2);
+        }
+
+        public byte this[int i]
+        {
+            get
+            {
+                if (i < 0 || i > 63)
+                {
+                    throw new IndexOutOfRangeException("Index must be between 0 and 63"); 
+                }
+                
+                return (this.BitContainer & (ulong)1 << i) > 0 ? (byte)1 : (byte)0;
+            }
+
+            set
+            {
+                if (i < 0 || i > 63)
+                {
+                    throw new IndexOutOfRangeException("Index must be between 0 and 63");
+                }
+
+                throw new NotImplementedException();
+            }
+        }
+
+
+
+        public IEnumerator<int> GetEnumerator()
+        {
+            // TODO: Implement Enumerator
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
     }
 }
