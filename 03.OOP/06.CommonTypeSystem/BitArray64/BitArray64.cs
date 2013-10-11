@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Collections;
+    using System.Text;
 
     // Define a class BitArray64 to hold 64 bit values inside an ulong value. 
     // Implement IEnumerable<int> and Equals(…), 
@@ -19,14 +20,14 @@
 
         public BitArray64(string instring)
         {
-            if (instring.Length < 64) 
+            if (instring.Length > 64) 
             {
                 throw new ArgumentException("Invalid input string!!!");
             }
 
-            for (int i = 0; i < 64; i++)
+            for (int i = 0; i < instring.Length; i++)
             {
-                this.BitContainer += (ulong)1 << int.Parse(instring[i].ToString());                  
+                this.BitContainer += ((ulong)1 * ulong.Parse(instring[i].ToString()) << instring.Length - i - 1);                  
             }
         }
 
@@ -76,7 +77,7 @@
                     throw new IndexOutOfRangeException("Index must be between 0 and 63"); 
                 }
                 
-                return (this.BitContainer & (ulong)1 << i) > 0 ? (byte)1 : (byte)0;
+                return (this.BitContainer & ((ulong)1 << 63 - i)) > 0 ? (byte)1 : (byte)0;
             }
 
             set
@@ -86,21 +87,45 @@
                     throw new IndexOutOfRangeException("Index must be between 0 and 63");
                 }
 
-                throw new NotImplementedException();
+                if (value < 0 || value > 1)
+                {
+                    throw new ArgumentException("Value must be 1 or 0!!!");
+                }
+
+                if (value > 0)
+                {
+                    this.bitContainer = this.BitContainer | ((ulong)1 << i);
+                }
+                else
+                {
+                    this.bitContainer = this.BitContainer & (~((ulong)1 << i));
+                }
             }
         }
 
-
-
         public IEnumerator<int> GetEnumerator()
         {
-            // TODO: Implement Enumerator
-            throw new NotImplementedException();
+            for (int i = 0; i < 64; i++)
+            {
+                yield return this[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
+        }
+
+        public override string ToString()
+        {
+            StringBuilder str = new StringBuilder(64);
+
+            for (int i = 0; i < 64; i++)
+            {
+                str.Append(this[i]);                
+            }
+
+            return str.ToString();
         }
     }
 }
