@@ -8,9 +8,9 @@ namespace AcademyPopcorn
 {
     class AcademyPopcornMain
     {
-        const int WorldRows = 23;
-        const int WorldCols = 40;
-        const int RacketLength = 6;
+        public const int WorldRows = 23;
+        public const int WorldCols = 40;
+        public const int RacketLength = 6;
 
         static void Initialize(Engine engine)
         {
@@ -37,6 +37,15 @@ namespace AcademyPopcorn
                     new IndestructibleBlock(new MatrixCoords(i, WorldCols - 1));
 
                 engine.AddObject(currRightWall);
+            }
+            
+            //add roof
+            for (int i = 0; i < WorldCols; i++)
+            {
+                IndestructibleBlock currLeftWall =
+                    new IndestructibleBlock(new MatrixCoords(0, i), '-');
+
+                engine.AddObject(currLeftWall);
             }
 
             Ball theBall = new Ball(new MatrixCoords(WorldRows / 2, 0),
@@ -65,7 +74,7 @@ namespace AcademyPopcorn
             IRenderer renderer = new ConsoleRenderer(WorldRows, WorldCols);
             IUserInterface keyboard = new KeyboardInterface();
 
-            ShootPlayerEngine gameEngine = new ShootPlayerEngine(renderer, keyboard, 500);
+            ShootPlayerEngine gameEngine = new ShootPlayerEngine(renderer, keyboard, 150);
 
             keyboard.OnLeftPressed += (sender, eventInfo) =>
             {

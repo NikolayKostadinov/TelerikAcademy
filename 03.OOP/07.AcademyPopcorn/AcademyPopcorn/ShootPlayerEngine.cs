@@ -4,7 +4,6 @@
 
     public class ShootPlayerEngine : Engine
     {
-        private ShootingRacket playerRacket;
 
         public ShootPlayerEngine(IRenderer renderer, IUserInterface userInterface, int sleepTimer)
             : base(renderer, userInterface, sleepTimer) 

@@ -31,11 +31,15 @@ namespace AcademyPopcorn
 
         public void MoveLeft()
         {
-            this.topLeft.Col--;
+            if (this.topLeft.Col >= 2) 
+            { 
+                this.topLeft.Col--;
+            }
         }
 
         public void MoveRight()
         {
+            if (this.topLeft.Col + this.Width <= AcademyPopcornMain.WorldCols - 3)
             this.topLeft.Col++;
         }
 

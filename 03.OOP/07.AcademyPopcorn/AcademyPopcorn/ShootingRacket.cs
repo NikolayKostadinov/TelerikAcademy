@@ -16,10 +16,11 @@ namespace AcademyPopcorn
 
         public override IEnumerable<GameObject> ProduceObjects()
         {
-            if (hasFire = true)
+            if (this.hasFire == true)
             {
+                this.hasFire = false;
                 List<GameObject> bullets = new List<GameObject>();
-                bullets.Add(new Bullet(new MatrixCoords(this.topLeft.Col + 3, this.topLeft.Row)));
+                bullets.Add(new Bullet(new MatrixCoords(this.topLeft.Row, this.topLeft.Col + 3)));
                 return bullets;
             }
             else 

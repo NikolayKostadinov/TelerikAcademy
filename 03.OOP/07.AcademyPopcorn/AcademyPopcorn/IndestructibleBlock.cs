@@ -9,10 +9,16 @@ namespace AcademyPopcorn
     {
         public const char Symbol = '|';
 
-        public IndestructibleBlock(MatrixCoords upperLeft)
+
+        public IndestructibleBlock(MatrixCoords upperLeft, char symbol)
             : base(upperLeft)
         {
-            this.body[0, 0] = IndestructibleBlock.Symbol;
+            this.body[0, 0] = symbol;
+        }
+
+        public IndestructibleBlock(MatrixCoords upperLeft)
+            : this(upperLeft, Symbol)
+        {
         }
 
         public override void RespondToCollision(CollisionData collisionData)
