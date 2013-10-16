@@ -7,7 +7,7 @@
 
     public class DocumentSystem
     {
-        private IList<IDocument> documents;
+        private readonly IList<IDocument> documents;
         
         private KeyValuePair<string, string> ParseAttribute(string attribute)
         {
@@ -28,14 +28,13 @@
                 document.LoadProperty(keyValue.Key, keyValue.Value);
             }
 
-            this.documents.Add(document);
-
             if (document.Name == null)
             {
                 return "Document has no name";
             }
             else
             {
+                this.documents.Add(document);
                 return string.Format("Document added: {0}", document.Name);
             }
         }
@@ -116,6 +115,8 @@
                       
         public string DecryptDocument(string name)
         {
+            StringBuilder sb = new StringBuilder();
+
             foreach (var document in this.documents)
             {
                 if (document.Name == name)
@@ -123,16 +124,24 @@
                     if (document is EncriptableDocument)
                     {
                         (document as EncriptableDocument).Decrypt();
-                        return string.Format("Document decrypted: {0}", document.Name);
+                        sb.AppendLine(string.Format("Document decrypted: {0}", document.Name));
                     }
                     else
                     {
-                        return string.Format("Document does not support decryption: {0}", document.Name);
+                        sb.AppendLine(string.Format("Document does not support decryption: {0}", document.Name));
                     }
                 }
+                
             }
 
-            return string.Format("Document not found: {0}", name);    
+            if (sb.Length != 0)
+            {
+                return sb.ToString().Trim();
+            }
+            else
+            {
+                return string.Format("Document not found: {0}", name);
+            }    
         }              
                        
         public string EncryptAllDocuments()

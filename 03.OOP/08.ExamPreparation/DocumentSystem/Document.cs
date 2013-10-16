@@ -11,7 +11,7 @@
         {
             get
             {
-                return this.GetProperty("Name").ToString();
+                return this.GetProperty("Name") as string;
             }
 
             set
@@ -48,7 +48,7 @@
             }
         }
 
-        public void SaveAllProperties(IList<KeyValuePair<string, object>> output)
+        public void SaveAllProperties(out IList<KeyValuePair<string, object>> output)
         {
             output = this.properties.ToList();
             output = output.OrderBy(x => x.Key).ToList();
@@ -60,9 +60,9 @@
             sb.Append(this.GetType().Name);
             sb.Append('[');
             
-            List<KeyValuePair<string,object>>props = new List<KeyValuePair<string,object>>();
+            IList<KeyValuePair<string,object>>props ;//= new List<KeyValuePair<string,object>>();
 
-            this.SaveAllProperties(props);
+            this.SaveAllProperties(out props);
 
             foreach (var item in props)
             {
@@ -72,15 +72,14 @@
                 }
             }
 
-            sb.ToString().Trim(';');
-            return sb.ToString() + "]";
+            return sb.ToString().Trim(';') + "]";
         }
 
         protected object GetProperty(string key) 
         {
             if (this.properties.ContainsKey(key.ToLower()))
             {
-                return properties[key];
+                return properties[key.ToLower()];
             }
             else
             {

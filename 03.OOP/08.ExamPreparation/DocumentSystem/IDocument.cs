@@ -10,7 +10,7 @@ namespace DocumentSystem
 
         void LoadProperty(string key, string value);
 
-        void SaveAllProperties(IList<KeyValuePair<string, object>> output);
+        void SaveAllProperties(out IList<KeyValuePair<string, object>> output);
 
         string ToString();
     }

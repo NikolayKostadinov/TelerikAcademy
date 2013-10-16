@@ -5,8 +5,11 @@
 
     public class ConsoleDocumentSystem
     {
+        private static DocumentSystem ce;
+
         static void Main()
         {
+            ce = new DocumentSystem();
             IList<string> allCommands = ReadAllCommands();
             ExecuteCommands(allCommands);
         }
@@ -42,7 +45,6 @@
 
         private static void ExecuteCommand(string cmd, string parameters)
         {
-            DocumentSystem ce = new DocumentSystem();
             string[] cmdAttributes = parameters.Split(
                 new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
             if (cmd == "AddTextDocument")
