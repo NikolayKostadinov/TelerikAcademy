@@ -1,0 +1,51 @@
+﻿body {
+    background-color:#a9a9a9;
+}
+
+ h1 {
+    text-align:center;
+    font-size: 28pt;
+    color:#fafad2;
+}
+
+article header h1 {
+    text-align:left;
+    font-size: 20pt;
+}
+
+article footer p {
+    font-size:10pt;
+}
+
+article footer p a {
+    text-decoration:none;
+    color:black;
+}
+
+.document-footer{
+    text-align:center;
+}
+
+li {
+    list-style-type:none;
+}
+
+li a {
+    color:white;
+    font-weight:bold;
+    font-size:18pt;
+    text-align:center;
+    text-decoration:none;
+}
+
+li:nth-child(2) a {
+    background-color: #D3D3D3; 
+}
+
+li a:hover {
+    text-decoration:underline;
+}
+
+nav {
+    text-align:center;
+}

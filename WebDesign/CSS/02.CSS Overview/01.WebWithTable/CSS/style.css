@@ -1,0 +1,53 @@
+﻿* { margin: 0; padding: 0; }
+
+body {
+    background-color:#595959;
+    font-family:Arial;
+    color:#FFFFFF;
+}
+
+table {
+    text-align:left;
+    vertical-align:top;
+}
+
+th {
+    color:#c3bfb7;
+    font-size:20px;
+    font-weight:normal;
+    vertical-align:text-top; 
+}
+
+td:nth-child(1) {
+    font-style:italic;
+    padding:0px 20px 0px 0px;
+}
+
+td{
+    padding-bottom:20px;
+    vertical-align:text-top; 
+}
+
+#green-point{
+    font-size: 40pt;
+	color: #33CC66;
+	position: relative;
+	top: 11px;
+	left: -3px;
+}
+
+td p:nth-of-type(2){
+    color:red;
+}
+
+td a {
+    color:white;
+    text-decoration:none;
+}
+#response-time, #last-action {
+    color:#c3bfb7;
+}
+#status {
+    color:orange;
+}
+

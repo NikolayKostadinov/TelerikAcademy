@@ -1,0 +1,8 @@
+﻿div{
+    border: 2px solid red;
+    border-radius:100px;
+    background-color:black;
+}
+    div:nth-child(n) {
+        padding-right:3%;
+    }

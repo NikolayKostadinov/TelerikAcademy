@@ -1,0 +1,36 @@
+﻿* {
+    font-family:Consolas;
+}
+table, th, td, tr  {
+    border:1px solid grey;
+    border-spacing:0;
+    border-collapse:collapse;
+    padding-left:5px;
+    padding-right:40px;
+}
+
+tr:nth-last-child(2n+1) {
+    background-color:#ececd8;
+}
+
+th {
+    background-color:rgb(88, 187, 6);
+    color:white;
+    font-weight:normal;
+    text-align:left;
+    padding-left:5px;
+}
+
+td {
+     padding-left:5px;
+     padding-right:40px;
+}
+
+td img {
+    height: 15px;
+    vertical-align:central;
+}
+
+    td:last-child, tr th:last-child {
+        padding-right:5px;
+    }

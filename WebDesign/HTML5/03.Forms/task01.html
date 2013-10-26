@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My First HTML5 Form</title>
+    <style>
+        table, tr, td
+        {
+            border-collapse:collapse;
+            border-style:solid;
+            border-width:1px;
+            border-color:black; 
+        }
+        input, textarea, select
+        {
+            border-style:inset;
+            border-width:2px; 
+            font-family:'Courier New';
+            font-size:10px;
+            vertical-align:middle;
+        }
+        textarea
+        {
+            resize:none;
+        }
+        .lf
+        {
+            text-align:right;
+            font-family:Calibri;
+            font-weight:bold;
+            font-size:18px;
+            padding:3px 5px 3px 3px; 
+            width:150px;
+        }
+        td
+        {
+            padding:3px 3px 3px 3px;
+            width:300px;
+            font-family:Calibri;
+            font-size:14px;
+            vertical-align:middle;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+    <table>
+        <tr>
+            <td class="lf">
+                <label for="lname">Last Name</label> 
+            </td>
+            <td colspan="3">
+                <input type="text" id="lname" name="lname" style="width:280px;" />
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">
+                <label for="fname">First Name</label>
+                    </td>
+            <td colspan="3">
+                <input type="text" id="fname" name="fname" style="width:280px;"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">
+                <label for="address">Address</label>
+                    </td>
+            <td colspan="3">
+                <textarea  id="address" rows="4" cols="28" name="fname" placeholder="18 Konstantin Velichkov Str. ent.2, flor 1, apt.2"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">
+                <label for="city">City</label>
+            </td>
+            <td style="width:50px">
+                <input type="text" id="city" placeholder="Burgas" />
+            </td>
+            <td class="lf" style="width:50px; text-align:center">
+                <label for="state">State</label>
+            </td>
+            <td style="width:50px; text-align:center;">
+                <input style="width:50px" type="text" id="state" />
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">
+                <label for="zip">Zip/Postal Code</label>
+            </td>
+            <td colspan="3"><input style="width:50px" type="text" id="zip" placeholder="8000" /></td>
+        </tr>
+        <tr>
+            <td class="lf">
+                <label for="country">Country</label>
+            </td>
+            <td colspan="3">
+                <select name ="Country" id="country">
+                    <option value="Bulgaria" selected="selected">Bulgaria</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="New Zenland">New Zenland</option>                    
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">
+                <label for="phone">Phone (country code,<br />area code, number)</label>
+            </td>
+            <td colspan="3">
+                (+ <input type="tel" placeholder="359" name="coutryCode" style="width:40px" id="phone" 
+                    pattern="[0-9]{3}" title="Three numbers country code" /> )
+                
+                <input type="tel" placeholder="56" name="ареаCode" style="width:40px"
+                    pattern="[0-9]{2,3}" title="Two or three numbers area code" />
+                 - <input type="tel" placeholder="831512" name="phoneCode" style="width:150px"
+                     pattern="[0-9]{8,}" title="Eight or more numbers phone number" /> 
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">
+                <label for="email">E-mail</label>
+            </td>
+            <td colspan="3">
+                <input type="email" id="email" name="email" placeholder="nikhattan@yahoo.com" 
+                    pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$" 
+                    title="(symbols)@(symbols).(two or three symbols)" />
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">
+                <label for=birthMonth>Birth date</label> 
+            </td>
+            <td colspan="3">
+                Month <input type="text" id="birthMonth" name="birthMonth" 
+                    pattern="0[1-9]+|[1]+[1-2]+" title="The input must be int the format MM number from 01 to 12!" 
+                    style="width:2em"/>
+                Day <input type="text" id="birthDay" name="birthDay" 
+                    pattern="0[1-9]+|[1-2]+[0-9]+|[3]+[0-1]+" title="The input must be int the format DD number from 01 to 31!" 
+                    style="width:2em"/>
+                Year (4 digit) <input type="text" id="birthYear" name="birthYear" 
+                    pattern="[0-9]{4}" title="The input must be int the format YYYY!" 
+                    style="width:4em"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">
+                <label for="gender">Gender</label>
+            </td>
+            <td colspan="3">
+                <select id="gender" name="gender">
+                    <option value="0" selected="selected">Male</option>
+                    <option value="1">Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">Starting date</td>
+            <td colspan="3">
+                <input type="radio" name="startingDate" value="0" id="spring" checked="checked" >
+                <label for="spring">Spring 2006</label>
+                <input type="radio" name="startingDate" value="0" id="summer">
+                <label for="summer">Summer 2006</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="lf">Comments/Quertions</td>
+            <td colspan="3"><textarea id="Textarea1" rows="6" cols="32" name="fname" 
+                placeholder="Pleace send me more information about the lodging."></textarea></td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="4" style="text-align:center; background-color:skyblue;">
+                    <input type="submit" value="Submit" name="submitBtn" style="border-style:outset; font-family:Calibri; font-size:12px;" />
+                    <input type="reset" value="Clear This Form" name="resetBtn" style="border-style:outset; font-family:Calibri; font-size:12px"/>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+  </form>
+</body>
+</html>
