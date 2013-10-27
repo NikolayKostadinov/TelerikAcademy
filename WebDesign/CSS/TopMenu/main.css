@@ -1,0 +1,86 @@
+﻿body, .top-menu {
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.top-menu, .sub-menu > li, .sub-sub-menu > li {
+    list-style-type: none;
+    height: 50px;
+    background-color: grey;
+    background: #d2d2d2; /* Old browsers */
+    background: -moz-linear-gradient(top, #d2d2d2 0%, #cecece 12%, #c1c1c1 20%, #9e9e9e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2d2d2), color-stop(12%,#cecece), color-stop(20%,#c1c1c1), color-stop(100%,#9e9e9e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #d2d2d2 0%,#cecece 12%,#c1c1c1 20%,#9e9e9e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #d2d2d2 0%,#cecece 12%,#c1c1c1 20%,#9e9e9e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #d2d2d2 0%,#cecece 12%,#c1c1c1 20%,#9e9e9e 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #d2d2d2 0%,#cecece 12%,#c1c1c1 20%,#9e9e9e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2d2d2', endColorstr='#9e9e9e',GradientType=0 ); /* IE6-9 */
+}
+
+    .top-menu li {
+        display: inline-block;
+        border-right: 3px groove lightgrey;
+        padding-top: 10px;
+        height: 40px;
+    }
+
+li:hover ul.sub-menu {
+    display: block;
+}
+
+li:hover > ul.sub-sub-menu {
+    display: block;
+}
+
+.top-menu li a {
+    text-decoration: none;
+    padding: 20px 20px 20px 20px;
+    margin: 20px;
+    font-size: 20pt;
+    font-weight: bold;
+    color: orange;
+}
+
+    .top-menu li a:hover {
+        color: #cecece;
+    }
+
+.last-nav-item {
+    border: none;
+}
+
+ul.sub-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+}
+
+ul.sub-sub-menu {
+    display: none;
+    position: absolute;
+}
+
+    ul.sub-sub-menu li:first-of-type {
+        border-top: 3px groove lightgrey;
+        width: 220px;
+    }
+
+        ul.sub-sub-menu li a {
+            padding: 5px;
+        }
+
+.sub-menu li {
+    display: block;
+    border-left: 3px groove lightgrey;
+    border-bottom: 3px groove lightgrey;
+}
+
+    .sub-menu li a {
+        font-size: 18pt;
+    }
+
+ul.sub-sub-menu {
+    margin-left: 190px;
+}
