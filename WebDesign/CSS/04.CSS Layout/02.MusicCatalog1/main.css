@@ -8,12 +8,12 @@
     zoom: 1;
 }
 
-.clearfix:after {
-    content: "";
-    display: block;
-    clear: both;
-    height: 0;
-}
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+    }
 
 ul {
     list-style-type: none;
@@ -28,7 +28,7 @@ p {
 .main-form {
     position: absolute;
     padding: 15px;
-    top:20px;
+    top: 20px;
     left: 100px;
     width: 368px;
     height: 538px;
@@ -64,17 +64,24 @@ p {
 
 .list-div-last {
     height: 104px;
-    margin-bottom:18px;
+    margin-bottom: 18px;
 }
 
-    .list-div img {
-        float: left;
-        margin-right: 18px;
-        height: 87px;
-        width: 130px;
-        border:1px solid grey;
-    }
+.list-div img {
+    float: left;
+    margin-right: 18px;
+    height: 87px;
+    width: 130px;
+    border: 1px solid grey;
+}
 
-    .list-div p span {
-        font-weight: bold;
-    }
+.list-div p span {
+    font-weight: bold;
+}
+
+
+ .input-button {
+    background-image:url(img/image-button.png);
+    color: white;
+    border-color: #b61717;
+}
