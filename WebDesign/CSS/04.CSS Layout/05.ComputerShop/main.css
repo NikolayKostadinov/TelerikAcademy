@@ -1,2 +1,104 @@
-﻿body {
+﻿* {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
+
+a, li, body, div, hr, ul, fieldset, fieldset p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 642px;
+    //height: 487px;
+    border: 2px outset grey;
+    border-radius: 10px;
+}
+
+hr {
+    top: 45px;
+    left: 20px;
+    height: 0;
+    width: 602px;
+    margin: 5px 20px 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    text-align: center;
+}
+
+    header > ul > li {
+        display: inline-block;
+        padding-top: 10px;
+    }
+
+        header > ul > li > a {
+            font-family: Arial;
+            font-size: 16pt;
+            font-weight: bold;
+            color: #00BFFF;
+        }
+
+div {
+    width: 432px;
+    border: 2px outset grey;
+    margin: 0 10px 10px;
+}
+
+    div > ul > li {
+        display: inline-block;
+    }
+
+fieldset {
+    width: 198px;
+    height: 106px;
+    padding: 5px 0 5px 5px;
+    margin: 0 0 0 5px;
+}
+
+    fieldset img {
+        float: left;
+        width: 99px;
+        height: 55px;
+        margin-right: 10px;
+    }
+
+    fieldset p {
+        font-family: Corbel;
+        line-height: 30px;
+    }
+
+p span {
+    margin-left: 22px;
+}
+
+form ul {
+    position:absolute;
+	left:458px;
+	top:120px;
+}
+
+    form ul li {
+        font-family:Arial;
+        margin-bottom:10px;
+    }
+
+        form ul li span {
+            font-family:Corbel;
+        }
+
+.clearfix {
+    zoom: 1;
+}
+
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+    }

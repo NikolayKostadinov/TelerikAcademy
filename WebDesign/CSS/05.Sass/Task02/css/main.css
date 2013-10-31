@@ -1,0 +1,110 @@
+body header form input {
+  display: none; }
+  body header form input:checked + label {
+    border: 2px solid orange; }
+    body header form input:checked + label + div {
+      display: block; }
+body header form label {
+  display: inline-block;
+  margin: 5px; }
+  body header form label.picture1 {
+    background-image: url(../images/picture1.jpg);
+    -moz-background-size: 152px;
+    -o-background-size: 152px;
+    -webkit-background-size: 152px;
+    background-size: 152px;
+    width: 152px;
+    height: 152px; }
+  body header form label.picture2 {
+    background-image: url(../images/picture2.jpg);
+    -moz-background-size: 152px;
+    -o-background-size: 152px;
+    -webkit-background-size: 152px;
+    background-size: 152px;
+    width: 152px;
+    height: 152px; }
+  body header form label.picture3 {
+    background-image: url(../images/picture3.jpg);
+    -moz-background-size: 152px;
+    -o-background-size: 152px;
+    -webkit-background-size: 152px;
+    background-size: 152px;
+    width: 152px;
+    height: 152px; }
+  body header form label.picture4 {
+    background-image: url(../images/picture4.jpg);
+    -moz-background-size: 152px;
+    -o-background-size: 152px;
+    -webkit-background-size: 152px;
+    background-size: 152px;
+    width: 152px;
+    height: 152px; }
+  body header form label.picture5 {
+    background-image: url(../images/picture5.jpg);
+    -moz-background-size: 152px;
+    -o-background-size: 152px;
+    -webkit-background-size: 152px;
+    background-size: 152px;
+    width: 152px;
+    height: 152px; }
+  body header form label.picture6 {
+    background-image: url(../images/picture6.jpg);
+    -moz-background-size: 152px;
+    -o-background-size: 152px;
+    -webkit-background-size: 152px;
+    background-size: 152px;
+    width: 152px;
+    height: 152px; }
+body div {
+  display: none;
+  position: absolute;
+  top: 180px; }
+  body div.picture1 {
+    background-image: url(../images/picture1.jpg);
+    -moz-background-size: 500px;
+    -o-background-size: 500px;
+    -webkit-background-size: 500px;
+    background-size: 500px;
+    width: 500px;
+    height: 500px; }
+  body div.picture2 {
+    background-image: url(../images/picture2.jpg);
+    -moz-background-size: 500px;
+    -o-background-size: 500px;
+    -webkit-background-size: 500px;
+    background-size: 500px;
+    width: 500px;
+    height: 500px; }
+  body div.picture3 {
+    background-image: url(../images/picture3.jpg);
+    -moz-background-size: 500px;
+    -o-background-size: 500px;
+    -webkit-background-size: 500px;
+    background-size: 500px;
+    width: 500px;
+    height: 500px; }
+  body div.picture4 {
+    background-image: url(../images/picture4.jpg);
+    -moz-background-size: 500px;
+    -o-background-size: 500px;
+    -webkit-background-size: 500px;
+    background-size: 500px;
+    width: 500px;
+    height: 500px; }
+  body div.picture5 {
+    background-image: url(../images/picture5.jpg);
+    -moz-background-size: 500px;
+    -o-background-size: 500px;
+    -webkit-background-size: 500px;
+    background-size: 500px;
+    width: 500px;
+    height: 500px; }
+  body div.picture6 {
+    background-image: url(../images/picture6.jpg);
+    -moz-background-size: 500px;
+    -o-background-size: 500px;
+    -webkit-background-size: 500px;
+    background-size: 500px;
+    width: 500px;
+    height: 500px; }
+

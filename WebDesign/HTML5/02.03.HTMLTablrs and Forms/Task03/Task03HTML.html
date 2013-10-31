@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>My Table Task3</title>
+    <style type="text/css">
+
+        table 
+        {
+	        border-spacing: 0px;
+            font-family:Arial;
+	        font-size: 10pt;
+        }
+
+        .uround 
+        {
+            -moz-border-radius: 10px 10px 0 0;
+            -webkit-border-radius: 10px 10px 0 0;
+            border-radius:10px 10px 0 0; 
+        }
+        
+        .drround 
+        {
+            -moz-border-radius: 0 0 10px 0;
+            -webkit-border-radius: 0 0 10px 0;
+            border-radius:0 0 10px 0;
+        }
+
+        .dlround 
+        {
+            -moz-border-radius: 0 0 0 10px;
+            -webkit-border-radius: 0 0 0 10px;
+            border-radius:0 0 0 10px;
+        }
+
+
+        td, th
+        {
+            padding: 3px;
+            border: 1px solid #a4abb2;
+            border-spacing:0px;
+	        text-align: left;
+	        font-weight: normal;
+            vertical-align:middle;
+        }
+
+        thead, tfoot
+        {
+            background: linear-gradient(0deg, #CCC, #e4e6e8);
+            border: 1px solid #a4abb2;
+            padding: 3px;
+        }
+
+        .flat 
+        {
+            background: #e4e6e8;
+            border: 1px solid #a4abb2;
+            padding: 3px;
+        }
+
+        tfoot td
+        {
+            border-left:none;
+            border-right:none;
+            border-top: 2px solid #a4abb2;
+            padding: 3px 10px 3px 10px;
+        }
+ 
+        tfoot a 
+        {
+	        text-decoration: none;
+	        color: black;
+	        padding: 3px;
+	        padding-left: 4px;
+	        padding-right: 4px;	
+            vertical-align:middle;
+        }
+
+        tfoot a:hover 
+        {
+	        border: 1px solid red;
+        }
+
+        input[type="image"] {
+	        vertical-align: middle;
+        }
+
+        input[type="checkbox"] {
+	        vertical-align: middle;
+        }
+
+        input[type="text"] {
+	        border: 1px solid #9babc2;
+            vertical-align:middle;
+        }
+
+        .active 
+        {
+	        border: 1px solid red;
+        }
+
+        .right 
+        {
+	        text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="6" class="uround">Drag a column header and drop it here to group by that column</th>
+                </tr>
+                <tr>
+                    <th>ProductID</th>
+                    <th style="width:24em">Product name</th>
+                    <th style="width:15em">Unit price</th>
+                    <th style="width:15em">Quantity per unit</th>
+                    <th style="width:15em">Units in stock</th>
+                    <th>Discontinued</th>
+                </tr>
+                <tr class="flat">
+                    <th>
+                        <input type="text" name="ProductID" style="width:3em" />
+                    </th>
+                    <th>
+                        <input type="text" name="Product name" style="width:10em" />
+                    </th>
+                    <th>
+                        <input type="text" name="Unit price" style="width:5em"/>
+                        <input type="image" src="images/buttonFilter.png" name="Unit price filter" alt="Filter"  />
+                    </th>
+                    <th>
+                        <input type="text" name="Quantity per unit" style="width:7em"/>
+                    </th>
+                    <th>
+                        <input type="text" name="Units in stock" style="width:5em"/>
+                        <input type="image" src="images/buttonFilter.png" name="Units in stock filter" alt="Filter" />
+                    </th>
+                    <th>
+                        <input type="checkbox" name="Discountinued" style="vertical-align:middle" />
+                        <input type="image" src="images/buttonFilter.png" name="Discontinued filter" alt="Filter" />
+                    </th>
+                </tr>
+            </thead>
+            <tfoot id="navbar" class="NavPan">
+                     <tr>
+                         <td colspan="4" class="dlround">
+                             <input type="image" src="images/begin.png" name="begin" alt="Begin" />  
+                             <input type="image" src="images/prev.png" name ="prev" alt="Previouse"/>
+                             <a href="#">1</a>
+						     <a href="#">2</a>
+						     <a href="#">3</a>
+						     <a href="#">4</a>
+						     <a href="#">5</a>
+						     <a href="#">6</a>
+						     <a href="#">7</a>
+						     <a href="#">8</a>
+						     <a href="#">9</a>
+						     <a href="#">10</a>
+						     ...
+                             <input type="image" src="images/next.png" name="next" alt="Next" />
+                             <input type="image" src="images/end.png" name="last" alt="Last" />
+                             Page size: 
+                             <select>
+                                 <script>
+                                     for (i = 0; i < 50 ; i++) {
+                                         if (i != 4)
+                                         {
+                                             document.write('<option value="' + (i + 6) + '">' + (i + 6) + '</option>')
+                                         }
+                                         else
+                                         {
+                                             document.write('<option value="10" selected="selected">10</option>')
+                                         }
+                                     }
+                                 </script> 
+                             </select>
+                         </td>
+                         <td colspan="2" class="drround right">335104 items in 33511 pages</td>
+                     </tr>
+                </tfoot>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Chay</td>
+                    <td>$18.00</td>
+                    <td>10 boxes x 20 bags</td>
+                    <td>39</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" /></td>
+                </tr>
+                 <tr>
+                    <td>2</td>
+                    <td>Chang</td>
+                    <td>$19.00</td>
+                    <td>24 - 12 oz bottles</td>
+                    <td>17</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" /></td>
+                </tr>
+                 <tr>
+                    <td>3</td>
+                    <td>Aniseed Syrup</td>
+                    <td>$10.00</td>
+                    <td>12 - 550 ml bottles</td>
+                    <td>13</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" /></td>
+                </tr>
+                 <tr>
+                    <td>4</td>
+                    <td>Chef Anton's Cajun Seasoning</td>
+                    <td>$22.00</td>
+                    <td>48 - 6 oz jars</td>
+                    <td>53</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" /></td>
+                </tr>
+                 <tr>
+                    <td>5</td>
+                    <td>Chef Anton's Gumbo Mix</td>
+                    <td>$21.35</td>
+                    <td>36 boxes</td>
+                    <td>0</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" checked="checked" /></td>
+                </tr>
+                 <tr>
+                    <td>6</td>
+                    <td>Grandma's Boysenberry Spread</td>
+                    <td>$25.00</td>
+                    <td>12 - 8 oz jars</td>
+                    <td>120</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" /></td>
+                </tr>
+                 <tr>
+                    <td>7</td>
+                    <td>Uncle Bob's Organic Dried Pears</td>
+                    <td>$30.00</td>
+                    <td>12 - 1 lb pkgs.</td>
+                    <td>15</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" /></td>
+                </tr>
+                 <tr>
+                    <td>8</td>
+                    <td>Northwoods Cranberry Sauce</td>
+                    <td>$40.00</td>
+                    <td>12 - 12 oz jars</td>
+                    <td>6</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" /></td>
+                </tr>
+                 <tr>
+                    <td>9</td>
+                    <td>Mishi Kobe Niku</td>
+                    <td>$97.00</td>
+                    <td>18 - 500 g pkgs.</td>
+                    <td>29</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" checked="checked" /></td>
+                </tr>
+                 <tr>
+                    <td>10</td>
+                    <td>Ikura</td>
+                    <td>$31.00</td>
+                    <td>12 - 200 ml jars</td>
+                    <td>31</td>
+                    <td><input type="checkbox" value="1" disabled="disabled" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

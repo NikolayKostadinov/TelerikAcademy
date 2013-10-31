@@ -2,9 +2,9 @@
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Web page 1</title>
+		<title>Computer Shop</title>
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-		<link href="style.css" rel="stylesheet" type="text/css" />
+		<link href="main.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
@@ -26,11 +26,11 @@
 					<li>
 						<fieldset>
 							<legend>Apple MacBook Air</legend>
-							<img src="laptop.png" alt="laptop"/>
-							<p>	
+							<img src="img/laptop.png" alt="laptop"/>
+							<p class="clearfix">	
 								64GB SSD
-								2GB DDR 
-								1300 USD
+								2GB DDR
+                                <span>1300 USD</span>
 								<span>Intel Core i5</span>
 							</p>
 						</fieldset>
@@ -38,11 +38,11 @@
 					<li>
 						<fieldset>
 							<legend>Apple MacBook Air</legend>
-							<img src="laptop.png" alt="laptop"/>
-							<p>	
+							<img src="img/laptop.png" alt="laptop"/>
+							<p class="clearfix">	
 								64GB SSD
 								2GB DDR 
-								1300 USD
+								<span>1300 USD</span>
 								<span>Intel Core i5</span>
 							</p>
 						</fieldset>
@@ -50,11 +50,11 @@
 					<li>
 						<fieldset>
 							<legend>Apple MacBook Air</legend>
-							<img  src="laptop.png" alt="laptop"/>
-							<p>	
+							<img  src="img/laptop.png" alt="laptop"/>
+							<p class="clearfix">	
 								64GB SSD
 								2GB DDR 
-								1300 USD
+								<span>1300 USD</span>
 								<span>Intel Core i5</span>
 							</p>
 						</fieldset>
@@ -62,11 +62,11 @@
 					<li>
 						<fieldset>
 							<legend>Apple MacBook Air</legend>
-							<img  src="laptop.png" alt="laptop"/>
-							<p>	
+							<img  src="img/laptop.png" alt="laptop"/>
+							<p class="clearfix">	
 								64GB SSD
 								2GB DDR 
-								1300 USD
+								<span>1300 USD</span>
 								<span>Intel Core i5</span>
 							</p>
 						</fieldset>
@@ -74,11 +74,11 @@
 					<li>
 						<fieldset>
 							<legend>Apple MacBook Air</legend>
-							<img  src="laptop.png" alt="laptop"/>
-							<p>	
+							<img  src="img/laptop.png" alt="laptop"/>
+							<p class="clearfix">	
 								64GB SSD
 								2GB DDR 
-								1300 USD
+								<span>1300 USD</span>
 								<span>Intel Core i5</span>
 							</p>
 						</fieldset>
@@ -86,12 +86,11 @@
 					<li>
 						<fieldset>
 							<legend>Apple MacBook Air</legend>
-							<img  src="laptop.png" alt="laptop"/>
-							<p>	
+							<img  src="img/laptop.png" alt="laptop"/>
+							<p class="clearfix">	
 								64GB SSD
 								2GB DDR 
-								1300 USD
-								<span>Intel Core i5</span>
+								<span>1300 USD</span><span>Intel Core i5</span>
 							</p>
 						</fieldset>
 					</li>
@@ -99,14 +98,22 @@
 			</div>
 			<form>
 				<ul>
-					<li>Min price: 500 USD</li>
-					<li><input type="range" min="0" max="1000" value="500" id="Minp"/></li>
-					<li>Max price: 1500 USD</li>
-					<li><input type="range" min="0" max="3000" value="1500" /></li>
-					<li>Min RAM: 4GB</li>
-					<li><input type="range" min="0" max="8" value="4" /></li>
-					<li>Max RAM: 16GB</li>
-					<li><input type="range" min="0" max="32" value="16" /></li>
+					<li>Min price: <span id="min_price_span">500</span> USD</li>
+					<li><input type="range" id="minprice" min="0" max="1000" value="500" step="50" 
+                         onchange="getElementById('min_price_span').innerHTML=this.value" />
+					</li>
+					<li>Max price: <span id="max-price">1500</span> USD</li>
+					<li><input type="range" min="0" max="3000" value="1500"step="50" 
+                         onchange="getElementById('max-price').innerHTML=this.value" />
+					</li>
+					<li>Min RAM: <span id="min-ram">4</span>GB</li>
+					<li><input type="range" min="0" max="8" value="4" 
+                        onchange="getElementById('min-ram').innerHTML=this.value" />
+					</li>
+					<li>Max RAM: <span id="max-ram">16</span>GB</li>
+					<li><input type="range" min="0" max="32" value="16" 
+                        onchange="getElementById('max-ram').innerHTML=this.value" />
+					</li>
 				</ul>
 			</form>
 		</section>

@@ -1,0 +1,23 @@
+﻿table
+{
+    width: 300px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+table td 
+{
+    padding: 2px; 
+}
+
+tfoot
+{
+    background-color: skyblue;
+}
+
+.right
+{
+    text-align: right;
+    font-size: medium;
+    font-weight: bold;
+}

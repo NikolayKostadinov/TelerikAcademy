@@ -1,0 +1,94 @@
+@mixin display
+{
+	& + div 
+	{
+		display:block;
+	}
+}
+
+@mixin show_border
+{
+	& + label
+	{
+		border: 2px solid orange;
+		@include display;
+	}	
+}
+
+@mixin size($size)
+{
+	-moz-background-size:$size;
+	-o-background-size:$size;
+	-webkit-background-size:$size;
+	background-size:$size;
+	width:$size;
+	height:$size;
+}
+
+@mixin galery($size)
+{
+	&.picture1
+	{
+		background-image:url(../images/picture1.jpg);
+		@include size($size);
+	}
+	&.picture2
+	{
+		background-image:url(../images/picture2.jpg);
+		@include size($size);
+	}
+	&.picture3
+	{
+		background-image:url(../images/picture3.jpg);
+		@include size($size);
+	}
+	&.picture4
+	{
+		background-image:url(../images/picture4.jpg);
+		@include size($size);
+	}
+	&.picture5
+	{
+		background-image:url(../images/picture5.jpg);
+		@include size($size);
+	}
+	&.picture6
+	{
+		background-image:url(../images/picture6.jpg);
+		@include size($size);
+	}
+}
+
+body
+{
+	header
+	{
+	form 
+	{
+		input 
+		{
+			display:none;
+			&:checked
+			{
+				@include show_border;
+			}
+		}	
+
+		label 
+		{
+			@include galery(152px);
+			display:inline-block;
+			margin:5px;
+					
+		}
+	}
+	}
+	div 
+	{
+		@include galery(500px);
+		display:none;
+		position:absolute;
+		top:180px;
+	}
+
+}

@@ -1,0 +1,64 @@
+﻿table 
+{
+	border-spacing: 0px;
+	border-collapse: collapse;
+	font-size: 10pt;
+}
+
+td, th
+{
+    border: 1px solid #a4abb2;
+	padding: 3px;
+	text-align: left;
+	font-weight: normal;
+    vertical-align:middle;
+}
+
+thead, tfoot
+{
+    background-color: #e4e6e8;
+    border: 1px solid #a4abb2;
+}
+
+tfoot td
+{
+    border:none;
+}
+ 
+tfoot a 
+{
+	text-decoration: none;
+	color: black;
+	padding: 3px;
+	padding-left: 4px;
+	padding-right: 4px;	
+    vertical-align:middle;
+}
+
+tfoot a:hover 
+{
+	border: 1px solid red;
+}
+
+input[type="image"] {
+	vertical-align: middle;
+}
+
+input[type="checkbox"] {
+	vertical-align: middle;
+}
+
+input[type="text"] {
+	border: 1px solid #9babc2;
+    vertical-align:middle;
+}
+
+.active 
+{
+	border: 1px solid red;
+}
+
+.right 
+{
+	text-align: right;
+}

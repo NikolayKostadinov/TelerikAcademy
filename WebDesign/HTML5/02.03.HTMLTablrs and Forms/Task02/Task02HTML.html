@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>My Table</title>
+    <style type="text/css">
+        table, th, tr, td {
+            padding:3px;
+            border-style:groove;
+            border-color:darkgray; 
+            border-width:2px;
+            border-collapse:collapse;
+        }
+        .ul {
+            display: inline;
+            content: ", ";
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Order</th>
+                    <th colspan="3">Personal Info</th>
+                    <th colspan="5">University Marks</th>
+                </tr>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Faculty Number</th>
+                    <th>English</th>
+                    <th>Math</th>
+                    <th>Biology</th>
+                    <th>Physics</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tfoot id="navbar">
+                     <tr>
+                         <td colspan="9">
+                                 <span><input type="button" value="Previous" /></span>
+                                 <span><a href="#">1</a></span>,
+                                 <span><a href="#">2</a></span>,
+                                 <span><a href="#">3</a></span>,
+                                 <span><a href="#">4</a></span>,
+                                 <span><a href="#">...</a></span>,
+                                 <span><a href="#">10</a></span>
+                                 <span><input type="button" value="Next"/></span>
+                         </td>
+                     </tr>
+                 </tfoot>
+            <tbody>
+                <script>
+                    for(i = 0; i < 9; i++){
+                        document.write('<tr>')
+                        document.write('<td>'+(i+1)+'</td>')
+                        document.write('<td>Nikolay</td>')
+                        document.write('<td>Kostadinov</td>')
+                        document.write('<td>16637</td>')
+                        document.write('<td>2</td>')
+                        document.write('<td>3</td>')
+                        document.write('<td>4</td>')
+                        document.write('<td>5</td>')             
+                        document.write('<td>3.50</td>')     
+                        document.write('</tr>')
+                    }
+                    </script>
+                    </tbody>
+                </table>
+            </form>
+        </body>
+        </html>

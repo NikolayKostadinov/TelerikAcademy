@@ -1,0 +1,35 @@
+﻿body
+{
+    font-family:Calibri;
+}
+
+header h1 img
+{
+    float:left;
+}
+
+header h1
+{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+table
+{
+    border: 2px solid black;
+    border-spacing:0px;
+}
+
+nav
+{
+    margin-bottom:40px;
+}
+
+tr, th, td
+{
+    border: 1px solid black;
+    border-collapse:collapse;
+    border-spacing:0px;
+    padding:5px;
+}
+    

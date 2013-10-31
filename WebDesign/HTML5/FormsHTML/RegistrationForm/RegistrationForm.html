@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Registration</title>
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <form method="post" action="register.php">
+        <table border="1">
+            <colgroup>
+                <col style="width: 100px" />
+                <col style="width: 100px" />
+                <col style="width: 50px" />
+                <col style="width: 50px" />
+            </colgroup>
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: center">
+                        <input type="submit" value="Submit" />
+                        <input type="reset" value="Clear This Form" />
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td class="right"><label for="lname">Last Name</label></td>
+                    <td colspan="3"><input type="text" size="50" id="lname" value="Mihaylov" /></td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="fname">First Name</label></td>
+                    <td colspan="3"><input type="text" size="50" id="fname" value="Stoyan" /></td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="address">Address</label></td>
+                    <td colspan="3"><textarea id="address" rows="3" cols="38">Student City&#10Alexander Fol 2 str.</textarea></td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="city">City</label></td>
+                    <td><input type="text" size="30" id="city" value="Sofia" /></td>
+                    <td class="right"><label for="state">State</label></td>
+                    <td><input type="text" size="8" id="state" /></td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="zip">Zip/Postal Code</label></td>
+                    <td colspan="3"><input type="text" size="10" id="zip" value="1700" /></td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="country">Country</label></td>
+                    <td colspan="3">
+                        <select name="country" id="country" style="width: 220px">
+                            <option value="Bulgaria" selected="selected">Bulgaria</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Switzerland">Switzerland</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="phone">Phone (country code, area code, number)</label></td>
+                    <td colspan="3">
+                        (+<input type="text" size="5" id="phone" maxlength="3" value="359" />)
+                        <input type="text" size="5" maxlength="5" value="883" /> -
+                        <input type="text" size="20" maxlength="10" value="888888" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="email">E-mail</label></td>
+                    <td colspan="3"><input type="email" size="50" id="email" title="email" 
+                            pattern="[a-zA-Z0-9_]{3,}@[a-zA-Z0-9_]{3,}.[a-zA-Z0-9_]{2,4}" value="tqnata_88@abv.bg" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="bd">Birth date</label></td>
+                    <td colspan="3">
+                        <span style="font-size: 15px">Month</span>
+                        <input type="text" size="2" id="bd" maxlength="2" value="05" />
+                        <span style="font-size: 15px">Day</span>
+                        <input type="text" size="2" maxlength="2" value="19" />
+                        <span style="font-size: 15px">Year (4 digits)</span>
+                        <input type="text" size="5" maxlength="4" value="1988" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="gender">Gender</label></td>
+                    <td colspan="3">
+                        <select name="gender" id="gender">
+                            <option value="Male" selected="selected">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="spring">Starting date</label></td>
+                    <td colspan="3">
+                        <input type="radio" name="date" id="spring" checked="checked" value="Spring 2013"/>
+                        <label for="spring">Spring 2013</label>
+                        <input type="radio" name="date" id="summer" value="Summer 2013"/>
+                        <label for="summer">Summer 2013</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right"><label for="comments">Comments/Questions</label></td>
+                    <td colspan="3">
+                        <textarea id="comments" rows="6" cols="38">Please send me some information about the logging.
+                        </textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

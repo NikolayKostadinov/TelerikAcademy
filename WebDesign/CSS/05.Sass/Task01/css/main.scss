@@ -1,0 +1,329 @@
+@mixin gradient($color1, $location1, $color2, $location2)
+{
+	background: $color1; /* Old browsers */
+	background: -moz-linear-gradient(top,  $color1 $location1, $color2 $location2); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($location1,$color1), color-stop($location2,$color2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  $color1 $location1,$color2 $location2); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  $color1 $location1,$color2 $location2); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  $color1 $location1,$color2 $location2); /* IE10+ */
+	background: linear-gradient(to bottom,  $color1 $location1,$color2 $location2); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin reset
+{
+	margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@mixin clearboth
+{
+	clear:both;
+}
+
+@mixin clearfix{
+    	zoom: 1;
+		&:after
+		{
+			content: "\0020";
+			display: block;
+			height: 0;
+			overflow: hidden;
+			@include clearboth;
+		}
+}
+
+.displayblock{
+	display:block;
+}
+
+body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.clearfix
+{
+	@include clearfix;
+}
+
+body
+{
+	@include gradient(#D291FD,10%, #9215F2, 20%);
+	font: 14px normal Arial;
+    color: white;
+
+	header 
+	{
+        padding-top: 25px;
+        padding-bottom: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+			
+		nav {
+			/*navigation bar*/
+			@extend .clearfix;
+            display: inline-block;
+            width: 75%;
+            margin: 20px 20px 20px 20px;
+            padding: 12px;
+            border: 2px solid #000;
+            border-radius: 15px;
+			ul.nav-list {
+                list-style-type: none;
+            }
+			ul
+			{
+				@extend .clearfix;
+				li 
+				{
+					float: left;
+					margin: 0;
+					a 
+					{
+						text-decoration: none;
+						padding: 0 10px 0 10px;
+						color: white;
+						font: 1.4em normal Arial;
+					}
+					a.selected 
+					{
+                        font-weight: bold;
+                    }
+					ul.sub-nav-list 
+					{
+						@extend .clearfix;
+						position: absolute;
+						display: none;
+						background-color: rgba(179, 94, 243, 0.9);
+						border-radius: 5px;
+					}
+					ul
+					{ 
+						li 
+						{
+							float: none;
+							margin: 0 15px;
+							padding: 10px 0;
+							border-bottom: 1px solid black;
+							&:last-of-type 
+							{
+								border-bottom: none;
+							}
+							& > a 
+							{
+								font-size: 1.2em;
+								color: #fff;
+							}
+						}
+					}
+					&:hover			
+					{
+						& > a 
+						{
+							text-decoration: underline;
+							color: #a8a8a8;
+							&+ ul
+							{
+									display:block;
+							}
+						}
+					}
+				}
+			}
+        }
+		div
+		{
+			&#header-container
+			{
+				@extend .clearfix;
+				div
+				{
+					&#logo-container
+					{
+						float: left;
+						position: relative;
+					}
+					&#logo-container 
+					{
+						float: left;
+						position: relative;
+					}
+					&#reg-form-container {
+						float: right;
+						position: relative;
+						right: 5%;
+						top: 50%;
+						div 
+						{
+							text-align: right;
+							label 
+							{
+								width: 50px;
+								margin: 5px;
+							}
+							input 
+							{
+								width: 130px;
+								border: 1px solid #603382;
+								border-radius: 10px;
+								padding: 2px 5px;
+								margin: 5px;
+								&#tb-username, &#tb-password 
+								{
+									@include gradient(#D291FD,10%, #9215F2, 20%);
+								   background: #b35ef3;
+								}
+							}
+						}
+						button 
+						{
+							margin-left: auto;
+							margin-right: auto;
+							font-weight: bold;
+							border: 1px solid #603382;
+							border-style: outset;
+							border-radius: 10px;
+							padding: 5px 8px;
+							@include gradient(#D291FD,10%, #9215F2, 20%);
+							color:white;
+							&:hover 
+							{
+								border-style: inset;
+							}
+						}
+					}
+				}
+			}
+		}	
+	}
+	section 
+	{
+		@extend .clearfix;
+		width: 75%;
+		float: left;
+		color: black;
+		article 
+		{
+			margin: 20px;
+			padding: 20px;
+			border: 1px solid black;
+			border-radius:15px;
+			color:white;
+			header 
+			{
+				background: none;
+				padding: 5px;
+				h1 
+				{
+					font-size: 1.4em;
+					padding: 0;
+				}
+			}
+			footer 
+			{
+            padding: 5px;
+				p 
+				{
+					font-size: 16px;
+					text-align: right;
+					font-weight: normal;
+					time 
+					{
+						font-family: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
+					}
+					a 
+					{
+                    text-decoration: none;
+                    color: #d68dff;
+						&:hover 
+						{
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+	aside 
+	{
+		@extend .clearfix;
+        float: left;
+        width: 20%;
+        margin: 20px;
+		&> ul {
+            list-style-type: none;
+			&> li {
+                margin: 15px 0;
+                padding: 15px;
+                border: 1px solid black;
+                border-radius: 5px;
+				h2 
+				{
+                    font-size: 1.1em;
+                    font-weight: bold;
+					p 
+					{
+						margin-top: 10px;
+						margin-right: 5px;
+						margin-bottom: 10px;
+						margin-left: 5px;
+						font-size: 14px;
+						a 
+						{
+							color: #aaaaaa;
+							text-decoration: none;
+						}
+						strong 
+						{
+							color: #cccccc;
+							font-weight: bold;
+							font-style: normal;
+						}
+						em 
+						{
+							color: #cccccc;
+							font-weight: normal;
+							font-style: italic;
+						}
+
+					}
+                }
+				ul 
+				{
+                    list-style-type: none;
+                    margin-top: 10px;
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                    margin-left: 0px;
+					li 
+					{
+                        margin-top: 5px;
+                        margin-left: 10px;
+                        margin-bottom: 0px;
+                        margin-right: 0px;
+                        background: url(images/li-dot.png) no-repeat;
+                        background-position: 0 50%;
+                        padding-left: 25px;
+                    }
+                }
+            }
+        }
+    }
+	footer {
+        clear: both;
+        padding-top: 15px;
+        padding-bottom: 25px;
+        padding-right: 0px;
+        padding-left: 0px;
+		p {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align:center;
+        }
+    }
+}
+
+ 

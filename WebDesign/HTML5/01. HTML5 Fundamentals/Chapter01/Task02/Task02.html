@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Task02 from the lesson 01 of HTML Fundamentals</title>
+        <style>
+            body { font-family: Arial; }
+            ol { 
+                margin-left:25px;  
+                padding-left:1em;  
+                text-indent:1em;
+            }
+            ul { 
+                margin-left:25px;  
+                padding-left:2em;  
+                text-indent:1em;
+            }
+        </style>
+    </head>  
+    <body>
+        <p>Precending Text</p>
+       <ol type="I">
+           <li>List Item 1
+               <ol type="a">
+                <li>Nested Item 1.1</li>
+                <li>Nested Item 1.2</li>
+               </ol>
+           </li>
+           <li>List Item 2
+               <ol>
+               <li>Nested Item 2.1</li>
+               <li>Nested Item 2.2
+                   <ul style="list-style-type:circle">
+                    <li>Nested Item 2.2.1</li>
+                    <li>Nested Item 2.2.2
+                        <ul style="list-style-type:square">
+                        <li>Nested Item 2.2.2.1</li>
+                        <li>Nested Item 2.2.2.2</li>
+                    </ul>
+                    </li>
+                    <li>Nested Item 2.2.2</li>
+                    </ul>
+               </li>                
+               <li>Nested Item 2.3</li>
+           </ol>
+           </li>
+           <li>List Item 3
+               <ul style="list-style-type:disc; padding-left:0.5em;">
+                   <li>Nested Item 3.1</li>
+                   <li>Nested Item 3.1</li>
+                   <li>Nested Item 3.1</li>
+               </ul>
+           </li>
+       </ol>           
+    </body>
+</html>
