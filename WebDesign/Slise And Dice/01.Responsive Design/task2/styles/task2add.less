@@ -1,0 +1,121 @@
+﻿body {
+}
+
+@media only screen and (max-width: 1024px) {
+    div#wrapper {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    div#wrapper {
+        & > aside {
+            float: none;
+            width: 95%;
+
+            div.social {
+                width: 100%;
+
+                ul {
+                    text-align: center;
+
+                    li {
+                        display: inline-block;
+
+                        a {
+                            font-size: 0.6em;
+                        }
+                    }
+                }
+            }
+
+            div.news {
+                display: none;
+            }
+        }
+
+        section {
+            width: 95%;
+
+            article {
+                width: 100%;
+
+                div {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    div#wrapper header nav {
+        float: left;
+        margin-left: 1%;
+        text-align: center;
+        width: 100%;
+
+        ul {
+            li {
+                margin: 0 1%;
+                padding: 0 1%;
+
+                a {
+                    padding: 5px 5%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    div#wrapper header, div#wrapper header nav, div#wrapper header nav ul, div#wrapper header nav ul li {
+        margin: 0;
+        padding: 0;
+    }
+
+    div#wrapper {
+        header {
+            border: none;
+            margin-bottom: 15px;
+            h1 {
+                margin: 10px 0;
+            }
+            nav {
+                float: none;
+                width: 100%;
+
+                ul {
+                    width: 100%;
+
+                    li {
+                        display: block;
+                        margin-top: 5px;
+                        &:hover ul {
+                            display: none;
+                        }
+                        &:first-of-type{margin-top:0;}
+                    }
+                }
+            }
+        }
+
+        & > aside {
+            div.social {
+                ul {
+                    li {
+                        a {
+                            img {
+                                display: inline-block;
+                            }
+
+                            span {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

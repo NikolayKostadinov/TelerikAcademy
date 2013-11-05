@@ -1,0 +1,89 @@
+﻿@media only screen and (max-width: 1024px) {
+  div#wrapper {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 780px) {
+  div#wrapper > aside {
+    float: none;
+    width: 95%;
+  }
+  div#wrapper > aside div.social {
+    width: 100%;
+  }
+  div#wrapper > aside div.social ul {
+    text-align: center;
+  }
+  div#wrapper > aside div.social ul li {
+    display: inline-block;
+  }
+  div#wrapper > aside div.social ul li a {
+    font-size: 0.6em;
+  }
+  div#wrapper > aside div.news {
+    display: none;
+  }
+  div#wrapper section {
+    width: 95%;
+  }
+  div#wrapper section article {
+    width: 100%;
+  }
+  div#wrapper section article div {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  div#wrapper header nav {
+    float: left;
+    margin-left: 1%;
+    text-align: center;
+    width: 100%;
+  }
+  div#wrapper header nav ul li {
+    margin: 0 1%;
+    padding: 0 1%;
+  }
+  div#wrapper header nav ul li a {
+    padding: 5px 5%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  div#wrapper header,
+  div#wrapper header nav,
+  div#wrapper header nav ul,
+  div#wrapper header nav ul li {
+    margin: 0;
+    padding: 0;
+  }
+  div#wrapper header {
+    border: none;
+    margin-bottom: 15px;
+  }
+  div#wrapper header h1 {
+    margin: 10px 0;
+  }
+  div#wrapper header nav {
+    float: none;
+    width: 100%;
+  }
+  div#wrapper header nav ul {
+    width: 100%;
+  }
+  div#wrapper header nav ul li {
+    display: block;
+    margin-top: 5px;
+  }
+  div#wrapper header nav ul li:hover ul {
+    display: none;
+  }
+  div#wrapper header nav ul li:first-of-type {
+    margin-top: 0;
+  }
+  div#wrapper > aside div.social ul li a img {
+    display: inline-block;
+  }
+  div#wrapper > aside div.social ul li a span {
+    display: none;
+  }
+}

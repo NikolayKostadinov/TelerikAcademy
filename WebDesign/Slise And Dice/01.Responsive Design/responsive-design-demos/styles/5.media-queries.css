@@ -360,8 +360,8 @@ body #wrapper > footer h2 {
     float: right;
     display: inline-block;
     position: absolute;
-    margin-top: 5px
-                                  bottom:0;
+    margin-top: 5px;
+    bottom:0;
     right: 0;
     background-color: white;
   }
