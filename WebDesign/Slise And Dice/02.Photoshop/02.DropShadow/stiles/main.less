@@ -3,91 +3,76 @@
     padding: 0;
 }
 
-.clearfix() {
-    -ms-zoom: 1;
-    zoom: 1;
-
-    &:after {
-        display: block;
-        clear: both;
-        height: 0;
-        content: "";
-    }
-}
-
-@divheight: 800px;
-@divwidth: 600px;
+@divheight: 400px;
+@divwidth: 300px;
 
 body {
+    background-color:lightblue;
     form#form1 {
         margin: 10px 0 0 10px;
 
-        .picture-wrapper {
-            width: @divwidth;
-            height: @divheight;
-            background-image: url(/02.dropshadow/img/jaky.jpg);
-            background-repeat: no-repeat;
-            -moz-background-size: 100% 100%;
-            -o-background-size: 100% 100%;
-            -webkit-background-size: 100% 100%;
-            background-size: 100% 100%;
+        div {
+            position: absolute;
 
             img {
-                border: 1px solid black;
                 display: block;
-                float: left;
                 width: 300px;
                 height: 400px;
             }
 
-            .bottom-container {
-                height: 7px;
-                width: 100%;
-                position: relative;
-                top: 100%;
-            }
-
-            .right-container {
-                float: right;
-                margin-right: -7px;
-                width: 7px;
-                height: 100%;
-            }
-
             .bottom-left {
-                background-image: url(../img/bottom-left.png);
+                position: absolute;
+                bottom: -7px;
+                left: 0;
                 width: 10px;
                 height: 7px;
-                float: left;
+                background-image: url(../img/bottom-left.png);
             }
 
             .bottom-right {
-                background-image: url(../img/bottom-right.png);
-                height: 7px;
+                position: absolute;
+                right: -7px;
                 width: 7px;
-                float: left;
-                margin-right: -7px;
+                height: 7px;
+                background-image: url(../img/bottom-right.png);
             }
 
             .bottom-tile {
-                float: left;
-                background-image: url(../img/bootm-tile.png);
+                position: absolute;
+                right: 0px;
+                left: 10px;
                 height: 7px;
-                width: 96.5%;
+                background-image: url(../img/bootm-tile.png);
                 background-repeat: repeat-x;
             }
 
             .right {
-
-                height: 97.5%;
-                width: 7px;
                 background-image: url(../img/right.png);
+                background-repeat: repeat-y;
+                width: 7px;
+                position: absolute;
+                top: 10px;
+                bottom: 0px;
+                right: -7px;
             }
+
             .top-right {
-                width:7px;
-                height:10px;
+                width: 7px;
+                height: 10px;
+                position: absolute;
+                top: 0px;
+                right: -7px;
                 background-image: url(../img/top-right.png);
             }
         }
+    }
+}
+
+div#picture2 {
+    position:absolute;
+    left:400px;
+    img#picture2 {
+        height: 200px;
+        width: 150px;
     }
 }
