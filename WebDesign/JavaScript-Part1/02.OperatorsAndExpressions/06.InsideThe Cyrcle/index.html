@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="js-console" style="background-color: black; color: white; height: 768px; width: 1024px;">
+        <span>X </span>
+        <input type="text" id="input1" /><br />
+        <span>Y </span>
+        <input type="text" id="input2" /><br />
+        <button type="button" id="btn" onclick="OnBtnCalculateClick()">Calculate</button>
+
+
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        function OnBtnCalculateClick() {
+            var X = jsConsole.readFloat('#input1');
+            var Y = jsConsole.readFloat('#input2');
+            CalculateTask(X, Y);
+        }
+        function CalculateTask(X, Y) {
+            var radius = 5;
+            if ((X * X + Y * Y) < radius * radius) {
+                jsConsole.writeLine("The point with X: " + X + " and Y: " + Y + " is placed inside the circle.");
+            } else {
+                jsConsole.writeLine("The point with X: " + X + " and Y: " + Y + " is placed outside the circle.");
+            }
+        }
+    </script>
+</body>
+</html>

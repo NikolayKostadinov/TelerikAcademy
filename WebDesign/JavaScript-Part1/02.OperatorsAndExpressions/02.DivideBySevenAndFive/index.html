@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="js-console" style="background-color:black; color:white;height:768px;width:1024px;">
+        <input type="text" id="input1" />
+        <button type="button" id="btn" onclick="OnBtnCalculateClick()">Calculate</button>
+        <input type="text" id="input2" style="display:block"/>
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        function OnBtnCalculateClick() {
+            var input = jsConsole.readFloat('#input1');
+            CalculateTask(input);
+            
+        }
+        function CalculateTask(input) {
+            var result = (input % 7 === 0) && (input % 5 === 0) ? 'The number ' + input + ' that you entered divides by 7 and 5.' : 'The number ' + input + " that you entered doesn't divides by 7 and 5.";
+            jsConsole.writeLine(result);
+        }
+    </script>
+</body>
+</html>

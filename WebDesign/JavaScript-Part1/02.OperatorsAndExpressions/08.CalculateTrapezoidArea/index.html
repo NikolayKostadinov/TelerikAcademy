@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="js-console" style="background-color: black; color: white; height: 768px; width: 1024px;">
+        <span>a </span><input type="text" id="input1" /><br />
+        <span>b </span><input type="text" id="input2" /><br />
+        <span>h </span><input type="text" id="input3" /><br />
+        <button type="button" id="btn" onclick="OnBtnCalculateClick()">Calculate</button>
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        function OnBtnCalculateClick() {
+            var a = jsConsole.readFloat('#input1');
+            var b = jsConsole.readFloat('#input2');
+            var h = jsConsole.readFloat('#input3');
+            CalculateTask(a, b, h);
+
+        }
+        function CalculateTask(a, b, h) {
+            var result = ((a + b) * h) / 2;
+            jsConsole.writeLine("The area of trapezoid with dimensions: a = " + a
+                + " b = "+ b + " h = " + h + " is " + result + " .");
+        }
+    </script>
+</body>
+</html>
+
