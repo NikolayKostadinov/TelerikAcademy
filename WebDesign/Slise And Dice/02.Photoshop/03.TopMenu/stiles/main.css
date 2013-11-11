@@ -1,0 +1,66 @@
+﻿body,
+nav,
+div,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+}
+body {
+  margin: 10px;
+  font: bold 12pt Arial;
+}
+body nav div.top-menu {
+  position: absolute;
+  height: 50px;
+  width: 523px;
+}
+body nav div.top-menu div.left {
+  z-index: 1;
+  background-image: url(../img/left-menu.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 7px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+body nav div.top-menu div.tile {
+  z-index: -1;
+  background-image: url(../img/tile.png);
+  background-repeat: repeat-x;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 7px;
+  right: 7px;
+}
+body nav div.top-menu div.right {
+  background-image: url(../img/right.png);
+  background-repeat: no-repeat;
+  width: 7px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+body nav div.top-menu ul li {
+  display: inline-block;
+}
+body nav div.top-menu ul li a {
+  line-height: 50px;
+  height: 100%;
+  padding: 0 18px;
+  text-decoration: none;
+  color: #A7162E;
+}
+body nav div.top-menu .separator {
+  background-image: url(../img/separator.png);
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+}

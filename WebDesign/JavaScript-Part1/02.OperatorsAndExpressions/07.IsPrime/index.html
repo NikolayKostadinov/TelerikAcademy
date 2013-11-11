@@ -21,7 +21,8 @@
             if (input < 2) {
                 isPrime = false;
             } else {
-                for (var i = 2; i < input; i++) {
+                var maxDivider = Math.floor(Math.sqrt(input));
+                for (var i = 2; i <= maxDivider; i++) {
                     if ((input % i === 0) && (i !== input)) {
                         isPrime = false;
                     }
