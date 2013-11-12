@@ -1,0 +1,4 @@
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\02.SignOfProductOfTree\bin\02.SignOfProductOfTree.dll
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\02.SignOfProductOfTree\bin\02.SignOfProductOfTree.pdb
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\02.SignOfProductOfTree\obj\Debug\02.SignOfProductOfTree.dll
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\02.SignOfProductOfTree\obj\Debug\02.SignOfProductOfTree.pdb

@@ -1,0 +1,5 @@
+D:\TelericAcademy\Homeworks\WebDesign\CSS\Dropdown-menu\Dropdown-menu\bin\Dropdown-menu.dll
+D:\TelericAcademy\Homeworks\WebDesign\CSS\Dropdown-menu\Dropdown-menu\bin\Dropdown-menu.pdb
+D:\TelericAcademy\Homeworks\WebDesign\CSS\Dropdown-menu\Dropdown-menu\obj\Debug\Dropdown-menu.csprojResolveAssemblyReference.cache
+D:\TelericAcademy\Homeworks\WebDesign\CSS\Dropdown-menu\Dropdown-menu\obj\Debug\Dropdown-menu.dll
+D:\TelericAcademy\Homeworks\WebDesign\CSS\Dropdown-menu\Dropdown-menu\obj\Debug\Dropdown-menu.pdb

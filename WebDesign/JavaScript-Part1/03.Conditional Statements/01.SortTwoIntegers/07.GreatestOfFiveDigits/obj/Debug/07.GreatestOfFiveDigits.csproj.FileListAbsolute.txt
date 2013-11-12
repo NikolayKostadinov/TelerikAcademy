@@ -1,0 +1,5 @@
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\07.GreatestOfFiveDigits\bin\07.GreatestOfFiveDigits.dll
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\07.GreatestOfFiveDigits\bin\07.GreatestOfFiveDigits.pdb
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\07.GreatestOfFiveDigits\obj\Debug\07.GreatestOfFiveDigits.csprojResolveAssemblyReference.cache
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\07.GreatestOfFiveDigits\obj\Debug\07.GreatestOfFiveDigits.dll
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\07.GreatestOfFiveDigits\obj\Debug\07.GreatestOfFiveDigits.pdb

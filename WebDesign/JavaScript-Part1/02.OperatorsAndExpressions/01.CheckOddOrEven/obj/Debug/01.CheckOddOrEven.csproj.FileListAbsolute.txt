@@ -1,0 +1,5 @@
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\02.OperatorsAndExpressions\01.CheckOddOrEven\bin\01.CheckOddOrEven.dll
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\02.OperatorsAndExpressions\01.CheckOddOrEven\bin\01.CheckOddOrEven.pdb
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\02.OperatorsAndExpressions\01.CheckOddOrEven\obj\Debug\01.CheckOddOrEven.csprojResolveAssemblyReference.cache
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\02.OperatorsAndExpressions\01.CheckOddOrEven\obj\Debug\01.CheckOddOrEven.dll
+D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\02.OperatorsAndExpressions\01.CheckOddOrEven\obj\Debug\01.CheckOddOrEven.pdb
