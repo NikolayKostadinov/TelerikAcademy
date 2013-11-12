@@ -1,5 +1,0 @@
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\06.QuadraticEquation\bin\06.QuadraticEquation.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\06.QuadraticEquation\bin\06.QuadraticEquation.pdb
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\06.QuadraticEquation\obj\Debug\06.QuadraticEquation.csprojResolveAssemblyReference.cache
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\06.QuadraticEquation\obj\Debug\06.QuadraticEquation.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\06.QuadraticEquation\obj\Debug\06.QuadraticEquation.pdb
