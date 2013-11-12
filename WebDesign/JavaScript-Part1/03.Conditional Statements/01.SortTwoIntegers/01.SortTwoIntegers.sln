@@ -11,9 +11,45 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.SortThreeRealNumbersDesc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.NameOfTheDigit", "..\05.NameOfTheDigit\05.NameOfTheDigit.csproj", "{99C956C0-2271-42E9-B76C-067FB3701579}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.QuadraticEquation", "06.QuadraticEquation\06.QuadraticEquation.csproj", "{FDDF9E22-011E-4365-8467-2998AD67EFEF}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "06.QuadraticEquation", "..\06.QuadraticEquation\", "{7D57C383-E38D-4F4D-B6DA-9F3445EED91D}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/06.QuadraticEquation"
+		Debug.AspNetCompiler.PhysicalPath = "..\06.QuadraticEquation\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\06.QuadraticEquation\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/06.QuadraticEquation"
+		Release.AspNetCompiler.PhysicalPath = "..\06.QuadraticEquation\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\06.QuadraticEquation\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50706"
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.GreatestOfFiveDigits", "07.GreatestOfFiveDigits\07.GreatestOfFiveDigits.csproj", "{835D011E-B594-48C6-BB8D-D4B67CC2BF8C}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "07.GreatestOfFiveDigits", "..\07.GreatestOfFiveDigits\", "{97D1E639-795D-4E70-BA26-8C9BED3B4C0C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/07.GreatestOfFiveDigits"
+		Debug.AspNetCompiler.PhysicalPath = "..\07.GreatestOfFiveDigits\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\07.GreatestOfFiveDigits\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/07.GreatestOfFiveDigits"
+		Release.AspNetCompiler.PhysicalPath = "..\07.GreatestOfFiveDigits\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\07.GreatestOfFiveDigits\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50720"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,14 +77,14 @@ Global
 		{99C956C0-2271-42E9-B76C-067FB3701579}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99C956C0-2271-42E9-B76C-067FB3701579}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99C956C0-2271-42E9-B76C-067FB3701579}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FDDF9E22-011E-4365-8467-2998AD67EFEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDDF9E22-011E-4365-8467-2998AD67EFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDDF9E22-011E-4365-8467-2998AD67EFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDDF9E22-011E-4365-8467-2998AD67EFEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{835D011E-B594-48C6-BB8D-D4B67CC2BF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{835D011E-B594-48C6-BB8D-D4B67CC2BF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{835D011E-B594-48C6-BB8D-D4B67CC2BF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{835D011E-B594-48C6-BB8D-D4B67CC2BF8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D57C383-E38D-4F4D-B6DA-9F3445EED91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D57C383-E38D-4F4D-B6DA-9F3445EED91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D57C383-E38D-4F4D-B6DA-9F3445EED91D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D57C383-E38D-4F4D-B6DA-9F3445EED91D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{97D1E639-795D-4E70-BA26-8C9BED3B4C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97D1E639-795D-4E70-BA26-8C9BED3B4C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97D1E639-795D-4E70-BA26-8C9BED3B4C0C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{97D1E639-795D-4E70-BA26-8C9BED3B4C0C}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
