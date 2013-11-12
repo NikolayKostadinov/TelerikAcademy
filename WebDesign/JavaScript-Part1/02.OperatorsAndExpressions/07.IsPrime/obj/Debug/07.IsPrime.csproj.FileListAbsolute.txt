@@ -1,4 +1,0 @@
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\02.OperatorsAndExpressions\07.IsPrime\bin\07.IsPrime.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\02.OperatorsAndExpressions\07.IsPrime\bin\07.IsPrime.pdb
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\02.OperatorsAndExpressions\07.IsPrime\obj\Debug\07.IsPrime.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\02.OperatorsAndExpressions\07.IsPrime\obj\Debug\07.IsPrime.pdb

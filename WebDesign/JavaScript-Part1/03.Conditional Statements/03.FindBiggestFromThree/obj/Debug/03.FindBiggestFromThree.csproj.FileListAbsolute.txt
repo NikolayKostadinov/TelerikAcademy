@@ -1,4 +1,0 @@
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\03.FindBiggestFromThree\bin\03.FindBiggestFromThree.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\03.FindBiggestFromThree\bin\03.FindBiggestFromThree.pdb
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\03.FindBiggestFromThree\obj\Debug\03.FindBiggestFromThree.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\03.FindBiggestFromThree\obj\Debug\03.FindBiggestFromThree.pdb

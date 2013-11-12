@@ -1,5 +1,0 @@
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\01.SortTwoIntegers\bin\01.SortTwoIntegers.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\01.SortTwoIntegers\bin\01.SortTwoIntegers.pdb
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\01.SortTwoIntegers\obj\Debug\01.SortTwoIntegers.csprojResolveAssemblyReference.cache
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\01.SortTwoIntegers\obj\Debug\01.SortTwoIntegers.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\01.SortTwoIntegers\01.SortTwoIntegers\obj\Debug\01.SortTwoIntegers.pdb

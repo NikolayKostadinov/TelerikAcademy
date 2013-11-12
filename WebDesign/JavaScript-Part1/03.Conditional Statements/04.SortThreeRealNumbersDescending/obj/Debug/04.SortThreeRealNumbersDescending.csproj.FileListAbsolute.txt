@@ -1,5 +1,0 @@
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\04.SortThreeRealNumbersDescending\bin\04.SortThreeRealNumbersDescending.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\04.SortThreeRealNumbersDescending\bin\04.SortThreeRealNumbersDescending.pdb
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\04.SortThreeRealNumbersDescending\obj\Debug\04.SortThreeRealNumbersDescending.csprojResolveAssemblyReference.cache
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\04.SortThreeRealNumbersDescending\obj\Debug\04.SortThreeRealNumbersDescending.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\04.SortThreeRealNumbersDescending\obj\Debug\04.SortThreeRealNumbersDescending.pdb

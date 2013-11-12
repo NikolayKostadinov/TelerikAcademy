@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+        <style>
+            #js-console{
+                height:768px;
+                width:1024px;
+                background-color:#000000;
+                color:#ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="input1">N = </label>
+        <input type="text" id="input1" />
+        <button type="button" onclick="OnButtonExecuteClick()">Execute</button>
+        <div id="js-console"></div>
+    </body>
+    <script src="js-console.js"></script>
+    <script>
+        function OnButtonExecuteClick() {
+            var N = parseInt(document.getElementById("input1").value);
+            var ix = 0;
+            do {
+                ix++;
+                if (ix % 3 !== 0 && ix % 7 !== 0) {
+                    jsConsole.writeLine(ix);
+                }
+            } while (N > ix);
+        }
+    </script>
+</html>

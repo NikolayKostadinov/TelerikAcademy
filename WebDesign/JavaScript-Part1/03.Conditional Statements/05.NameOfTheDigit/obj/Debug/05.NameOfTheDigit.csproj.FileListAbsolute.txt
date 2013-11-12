@@ -1,5 +1,0 @@
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\05.NameOfTheDigit\bin\05.NameOfTheDigit.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\05.NameOfTheDigit\bin\05.NameOfTheDigit.pdb
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\05.NameOfTheDigit\obj\Debug\05.NameOfTheDigit.csprojResolveAssemblyReference.cache
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\05.NameOfTheDigit\obj\Debug\05.NameOfTheDigit.dll
-D:\TelericAcademy\Homeworks\WebDesign\JavaScript-Part1\03.Conditional Statements\05.NameOfTheDigit\obj\Debug\05.NameOfTheDigit.pdb

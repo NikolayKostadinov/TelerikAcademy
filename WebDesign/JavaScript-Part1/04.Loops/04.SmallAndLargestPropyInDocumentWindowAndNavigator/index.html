@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        #js-console {
+            height: 768px;
+            width: 1024px;
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <button type="button" onclick="OnButtonExecuteClick()">Execute</button>
+    <div id="js-console"></div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonExecuteClick() {
+        var tmpStr = "";
+        var str1 = "";
+        var arr = new Array();
+        for (var property in document) {
+             tmpStr += property + ',';
+        }
+        
+        arr = tmpStr.split(',');
+        arr.sort();
+        str1 = "The smallest property in document class is : " + arr[1] + "<br/>" +
+            "The Largest property in document class is : " + arr[arr.length - 1] + "<br/>";
+        tmpStr = "";
+        for ( property in window) {
+            tmpStr += property + ',';
+        }
+        arr = tmpStr.split(',');
+        arr.sort();
+        str1 += "The smallest property in window class is : " + arr[1] + "<br/>" +
+            "The Largest property in window class is : " + arr[arr.length - 1] + "<br/>";
+
+        tmpStr = "";
+        for (property in navigator) {
+            tmpStr += property + ',';
+        }
+        arr = tmpStr.split(',');
+        arr.sort();
+        str1 += "The smallest property in navigator class is : " + arr[1] + "<br/>" +
+            "The Largest property in navigator class is : " + arr[arr.length - 1] + "<br/>";
+
+        jsConsole.writeLine(str1);
+    }
+</script>
+</html>
