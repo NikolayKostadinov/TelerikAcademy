@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width:1024px;
+            height:768px;
+            background-color:black;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <span>Number</span>
+    <input type="text" id="input1" /><br />
+    <button onclick="OnButtonClick()">Check input</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="scrips/js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var number = parseInt(document.getElementById("input1").value);
+        var nameOfNumber
+        switch (number) {
+            case 0:
+                nameOfNumber = "zero";
+                break;
+            case 1:
+                nameOfNumber = "one";
+                break;
+            case 2:
+                nameOfNumber = "two";
+                break;
+            case 3:
+                nameOfNumber = "three";
+                break;
+            case 4:
+                nameOfNumber = "four";
+                break;
+            case 5:
+                nameOfNumber = "five";
+                break;
+            case 6:
+                nameOfNumber = "six";
+                break;
+            case 7:
+                nameOfNumber = "seven";
+                break;
+            case 8:
+                nameOfNumber = "eight";
+                break;
+            case 9:
+                nameOfNumber = "nine";
+                break;
+            default:
+                nameOfNumber = "NaN";
+                break;
+        }
+        jsConsole.writeLine(nameOfNumber);
+    }
+</script>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 1024px;
+            height: 768px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <span>First Number</span>
+    <input type="text" id="input1" /><br />
+    <span>Second Number</span>
+    <input type="text" id="input2" /><br />
+    <span>Third Number</span>
+    <input type="text" id="input3" /><br />
+    <button onclick="OnButtonClick()">Check input</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="scrips/js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var firstNumber = document.getElementById("input1").value;
+        var secondNumber = document.getElementById("input2").value;
+        var thirdNumber = document.getElementById("input3").value;
+        
+        for (var i = 0; i < 2; i++) {
+            if (firstNumber < secondNumber) {
+                var buffer = secondNumber;
+                secondNumber = firstNumber;
+                firstNumber = buffer;
+                if (firstNumber < thirdNumber) {
+                    buffer = thirdNumber;
+                    thirdNumber = firstNumber;
+                    firstNumber = buffer;
+                }
+            } else {
+                if (secondNumber < thirdNumber) {
+                    buffer = secondNumber;
+                    secondNumber = thirdNumber;
+                    thirdNumber = buffer;
+                }
+            }
+        }
+        jsConsole.writeLine("First number  = " + firstNumber);
+        jsConsole.writeLine("Second number = " + secondNumber);
+        jsConsole.writeLine("Third number  = " + thirdNumber);
+    }
+</script>
+</html>
+

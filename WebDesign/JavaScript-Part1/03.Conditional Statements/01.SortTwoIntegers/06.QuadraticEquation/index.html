@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 1024px;
+            height: 768px;
+            background-color: black;
+            color: white;
+        }
+
+        .super {
+            vertical-align: super;
+        }
+    </style>
+</head>
+<body>
+    <p>ax<span class="super">2</span> + bx + c = 0</p>
+    <span>a</span>
+    <input type="text" id="input1" /><br />
+    <span>b</span>
+    <input type="text" id="input2" /><br />
+    <span>c</span>
+    <input type="text" id="input3" /><br />
+    <button onclick="OnButtonClick()">Calcumate</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="scrips/js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var a = parseFloat(document.getElementById("input1").value);
+        var b = parseFloat(document.getElementById("input2").value);
+        var c = parseFloat(document.getElementById("input3").value);
+
+        //Calculate D=-b^2-4a*c;
+        var d = (b*b) - (4 * a * c);
+        //incpecting D
+        if (d >= 0) {
+            var x1 = (-b - Math.sqrt(d)) / (2 * a);
+            if (d > 0) {
+                var x2 = (-b + Math.sqrt(d)) / (2 * a);
+            }
+            else {
+                x2 = x1;
+            }
+            jsConsole.writeLine("The roots of equation " +
+                (a !== 1 ? a : "") + "x²" +
+                (b > 0 ? "+" : "")
+                + b + "x" +
+                 (c > 0 ? "+" + c : "") +
+                " = 0 is:");
+            jsConsole.writeLine("x1 = " + x1);
+            jsConsole.writeLine("x2 = " + x2);
+        }
+        else {
+            jsConsole.writeLine("No real roots for this equation!");
+        }
+    }
+</script>
+</html>
+

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 1024px;
+            height: 768px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <span>First</span>
+    <input type="text" id="input1" /><br />
+    <span>Second</span>
+    <input type="text" id="input2" /><br />
+    <span>Third</span>
+    <input type="text" id="input3" /><br />
+    <span>Fourth</span>
+    <input type="text" id="input4" /><br />
+    <span>Fifth</span>
+    <input type="text" id="input5" /><br />
+    <button onclick="OnButtonClick()">Calculate</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="scrips/js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var arr = new Array (5);
+         arr[0] = jsConsole.readFloat("#input1");
+         arr[1] = jsConsole.readFloat("#input2");
+         arr[2] = jsConsole.readFloat("#input3");
+         arr[3] = jsConsole.readFloat("#input4");
+         arr[4] = jsConsole.readFloat("#input5");
+        var maxNum = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+            if (maxNum < arr[i]) {
+                maxNum = arr[i];
+            }
+        }
+        jsConsole.writeLine("Maximal number is: " + maxNum);
+    }
+</script>
+</html>
+
+
