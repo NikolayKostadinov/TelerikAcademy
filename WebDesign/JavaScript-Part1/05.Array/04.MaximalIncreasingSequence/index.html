@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        #js-console {
+            height: 768px;
+            width: 1024px;
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <label for="input1">String 1: </label>
+    <input type="text" id="input1" /><br />
+        <button onclick="OnButtonCalculateClick()">Calculate</button>
+    <div id="js-console"></div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonCalculateClick() {
+        var input1 = document.getElementById("input1").value;
+        var arr = input1.split(', ');
+        var maxSequenceLenght = 0;
+        var maxSequenseElements = new Array();
+        var tempMaxSequenseElements = new Array();
+        var tempLen = 0;
+        var lastElement;
+        for (var i = 0; i < arr.length; i++) {
+            if (lastElement < arr[i]) {
+                tempLen++;
+                tempMaxSequenseElements.push(arr[i]);
+            } else {
+                if (tempLen > maxSequenceLenght) {
+                    maxSequenceLenght = tempLen;
+                    maxSequenseElements = tempMaxSequenseElements;
+                    tempMaxSequenseElements = new Array();
+                }
+                lastElement = arr[i];
+                tempLen = 1;
+                tempMaxSequenseElements.push(arr[i]);
+            }
+        }
+        var str="";
+        jsConsole.writeLine("{" + maxSequenseElements.join(", ") + "}");
+    }
+</script>
+</html>

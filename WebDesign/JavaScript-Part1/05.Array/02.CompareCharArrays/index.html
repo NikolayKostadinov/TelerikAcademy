@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        #js-console {
+            height: 768px;
+            width: 1024px;
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <label for="input1">String 1: </label>
+    <input type="text" id="input1" /><br />
+    <label for="input2">String 2: </label>
+    <input type="text" id="input2" /><br />
+        <button onclick="OnButtonCalculateClick()">Calculate</button>
+    <div id="js-console"></div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonCalculateClick() {
+        var input1 = document.getElementById("input1").value;
+        var input2 = document.getElementById("input2").value;
+        var lastIndex = input1.length > input2.length ? input2 : input1;
+        var firstGreaterThan = 0;
+        for (var i = 0; i < lastIndex; i++) {
+            if (input1[i] > input2[i]) {
+                firstGreaterThan = 1;
+                break;
+            } else if (input1[i] < input2[i]) {
+                firstGreaterThan = -1;
+                break;
+            }
+        }
+        if (firstGreaterThan === 0) {
+            if (input1.length > input2.length) {
+                firstGreaterThan = 1;
+            } else if (input1.length < input2.length) {
+                firstGreaterThan = -1;
+            }
+        }
+
+        switch (firstGreaterThan) {
+            case -1:
+                jsConsole.writeLine("String 2 is greater than string 1.");
+                break;
+            case 1:
+                jsConsole.writeLine("String 1 is greater than string 2.");
+                break;
+            default:
+                jsConsole.writeLine("String 1 and string 2 are equal.");
+                break;
+        }
+    }
+</script>
+</html>

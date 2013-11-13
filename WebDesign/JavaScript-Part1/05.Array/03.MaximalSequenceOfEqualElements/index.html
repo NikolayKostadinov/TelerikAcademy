@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        #js-console {
+            height: 768px;
+            width: 1024px;
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <label for="input1">String 1: </label>
+    <input type="text" id="input1" /><br />
+        <button onclick="OnButtonCalculateClick()">Calculate</button>
+    <div id="js-console"></div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonCalculateClick() {
+        var input1 = document.getElementById("input1").value;
+        var arr = input1.split(',');
+        var maxSequenceLenght = 0;
+        var maxSequenseElement;
+        var tempLen = 0;
+        var lastElement;
+        for (var i = 0; i < arr.length; i++) {
+            if (lastElement === arr[i]) {
+                tempLen++;
+            } else {
+                if (tempLen > maxSequenceLenght) {
+                    maxSequenceLenght = tempLen;
+                    maxSequenseElement = arr[i-1];
+                }
+                lastElement = arr[i];
+                tempLen = 1;
+            }
+        }
+        var str="";
+        for (i = 0; i < maxSequenceLenght; i++) {
+            str += maxSequenseElement;
+            str += (i < (maxSequenceLenght - 1)) ? ", " : "";
+        }
+        jsConsole.writeLine("{" + str + "}");
+    }
+</script>
+</html>
