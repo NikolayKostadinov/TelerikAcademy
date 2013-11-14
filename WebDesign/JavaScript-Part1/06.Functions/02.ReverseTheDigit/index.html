@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 1024px;
+            height: 768px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <span>Number</span>
+    <input type="text" id="input1" /><br />
+    <button onclick="OnButtonClick()">Check input</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var number = getNumberFromElement("input1");
+        var reversed = reverseTheNumber(number);
+        jsConsole.writeLine(number + "<br/>" + reversed);
+    }
+    function getNumberFromElement(input){
+        return parseInt(document.getElementById(input).value);
+    }
+    function reverseTheNumber(number) {
+        var reversed = "";
+        var manipulator = number > 0 ? 1 : -1;
+        number = number * manipulator;
+        var len = number.toString.length;
+        for (var i = 0; i < len; i++) {
+            reversed[len - 1 - i] = number[i];
+        }
+        reversed *= manipulator;
+        return reversed;
+    }
+    
+</script>
+</html>

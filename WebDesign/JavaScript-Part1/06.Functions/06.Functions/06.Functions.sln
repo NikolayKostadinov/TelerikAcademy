@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "01.NameLastDigit", "http://localhost:8196", "{69CFC115-5391-4282-A00C-FCB850C39BFD}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_8196"
+		Debug.AspNetCompiler.PhysicalPath = "..\01.NameLastDigit\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8196\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_8196"
+		Release.AspNetCompiler.PhysicalPath = "..\01.NameLastDigit\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8196\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\01.NameLastDigit\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "02.ReverseTheDigit", "http://localhost:8485", "{6A67B98A-84E1-4DA1-B384-82BC4A95F5F4}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_8485"
+		Debug.AspNetCompiler.PhysicalPath = "..\02.ReverseTheDigit\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8485\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_8485"
+		Release.AspNetCompiler.PhysicalPath = "..\02.ReverseTheDigit\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8485\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\02.ReverseTheDigit\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69CFC115-5391-4282-A00C-FCB850C39BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69CFC115-5391-4282-A00C-FCB850C39BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A67B98A-84E1-4DA1-B384-82BC4A95F5F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A67B98A-84E1-4DA1-B384-82BC4A95F5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
