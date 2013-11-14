@@ -4,10 +4,11 @@
     <title></title>
     <style>
         div {
-            width: 1024px;
-            height: 768px;
+            width: 400px;
+            height: 400px;
             background-color: black;
             color: white;
+            overflow-y: scroll;
         }
     </style>
 </head>
@@ -20,25 +21,28 @@
 </body>
 <script src="js-console.js"></script>
 <script>
+
     function OnButtonClick() {
         var number = getNumberFromElement("input1");
         var reversed = reverseTheNumber(number);
         jsConsole.writeLine(number + "<br/>" + reversed);
     }
-    function getNumberFromElement(input){
+
+    function getNumberFromElement(input) {
         return parseInt(document.getElementById(input).value);
     }
+
     function reverseTheNumber(number) {
         var reversed = "";
         var manipulator = number > 0 ? 1 : -1;
         number = number * manipulator;
-        var len = number.toString.length;
-        for (var i = 0; i < len; i++) {
-            reversed[len - 1 - i] = number[i];
+        while(number){
+            reversed += number % 10;
+            number = Math.floor((number / 10));
         }
         reversed *= manipulator;
         return reversed;
     }
-    
+
 </script>
 </html>
