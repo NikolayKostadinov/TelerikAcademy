@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        #js-console {
+            height: 400px;
+            width: 800px;
+            background-color: #000000;
+            color: #ffffff;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <label for="input1">Input array: </label>
+    <input type="text" id="input1" /><br />
+    <button onclick="OnButtonCalculateClick()">Calculate</button>
+    <div id="js-console"></div>
+
+    <script src="js-console.js"></script>
+    <script>
+        function OnButtonCalculateClick() {
+            var input1 = document.getElementById("input1").value;
+            var arr = input1.split(',');
+            var numberOfOccurances = new Array();
+
+            for (var i = 0; i < arr.length; i++) {
+                if (numberOfOccurances[arr[i]] === undefined) {
+                    numberOfOccurances[arr[i]] = {
+                        count: 1,
+                        Value: arr[i]
+                    };
+                } else {
+                    numberOfOccurances[arr[i]].count++;
+                }
+            }
+            numberOfOccurances.sort(function (x, y) { return y.count - x.count;});
+            jsConsole.writeLine(numberOfOccurances[0].Value +
+                " (" + numberOfOccurances[0].count +
+                ((numberOfOccurances[0].count > 1) ? " times)" : "time)"));
+        }
+    </script>
+</body>
+
+</html>

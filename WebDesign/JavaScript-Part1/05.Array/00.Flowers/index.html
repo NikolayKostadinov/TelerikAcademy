@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var flower_shop = new Array();
+
+        flower_shop["rose"] = +"20.00";
+        flower_shop["daisy"] = +"4.00";
+        flower_shop["orchid"] = +"2.00";
+
+        //let's print out the headers to our table
+        document.write("<table border=\"1\" cellpadding=\"5\">");
+        document.write("<tr><th>Flower</th><th>Price</th></tr>");
+
+        //Now we start the for loop using the variable flower to hold our key.
+        for (var flower in flower_shop) //print the values into a table cell for each iteration
+            document.write("<tr><td>" + flower + "</td><td>" + flower_shop[flower] + "</td></tr>");
+
+        //finally close the table
+        document.write("</table>");
+        if (flower_shop["rose"] > flower_shop["daisy"]) {
+            document.write("<br />");
+            document.write("<br />");
+            document.write("YES");
+
+            //code
+        } else {
+            document.write("<br />");
+            document.write("<br />");
+            document.write("NO");
+        }
+    </script>
+
+</body>
+</html>

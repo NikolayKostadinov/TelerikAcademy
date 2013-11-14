@@ -87,6 +87,72 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "04.MaximalIncreasingSequenc
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "05.SelectionSort", "http://localhost:6703", "{58DDC8A8-0B85-4ECA-8141-3C21A795F2FD}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_6703"
+		Debug.AspNetCompiler.PhysicalPath = "05.SelectionSort\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6703\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_6703"
+		Release.AspNetCompiler.PhysicalPath = "05.SelectionSort\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6703\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "05.SelectionSort\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "06.MostFreqNumber", "http://localhost:6828", "{670537B4-1698-429B-A680-D0F03C42185F}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_6828"
+		Debug.AspNetCompiler.PhysicalPath = "06.MostFreqNumber\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6828\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_6828"
+		Release.AspNetCompiler.PhysicalPath = "06.MostFreqNumber\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6828\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "06.MostFreqNumber\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "00.Flowers", "http://localhost:7271", "{4B6A936B-596E-4358-A3AD-79E49ABA724F}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_7271"
+		Debug.AspNetCompiler.PhysicalPath = "00.Flowers\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7271\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_7271"
+		Release.AspNetCompiler.PhysicalPath = "00.Flowers\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7271\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "00.Flowers\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +166,12 @@ Global
 		{62E0473F-63EB-4EE3-A0AA-9009BE4B1DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56B04114-417D-49DF-81D2-E4E5F2C98577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{56B04114-417D-49DF-81D2-E4E5F2C98577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58DDC8A8-0B85-4ECA-8141-3C21A795F2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58DDC8A8-0B85-4ECA-8141-3C21A795F2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670537B4-1698-429B-A680-D0F03C42185F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670537B4-1698-429B-A680-D0F03C42185F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6A936B-596E-4358-A3AD-79E49ABA724F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6A936B-596E-4358-A3AD-79E49ABA724F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

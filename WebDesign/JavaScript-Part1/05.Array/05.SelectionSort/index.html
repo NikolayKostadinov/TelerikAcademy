@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        #js-console {
+            height: 400px;
+            width: 800px;
+            background-color: #000000;
+            color: #ffffff;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <label for="input1">Input array: </label>
+    <input type="text" id="input1" /><br />
+    <button onclick="OnButtonCalculateClick()">Calculate</button>
+    <div id="js-console"></div>
+
+    <script src="js-console.js"></script>
+    <script>
+        function OnButtonCalculateClick() {
+            var input1 = document.getElementById("input1").value;
+            var arr = input1.split(',');
+            var sortedArray = new Array(arr.length);
+
+            for (var i = 0; i < sortedArray.length; i++) {
+                var min = arr[0];
+                var ix = 0;
+                for (var j = 0; j < arr.length; j++) {
+                    if (parseInt(min) > parseInt(arr[j])) {
+                        min = arr[j];
+                        ix = j;
+                    }
+                }
+                sortedArray[i] = min;
+                arr.splice(ix, 1);
+            }
+            jsConsole.writeLine("{" + sortedArray.join(", ") + "}");
+        }
+    </script>
+</body>
+
+</html>
