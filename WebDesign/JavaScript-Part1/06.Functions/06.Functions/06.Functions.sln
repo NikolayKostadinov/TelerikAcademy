@@ -45,6 +45,68 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "02.ReverseTheDigit", "http:
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "03.OccuranceOfWord", "http://localhost:11141", "{3DF4E186-BA78-447E-8AFE-73D6BF2AE7A0}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_11141"
+		Debug.AspNetCompiler.PhysicalPath = "..\03.OccuranceOfWord\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_11141\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_11141"
+		Release.AspNetCompiler.PhysicalPath = "..\03.OccuranceOfWord\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_11141\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\03.OccuranceOfWord\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "04.CountTheNumberOfDivs", "..\04.CountTheNumberOfDivs\", "{9703C5C6-ED84-4E4C-AB09-496910464657}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/04.CountTheNumberOfDivs"
+		Debug.AspNetCompiler.PhysicalPath = "..\04.CountTheNumberOfDivs\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\04.CountTheNumberOfDivs\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/04.CountTheNumberOfDivs"
+		Release.AspNetCompiler.PhysicalPath = "..\04.CountTheNumberOfDivs\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\04.CountTheNumberOfDivs\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "12937"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "05.NumberInArrayCount", "..\05.NumberInArrayCount\", "{A62ED43A-AB93-4A87-A690-B7B48BBC39BF}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/05.NumberInArrayCount"
+		Debug.AspNetCompiler.PhysicalPath = "..\05.NumberInArrayCount\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\05.NumberInArrayCount\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/05.NumberInArrayCount"
+		Release.AspNetCompiler.PhysicalPath = "..\05.NumberInArrayCount\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\05.NumberInArrayCount\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "14332"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +116,12 @@ Global
 		{69CFC115-5391-4282-A00C-FCB850C39BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A67B98A-84E1-4DA1-B384-82BC4A95F5F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6A67B98A-84E1-4DA1-B384-82BC4A95F5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DF4E186-BA78-447E-8AFE-73D6BF2AE7A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DF4E186-BA78-447E-8AFE-73D6BF2AE7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9703C5C6-ED84-4E4C-AB09-496910464657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9703C5C6-ED84-4E4C-AB09-496910464657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A62ED43A-AB93-4A87-A690-B7B48BBC39BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A62ED43A-AB93-4A87-A690-B7B48BBC39BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

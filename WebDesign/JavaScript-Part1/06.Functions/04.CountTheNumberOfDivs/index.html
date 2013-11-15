@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        body {
+            font-size: 10px;
+        }
+
+        div#js-console {
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            background-color: black;
+            color: white;
+            overflow-y: scroll;
+            font-size: 1em;
+            padding-left: 3px;
+        }
+
+        button {
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        textarea {
+            font-size: 0.8em;
+            width: 400px;
+            height: 100px;
+        }
+
+        label {
+            margin-right: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body onload="OnFormLoad()">
+    <textarea id="input1"></textarea>
+    <br />
+    <input type="checkbox" id="is-casesens" />
+    <label for="is-casesens">Case sensitive</label>
+    <button onclick="OnButtonClick()">Check input</button>
+    <div>
+        <div>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div>
+    </div>
+    <div>
+    </div>
+    <div id="js-console">
+    </div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnFormLoad() {
+        var count = document.getElementsByTagName("div").length;
+        jsConsole.writeLine("The number of divs in your page is " + count);
+    }
+</script>
+</html>

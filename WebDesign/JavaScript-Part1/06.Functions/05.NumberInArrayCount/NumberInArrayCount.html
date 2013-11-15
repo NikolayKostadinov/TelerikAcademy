@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>NumberInArrayCount</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
+</head>
+<body>  
+    <label for="tb-array">Space separated integers: </label>
+	<input type="text" id="tb-array" />
+    <label for="tb-number">Number: </label>
+	<input type="text" id="tb-number" />
+	<a href="#" onclick="onCountButtonClick()">Find number of occurences.</a>
+    <a href="#" onclick="onTestButtonClick()">Automatic test (enter number only)</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    // Write a function that counts how many times given number appears in given array.
+	    // Write a test function to check if the function is working correctly.
+
+	    
+
+	    function countOccur(array, number) {
+	        if ((typeof (array) === "object") && (typeof (number) === "number")) {
+	            var count = 0;
+	            for (var num = 0; num < array.length; num++) {
+	                if (parseInt(array[num]) === number) count++;
+	            }
+	            return count;
+	        }
+	    }
+
+	    function testGenerator(number) {
+	        var arraySize = Math.floor((Math.random() * 48) + 2); // 2 to 50
+	        var occurances = Math.floor((Math.random() * arraySize / 2) + 1); // 1 to arraySize/2 + 1
+	        var arr = new Array(arraySize);
+
+	        var currentIndex;
+	        // initialize array with random numbers form 1 to the modulus of (number*2) + 1 but different than the number!
+	        for (var i = 0; i < arraySize; i++) {
+	            do{
+	                currentIndex = Math.floor((Math.random() * Math.abs(number) * 2) + 1);
+	            } while (currentIndex == number)
+
+	            arr[i] = currentIndex;
+	        }
+
+	        var indicesSoFar = new Array(occurances);
+
+	        // put number occurances number of time
+	        for (var i = 0; i < occurances; i++) {
+
+	            do{
+	                randomIndex = Math.floor((Math.random() * arraySize) - 1); // random index from -1 to arraySize-1
+	                if (randomIndex < 0) randomIndex = 0; // solve index=-1 case
+
+	            } while (indicesSoFar.indexOf(randomIndex) != -1) // until this index is not new (already put the number there)
+
+	            indicesSoFar[i] = randomIndex; // add it to the already chosen indexes
+	            arr[randomIndex] = number; // put the wanted number in this position
+	        }
+
+	        var functionCounted = countOccur(arr, number);
+
+	        jsConsole.writeLine("Number: " + number);
+	        jsConsole.writeLine("Generated test array: ");
+	        for (var i = 0; i < arraySize; i++) {
+	            jsConsole.write(arr[i] + " ");
+	        }
+	        jsConsole.writeLine();
+	        var correct = (occurances == functionCounted) ? true : false;
+	        jsConsole.writeLine("Expected: " + occurances + "; Actual: " + functionCounted + "; Correct: " + correct);
+	        jsConsole.writeLine();
+	    }
+
+	    function onCountButtonClick() {
+	        number = jsConsole.readInteger("#tb-number");
+	        array = jsConsole.readArray("#tb-array", " ");
+	        jsConsole.writeLine(countOccur(array, number));
+	    }
+
+	    function onTestButtonClick() {
+	        number = jsConsole.readInteger("#tb-number");
+	        array = jsConsole.readArray("#tb-array", " ");
+	        testGenerator(number);
+	    }
+
+	    
+	</script>
+</body>
+</html>
+

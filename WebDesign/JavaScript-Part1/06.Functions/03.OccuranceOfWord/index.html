@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        body {
+            font-size: 10px;
+        }
+
+        div#js-console {
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            background-color: black;
+            color: white;
+            overflow-y: scroll;
+            font-size: 1em;
+            padding-left: 3px;
+        }
+
+        button {
+            font-size: 1em;
+            margin-bottom:5px;
+        }
+
+        textarea {
+            font-size: 0.8em;
+            width: 400px;
+            height: 100px;
+        }
+
+        label {
+            margin-right: 20px;
+            font-size:1.2em;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="input1"></textarea>
+    <br />
+    <input type="checkbox" id="is-casesens" />
+    <label for="is-casesens">Case sensitive</label>
+    <button onclick="OnButtonClick()">Check input</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="js-console.js"></script>
+<script>
+
+    function OnButtonClick() {
+
+        var isCaseSensitive = document.getElementById("is-casesens").checked;
+        var words = getNumberFromElements("input1", isCaseSensitive);
+        var wordsCounter = getWordsCount(words);
+
+        for (var word in wordsCounter) {
+            jsConsole.writeLine(word + " -> " + wordsCounter[word]);
+        }
+    }
+
+    function getNumberFromElements(input, isCase) {
+        var caseSense = isCase || false;
+        var strInput = document.getElementById(input).value.toString();
+        if (!caseSense) {
+            strInput = strInput.toLowerCase();
+        }
+        words = strInput.split(/[\s,-?!\n\r\.)(\'\"\n]/)
+        return words;
+    }
+
+    function getWordsCount(words) {
+        var wordsCount = {};
+        for (var i in words) {
+            if (words[i] != "") {
+                if (wordsCount[words[i]]) {
+                    wordsCount[words[i]]++;
+                } else {
+                    wordsCount[words[i]] = 1;
+                }
+            }
+        }
+        return wordsCount;
+    }
+
+</script>
+</html>
