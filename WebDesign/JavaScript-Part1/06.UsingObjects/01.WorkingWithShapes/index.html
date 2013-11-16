@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 1024px;
+            height: 768px;
+            background-color: black;
+            color: white;
+        }
+
+        fieldset {
+            display: inline-block;
+        }
+
+        input {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Point1</legend>
+            <label for="input1">X</label>
+            <input type="text" id="input1" /><br />
+            <label for="input2">Y</label>
+            <input type="text" id="input2" />
+        </fieldset>
+        <fieldset>
+            <legend>Point2</legend>
+            <label for="input3">X</label>
+            <input type="text" id="input3" /><br />
+            <label for="input4">Y</label>
+            <input type="text" id="input4" />
+        </fieldset>
+        <fieldset>
+            <legend>Point3</legend>
+            <label for="input5">X</label>
+            <input type="text" id="input5" /><br />
+            <label for="input6">Y</label>
+            <input type="text" id="input6" />
+        </fieldset>
+        <fieldset>
+            <legend>Point4</legend>
+            <label for="input7">X</label>
+            <input type="text" id="input7" /><br />
+            <label for="input8">Y</label>
+            <input type="text" id="input8" />
+        </fieldset>
+        <fieldset>
+            <legend>Point5</legend>
+            <label for="input9">X</label>
+            <input type="text" id="input9" /><br />
+            <label for="input10">Y</label>
+            <input type="text" id="input10" />
+        </fieldset>
+        <fieldset>
+            <legend>Point6</legend>
+            <label for="input11">X</label>
+            <input type="text" id="input11" /><br />
+            <label for="input12">Y</label>
+            <input type="text" id="input12" />
+        </fieldset>
+    </form>
+    <button onclick="OnButtonClick()">Check input</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="scripts/js-console.js"></script>
+<script src="scripts/shapes.js"></script>
+<script>
+    function OnButtonClick() {
+        var coords = document.getElementsByTagName("input");
+        var isTriangle = false;
+        if (validateInput(coords)) {
+            var points = createPoints(coords);
+            var lines = createLines(points);
+            if ((lines[0] < lines[1] + lines[2]) &&
+                (lines[1] < lines[0] + lines[2]) &&
+                (lines[2] < lines[0] + lines[1])) {
+                isTriangle = true;
+            }
+        }
+        jsConsole.writeLine((isTriangle ? "The figure is triangle." : "The figure isn't triangle."));
+    }
+
+    function validateInput(coords) {
+        var isOK = true;
+        for (var i = 0; i < coords.length; i++) {
+            if (coords[i].value === "") {
+                isOk = false;
+                alert("Please enter an value in field " + coords[i].id);
+                break;
+            }
+        }
+        return isOK;
+    }
+
+    function createPoints(coords) {
+        var points = [];
+        for (var i = 0; i < coords.length; i += 2) {
+            points.push(makePoint(parseFloat(coords[i].value), parseFloat(coords[i + 1].value)));
+        }
+        return points;
+    }
+
+    function createLines(points) {
+        var lines = [];
+        for (var i = 0; i < points.length; i += 2) {
+            lines.push(makeLine(points[i], points[i + 1]).lineLenght());
+        }
+        return lines;
+    }
+</script>
+</html>

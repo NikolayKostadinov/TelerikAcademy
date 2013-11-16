@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 1024px;
+            height: 768px;
+            background-color: black;
+            color: white;
+        }
+
+        fieldset {
+            display: inline-block;
+        }
+
+        input {
+            margin: 3px 0;
+        }
+
+            input:first-of-type {
+                width: 250px;
+            }
+
+        label:last-of-type, button {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <label for="input1">Enter array of elements separates by "," </label>
+    <input type="text" id="input1" />
+    <label for="input2">Element to remove </label>
+    <input type="text" id="input2" />
+    <button onclick="OnButtonClick()">Check input</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var persons = [ { firstname : "Gosho", lastname: "Petrov", age: 50 }, 
+                        { firstname: "Bay", lastname: "Ivan", age: 37 },
+                        { firstname: "Bay", lastname: "Pesho", age: 81 },
+                        { firstname: "Nikolay", lastname: "Kostadinov", age: 35 },
+                        { firstname: "Bay", lastname: "Mico", age: 10 },
+                        { firstname: "Chico", lastname: "Ivan", age: 40 },
+
+        ];
+        var youngest = findYoungest(persons);
+        jsConsole.writeLine(youngest.firstname + " " + youngest.lastname + " " + youngest.age);
+    }
+
+    function findYoungest(persons) {
+        var minage = persons[0].age;
+        var minagePerson = persons[0];
+        for (var i in persons) {
+            if (persons[i].age < minage) {
+                minage = persons[i].age;
+                minagePerson = persons[i];
+            }
+        }
+        return minagePerson;
+    }
+</script>
+</html>

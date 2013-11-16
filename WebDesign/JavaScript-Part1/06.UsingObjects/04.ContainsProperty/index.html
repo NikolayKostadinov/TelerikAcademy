@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 1024px;
+            height: 768px;
+            background-color: black;
+            color: white;
+        }
+
+        fieldset {
+            display: inline-block;
+        }
+
+        input {
+            margin: 3px 0;
+        }
+
+            input:first-of-type {
+                width: 250px;
+            }
+
+        label:last-of-type, button {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <label for="input1">Enter array of elements separates by "," </label>
+    <input type="text" id="input1" />
+    <label for="input2">Element to remove </label>
+    <input type="text" id="input2" />
+    <button onclick="OnButtonClick()">Check input</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var containsProperty = hasProperty(document.getElementById("js-console"), "tagName");
+        jsConsole.writeLine("" + containsProperty);
+    }
+
+    function hasProperty(obj, inProperty) {
+        var contaisProperty = false;
+        for (property in obj) {
+            if (property == inProperty) {
+                contaisProperty = true;
+                break;
+            }
+        }
+        return contaisProperty;
+    }
+</script>
+</html>

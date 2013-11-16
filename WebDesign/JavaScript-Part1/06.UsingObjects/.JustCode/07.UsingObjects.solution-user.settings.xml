@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0" Timestamp="654b925a-90b4-4155-a8d6-735a7ff67c8c">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings Version="2">
+      <FilePath>
+        <FileRelativePath>01.WorkingWithShapes/scripts/shapes.js</FileRelativePath>
+        <ProjectRelativePath>01.WorkingWithShapes/</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>7458066729208364625</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>
