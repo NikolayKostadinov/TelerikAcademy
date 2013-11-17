@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 1024px;
+            height: 768px;
+            background-color: black;
+            color: white;
+        }
+
+        fieldset {
+            display: inline-block;
+        }
+
+        input {
+            margin: 3px 0;
+        }
+
+            input:first-of-type {
+                width: 250px;
+            }
+
+        label:last-of-type, button {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="OnButtonClick()">Check input</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var persons = [ { firstname : "Gosho", lastname: "Petrov", age: 50 }, 
+                        { firstname: "Bay", lastname: "Ivan", age: 37 },
+                        { firstname: "Bay", lastname: "Pesho", age: 81 },
+                        { firstname: "Nikolay", lastname: "Kostadinov", age: 35 },
+                        { firstname: "Bay", lastname: "Mico", age: 10 },
+                        { firstname: "Chico", lastname: "Ivan", age: 40 },
+                        { firstname: "Chico", lastname: "Pesho", age: 35 },
+                        { firstname: "Gospodin", lastname: "Kostadinov", age: 45 },
+        ];
+       
+        var groupedByFname = group(persons, "firstname");
+        var groupedByLname = group(persons, "lastname");
+        var groupedByAge = group(persons, "age");
+
+        jsConsole.writeLine("Success");
+    }
+
+    function group(persons, parameter) {
+        var group = new Array();
+        
+        switch (parameter) {
+            case "firstname":
+                for (var i in persons) {
+                    if (!group[persons[i].firstname]) {
+                        group[persons[i].firstname]=new Array();
+                        group[persons[i].firstname].push(persons[i]);
+                    } else {
+                        group[persons[i].firstname].push(persons[i]);
+                    }
+                }
+                break;
+            case "lastname":
+                for (var i in persons) {
+                    if (!group[persons[i].lastname]) {
+                        group[persons[i].lastname] = new Array();
+                        group[persons[i].lastname].push(persons[i]);
+                    } else {
+                        group[persons[i].lastname].push(persons[i]);
+                    }
+                }
+                break;
+            case "age":
+                for (var i in persons) {
+                    if (!group[persons[i].age]) {
+                        group[persons[i].age] = new Array();
+                        group[persons[i].age].push(persons[i]);
+                    } else {
+                        group[persons[i].age].push(persons[i]);
+                    }
+                }
+                break;
+            default:
+                alert('No such parameter "'+parameter+'"!');
+
+        }
+        return group;
+    }
+</script>
+</html>

@@ -109,6 +109,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "05.FindYoungest", "http://l
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "06.GoupingRecords", "http://localhost:2278", "{2ADB26A7-1364-4E4A-ACDB-3CA8774CBAA5}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_2278"
+		Debug.AspNetCompiler.PhysicalPath = "06.GoupingRecords\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2278\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_2278"
+		Release.AspNetCompiler.PhysicalPath = "06.GoupingRecords\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2278\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "06.GoupingRecords\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +146,8 @@ Global
 		{D2B9DF7B-8247-442F-995B-0000419FD423}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED735D0-F1D1-4080-AF86-A0EEDFE36B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6ED735D0-F1D1-4080-AF86-A0EEDFE36B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ADB26A7-1364-4E4A-ACDB-3CA8774CBAA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ADB26A7-1364-4E4A-ACDB-3CA8774CBAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
