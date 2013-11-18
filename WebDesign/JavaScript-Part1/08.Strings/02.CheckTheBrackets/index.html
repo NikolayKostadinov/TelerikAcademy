@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            color: white;
+            overflow-y:scroll;
+        }
+    </style>
+</head>
+<body>
+    <span>Number</span>
+    <input type="text" id="input1" /><br />
+    <button onclick="OnButtonClick()">Check Equation</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var inString = document.getElementById("input1").value;
+        var isCorrect = checkEquation(inString);
+        jsConsole.writeLine("" + isCorrect);
+    }
+
+    function checkEquation(inString) {
+        var queue = [];
+        var isCorrect = false;
+        for (var i = 0; i < inString.length; i++) {
+            if (inString[i] == '(') {
+                queue.push(inString[i]);
+            } else if (inString[i] == ')') {
+                if (queue.length > 0) {
+                    queue.pop();
+                } else {
+                    return isCorrect;
+                }
+            }
+        }
+        if (queue.length == 0) {
+            isCorrect = true;
+        }
+        return isCorrect;
+    }
+</script>
+</html>

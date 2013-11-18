@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            color: white;
+            overflow-y:scroll;
+        }
+    </style>
+</head>
+<body>
+    <label for="input1">Input some text:</label>
+    <textarea id="input1"></textarea>
+    <label for="input2">Input searched string: </label>
+    <input type="text" id="input2" />
+    <button onclick="OnButtonClick()">Check Equation</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonClick() {
+        var inStr = document.getElementById("input1").value;
+        var wantedStr = document.getElementById("input2").value;
+        var count = countOccurancesOfString(inStr, wantedStr);
+        jsConsole.writeLine(count);
+    }
+
+    function countOccurancesOfString(inStr, wantedStr) {
+        var counter = 0;
+        inStr = inStr.toLowerCase();
+        wantedStr = wantedStr.toLowerCase();
+        var endOfLoop = false;
+        var len = wantedStr.length;
+        var index = 0;
+        while (!endOfLoop) {
+            index = inStr.indexOf(wantedStr, index);
+            if (index >= 0) {
+                counter++;
+                index = index + len;
+            } else {
+                endOfLoop = true;
+            }
+        }
+        return counter;
+    }
+</script>
+</html>
