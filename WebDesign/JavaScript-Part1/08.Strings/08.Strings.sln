@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "01.ReverseTheString", "http://localhost:4449", "{49D0D482-5E29-46FF-A8D3-F7605905F12B}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_4449"
+		Debug.AspNetCompiler.PhysicalPath = "01.ReverseTheString\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4449\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_4449"
+		Release.AspNetCompiler.PhysicalPath = "01.ReverseTheString\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4449\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "01.ReverseTheString\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "02.CheckTheBrackets", "http://localhost:6004", "{C69AE5C9-97A4-4F1E-BD1E-B8D55E9C8975}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_6004"
+		Debug.AspNetCompiler.PhysicalPath = "02.CheckTheBrackets\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6004\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_6004"
+		Release.AspNetCompiler.PhysicalPath = "02.CheckTheBrackets\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6004\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "02.CheckTheBrackets\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "03.CountIfContains", "http://localhost:8823", "{F8B6912D-DE95-436F-88C4-A5F7369D47AC}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_8823"
+		Debug.AspNetCompiler.PhysicalPath = "03.CountIfContains\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8823\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_8823"
+		Release.AspNetCompiler.PhysicalPath = "03.CountIfContains\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8823\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "03.CountIfContains\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49D0D482-5E29-46FF-A8D3-F7605905F12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D0D482-5E29-46FF-A8D3-F7605905F12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69AE5C9-97A4-4F1E-BD1E-B8D55E9C8975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69AE5C9-97A4-4F1E-BD1E-B8D55E9C8975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8B6912D-DE95-436F-88C4-A5F7369D47AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8B6912D-DE95-436F-88C4-A5F7369D47AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
