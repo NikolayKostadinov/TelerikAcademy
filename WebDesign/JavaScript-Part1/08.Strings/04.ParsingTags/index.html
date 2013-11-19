@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            color: white;
+            overflow-y: scroll;
+        }
+        label{
+            display:block;
+
+        }
+        button{
+            display:block;
+            margin:5px 0;
+        }
+        textarea{
+            padding-right:0;
+            width:400px;
+            height:150px;
+        }
+    </style>
+</head>
+<body>
+    <label for="input1">Input some text:</label>
+    <textarea id="input1">Normal text <mixcase>mix case text <upcase>upper case text in mix case tag <lowcase>nested low text case </lowcase> some more upper text case in mix case tag</upcase> second part of mixed text case</mixcase> some normal text again <upcase>upper text case</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.</textarea> 
+    <button onclick="OnButtonClick()">Apply Tags</button>
+    <div id="js-console">
+    </div>
+</body>
+<script src="js-console.js"></script>
+<script>
+    function OnButtonClick() { 
+        var inStr = document.getElementById("input1").value;
+        var newString = machPattern(inStr);
+        jsConsole.writeLine(newString);
+    }
+
+    function machPattern(inStr) {
+        var myregexp = /<mixcase>(.*?)<\/mixcase>/gi;
+
+
+        var newText = inStr.replace(myregexp,
+                function ($1) {
+                    var str = $1;
+                    var str1 = [];
+                    var len = str.length;
+                    for (var i = 0; i < len; i++) {
+                        if (Math.random() * 2 > 1) {
+                            str1[i] = str[i].toUpperCase();
+                        } else {
+                            str1[i] = str[i].toLowerCase();
+                        }
+                    }
+                    return str1.join("");
+                })
+        myregexp = /<upcase>(.*?)<\/upcase>/gi
+        newText = newText.replace(myregexp,
+                function ($1) {
+                    var str = $1;
+                    return str.toUpperCase();
+                })
+        myregexp = /<lowcase>(.*?)<\/lowcase>/gi
+        newText = newText.replace(myregexp,
+                function ($1) {
+                    var str = $1;
+                    return str.toLowerCase();
+                })
+        return newText;
+    }
+
+</script>
+</html>
