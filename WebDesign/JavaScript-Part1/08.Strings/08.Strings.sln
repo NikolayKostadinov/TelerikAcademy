@@ -67,6 +67,48 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "03.CountIfContains", "http:
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "04.ParsingTags", "04.ParsingTags\", "{DEEB639C-3E6D-4E73-9400-91335A953C75}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/04.ParsingTags"
+		Debug.AspNetCompiler.PhysicalPath = "04.ParsingTags\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\04.ParsingTags\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/04.ParsingTags"
+		Release.AspNetCompiler.PhysicalPath = "04.ParsingTags\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\04.ParsingTags\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1993"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "05.ReplacesNonBreakingWhite-Spaces", "http://localhost:1995", "{1CA86E57-6148-4BF3-8F00-C4F7B660CAF8}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_1995"
+		Debug.AspNetCompiler.PhysicalPath = "05.ReplacesNonBreakingWhite-Spaces\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1995\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_1995"
+		Release.AspNetCompiler.PhysicalPath = "05.ReplacesNonBreakingWhite-Spaces\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1995\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "05.ReplacesNonBreakingWhite-Spaces\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +120,10 @@ Global
 		{C69AE5C9-97A4-4F1E-BD1E-B8D55E9C8975}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8B6912D-DE95-436F-88C4-A5F7369D47AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8B6912D-DE95-436F-88C4-A5F7369D47AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEEB639C-3E6D-4E73-9400-91335A953C75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEEB639C-3E6D-4E73-9400-91335A953C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA86E57-6148-4BF3-8F00-C4F7B660CAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA86E57-6148-4BF3-8F00-C4F7B660CAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

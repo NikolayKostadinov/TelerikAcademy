@@ -40,37 +40,25 @@
         jsConsole.writeLine(newString);
     }
 
-    function machPattern(inStr) {
-        var myregexp = /<mixcase>(.*?)<\/mixcase>/gi;
-
-
-        var newText = inStr.replace(myregexp,
-                function ($1) {
-                    var str = $1;
-                    var str1 = [];
-                    var len = str.length;
-                    for (var i = 0; i < len; i++) {
-                        if (Math.random() * 2 > 1) {
-                            str1[i] = str[i].toUpperCase();
-                        } else {
-                            str1[i] = str[i].toLowerCase();
-                        }
-                    }
-                    return str1.join("");
-                })
-        myregexp = /<upcase>(.*?)<\/upcase>/gi
-        newText = newText.replace(myregexp,
-                function ($1) {
-                    var str = $1;
-                    return str.toUpperCase();
-                })
-        myregexp = /<lowcase>(.*?)<\/lowcase>/gi
-        newText = newText.replace(myregexp,
-                function ($1) {
-                    var str = $1;
-                    return str.toLowerCase();
-                })
+    function machPattern(inStr, pattern) {
+        var patterns = [/<mixcase>(.*?)<\/mixcase>/gi, /<upcase>(.*?)<\/upcase>/gi, /<lowcase>(.*?)<\/lowcase>/gi];
+        var newText = inStr.replace(patterns[0], function (group) { return generateRandomCaseString(group) })
+            .replace(patterns[1], function (group) { return group.toUpperCase() })
+            .replace(patterns[2], function (group) { return group.toLowerCase() });
         return newText;
+    }
+
+    function generateRandomCaseString(inputString) {
+        var resultArray = [];
+        var len = inputString.length;
+        for (var i = 0; i < len; i++) {
+            if (Math.random() * 2 > 1) {
+                resultArray[i] = inputString[i].toUpperCase();
+            } else {
+                resultArray[i] = inputString[i].toLowerCase();
+            }
+        }
+        return resultArray.join("");
     }
 
 </script>
