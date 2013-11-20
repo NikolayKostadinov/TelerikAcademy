@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Person", "02.Person\02.Person.csproj", "{61F190EA-46A8-4BC5-90C5-C91DCE50D3DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ConsolePrinter", "01.ConsolePrinter\01.ConsolePrinter.csproj", "{21AD6F7F-12A9-4E5E-A8D4-D88C4BC38E58}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "03.RefactoringJavaScript", "http://localhost:6041", "{E6B6F09B-0C98-44E7-B001-B87524E09C8F}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_6041"
+		Debug.AspNetCompiler.PhysicalPath = "03.RefactoringJavaScript\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6041\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_6041"
+		Release.AspNetCompiler.PhysicalPath = "03.RefactoringJavaScript\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6041\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "03.RefactoringJavaScript\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minesweeper", "04.Minesweeper\Minesweeper.csproj", "{B20E8DFD-5F12-4358-849D-1F25806E9052}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61F190EA-46A8-4BC5-90C5-C91DCE50D3DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F190EA-46A8-4BC5-90C5-C91DCE50D3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F190EA-46A8-4BC5-90C5-C91DCE50D3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F190EA-46A8-4BC5-90C5-C91DCE50D3DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21AD6F7F-12A9-4E5E-A8D4-D88C4BC38E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21AD6F7F-12A9-4E5E-A8D4-D88C4BC38E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21AD6F7F-12A9-4E5E-A8D4-D88C4BC38E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21AD6F7F-12A9-4E5E-A8D4-D88C4BC38E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B6F09B-0C98-44E7-B001-B87524E09C8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B6F09B-0C98-44E7-B001-B87524E09C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B6F09B-0C98-44E7-B001-B87524E09C8F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B6F09B-0C98-44E7-B001-B87524E09C8F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B20E8DFD-5F12-4358-849D-1F25806E9052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20E8DFD-5F12-4358-849D-1F25806E9052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20E8DFD-5F12-4358-849D-1F25806E9052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20E8DFD-5F12-4358-849D-1F25806E9052}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
