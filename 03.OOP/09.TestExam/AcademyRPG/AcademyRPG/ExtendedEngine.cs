@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AcademyRPG
+﻿namespace AcademyRPG
 {
+    using System;
+    using System.Linq;
+
     public class ExtendedEngine : Engine
     {
         public override void ExecuteCreateObjectCommand(string[] commandWords)
@@ -30,8 +28,7 @@ namespace AcademyRPG
                     {
                         string name = commandWords[2];
                         Point position = Point.Parse(commandWords[3]);
-                        int owner = int.Parse(commandWords[4]);
-                        this.AddObject(new Giant(name, position, owner));
+                        this.AddObject(new Giant(name, position));
                         return;
                     }
             }

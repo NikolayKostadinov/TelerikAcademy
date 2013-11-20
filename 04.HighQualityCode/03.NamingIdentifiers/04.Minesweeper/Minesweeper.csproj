@@ -76,6 +76,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameEngine.cs" />
     <Compile Include="Minesweeper.cs" />
     <Compile Include="Point.cs" />
   </ItemGroup>
