@@ -16,17 +16,17 @@ namespace SoftwareAcademy
             this.Teacher = teacher;
         }
 
-        public string Name 
-        { 
+        public string Name
+        {
             get
             {
                 return this.name;
             }
-            set 
+            set
             {
-                if (value == null) 
+                if (value == null)
                 {
-                    throw new ArgumentNullException(string.Format("Invalid entrye for {0}.Name",this.GetType().Name));
+                    throw new ArgumentNullException(string.Format("Invalid entrye for {0}.Name", this.GetType().Name));
                 }
                 this.name = value;
             }
@@ -41,9 +41,14 @@ namespace SoftwareAcademy
 
         public override string ToString()
         {
-           StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
-           sb.Append(string.Format("{0}: Name={1}; Teacher={2}; ", this.GetType().Name, this.Name, this.Teacher != null ? this.Teacher.Name : string.Empty));
+            sb.Append(string.Format("{0}: Name={1}; ", this.GetType().Name, this.Name));
+
+            if (this.Teacher != null && !(string.IsNullOrEmpty(this.Teacher.Name) || string.IsNullOrWhiteSpace(this.Teacher.Name)))
+            {
+                sb.Append(string.Format("Teacher={0}; ", this.Teacher.Name));
+            }
 
             int topicsNumber = this.topics.Count;
 
@@ -64,12 +69,12 @@ namespace SoftwareAcademy
                 {
                     sb.Append(topic + ", ");
                 }
-                else 
+                else
                 {
                     sb.Append(topic + "]; ");
                 }
             }
-          
+
             return sb.ToString();
         }
     }

@@ -6,7 +6,7 @@
 
     public class Minesweeper
     {
-        static void Main(string[] arguments)
+        public static void Main(string[] arguments)
         {
             const int MAXIMAL_NUMBER_OF_MOVES = 35;
             string command = string.Empty;
@@ -19,6 +19,8 @@
             int column = 0;
             bool isStratOfTheGame = true;
             bool isSuccesfulFinishedTheGame = false;
+
+            GameEngine engine = new GameEngine();
 
             do
             {
