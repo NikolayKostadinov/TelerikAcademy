@@ -4,12 +4,12 @@ namespace CohesionAndCoupling
 {
     static class Utils
     {
-        public static double Width { get; set; }
-        public static double Height { get; set; }
-        public static double Depth { get; set; }
-
         public static string GetFileExtension(string fileName)
         {
+            if (fileName == null || (string.IsNullOrEmpty(fileName) || string.IsNullOrWhiteSpace(fileName)))
+            {
+                throw new ArgumentException("The name of the file cannot be empty!");
+            }
             int indexOfLastDot = fileName.LastIndexOf(".");
             if (indexOfLastDot == -1)
             {
@@ -22,6 +22,11 @@ namespace CohesionAndCoupling
 
         public static string GetFileNameWithoutExtension(string fileName)
         {
+            if (fileName == null || (string.IsNullOrEmpty(fileName) || string.IsNullOrWhiteSpace(fileName)))
+            {
+                throw new ArgumentException("The name of the file cannot be empty!");
+            }
+
             int indexOfLastDot = fileName.LastIndexOf(".");
             if (indexOfLastDot == -1)
             {
@@ -44,34 +49,56 @@ namespace CohesionAndCoupling
             return distance;
         }
 
-        public static double CalcVolume()
+        public static double CalcVolume(double height, double width, double depth)
         {
-            double volume = Width * Height * Depth;
+            CheckIfParameterIsPositive(height, "Height");
+            CheckIfParameterIsPositive(width, "Width");
+            CheckIfParameterIsPositive(depth, "Depth");
+            double volume = width * height * depth;
             return volume;
         }
 
-        public static double CalcDiagonalXYZ()
+
+
+        public static double CalcDiagonalXYZ(double height, double width, double depth)
         {
-            double distance = CalcDistance3D(0, 0, 0, Width, Height, Depth);
+            CheckIfParameterIsPositive(height, "Height");
+            CheckIfParameterIsPositive(width, "Width");
+            CheckIfParameterIsPositive(depth, "Depth");
+            double distance = CalcDistance3D(0, 0, 0, width, height, depth);
             return distance;
         }
 
-        public static double CalcDiagonalXY()
+        public static double CalcDiagonalXY(double height, double width)
         {
-            double distance = CalcDistance2D(0, 0, Width, Height);
+            CheckIfParameterIsPositive(height, "Height");
+            CheckIfParameterIsPositive(width, "Width");
+            double distance = CalcDistance2D(0, 0, width, height);
             return distance;
         }
 
-        public static double CalcDiagonalXZ()
+        public static double CalcDiagonalXZ(double width, double depth)
         {
-            double distance = CalcDistance2D(0, 0, Width, Depth);
+            CheckIfParameterIsPositive(width, "Height");
+            CheckIfParameterIsPositive(depth, "Depth");
+            double distance = CalcDistance2D(0, 0, width, depth);
             return distance;
         }
 
-        public static double CalcDiagonalYZ()
+        public static double CalcDiagonalYZ(double height, double depth)
         {
-            double distance = CalcDistance2D(0, 0, Height, Depth);
+            CheckIfParameterIsPositive(height, "Height");
+            CheckIfParameterIsPositive(depth, "Depth");
+            double distance = CalcDistance2D(0, 0, height, depth);
             return distance;
+        }
+
+        private static void CheckIfParameterIsPositive(double parameterValue, string parameterName)
+        {
+            if (parameterValue < 0)
+            {
+                throw new ArgumentException("{0} cannot be less then 0!", parameterName);
+            }
         }
     }
 }
