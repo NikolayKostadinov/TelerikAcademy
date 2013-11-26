@@ -53,6 +53,7 @@ class AssertionsHomework
                 minElementIndex = i;
             }
         }
+
         return minElementIndex;
     }
 

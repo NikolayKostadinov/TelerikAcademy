@@ -69,7 +69,7 @@ namespace SolarSystem
         void OnTimerTick(object sender, EventArgs e)
         {
             var now = DateTime.Now;
-            Days += (now-_startTime).TotalMilliseconds * DaysPerSecond / 1000.0 * (ReverseTime?-1:1);
+            Days += (now - _startTime).TotalMilliseconds * DaysPerSecond / 1000.0 * (ReverseTime ? -1 : 1);
             _startTime = now;
             Update("Days");
             OnTimeChanged();
@@ -93,10 +93,7 @@ namespace SolarSystem
 
         private void EarthRotation()
         {
-			for (double step = 0; step <= 360; step+=0.00005)
-			{
-				EarthRotationAngle = step * Days / EarthRotationPeriod;
-			}
+            EarthRotationAngle = 360 * Days / EarthRotationPeriod;
             Update("EarthRotationAngle");
         }
 
