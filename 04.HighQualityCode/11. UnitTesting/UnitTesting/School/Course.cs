@@ -12,7 +12,7 @@ namespace School
     /// <summary>
     /// Course Class
     /// </summary>
-    public class Course
+    public class Course : ICloneable
     {
         private string name = string.Empty;
         private Dictionary<uint, Student> students = new Dictionary<uint, Student>();
@@ -38,13 +38,29 @@ namespace School
 
             private set
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value)) 
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException("Cannot create student with empty name");
                 }
 
                 this.name = value;
             }
+        }
+
+        /// <summary>
+        /// Deep copy of Course object
+        /// </summary>
+        /// <returns>New Course object</returns>
+        public object Clone()
+        {
+            Course cloneCourse = new Course(this.Name);
+            foreach (var student in this.students) 
+            {
+                Student st = (Student)student.Value.Clone();
+                cloneCourse.JoinCourse(st);
+            }
+
+            return cloneCourse;
         }
 
         /// <summary>
@@ -58,7 +74,7 @@ namespace School
                 throw new ArgumentException("Student cannot be empty!!!");
             }
 
-            if (this.students.Count > 30)
+            if (this.students.Count >= 30)
             {
                 throw new IndexOutOfRangeException("There cannot be more than 30 students in this course!!!");
             }
@@ -105,7 +121,15 @@ namespace School
 
         public Dictionary<uint, Student> ViewStudents()
         {
-            return students;
+            Dictionary<uint, Student> cloneStudents = new Dictionary<uint, Student>(this.students.Count);
+
+            foreach (var student in this.students)
+            {
+                Student st = (Student)student.Value.Clone();
+                cloneStudents.Add(st.Id, st);
+            }
+
+            return cloneStudents;
         }
 
         public override string ToString()

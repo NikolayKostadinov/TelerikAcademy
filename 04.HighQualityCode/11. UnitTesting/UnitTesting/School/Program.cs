@@ -22,8 +22,9 @@ namespace School
             Course electricalEngeneering = new Course("Electrical Enceneering");
             for (int i = 0; i < 10; i++)
             {
-                electricalEngeneering.JoinCourse(new Student(string.Format("Student{0}",i),tmt.GetStugentId));                    
+                electricalEngeneering.JoinCourse(new Student(string.Format("Student{0}", i), tmt.GetStugentId));                    
             }
+
             tmt.AddCourse(electricalEngeneering);
 
             ConsolePrinter(tmt.ToString());
@@ -34,7 +35,6 @@ namespace School
                 {
                     ConsolePrinter(student.Value.ToString(), 6);
                 }
-   
             }
         }
 

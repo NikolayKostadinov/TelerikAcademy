@@ -70,7 +70,13 @@ using System.Collections.Generic;
 
         public List<Course> ViewCourses() 
         {
-            return this.courses;
+            List<Course> cloneCourses = new List<Course>(this.courses.Count);
+            foreach (Course course in this.courses)
+            {
+                cloneCourses.Add((Course)course.Clone());
+            }
+
+            return cloneCourses;
         }
 
         public override string ToString()

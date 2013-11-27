@@ -10,7 +10,7 @@ namespace School
     /// <summary>
     /// Students Class
     /// </summary>
-    public class Student
+    public class Student : ICloneable
     {
         /// <summary>
         /// Student name
@@ -73,6 +73,12 @@ namespace School
 
                 this.id = value; 
             }
+        }
+
+        public object Clone()
+        {
+            Student cloneStudent = new Student(this.Name, this.id);
+            return cloneStudent;
         }
 
         public override string ToString()
