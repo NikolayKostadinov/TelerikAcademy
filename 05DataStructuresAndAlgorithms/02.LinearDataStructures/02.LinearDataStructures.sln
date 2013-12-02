@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.FindTheMajorant", "08.Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.GeneratonSequenceOfNumbers", "09.GeneratonSequenceOfNumbers\09.GeneratonSequenceOfNumbers.csproj", "{04890125-0421-4749-A639-F08F7EB5F953}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.ShortestSequenceOfOperations", "10.ShortestSequenceOfOperations\10.ShortestSequenceOfOperations.csproj", "{A64D48D0-BC17-4632-82E0-B1D876AC4A97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{04890125-0421-4749-A639-F08F7EB5F953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04890125-0421-4749-A639-F08F7EB5F953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04890125-0421-4749-A639-F08F7EB5F953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A64D48D0-BC17-4632-82E0-B1D876AC4A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A64D48D0-BC17-4632-82E0-B1D876AC4A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A64D48D0-BC17-4632-82E0-B1D876AC4A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A64D48D0-BC17-4632-82E0-B1D876AC4A97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
