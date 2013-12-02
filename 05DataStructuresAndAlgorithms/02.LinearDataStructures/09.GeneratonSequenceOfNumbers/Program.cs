@@ -31,15 +31,10 @@
             Queue<long> nextOperand = new Queue<long>();
             nextOperand.Enqueue(generatorBase);
 
-            while (true)
+            while (result.Count < LenOfGeneratedList)
             {
                 long currentOperand = nextOperand.Dequeue();
                 result.Add(currentOperand);
-
-                if (result.Count == LenOfGeneratedList)
-                {
-                    break;   
-                }
 
                 nextOperand.Enqueue(currentOperand + 1);
                 nextOperand.Enqueue(2*currentOperand + 1);
