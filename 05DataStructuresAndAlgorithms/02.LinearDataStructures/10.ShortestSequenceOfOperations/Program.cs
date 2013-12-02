@@ -4,80 +4,81 @@
     using System.Linq;
     using System.Collections.Generic;
 
-class Program
-{
-    static IList<IEnumerable<T>> GetShortestSequences<T>(T start, T end, IList<Func<T, T>> operations)
-        where T : IComparable<T>
+    class Program
     {
-        var results = new List<IEnumerable<T>>();
-
-        var visited = new HashSet<T>();
-        var currentWave = new Queue<Node<T>>();
-
-        visited.Add(start);
-        currentWave.Enqueue(new Node<T>(start));
-
-        int level = 1;
-
-        while (currentWave.Count != 0)
+        static IList<IEnumerable<T>> GetShortestSequences<T>(T start, T end, IList<Func<T, T>> operations)
+            where T : IComparable<T>
         {
-            var nextWave = new Queue<Node<T>>();
+            var results = new List<IEnumerable<T>>();
 
-            var nextVisited = new HashSet<T>();
+            var visited = new HashSet<T>();
+            var currentWave = new Queue<Node<T>>();
 
-            level++;
+            visited.Add(start);
+            currentWave.Enqueue(new Node<T>(start));
+
+            int level = 1;
 
             while (currentWave.Count != 0)
             {
-                var currentNode = currentWave.Dequeue();
+                var nextWave = new Queue<Node<T>>();
 
-                foreach (var operation in operations)
+                var nextVisited = new HashSet<T>();
+
+                level++;
+
+                while (currentWave.Count != 0)
                 {
-                    T nextElement = operation(currentNode.Value);
+                    var currentNode = currentWave.Dequeue();
 
-                    if (nextElement.CompareTo(end) > 0)
-                        continue;
-
-                    if (visited.Contains(nextElement))
-                        continue;
-
-                    var nextNode = new Node<T>(nextElement);
-                    nextNode.Previous = currentNode;
-
-                    nextVisited.Add(nextElement);
-                    nextWave.Enqueue(nextNode);
-
-                    if (nextElement.Equals(end))
+                    foreach (var operation in operations)
                     {
-                        var sequence = new ReversedLinkedList<T>(nextNode);
-                        results.Add(sequence.Reverse());
+                        T nextElement = operation(currentNode.Value);
+
+                        if (nextElement.CompareTo(end) > 0)
+                            continue;
+
+                        if (visited.Contains(nextElement))
+                            continue;
+
+                        var nextNode = new Node<T>(nextElement);
+                        nextNode.Previous = currentNode;
+
+                        nextVisited.Add(nextElement);
+                        nextWave.Enqueue(nextNode);
+
+                        if (nextElement.Equals(end))
+                        {
+                            var sequence = new ReversedLinkedList<T>(nextNode);
+                            results.Add(sequence.Reverse());
+                        }
                     }
                 }
+
+                visited.UnionWith(nextVisited);
+
+                if (results.Count != 0)
+                    nextWave.Clear();
+
+                currentWave = nextWave;
             }
 
-            visited.UnionWith(nextVisited);
+            //Console.WriteLine("Sequences length: {0}.", level);
 
-            if (results.Count != 0)
-                nextWave.Clear();
-
-            currentWave = nextWave;
+            return results;
         }
 
-        //Console.WriteLine("Sequences length: {0}.", level);
-
-        return results;
-    }
-
-    static void Main()
-    {
-        Func<int, int>[] operations = 
+        static void Main()
         {
-            x => x + 1,
-            x => x + 2,
-            x => x * 2,
-        };
+            Func<int, int>[] operations = 
+                {
+                    x => x + 1,
+                    x => x + 2,
+                    x => x * 2,
+                };
 
-        foreach (var sequence in GetShortestSequences(5, 16, operations))
-            Console.WriteLine(string.Join(" -> ", sequence));
+            foreach (var sequence in GetShortestSequences(5, 16, operations))
+                Console.WriteLine(string.Join(" -> ", sequence));
+        }
     }
 }
