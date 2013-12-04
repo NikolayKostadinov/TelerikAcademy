@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class TreeNode<T> : IEnumerable<TreeNode<T>>
+    public class TreeNode<T> : AbstractTreeNode<T>
     {
         private T value;
         private List<TreeNode<T>> children;
@@ -16,16 +16,17 @@
             this.children = new List<TreeNode<T>>();
         }
 
-        public T Value
+        public override T Value
         {
             get
             {
                 return this.value;
             }
-            set
-            {
-                this.value = value;
-            }
+        }
+
+        public override int GetChildCount()
+        {
+            return this.children.Count;
         }
 
         public void AddChild(TreeNode<T> child)
@@ -41,19 +42,18 @@
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            // TODO: Implement this method
-            return GetEnumerator();
-        }
-
-        public IEnumerator<TreeNode<T>> GetEnumerator()
+        public override IEnumerator<AbstractTreeNode<T>> GetEnumerator()
         {
             // TODO: Implement this method
             foreach (TreeNode<T> node in this.children)
             {
                 yield return node;
             }
+        }
+
+        public override string ToString()
+        {
+            return this.Value.ToString();
         }
     }
 }

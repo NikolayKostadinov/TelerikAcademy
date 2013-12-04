@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public class Tree<T>: IEnumerable<TreeNode<T>>
+    public class Tree<T> : AbstractTreeNode<T>
     {
         private TreeNode<T> root;
 
@@ -23,6 +23,19 @@
             this.root = new TreeNode<T>(value);
         }
 
+        public override T Value
+        {
+            get
+            {
+                return this.root.Value;
+            }
+        }
+
+        public override int GetChildCount()
+        {
+            return this.root.GetChildCount();
+        }
+
         public TreeNode<T> Root
         {
             get { return this.root; }
@@ -33,7 +46,7 @@
             return this.TraverseDFSToString(this.root, string.Empty);
         }
 
-        private string TraverseDFSToString(TreeNode<T> root, string spaces)
+        private string TraverseDFSToString(AbstractTreeNode<T> root, string spaces)
         {
             
             if (this.root == null)
@@ -54,13 +67,7 @@
             return result.ToString();
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            // TODO: Implement this method
-            return GetEnumerator();
-        }
-
-        public IEnumerator<TreeNode<T>> GetEnumerator()
+        public override IEnumerator<AbstractTreeNode<T>> GetEnumerator()
         {
             // TODO: Implement this method
             foreach (TreeNode<T> node in this.root)
