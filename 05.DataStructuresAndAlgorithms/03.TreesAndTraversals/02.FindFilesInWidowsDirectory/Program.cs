@@ -1,12 +1,12 @@
 ﻿namespace FindFilesInWidowsDirectory
 {
     using System;
-    using System.Linq;
     using System.IO;
+    using System.Linq;
 
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        internal static void Main(string[] args)
         {
             DateTime begin = DateTime.Now;
             string directoryName = @"C:\Windows";
@@ -17,13 +17,13 @@
 
         private static void GetDirectory(string directory)
         {
-
             bool isDirectoryExist = Directory.Exists(directory);
 
             if (!isDirectoryExist)
             {
                 throw new ArgumentException("Invalid directoryName!!!");
             }
+
             try
             {
                 var files = Directory.GetFileSystemEntries(directory, "*.exe");

@@ -5,38 +5,38 @@
     using System.Text;
     using Tree;
 
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        internal static void Main(string[] args)
         {
             try
             {
                 TreeNode<int>[] nodes = GetNodesFtomConsole();
                 Tree<int> tree = TreeUtils.GenerateTreeFtomTreeNodes(nodes);
 
-                //01. Find root
+                // 01. Find root
                 Console.WriteLine("Root Of Tree is: " + tree.Root.Value);
 
-                //02. Find Leafs
+                // 02. Find Leafs
                 List<AbstractTreeNode<int>> leafs = TreeUtils.GetLeafs(tree);
                 Console.WriteLine(
                     "The Leaves of tree {0}: {1}",
                     (leafs.Count > 1) ? "are" : "is",
                     string.Join(", ", leafs));
 
-                //03. Fing middle Nodes
+                // 03. Fing middle Nodes
                 List<AbstractTreeNode<int>> middleNodes = TreeUtils.GetMiddleNodes(tree);
                 Console.WriteLine(
                     "The Middle nodes of tree {0}: {1}",
-                    (leafs.Count > 1) ? "are" : "is", string.Join(", ", middleNodes));
+                    (leafs.Count > 1) ? "are" : "is", 
+                    string.Join(", ", middleNodes));
 
-                //04. Get The LongestPath in the tree
+                // 04. Get The LongestPath in the tree
                 Dictionary<string, int> paths = new Dictionary<string, int>();
                 List<int> rootName = new List<int>() { tree.Root.Value };
                 int maxPathLenght = TreeUtils.GetLongestPathLenghtDFS(tree, paths, rootName);
                 Console.WriteLine("The longest path in tree is long: {0}", maxPathLenght);
-                ConsolePrintLongestPath(paths, maxPathLenght+1);
-
+                ConsolePrintLongestPath(paths, maxPathLenght + 1);
             }
             catch (ArgumentException ex)
             {
@@ -113,6 +113,7 @@
             {
                 throw new ArgumentException("{0} index must be positive number!!!", messageParam);
             }
+
             return output;
         }
     }

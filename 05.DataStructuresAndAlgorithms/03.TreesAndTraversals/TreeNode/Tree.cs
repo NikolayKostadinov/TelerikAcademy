@@ -31,14 +31,14 @@
             }
         }
 
-        public override int GetChildCount()
-        {
-            return this.root.GetChildCount();
-        }
-
         public TreeNode<T> Root
         {
             get { return this.root; }
+        }
+
+        public override int GetChildCount()
+        {
+            return this.root.GetChildCount();
         }
 
         public override string ToString()
@@ -46,9 +46,17 @@
             return this.TraverseDFSToString(this.root, string.Empty);
         }
 
+        public override IEnumerator<AbstractTreeNode<T>> GetEnumerator()
+        {
+            // TODO: Implement this method
+            foreach (TreeNode<T> node in this.root)
+            {
+                yield return node;
+            }
+        }
+
         private string TraverseDFSToString(AbstractTreeNode<T> root, string spaces)
         {
-            
             if (this.root == null)
             {
                 return string.Empty;
@@ -61,19 +69,10 @@
 
             foreach (var child in root)
             {
-                result.Append(TraverseDFSToString(child, spaces + "   "));
+                result.Append(this.TraverseDFSToString(child, spaces + "   "));
             }
 
             return result.ToString();
-        }
-
-        public override IEnumerator<AbstractTreeNode<T>> GetEnumerator()
-        {
-            // TODO: Implement this method
-            foreach (TreeNode<T> node in this.root)
-            {
-                yield return node;
-            }
         }
     }
 }

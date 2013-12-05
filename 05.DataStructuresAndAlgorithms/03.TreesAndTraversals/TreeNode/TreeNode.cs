@@ -24,6 +24,14 @@
             }
         }
 
+        public TreeNode<T> this[int index]
+        {
+            get
+            {
+                return this.children[index];
+            }
+        }
+
         public override int GetChildCount()
         {
             return this.children.Count;
@@ -33,15 +41,7 @@
         {
             this.children.Add(child);
         }
-
-        public TreeNode<T> this[int index]
-        {
-            get
-            {
-                return this.children[index];
-            }
-        }
-
+                
         public override IEnumerator<AbstractTreeNode<T>> GetEnumerator()
         {
             // TODO: Implement this method

@@ -1,10 +1,8 @@
 ﻿namespace Tree
 {
     using System;
-    using System.Linq;
     using System.Collections.Generic;
-    using System.Collections;
-    using System.Text;
+    using System.Linq;
 
     public class TreeUtils
     {
@@ -34,25 +32,6 @@
 
             throw new ArgumentException("No root!!!");
         }
-
-        private static void GenerateTreeFromFoor(Tree<int> tree, TreeNode<int>[] nodeArray)
-        {
-            foreach (TreeNode<int> node in nodeArray[tree.Root.Value])
-            {
-                tree.Root.AddChild(node);
-                GenerateSubnodes(node, nodeArray);
-            }
-        }
-
-        private static void GenerateSubnodes(TreeNode<int> node, TreeNode<int>[] nodeArray)
-        {
-            foreach (TreeNode<int> subnode in nodeArray[node.Value])
-            {
-                node.AddChild(subnode);
-                GenerateSubnodes(subnode, nodeArray);
-            }
-        }
-
 
         public static List<AbstractTreeNode<int>> GetLeafs(AbstractTreeNode<int> tree)
         {
@@ -96,7 +75,10 @@
             {
                 string key = string.Join(", ", path);
                 if (!paths.ContainsKey(key))
+                {
                     paths.Add(key, path.Count);
+                }
+
                 path.RemoveAt(path.Count - 1);
                 return 0;
             }
@@ -111,6 +93,24 @@
 
             path.RemoveAt(path.Count - 1);
             return maxPath + 1;
+        }
+
+        private static void GenerateTreeFromFoor(Tree<int> tree, TreeNode<int>[] nodeArray)
+        {
+            foreach (TreeNode<int> node in nodeArray[tree.Root.Value])
+            {
+                tree.Root.AddChild(node);
+                GenerateSubnodes(node, nodeArray);
+            }
+        }
+
+        private static void GenerateSubnodes(TreeNode<int> node, TreeNode<int>[] nodeArray)
+        {
+            foreach (TreeNode<int> subnode in nodeArray[node.Value])
+            {
+                node.AddChild(subnode);
+                GenerateSubnodes(subnode, nodeArray);
+            }
         }
     }
 }

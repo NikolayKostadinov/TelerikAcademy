@@ -4,20 +4,17 @@
     using System.Collections.Generic;
     using System.IO;
 
-    public class Folder
+    class Folder
     {
-        string name;
-        List<File> files;
-        List<Folder> folders;
+        private string name;
+        private List<File> files = new List<File>();
+        private List<Folder> childFolders = new List<Folder>();
 
-        public Folder(string path)
+        public Folder(string folderName)
         {
-            DirectoryInfo dirInfo = new DirectoryInfo(path);
-            this.Name = dirInfo.Name;
-
-            CreateRecursivelyFilesAndFolders(dirInfo);
+            this.name = folderName;
+            GetGhildsRecursively(folderName);
         }
-
 
         public string Name
         {
@@ -28,106 +25,99 @@
 
             private set
             {
-                if (value == null || value == "")
+                if (string.IsNullOrEmpty(value.Trim()))
                 {
-                    throw new ArgumentException("Folder name cannot be null or empty");
+                    throw new ArgumentException("Directory name cannot be empty string or white space.");
                 }
+
+                if (!Directory.Exists(value))
+                {
+                    throw new ArgumentException("There no such directory! " + value);
+                }
+
                 this.name = value;
             }
         }
 
-        public List<File> Files
+        public int FilesCount
         {
             get
             {
-                return this.files;
-            }
-            private set
-            {
-                this.files = value;
+                return this.files.Count;
             }
         }
 
-        public List<Folder> Folders
+        public int SubfoldersCount
         {
             get
             {
-                return this.folders;
-            }
-            private set
-            {
-                this.folders = value;
+                return this.childFolders.Count;
             }
         }
 
-        public long GetFilesSize()
+        public File GetFileById(int id)
         {
-            long size = 0;
-
-            foreach (var file in files)
+            if (id >= 0 && id < this.files.Count)
             {
-                size += file.SizeInBytes;
+                return this.files[id];
             }
-
-            foreach (var folder in folders)
+            else
             {
-                size += folder.GetFilesSize();
+                throw new IndexOutOfRangeException("Index of files collection in frolder " + this.Name + " is out of range");
             }
-
-            return size;
         }
 
-
-
-        public Folder FindFolder(string name)
+        public Folder GetSubFoldersById(int id)
         {
-
-            foreach (var folder in folders)
+            if (id >= 0 && id < this.childFolders.Count)
             {
-                if (folder.name == name)
-                {
-                    return folder;
-                }
+                return this.childFolders[id];
             }
-
-            foreach (var folder in folders)
+            else
             {
-                Folder foundFolder = FindFolder(name);
-                if (foundFolder != null)
-                {
-                    return foundFolder;
-                }
+                throw new IndexOutOfRangeException("Index of folders collection in frolder " + this.Name + " is out of range");
             }
-
-            throw new ArgumentException("No such folder");
         }
 
-        private void CreateRecursivelyFilesAndFolders(DirectoryInfo dirInfo)
+        public override string ToString()
         {
-            FileInfo[] files;
+            return this.Name;
+        }
+
+        private void GetGhildsRecursively(string folderName)
+        {
+            string[] filesInFolder;
+
             try
             {
-                files = dirInfo.GetFiles();
+                filesInFolder = Directory.GetFiles(folderName);
+            
+                foreach (string file in filesInFolder)
+                {
+                    this.AddChildFile(new File(file));
+                }
+
+                string[] childFolders = Directory.GetDirectories(folderName);
+
+                foreach (string folder in childFolders)
+                {
+                    this.AddChildFolders(new Folder(folder));                
+                }
             }
-            catch (UnauthorizedAccessException)
+            catch(UnauthorizedAccessException)
             {
-                this.files = new List<File>();
-                this.folders = new List<Folder>();
                 return;
             }
+        }
 
-            this.files = new List<File>();
-            foreach (var file in files)
-            {
-                this.files.Add(new File(file.Name, file.Length));
-            }
+        private void AddChildFolders(Folder folder)
+        {
+            this.childFolders.Add(folder);
+        }
 
-            DirectoryInfo[] dirs = dirInfo.GetDirectories();
-            folders = new List<Folder>();
-            foreach (var dir in dirs)
-            {
-                this.folders.Add(new Folder(dir.FullName));
-            }
+        private void AddChildFile(File file)
+        {
+            this.files.Add(file);
         }
     }
 }

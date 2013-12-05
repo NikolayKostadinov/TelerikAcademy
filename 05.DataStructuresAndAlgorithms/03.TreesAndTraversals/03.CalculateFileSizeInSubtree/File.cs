@@ -1,49 +1,68 @@
 ﻿namespace CalculateFileSizeInSubtree
 {
     using System;
-    using System.Linq;
+    using System.IO;
 
     public class File
     {
-        string name;
-        long sizeBytes;
+        private string name = string.Empty;
+        private long size = 0;
 
-        public File(string name, long size)
+        public File(string fullPathAndName) 
         {
-            this.Name = name;
-            this.SizeInBytes = size;
+            this.Name = fullPathAndName;
+            FileInfo fileInfo;
+            try
+            {
+                fileInfo = new FileInfo(this.name);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return;
+            }
+
+            if (!fileInfo.Exists)
+            {
+                string message = string.Format("There is no such file {0}", fullPathAndName);
+                throw new ArgumentException(message);    
+            }
+
+            this.Size = fileInfo.Length;
         }
 
         public string Name
         {
-            get
+            get 
             {
                 return this.name;
             }
-            private set
+
+            private set 
             {
-                if (value == null || value == "")
+                if (string.IsNullOrEmpty(value.Trim()))
                 {
-                    throw new ArgumentException("File name cannot be null or empty");
+                    throw new ArgumentException("Filename cannot be empty string or white space.");
                 }
 
                 this.name = value;
             }
         }
-        public long SizeInBytes
+
+        public long Size 
         {
-            get
-            {
-                return this.sizeBytes;
+            get 
+            { 
+                return this.size; 
             }
-            private set
+
+            private set 
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Size cannot be less than zero");
+                    throw new ArgumentException("The size of file must be a positive number.");
                 }
 
-                this.sizeBytes = value;
+                this.size = value;
             }
         }
     }
