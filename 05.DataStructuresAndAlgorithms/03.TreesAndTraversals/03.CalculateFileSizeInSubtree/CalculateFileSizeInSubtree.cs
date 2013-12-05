@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Text;
+    using System.Threading;
 
     public class CalculateFileSizeInSubtree
     {
@@ -12,10 +13,10 @@
             string folderName = @"C:\Windows";
 
             RootFolder root = new RootFolder(rootFolderName);
-            long folderSize = root.GetFolderSize(folderName);
+            long folderSize = root.GetFolderSize(rootFolderName);
             PrintMessage(folderName, folderSize);
 
-            folderName = @"C:\Windows\Globalization";
+            folderName = @"C:\Windows\System32";
             folderSize = root.GetFolderSize(folderName);
             PrintMessage(folderName, folderSize);
         }
@@ -23,29 +24,23 @@
         private static void PrintMessage(string folderName, long folderSize)
         {
             int TabForSizeInBytes = long.MaxValue.ToString().Length;
-            int TabForSizeInMegaBytes = (long.MaxValue / 1000000).ToString().Length;
-            int TabForSizeInGigaBytes = (long.MaxValue / 1000000000).ToString().Length;
 
-            double folderSizeInMegaBytes = folderSize/(1024 * 1024);
-            double folderSizeInGigaBytes = folderSizeInMegaBytes/1024;
- 
-            StringBuilder messageLine1 = new StringBuilder();
-            messageLine1.Append("Folder Name".PadLeft(folderName.Length+5));
-            messageLine1.Append("Size in Bytes".PadLeft(TabForSizeInBytes + 5));
-            messageLine1.Append("Size in MBytes".PadLeft(TabForSizeInMegaBytes+5));
-            messageLine1.Append("Size in GBytes".PadLeft(TabForSizeInGigaBytes+5));
+            double folderSizeInMegaBytes = folderSize / (1024 * 1024);
+            double folderSizeInGigaBytes = folderSizeInMegaBytes / 1024;
 
-            string separator = new string('-', messageLine1.Length);
-
-            StringBuilder messageLine2 = new StringBuilder();
-            messageLine2.Append(folderName.PadLeft(5));
-            messageLine2.Append(folderSize.ToString().PadLeft(TabForSizeInBytes + 5));
-            messageLine2.Append(folderSizeInMegaBytes.ToString("F1").PadLeft(TabForSizeInMegaBytes+5));
-            messageLine2.Append(folderSizeInGigaBytes.ToString("F1").PadLeft(TabForSizeInGigaBytes+5));
-
-            Console.WriteLine(messageLine1);
+            StringBuilder message = new StringBuilder();
+            message.Append("   Folder Name: ");
+            message.Append(folderName.PadLeft(TabForSizeInBytes + 5) + "\n");
+            int len = message.Length;
+            message.Append(" Size in Bytes: ");
+            message.Append(folderSize.ToString().PadLeft(TabForSizeInBytes + 5) + "\n");
+            message.Append("Size in MBytes: ");
+            message.Append(folderSizeInMegaBytes.ToString("F1").PadLeft(TabForSizeInBytes + 5) + "\n");
+            message.Append("Size in GBytes: ");
+            message.Append(folderSizeInGigaBytes.ToString("F1").PadLeft(TabForSizeInBytes + 5) + "\n");
+            Console.WriteLine(message);
+            string separator = new string('-', len + 2);
             Console.WriteLine(separator);
-            Console.WriteLine(messageLine2);
             Console.WriteLine();
         }
     }
