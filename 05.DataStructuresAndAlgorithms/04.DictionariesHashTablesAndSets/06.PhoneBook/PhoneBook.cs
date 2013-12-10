@@ -5,32 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 using Wintellect.PowerCollections;
 
-namespace _06.Phonebook
+namespace Phonebook
 {
     class PhoneBook
     {
-        MultiDictionary<string, PhoneEntry> firstNames;
-        MultiDictionary<string, PhoneEntry> middleNames;
-        MultiDictionary<string, PhoneEntry> lastNames;
-        MultiDictionary<string, PhoneEntry> towns;
+        private MultiDictionary<string, PhoneEntry> firstNames;
+        private MultiDictionary<string, PhoneEntry> middleNames;
+        private MultiDictionary<string, PhoneEntry> lastNames;
+        private MultiDictionary<string, PhoneEntry> towns;
 
 
         public PhoneBook(List<PhoneEntry> entries)
         {
-            firstNames = new MultiDictionary<string, PhoneEntry>(true);
-            middleNames = new MultiDictionary<string, PhoneEntry>(true);
-            lastNames = new MultiDictionary<string, PhoneEntry>(true);
-            towns = new MultiDictionary<string, PhoneEntry>(true);
+            this.firstNames = new MultiDictionary<string, PhoneEntry>(true);
+            this.middleNames = new MultiDictionary<string, PhoneEntry>(true);
+            this.lastNames = new MultiDictionary<string, PhoneEntry>(true);
+            this.towns = new MultiDictionary<string, PhoneEntry>(true);
 
             foreach (var entry in entries)
             {
-                firstNames.Add(new KeyValuePair<string,
+                this.firstNames.Add(new KeyValuePair<string,
                     ICollection<PhoneEntry>>(entry.FirstName, new PhoneEntry[] { entry }));
-                middleNames.Add(new KeyValuePair<string,
+                this.middleNames.Add(new KeyValuePair<string,
                     ICollection<PhoneEntry>>(entry.MiddleName, new PhoneEntry[] { entry }));
-                lastNames.Add(new KeyValuePair<string,
+                this.lastNames.Add(new KeyValuePair<string,
                     ICollection<PhoneEntry>>(entry.LastName, new PhoneEntry[] { entry }));
-                towns.Add(new KeyValuePair<string,
+                this.towns.Add(new KeyValuePair<string,
                     ICollection<PhoneEntry>>(entry.Town, new PhoneEntry[] { entry }));
             }
 
