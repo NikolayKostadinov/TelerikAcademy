@@ -23,21 +23,21 @@
 
         private static void PrintMessage(string folderName, long folderSize)
         {
-            int TabForSizeInBytes = long.MaxValue.ToString().Length;
+            int tabForSizeInBytes = long.MaxValue.ToString().Length;
 
             double folderSizeInMegaBytes = folderSize / (1024 * 1024);
             double folderSizeInGigaBytes = folderSizeInMegaBytes / 1024;
 
             StringBuilder message = new StringBuilder();
             message.Append("   Folder Name: ");
-            message.Append(folderName.PadLeft(TabForSizeInBytes + 5) + "\n");
+            message.Append(folderName.PadLeft(tabForSizeInBytes + 5) + "\n");
             int len = message.Length;
             message.Append(" Size in Bytes: ");
-            message.Append(folderSize.ToString().PadLeft(TabForSizeInBytes + 5) + "\n");
+            message.Append(folderSize.ToString().PadLeft(tabForSizeInBytes + 5) + "\n");
             message.Append("Size in MBytes: ");
-            message.Append(folderSizeInMegaBytes.ToString("F1").PadLeft(TabForSizeInBytes + 5) + "\n");
+            message.Append(folderSizeInMegaBytes.ToString("F1").PadLeft(tabForSizeInBytes + 5) + "\n");
             message.Append("Size in GBytes: ");
-            message.Append(folderSizeInGigaBytes.ToString("F1").PadLeft(TabForSizeInBytes + 5) + "\n");
+            message.Append(folderSizeInGigaBytes.ToString("F1").PadLeft(tabForSizeInBytes + 5) + "\n");
             Console.WriteLine(message);
             string separator = new string('-', len + 2);
             Console.WriteLine(separator);
