@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriorityQueue", "PriorityQu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryHeapDemo", "BinaryHeapDemo\BinaryHeapDemo.csproj", "{0AFA0C44-68B2-4734-91C3-CAD19ABAAE98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PQ", "PQ.cs\PQ.csproj", "{D3E3DAAF-1646-44F2-8D06-E167D7B5BF7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{0AFA0C44-68B2-4734-91C3-CAD19ABAAE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AFA0C44-68B2-4734-91C3-CAD19ABAAE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AFA0C44-68B2-4734-91C3-CAD19ABAAE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3E3DAAF-1646-44F2-8D06-E167D7B5BF7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3E3DAAF-1646-44F2-8D06-E167D7B5BF7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3E3DAAF-1646-44F2-8D06-E167D7B5BF7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3E3DAAF-1646-44F2-8D06-E167D7B5BF7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

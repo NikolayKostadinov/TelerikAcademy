@@ -11,9 +11,9 @@
 
         private List<T> binaryHeapContainer = new List<T>(1);
 
-        public int Lenght 
+        public int Lenght
         {
-            get 
+            get
             {
                 return this.binaryHeapContainer.Count;
             }
@@ -64,24 +64,25 @@
         public void AddNode(T value)
         {
             this.binaryHeapContainer.Add(value);
-            this.HeapSort();
+            this.ShiftUp();
         }
 
-        public void RemoveRoot(int nodeIndex) 
+        public void RemoveRoot()
         {
             if (this.binaryHeapContainer.Count == 0)
             {
                 throw new NullReferenceException("Cannot remove element from the empty bynary heap!!!");
             }
 
-            if (this.binaryHeapContainer.Count == 1) 
+            if (this.binaryHeapContainer.Count == 1)
             {
                 this.binaryHeapContainer.RemoveAt(BaseOfHeap);
+                return;
             }
 
             this.SwapRecords(BaseOfHeap, this.binaryHeapContainer.Count - 1);
             this.binaryHeapContainer.RemoveAt(this.binaryHeapContainer.Count - 1);
-            this.HeapSort();
+            this.ShiftDown();
         }
 
         private T GetNode(int childIndex, string nodeName)
@@ -106,34 +107,33 @@
             }
         }
 
-        private void HeapSort()
+        private void ShiftUp()
         {
-            this.Heapify();
+            int childIndex = this.Lenght - 1;
+            int parentIndex = (childIndex - 1) / 2;
 
-            int end = this.binaryHeapContainer.Count - 1;
-
-            while (end > 0)
+            while (childIndex > BaseOfHeap)
             {
-                this.SwapRecords(end, BaseOfHeap);
-                end--;
-                this.ShiftDown(BaseOfHeap, end);
+                if (this.binaryHeapContainer[parentIndex].CompareTo(this.binaryHeapContainer[childIndex]) < 0)
+                {
+                    SwapRecords(parentIndex, childIndex);
+                    childIndex = parentIndex;
+                }
+                else
+                {
+                    return;
+                }
+
+                childIndex = parentIndex;
+                parentIndex = (childIndex - 1) / 2;
             }
         }
 
-        private void Heapify()
-        {
-            int startIndex = (this.binaryHeapContainer.Count - 2) / 2;
 
-            while (startIndex >= 0)
-            {
-                this.ShiftDown(startIndex, this.binaryHeapContainer.Count - 1);
-                startIndex--;
-            }
-        }
-
-        private void ShiftDown(int startIndex, int endIndex)
+        private void ShiftDown()
         {
-            int root = startIndex;
+            int root = BaseOfHeap;
+            int endIndex = this.binaryHeapContainer.Count - 1;
             int child;
             int swap;
 
@@ -142,12 +142,12 @@
                 child = (root * 2) + 1;
                 swap = root;
 
-                if (this.binaryHeapContainer[swap].CompareTo(this.binaryHeapContainer[child]) > 0)
+                if (this.binaryHeapContainer[swap].CompareTo(this.binaryHeapContainer[child]) < 0)
                 {
                     swap = child;
                 }
 
-                if (child + 1 <= endIndex && this.binaryHeapContainer[swap].CompareTo(this.binaryHeapContainer[child + 1]) > 0)
+                if (child + 1 <= endIndex && this.binaryHeapContainer[swap].CompareTo(this.binaryHeapContainer[child + 1]) < 0)
                 {
                     swap = child + 1;
                 }
