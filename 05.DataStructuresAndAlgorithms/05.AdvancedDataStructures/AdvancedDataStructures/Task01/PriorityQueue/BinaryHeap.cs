@@ -8,14 +8,15 @@
         where T : IComparable<T>
     {
         private const int BaseOfHeap = 0;
-
         private List<T> binaryHeapContainer = new List<T>(1);
+        private int endOfHeap = 0;
+
 
         public int Lenght
         {
             get
             {
-                return this.binaryHeapContainer.Count;
+                return this.endOfHeap;
             }
         }
 
@@ -63,31 +64,40 @@
 
         public void AddNode(T value)
         {
-            this.binaryHeapContainer.Add(value);
+            if (endOfHeap == this.binaryHeapContainer.Count)
+            {
+                this.binaryHeapContainer.Add(value);
+            }
+            else
+            {
+                this.binaryHeapContainer[endOfHeap] = value;
+            }
+
+            this.endOfHeap++;
             this.ShiftUp();
         }
 
         public void RemoveRoot()
         {
-            if (this.binaryHeapContainer.Count == 0)
+            if (this.endOfHeap == 0)
             {
                 throw new NullReferenceException("Cannot remove element from the empty bynary heap!!!");
             }
 
-            if (this.binaryHeapContainer.Count == 1)
+            if (this.endOfHeap == 1)
             {
-                this.binaryHeapContainer.RemoveAt(BaseOfHeap);
+                this.endOfHeap--;
                 return;
             }
 
-            this.SwapRecords(BaseOfHeap, this.binaryHeapContainer.Count - 1);
-            this.binaryHeapContainer.RemoveAt(this.binaryHeapContainer.Count - 1);
+            this.SwapRecords(BaseOfHeap, this.endOfHeap - 1);
+            this.endOfHeap--;
             this.ShiftDown();
         }
 
         private T GetNode(int childIndex, string nodeName)
         {
-            if (childIndex <= (this.binaryHeapContainer.Count - 1))
+            if (childIndex <= (this.endOfHeap - 1))
             {
                 return this.binaryHeapContainer[childIndex];
             }
@@ -100,7 +110,7 @@
 
         private void CheckIfNodeExist(int nodeIndex)
         {
-            if (nodeIndex < 0 || nodeIndex > this.binaryHeapContainer.Count)
+            if (nodeIndex < 0 || nodeIndex > this.endOfHeap)
             {
                 string message = string.Format("There is no node with id {0}!", nodeIndex);
                 throw new IndexOutOfRangeException(message);
@@ -132,7 +142,7 @@
         private void ShiftDown()
         {
             int root = BaseOfHeap;
-            int endIndex = this.binaryHeapContainer.Count - 1;
+            int endIndex = this.endOfHeap - 1;
             int child;
             int swap;
 
