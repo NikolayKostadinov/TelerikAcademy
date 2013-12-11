@@ -116,7 +116,7 @@
             {
                 if (this.binaryHeapContainer[parentIndex].CompareTo(this.binaryHeapContainer[childIndex]) < 0)
                 {
-                    SwapRecords(parentIndex, childIndex);
+                    this.SwapRecords(parentIndex, childIndex);
                     childIndex = parentIndex;
                 }
                 else
@@ -128,7 +128,6 @@
                 parentIndex = (childIndex - 1) / 2;
             }
         }
-
 
         private void ShiftDown()
         {
