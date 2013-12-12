@@ -7,7 +7,7 @@
 namespace School
 {
     using System;
-using System.Collections.Generic;
+    using System.Collections.Generic;
 
     /// <summary>
     /// School Class
@@ -32,14 +32,14 @@ using System.Collections.Generic;
         /// </summary>
         public string Name
         {
-            get 
-            { 
-                return this.name; 
+            get
+            {
+                return this.name;
             }
 
-            private set 
-            { 
-                this.name = value; 
+            private set
+            {
+                this.name = value;
             }
         }
 
@@ -48,7 +48,7 @@ using System.Collections.Generic;
         /// </summary>
         public uint GetStugentId
         {
-            get 
+            get
             {
                 return this.lastStudentId++;
             }
@@ -58,9 +58,9 @@ using System.Collections.Generic;
         /// Adds new course in school
         /// </summary>
         /// <param name="course">Course to add</param>
-        public void AddCourse(Course course) 
+        public void AddCourse(Course course)
         {
-            if (course == null) 
+            if (course == null)
             {
                 throw new ArgumentException("Course cannot be empty");
             }
@@ -68,7 +68,7 @@ using System.Collections.Generic;
             this.courses.Add(course);
         }
 
-        public List<Course> ViewCourses() 
+        public List<Course> ViewCourses()
         {
             List<Course> cloneCourses = new List<Course>(this.courses.Count);
             foreach (Course course in this.courses)
