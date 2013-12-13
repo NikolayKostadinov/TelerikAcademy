@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -32,13 +33,20 @@
             collection.PrintAllItemsOnConsole();
             Console.WriteLine();
 
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
             Console.WriteLine("Linear search 101:");
             Console.WriteLine(collection.LinearSearch(101));
             Console.WriteLine();
-
+            sw.Stop();
+            Console.WriteLine(sw.Elapsed);
+            sw.Reset();
+            sw.Start();
             Console.WriteLine("Binary search 101:");
             Console.WriteLine(collection.BinarySearch(101));
             Console.WriteLine();
+            sw.Stop();
+            Console.WriteLine(sw.Elapsed);
 
             Console.WriteLine("Shuffle:");
             collection.Shuffle();

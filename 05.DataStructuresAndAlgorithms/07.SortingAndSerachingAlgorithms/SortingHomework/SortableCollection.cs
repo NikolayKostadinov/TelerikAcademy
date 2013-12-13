@@ -32,20 +32,56 @@
 
         public bool LinearSearch(T item)
         {
-            // TODO : Write Linear seasch
-            throw new NotImplementedException();
+            foreach (var record in this.items)
+            {
+                if (record.CompareTo(item) == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool BinarySearch(T item)
         {
-            // TODO : Write Binary Search
-            throw new NotImplementedException();
+            return BiSearch(item, 0, this.items.Count);
+        }
+
+        private bool BiSearch(T item, int begin, int end)
+        {
+            if (end - begin < 1)
+            {
+                if (this.Items[begin].CompareTo(item) == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                int middleIndex = begin+((end - begin) / 2);
+                if (this.Items[middleIndex].CompareTo(item) == 0)
+                {
+                    return true;
+                }
+                else if (this.Items[middleIndex].CompareTo(item) > 0)
+                {
+                    return this.BiSearch(item, begin, middleIndex);
+                }
+                else 
+                {
+                    return this.BiSearch(item, middleIndex, end);
+                }
+            }
         }
 
         public void Shuffle()
         {
             // TODO : Write Shuffle
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void PrintAllItemsOnConsole()
