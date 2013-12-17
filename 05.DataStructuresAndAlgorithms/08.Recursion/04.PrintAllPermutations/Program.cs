@@ -20,27 +20,33 @@
                 inputArr[i] = i + 1;
             }
 
-            PrintPermutations(n, inputArr);
+            PrintPermutations(0, inputArr);
         }
 
         private static void PrintPermutations(int n, int[] result)
         {
-            if (n == 0)
+            if (n >= result.Length)
             {
                 Console.WriteLine("{" + string.Join(", ", result) + "}");
-                return;
             }
-
-            for (int i = 0; i < n; i++)
+            else
             {
-                int oldValue = result[i];
-                result[i] = result[n-1];
-                result[n - 1] = oldValue;
-                PrintPermutations(n - 1, result);
-                oldValue = result[i];
-                result[i] = result[n - 1];
-                result[n - 1] = oldValue;
+                PrintPermutations(n + 1, result);
+
+                for (int i = n + 1; i < result.Length; i++)
+                {
+                    Swap(n, i, result);
+                    PrintPermutations(n + 1, result);
+                    Swap(n, i, result);
+                }
             }
+        }
+
+        private static void Swap(int source, int destination, int[] result)
+        {
+            int oldValue = result[destination];
+            result[destination] = result[source];
+            result[source] = oldValue;
         }
     }
 }
