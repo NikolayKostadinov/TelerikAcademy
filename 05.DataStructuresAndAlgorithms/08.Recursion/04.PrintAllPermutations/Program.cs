@@ -35,18 +35,18 @@
 
                 for (int i = n + 1; i < result.Length; i++)
                 {
-                    Swap(n, i, result);
+                    Swap(ref result[n], ref result[i]);
                     PrintPermutations(n + 1, result);
-                    Swap(n, i, result);
+                    Swap(ref result[n], ref result[i]);
                 }
             }
         }
 
-        private static void Swap(int source, int destination, int[] result)
+        private static void Swap(ref int source, ref int destination)
         {
-            int oldValue = result[destination];
-            result[destination] = result[source];
-            result[source] = oldValue;
+            int oldValue = destination;
+            destination = source;
+            source = oldValue;
         }
     }
 }
