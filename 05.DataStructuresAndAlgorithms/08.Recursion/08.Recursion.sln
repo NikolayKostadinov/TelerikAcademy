@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. PrintingAllCombinations
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. PrintingAllCombinationsWithoutDuplicates", "02. PrintingAllCombinationsWithoutDuplicates\03. PrintingAllCombinationsWithoutDuplicates.csproj", "{938923FB-70E3-4138-9575-318062226FBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.PrintAllPermutations", "04.PrintAllPermutations\04.PrintAllPermutations.csproj", "{8B2DF782-D511-4B33-AD6D-913B7628B88D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintingAllVariationsKelementFromNelements", "PrintingAllVariationsKelementFromNelements\PrintingAllVariationsKelementFromNelements.csproj", "{F14E7C04-E84E-41E5-A50A-D03F82B534B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{938923FB-70E3-4138-9575-318062226FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{938923FB-70E3-4138-9575-318062226FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{938923FB-70E3-4138-9575-318062226FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2DF782-D511-4B33-AD6D-913B7628B88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2DF782-D511-4B33-AD6D-913B7628B88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2DF782-D511-4B33-AD6D-913B7628B88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2DF782-D511-4B33-AD6D-913B7628B88D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F14E7C04-E84E-41E5-A50A-D03F82B534B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F14E7C04-E84E-41E5-A50A-D03F82B534B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F14E7C04-E84E-41E5-A50A-D03F82B534B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F14E7C04-E84E-41E5-A50A-D03F82B534B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
