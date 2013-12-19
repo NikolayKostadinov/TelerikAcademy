@@ -44,5 +44,10 @@
             this.dataContainer.RemoveRoot();
             return root;
         }
+
+        public T Peek()
+        {
+            return this.dataContainer.Root;
+        }
     }
 }
