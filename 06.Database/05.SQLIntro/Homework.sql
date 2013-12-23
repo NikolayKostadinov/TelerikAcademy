@@ -83,9 +83,12 @@ WHERE (emp.AddressID = adr.AddressID) AND
 
 /*20 Write a SQL query to find all employees along with their manager.*/
 SELECT emp.EmployeeID AS [¹], emp.FirstName + ' ' + emp.LastName AS [Emploee's Full Name], 
-	   mgr.FirstName + ' ' + mgr.LastName AS [Emploee's Full Name]
-FROM Employees AS emp LEFT OUTER JOIN Employees AS mgr
-	ON emp.ManagerID = mgr.EmployeeID
+	  ISNULL(mgr.FirstName + ' ' + mgr.LastName, 'Manager Of ' + dep.Name) AS [Emploee's Full Name]
+FROM Employees AS emp 
+	LEFT OUTER JOIN Employees AS mgr
+		ON emp.ManagerID = mgr.EmployeeID
+	INNER JOIN Departments AS dep
+		ON emp.DepartmentID = dep.DepartmentID 
 ORDER BY emp.EmployeeID
 
 /*21 Write a SQL query to find all employees, along with their manager and their address. 
