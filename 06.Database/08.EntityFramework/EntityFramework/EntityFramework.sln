@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.NorthwindModel", "01.NorthwindModel\01.NorthwindModel.csproj", "{ED943B63-5741-4296-8BF7-227DE2F9A567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ImpplementingInsertDeleteUpdateMethods", "02.ImpplementingInsertDeleteUpdateMethods\02.ImpplementingInsertDeleteUpdateMethods.csproj", "{BDE1D15D-A2C1-48AE-A5F1-5CEF4EEECB0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.SelectOrders", "02.SelectOrders\03.SelectOrders.csproj", "{5C9C4753-005F-4504-AECE-AD72A38DB92F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED943B63-5741-4296-8BF7-227DE2F9A567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED943B63-5741-4296-8BF7-227DE2F9A567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED943B63-5741-4296-8BF7-227DE2F9A567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED943B63-5741-4296-8BF7-227DE2F9A567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE1D15D-A2C1-48AE-A5F1-5CEF4EEECB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE1D15D-A2C1-48AE-A5F1-5CEF4EEECB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE1D15D-A2C1-48AE-A5F1-5CEF4EEECB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE1D15D-A2C1-48AE-A5F1-5CEF4EEECB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C9C4753-005F-4504-AECE-AD72A38DB92F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9C4753-005F-4504-AECE-AD72A38DB92F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9C4753-005F-4504-AECE-AD72A38DB92F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9C4753-005F-4504-AECE-AD72A38DB92F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
