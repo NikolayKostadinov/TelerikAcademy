@@ -10,7 +10,7 @@
         {
             try
             {
-                int affectedRecords = Dao.InsertCustomer("Pavlina Kostadinova", "Paverony1");
+                int affectedRecords = Dao.InsertCustomer("", "Concurency Test");
                 Console.WriteLine("The number of affected records is: {0}", affectedRecords);
             }
             catch (ArgumentException ex)
