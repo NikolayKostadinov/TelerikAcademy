@@ -11,7 +11,7 @@
         static void Main()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<StudentsSystemContext, Configuration>());
-
+            
             using (StudentsSystemContext dbContext = new StudentsSystemContext())
             {
                 var firstHomework = new Homework()
