@@ -2,7 +2,6 @@
 {
     using StudentsSystem.Model;
     using System;
-    using System.IO;
     using System.Data.Entity;
     
     public class StudentsSystemContext : DbContext 
