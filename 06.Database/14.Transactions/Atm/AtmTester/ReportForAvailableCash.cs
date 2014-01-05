@@ -1,17 +1,11 @@
-﻿using Atm.Data.Models;
-using Atm.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace AtmTester
+﻿namespace AtmTester
 {
+    using Atm.Data;
+    using Atm.Model;
+    using System;
+    using System.Linq;
+    using System.Windows.Forms;
+
     public partial class ReportForAvailableCash : Form
     {
         public static CardAccount CardAccount = new CardAccount();
@@ -25,7 +19,7 @@ namespace AtmTester
         {
             try
             {
-                GetAccountDetails(CardAccount);
+                CardAccount = Utility.GetAccountDetails(CardAccount);
                 GetCash frmGetCash = new GetCash();
                 EnterPinCode enterPinCode = new EnterPinCode();
                 enterPinCode.ShowDialog(this);
@@ -82,7 +76,7 @@ namespace AtmTester
                 CardAccount.CardNumber = this.tbCardNumber.Text;
                 try
                 {
-                    CardAccount = GetAccountDetails(CardAccount);
+                    CardAccount = Utility.GetAccountDetails(CardAccount);
                 }
                 catch (ArgumentException ex)
                 {
@@ -100,28 +94,14 @@ namespace AtmTester
         {
             try
             {
-                CardAccount = GetAccountDetails(CardAccount);
+                if (CardAccount.CardNumber != null)
+                {
+                    CardAccount = Utility.GetAccountDetails(CardAccount);
+                    this.tbBalance.Text = this.GetBalance();
+                }
             }
             catch 
             { 
-            }
-        }
-
-        private CardAccount GetAccountDetails(CardAccount CardAccount)
-        {
-            using (AtmContext context = new AtmContext())
-            {
-                CardAccount cheskAccount = (from acc in context.CardAccounts
-                                            where acc.CardNumber == CardAccount.CardNumber
-                                            select acc).Single();
-                if (cheskAccount != null)
-                {
-                    return cheskAccount;
-                }
-                else
-                {
-                    throw new ArgumentException("Account nor found!!!");
-                }
             }
         }
     }

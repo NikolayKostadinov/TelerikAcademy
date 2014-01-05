@@ -107,7 +107,7 @@
             this.Text = "Справка за наличност";
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.GotFocus +=ReportForAvailableCash_GotFocus;        
+            this.Validating += ReportForAvailableCash_GotFocus;
         }
 
         #endregion

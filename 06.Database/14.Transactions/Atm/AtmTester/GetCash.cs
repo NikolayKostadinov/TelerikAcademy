@@ -6,6 +6,7 @@ namespace AtmTester
     using System.Linq;
     using System.Windows.Forms;
     using System.Data.Entity.Infrastructure;
+    using Atm.Data;
 
     public partial class GetCash : Form
     {
@@ -32,6 +33,7 @@ namespace AtmTester
                 }
                 catch(DbUpdateConcurrencyException ex)
                 {
+                    ReportForAvailableCash.CardAccount = Utility.GetAccountDetails(ReportForAvailableCash.CardAccount);
                     string message = 
                         string.Format("Transaction is blocked due to paralel transaction.\n"
                         +"The card cash is {0:F2}.\nDo you want to continue with transaction?", 
@@ -61,7 +63,7 @@ namespace AtmTester
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Not enought CardCash");
             }
         }
     }
