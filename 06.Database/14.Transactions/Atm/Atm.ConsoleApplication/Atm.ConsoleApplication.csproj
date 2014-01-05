@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91F63893-08BD-4C6F-A321-5BBF38CC0296}</ProjectGuid>
+    <ProjectGuid>{B5F37828-29BE-4160-98BD-4C0CA1E70879}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StudentsSystem.ConsoleDemo</RootNamespace>
-    <AssemblyName>StudentsSystem.ConsoleDemo</AssemblyName>
+    <RootNamespace>Atm.ConsoleApplication</RootNamespace>
+    <AssemblyName>Atm.ConsoleApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -52,17 +52,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StudentsSystem.Model\StudentsSystem.Model.csproj">
-      <Project>{ff284067-8714-407e-acd1-42827e9efe57}</Project>
-      <Name>StudentsSystem.Model</Name>
+    <ProjectReference Include="..\Atm.Data\Atm.Data.csproj">
+      <Project>{7f306cd4-7836-4cb8-8682-6351705f1d55}</Project>
+      <Name>Atm.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atm.Model\Atm.Model.csproj">
+      <Project>{6a99600a-33f0-4f7e-ba16-7252b74689fd}</Project>
+      <Name>Atm.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
