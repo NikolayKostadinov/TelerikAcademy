@@ -1,4 +1,5 @@
-﻿namespace AtmTester
+﻿using Atm.Data;
+namespace AtmTester
 {
     partial class GetCash
     {
@@ -52,6 +53,7 @@
             this.tbCardNumber.Name = "tbCardNumber";
             this.tbCardNumber.Size = new System.Drawing.Size(100, 20);
             this.tbCardNumber.TabIndex = 3;
+            this.tbCardNumber.DataBindings.Add("Text", Utility.CardAccount, "CardNumber");
             // 
             // tbWantedCash
             // 
@@ -95,8 +97,9 @@
             this.lblAvailableCash.Name = "lblAvailableCash";
             this.lblAvailableCash.Size = new System.Drawing.Size(0, 13);
             this.lblAvailableCash.TabIndex = 7;
+            this.lblAvailableCash.DataBindings.Add("Text", Utility.CardAccount, "CardCash");
             // 
-            // getCash
+            // GetCash
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,9 +114,8 @@
             this.Controls.Add(this.tbCardNumber);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "getCash";
+            this.Name = "GetCash";
             this.Text = "Изтегляне на средства";
-            this.Load += new System.EventHandler(this.GetCash_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

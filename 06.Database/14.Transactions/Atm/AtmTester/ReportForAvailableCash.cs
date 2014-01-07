@@ -8,8 +8,6 @@
 
     public partial class ReportForAvailableCash : Form
     {
-        public static CardAccount CardAccount = new CardAccount();
-
         public ReportForAvailableCash()
         {
             InitializeComponent();
@@ -19,7 +17,7 @@
         {
             try
             {
-                CardAccount = Utility.GetAccountDetails(CardAccount);
+                Utility.CardAccount = Utility.GetAccountDetails(Utility.CardAccount);
                 GetCash frmGetCash = new GetCash();
                 EnterPinCode enterPinCode = new EnterPinCode();
                 enterPinCode.ShowDialog(this);
@@ -65,38 +63,17 @@
 
         private string GetBalance()
         {
-            string cashText = string.Format("{0:F2}", CardAccount.CardCash);
+            string cashText = string.Format("{0:F2}", Utility.CardAccount.CardCash);
             return cashText;
-        }
-
-        private void tbCardNumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            try
-            {
-                CardAccount.CardNumber = this.tbCardNumber.Text;
-                try
-                {
-                    CardAccount = Utility.GetAccountDetails(CardAccount);
-                }
-                catch (ArgumentException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    this.tbCardNumber.Focus();
-                }
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void ReportForAvailableCash_GotFocus(object sender, System.EventArgs e)
         {
             try
             {
-                if (CardAccount.CardNumber != null)
+                if (Utility.CardAccount.CardNumber != null)
                 {
-                    CardAccount = Utility.GetAccountDetails(CardAccount);
+                    Utility.CardAccount = Utility.GetAccountDetails(Utility.CardAccount);
                     this.tbBalance.Text = this.GetBalance();
                 }
             }

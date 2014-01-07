@@ -12,7 +12,7 @@ namespace Atm.Data.Models
         }
 
         public AtmContext()
-            : base("Name=AtmContext")
+            : base("Name=AtmContextWork")
         {
         }
 

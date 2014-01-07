@@ -7,6 +7,8 @@
 
     public class Utility
     {
+        public static CardAccount CardAccount = new CardAccount();
+
         public static CardAccount GetAccountDetails(CardAccount CardAccount)
         {
             using (AtmContext context = new AtmContext())

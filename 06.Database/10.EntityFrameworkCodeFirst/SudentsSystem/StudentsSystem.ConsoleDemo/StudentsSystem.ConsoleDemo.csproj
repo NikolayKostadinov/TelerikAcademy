@@ -60,6 +60,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StudentsSystem.Data\StudentsSystem.Data.csproj">
+      <Project>{D10FD1A5-F65A-4B12-A947-15B6FD55F248}</Project>
+      <Name>StudentsSystem.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StudentsSystem.Model\StudentsSystem.Model.csproj">
       <Project>{ff284067-8714-407e-acd1-42827e9efe57}</Project>
       <Name>StudentsSystem.Model</Name>

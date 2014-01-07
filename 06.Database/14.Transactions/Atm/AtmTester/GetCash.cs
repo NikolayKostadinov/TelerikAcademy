@@ -15,12 +15,6 @@ namespace AtmTester
             InitializeComponent();
         }
 
-        private void GetCash_Load(object sender, EventArgs e)
-        {
-            this.tbCardNumber.Text = ReportForAvailableCash.CardAccount.CardNumber;
-            this.lblAvailableCash.Text = string.Format("{0:F2}", ReportForAvailableCash.CardAccount.CardCash);
-        }
-
         private void BtGetCash_Click(object sender, EventArgs e)
         {
             using (AtmContext context = new AtmContext()) 
@@ -31,13 +25,13 @@ namespace AtmTester
                 {
                     context.SaveChanges();
                 }
-                catch(DbUpdateConcurrencyException ex)
+                catch(DbUpdateConcurrencyException)
                 {
-                    ReportForAvailableCash.CardAccount = Utility.GetAccountDetails(ReportForAvailableCash.CardAccount);
+                    Utility.CardAccount = Utility.GetAccountDetails(Utility.CardAccount);
                     string message = 
                         string.Format("Transaction is blocked due to paralel transaction.\n"
-                        +"The card cash is {0:F2}.\nDo you want to continue with transaction?", 
-                        ReportForAvailableCash.CardAccount.CardCash);
+                        +"The card cash is {0:F2}.\nDo you want to continue with transaction?",
+                        Utility.CardAccount.CardCash);
  
                     var result = MessageBox.Show(message,"Money transfer error!", MessageBoxButtons.YesNo);
                     
@@ -52,16 +46,16 @@ namespace AtmTester
 
         private void UpdateAccountCash(AtmContext context)
         {
-            ReportForAvailableCash.CardAccount = (from acc in context.CardAccounts
+            Utility.CardAccount = (from acc in context.CardAccounts
                                                   where acc.CardNumber == tbCardNumber.Text
                                                   select acc).Single();
             try
             {
                 decimal wantedCash;
                 decimal.TryParse(tbWantedCash.Text, out wantedCash);
-                ReportForAvailableCash.CardAccount.CardCash -= wantedCash;
+                Utility.CardAccount.CardCash -= wantedCash;
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException)
             {
                 MessageBox.Show("Not enought CardCash");
             }

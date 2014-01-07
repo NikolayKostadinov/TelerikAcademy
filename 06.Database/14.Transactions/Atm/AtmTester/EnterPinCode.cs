@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Atm.Data;
 using Atm.Data.Models;
 
 namespace AtmTester
@@ -24,7 +25,7 @@ namespace AtmTester
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                IsPinValid = (ReportForAvailableCash.CardAccount.CardPin == this.tbPinCode.Text);
+                IsPinValid = (Utility.CardAccount.CardPin == this.tbPinCode.Text);
                 this.Hide();
             }
         }

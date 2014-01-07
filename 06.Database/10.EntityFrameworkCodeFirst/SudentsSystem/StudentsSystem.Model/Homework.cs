@@ -11,6 +11,7 @@
         [Key]
         public int HomeworkID { get; set; }
 
+        [MaxLength(50)]
         public string Content { get; set; }
 
         public DateTime TimeSent { get; set; }

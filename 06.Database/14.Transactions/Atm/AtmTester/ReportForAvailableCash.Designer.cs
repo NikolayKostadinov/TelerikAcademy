@@ -1,4 +1,5 @@
-﻿namespace AtmTester
+﻿using Atm.Data;
+namespace AtmTester
 {
     partial class ReportForAvailableCash
     {
@@ -43,6 +44,7 @@
             this.tbBalance.Name = "tbBalance";
             this.tbBalance.Size = new System.Drawing.Size(100, 20);
             this.tbBalance.TabIndex = 0;
+            this.tbBalance.DataBindings.Add("Text", Utility.CardAccount, "CardCash");
             // 
             // tbCardNumber
             // 
@@ -50,7 +52,7 @@
             this.tbCardNumber.Name = "tbCardNumber";
             this.tbCardNumber.Size = new System.Drawing.Size(100, 20);
             this.tbCardNumber.TabIndex = 1;
-            this.tbCardNumber.Validating += tbCardNumber_Validating;
+            this.tbCardNumber.DataBindings.Add("Text", Utility.CardAccount, "CardNumber");
             // 
             // label2
             // 
