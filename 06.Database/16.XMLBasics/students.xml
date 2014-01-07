@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="students.xsl"?>
 <students xmlns="urn:students">
   <student>
     <name>Nikolay Kostadinov</name>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0" 
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-                xmlns:myObj="urn:students`" >
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:st="urn:students">
   <xsl:template match="/">
     <html>
       <body>
@@ -21,19 +21,19 @@
               <b>Phone</b>
             </td>
           </tr>
-          <xsl:for-each select="students/student">
+          <xsl:for-each select="st:students/st:student">
             <tr bgcolor="white">
               <td>
-                <xsl:value-of select="name"/>
+                <xsl:value-of select="st:name"/>
               </td>
               <td>
-                <xsl:value-of select="sex"/>
+                <xsl:value-of select="st:sex"/>
               </td>
               <td>
-                <xsl:value-of select="birth_date"/>
+                <xsl:value-of select="st:birth_date"/>
               </td>
               <td>
-                <xsl:value-of select="phone"/>
+                <xsl:value-of select="st:phone"/>
               </td>
             </tr>
           </xsl:for-each>
