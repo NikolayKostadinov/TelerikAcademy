@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<students xmlns="urn:students">
+  <student>
+    <name>Nikolay Kostadinov</name>
+    <sex>male</sex>
+    <birth_date>1977-11-24</birth_date>
+    <phone>+359886630111</phone>
+    <email>Nikolay.Kostadinov@itse.bg</email>
+    <course>Programing C#</course>
+    <specialty>Software Development</specialty>
+    <faculty_number>16637</faculty_number>
+    <taken_exams>
+      <exam>
+        <exam_name>C# Fundamentals Part1</exam_name>
+        <tutor>Pesho Peshev</tutor>
+        <score>100</score>
+      </exam>
+      <exam>
+        <exam_name>C# Fundamentals Part2</exam_name>
+        <tutor>Pesho Peshev</tutor>
+        <score>100</score>
+      </exam>
+      <exam>
+        <exam_name>OOP</exam_name>
+        <tutor>Pesho Peshev</tutor>
+        <score>100</score>
+      </exam>
+      <exam>
+        <exam_name>High Quality Code</exam_name>
+        <tutor>Pesho Peshev</tutor>
+        <score>100</score>
+      </exam>
+    </taken_exams>
+  </student>
+  <student>
+    <name>Hristo Grigorov</name>
+    <sex>male</sex>
+    <birth_date>1976-04-14</birth_date>
+    <phone>+359886630111</phone>
+    <email>Nikolay.Kostadinov@itse.bg</email>
+    <course>Programing C#</course>
+    <specialty>Software Development</specialty>
+    <faculty_number>16637</faculty_number>
+    <taken_exams>
+      <exam>
+        <exam_name>C# Fundamentals Part1</exam_name>
+        <tutor>Pesho Peshev</tutor>
+        <score>80</score>
+      </exam>
+      <exam>
+        <exam_name>C# Fundamentals Part2</exam_name>
+        <tutor>Pesho Peshev</tutor>
+        <score>90</score>
+      </exam>
+      <exam>
+        <exam_name>OOP</exam_name>
+        <tutor>Pesho Peshev</tutor>
+        <score>100</score>
+      </exam>
+      <exam>
+        <exam_name>High Quality Code</exam_name>
+        <tutor>Pesho Peshev</tutor>
+        <score>100</score>
+      </exam>
+    </taken_exams>
+  </student>
+</students>
+
