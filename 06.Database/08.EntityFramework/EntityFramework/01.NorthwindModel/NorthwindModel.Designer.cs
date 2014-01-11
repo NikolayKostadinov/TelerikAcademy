@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\TelerikAcademyHomeworks\Homeworks\06.Database\08.EntityFramework\EntityFramework\01.NorthwindModel\NorthwindModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\TelericAcademy\Homeworks\06.Database\08.EntityFramework\EntityFramework\01.NorthwindModel\NorthwindModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

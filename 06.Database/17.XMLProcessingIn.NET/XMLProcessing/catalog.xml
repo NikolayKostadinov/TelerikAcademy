@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+    <album>
+      <name>Kill 'Em All</name>
+      <artist>Metallica</artist>
+      <year>1983</year>
+      <producent>Paul Curcio</producent>
+      <price>10.00</price>
+      <songs>
+        <title>Hit the Lights</title>
+        <duration>5:29</duration>
+        <title>The Four Horsemen</title>
+        <duration>5:24</duration>
+        <title>Motorbreath</title>
+        <duration>3:47</duration>
+        <title>Jump In The Fire</title>
+        <duration>6:26</duration>
+        <title>(Anesthesia) - Pulling Teeth</title>
+        <duration>6:42</duration>
+        <title>Whiplash</title>
+        <duration>3:59</duration>
+        <title>Phantom Lord</title>
+        <duration>4:01</duration>
+        <title>No Remorse</title>
+        <duration>6:29</duration>
+        <title>Seek &amp; Destroy</title>
+        <duration>4:16</duration>
+        <title>Metal Militia</title>
+        <duration>5:05</duration>
+      </songs>
+    </album>
+    <album>
+      <name>Metallica</name>
+      <artist>Metallica</artist>
+      <year>1991</year>
+      <producent>Bob Rock</producent>
+      <price>10.00</price>
+      <songs>
+        <title>Enter Sandman</title>
+        <duration>5:29</duration>
+        <title>Sad But True</title>
+        <duration>5:24</duration>
+        <title>Holier Than Thou</title>
+        <duration>3:47</duration>
+        <title>The Unforgiven</title>
+        <duration>6:26</duration>
+        <title>Wherever I May Roam</title>
+        <duration>6:42</duration>
+        <title>Don't Tread On Me</title>
+        <duration>3:59</duration>
+        <title>Through the Never</title>
+        <duration>4:01</duration>
+        <title>Nothing Else Matters</title>
+        <duration>6:29</duration>
+        <title>Of Wolf and Man</title>
+        <duration>4:16</duration>
+        <title>The God That Failed</title>
+        <duration>5:05</duration>
+        <title>My Friend of Misery</title>
+        <duration>6:47</duration>
+        <title>The Struggle Within</title>
+        <duration>3:51</duration>
+      </songs>
+    </album>
+  <album>
+    <name>Show No Mercy</name>
+    <artist>Slayer</artist>
+    <year>1983</year>
+    <producent>Brian Slagel</producent>
+    <price>10.00</price>
+    <songs>
+      <title>Evil Has No Boundaries</title>
+      <duration>3:06</duration>
+      <title>The Antichrist</title>
+      <duration>2:49</duration>
+      <title>Die by the Sword</title>
+      <duration>3:36</duration>
+      <title>Fight Till Death</title>
+      <duration>3:37</duration>
+      <title>Metal Storm/Face the Slayer</title>
+      <duration>4:53</duration>
+      <title>Black Magic</title>
+      <duration>4:03</duration>
+      <title>Tormentor</title>
+      <duration>3:45</duration>
+      <title>The Final Command</title>
+      <duration>2:32</duration>
+      <title>Crionics</title>
+      <duration>3:29</duration>
+      <title>Show No Mercy</title>
+      <duration>3:06</duration>
+    </songs>
+  </album>
+</catalog>
+
