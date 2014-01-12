@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<albums>
+	<album>
+		<name>Kill 'Em All</name>
+		<address>Metallica</address>
+	</album>
+	<album>
+		<name>Metallica</name>
+		<address>Metallica</address>
+	</album>
+	<album>
+		<name>Show No Mercy</name>
+		<address>Slayer</address>
+	</album>
+</albums>

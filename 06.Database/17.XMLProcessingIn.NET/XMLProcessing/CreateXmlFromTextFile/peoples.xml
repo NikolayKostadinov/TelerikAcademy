@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<people>
+	<person>
+		<name>Nikolay Kostadinov</name>
+		<address>Burgas, Bulgaria, Lazur, bl.18, entr 2, ap2</address>
+		<phone>+359886630111</phone>
+	</person>
+	<person>
+		<name>Pavlina Kostadinova</name>
+		<address>Burgas, Bulgaria, Lazur, bl.18, entr 2, ap2</address>
+		<phone>+359889520339</phone>
+	</person>
+	<person>
+		<name>Ilina Marinova</name>
+		<address>Burgas, Bulgaria, Strahil Str., #3</address>
+		<phone>+359888123123</phone>
+	</person>
+</people>
