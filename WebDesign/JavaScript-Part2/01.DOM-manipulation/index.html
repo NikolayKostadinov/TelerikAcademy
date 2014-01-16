@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Part#2</title>
+    <style>
+        body, form, input {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        input {
+            border: 1px solid black;
+            font-size: 18pt;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+            div.wrapper {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" id="inputText" />
+        <input type="button" name="generate" value="Generate" onclick="onClickEventHandler()" />
+    </form>
+    <div class="wrapper">
+    </div>
+</body>
+<script>
+    function onClickEventHandler() {
+        var divWrapper = document.getElementsByClassName("wrapper")[0];
+        document.body.removeChild(divWrapper);
+        document.body.appendChild(divWrapper.cloneNode(false));
+        divWrapper = document.getElementsByClassName("wrapper")[0];
+        var countDivs = parseInt(document.getElementById("inputText").value);
+        var divEven = GenerateNewDiv("lightblue", "lightgrey");
+        var divOdd = GenerateNewDiv("lightblue", "darkgrey");
+        var innerHTML = document.createDocumentFragment();
+        for (var i = 0; i < countDivs; i++) {
+            if ((i % 2) === 0) {
+                innerHTML.appendChild(divOdd.cloneNode(false));
+            } else {
+                innerHTML.appendChild(divEven.cloneNode(false));
+            }
+        }
+        divWrapper.appendChild(innerHTML);
+    }
+
+    function GenerateNewDiv(borderColor, backgroundColor) {
+        var div = document.createElement("div");
+        div.style.height = "80px";
+        div.style.width = "80px";
+        div.style.borderRadius = "10px";
+        div.style.border = "1px solid " + borderColor;
+        div.style.backgroundColor = backgroundColor;
+        div.style.margin = "10px";
+        return div;
+    }
+</script>
+</html>
