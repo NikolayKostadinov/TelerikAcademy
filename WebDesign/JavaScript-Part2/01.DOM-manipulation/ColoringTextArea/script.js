@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+﻿//Create a text area and two inputs with type="color"
+//Make the font color of the text area as the value of the first color input
+//Make the background color of the text area as the value of the second input
+(function () {
+    'use strict';
+
+})
+=======
 ﻿(function () {
     'use strict';
 
@@ -15,3 +24,4 @@
         textEl.style.backgroundColor = event.target.value;
     });
 })();
+>>>>>>> 2d52fad01e6757c614d0642c536d46f459e5a767
