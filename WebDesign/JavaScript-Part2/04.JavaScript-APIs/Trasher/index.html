@@ -3,12 +3,16 @@
 <head>
     <title>Trasher</title>
     <link href="style.css" rel="stylesheet" />
-	<script src="scripts/modernizr.custom.63396.js"></script>
+    <script src="scripts/webstorage-objects.js"></script>
     <script src="scripts/drag-and-drop.js"></script>
 </head>
 <body>
-    <div id ="trashcan" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div id ="trash0" class="trash" draggable="true" ondragstart="drag(event)"></div>
-    <script src="scripts/multiply-trash.js"></script>
+    <div id="trashcan" ondrop="gameEngine.drop(event)" ondragover="gameEngine.allowDrop(event)"></div>
+    <div id="trash0" class="trash" draggable="true" ondragstart="gameEngine.drag(event)"></div>
+    <div id="hightscores">
+        <p>Hight Scores</p>
+    </div>
+<!--<script src="scripts/multiply-trash.js"></script>-->
+    <script>gameEngine.startGame();</script>
 </body>
 </html>
