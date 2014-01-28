@@ -25,6 +25,7 @@
     buttonNext.addEventListener('mouseout', OnButtonHover, false);
 
     function OnButtonClick(ev) {
+			ev.preventDefault();
         if (ev.target.id == 'next') {
             if (counter < (immages.length - 1)) {
                 counter++;

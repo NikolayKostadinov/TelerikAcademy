@@ -40,22 +40,24 @@ img {
 	
 }
 
-button {
+#picture div {
 	margin:0;
 	padding:0;
 	border: none;
     height: 300px;
     width: 195px;
     background: none;
+	display:inline-block;
+	
 }
 
-button#prev{ 
+div#prev{ 
 position:relative;
 top:-305px;
 left:0px;
 }
 
-button#next{
+div#next{
 position:relative;
 top:-305px;
 right:-4px;
@@ -68,14 +70,17 @@ span {
     font-weight: bolder;
     color: white;
     visibility: hidden;
+	margin:5px;
+	position:relative;
+	top:135px;
 }
 
-button#prev span {
-    float: left;
+div#prev span {
+	float:left;
 }
 
-button#next span {
-    float: right;
+div#next span {
+    float:right;
 }
 
 .clearfix {
