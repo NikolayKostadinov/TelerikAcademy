@@ -1,0 +1,73 @@
+﻿div#wrapper {
+    height: 700px;
+    width: 100%;
+}
+
+div#picture {
+    height: 40%;
+    width: 40%;
+    min-height: 300px;
+    min-width: 400px;
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,0.4) 10px 10px;
+    text-align: center;
+}
+
+body {
+    font-family: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
+    background: url(immages/gray_jean.png);
+}
+
+#wrapper {
+    max-width: 960px;
+    margin: 20px auto;
+    text-align: center;
+    color: #333;
+}
+
+img {
+    height: 300px;
+    width: 400px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 300px;
+}
+
+button {
+    height: 300px;
+    width: 200px;
+    background: none;
+    border:none;
+    display: inline-block;
+}
+
+    button#prev {
+        position: absolute;
+        top: 41px;
+        left: 415px;
+    }
+
+    button#next {
+        position: absolute;
+        top: 41px;
+    }
+
+span {
+    line-height: 100%;
+    font-size: 180%;
+    font-weight: bolder;
+    color: white;
+    visibility: hidden;
+}
+
+button#prev span {
+    float: left;
+}
+
+button#next span {
+    float: right;
+}
