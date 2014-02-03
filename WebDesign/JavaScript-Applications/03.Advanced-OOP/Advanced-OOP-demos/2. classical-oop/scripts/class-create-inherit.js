@@ -62,3 +62,5 @@ var gosho = new Student("Gosho", "Goshov", "Goshoto", 5);
 console.log(pesho.toString());
 console.log(pesho instanceof Student);
 console.log(pesho instanceof Person);
+console.log(pesho._super.fname);
+console.log(gosho._super.fname);

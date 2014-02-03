@@ -1,0 +1,44 @@
+﻿* {
+     margin:0px;
+    padding:0px;
+}
+body {
+    background-color:lightgrey;
+}
+
+div#side-wrapper {
+   margin:0;
+   padding:0;
+   background-color:grey;
+   width: 250px;
+   overflow:auto;
+   height:770px;
+}
+
+div#sb-header {
+    position:relative;
+    top:0px;
+    left:0px;
+    margin:0;
+    padding:0;
+    background-color:black;
+    font-family:'Arial Black', Gadget, sans-serif;
+    font-weight:bold;
+    color:white;
+    width:100%;
+}
+ul {
+    list-style-type:none;
+}
+li{
+    line-height:30px;
+}
+a {
+    position:relative;
+    top:0;
+    left:0;
+}
+
+li > ul {
+    margin-left:50px;
+}
