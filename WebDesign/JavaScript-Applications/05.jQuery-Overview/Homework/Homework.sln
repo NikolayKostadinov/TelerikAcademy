@@ -21,7 +21,71 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "jQuerySlider", "jQuerySlide
 		VWDPort = "65334"
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AE71C7B4-72B1-4668-A698-0EEFBF33E072}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "InsertingElements", "http://localhost:8010", "{D8B628B9-7EC9-4959-A024-B556F7BA8F51}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_8010"
+		Debug.AspNetCompiler.PhysicalPath = "InsertingElements\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8010\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_8010"
+		Release.AspNetCompiler.PhysicalPath = "InsertingElements\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8010\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "InsertingElements\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FromJSONToTable", "http://localhost:10173", "{3A83B59A-E613-4E65-9784-37EBB25B77DE}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_10173"
+		Debug.AspNetCompiler.PhysicalPath = "FromJSONToTable\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_10173\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_10173"
+		Release.AspNetCompiler.PhysicalPath = "FromJSONToTable\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_10173\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "FromJSONToTable\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ChangeBackgroundColor", "http://localhost:11275", "{615E7AA2-A993-4F9E-A292-857B658F63C2}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_11275"
+		Debug.AspNetCompiler.PhysicalPath = "ChangeBackgroundColor\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_11275\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_11275"
+		Release.AspNetCompiler.PhysicalPath = "ChangeBackgroundColor\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_11275\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "ChangeBackgroundColor\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +94,12 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A4D1A2A4-F6CF-4709-86EC-09608FEF02ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A4D1A2A4-F6CF-4709-86EC-09608FEF02ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B628B9-7EC9-4959-A024-B556F7BA8F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B628B9-7EC9-4959-A024-B556F7BA8F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A83B59A-E613-4E65-9784-37EBB25B77DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A83B59A-E613-4E65-9784-37EBB25B77DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{615E7AA2-A993-4F9E-A292-857B658F63C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{615E7AA2-A993-4F9E-A292-857B658F63C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,20 @@
+﻿* {
+    margin:0;
+    padding:0;
+    border:none;
+    
+}
+
+table, tr, td, th {
+    border:1px solid black;
+    border-collapse:collapse;
+}
+
+th, td {
+    padding:2px;
+}
+
+th {
+    background-color:lightblue;
+    text-align:center;
+}

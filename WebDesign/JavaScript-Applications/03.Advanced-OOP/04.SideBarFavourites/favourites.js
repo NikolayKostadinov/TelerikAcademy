@@ -67,7 +67,17 @@ var Folder = Class.create({
     },
 
     onClick: function (ev) {
-        if (this.style.backgroundImage == "url(\"/image/folderClosed.png\")") {
+        var splitedPictureUrl = this.style.backgroundImage.toString()
+           .split(/["\/)]+/);
+
+        var currentPicture = "";
+
+        if (splitedPictureUrl[splitedPictureUrl.length - 1] != "") {
+            currentPicture = splitedPictureUrl[splitedPictureUrl.length - 1];
+        } else {
+            currentPicture = splitedPictureUrl[splitedPictureUrl.length - 2];
+        }
+        if (currentPicture == "folderClosed.png") {
             this.style.backgroundImage = "url('/image/folderOpen.png')";
             var ul = this.parentNode.getElementsByTagName('ul')[0];
             ul.style.display = "block";

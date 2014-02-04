@@ -1,0 +1,13 @@
+﻿button {
+    display:inline-block;
+}
+#wrapper div{
+    display:block;
+    height:30px;
+    width:100px;
+    border:1px solid black;
+    padding-left:5px;
+    line-height:30px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
