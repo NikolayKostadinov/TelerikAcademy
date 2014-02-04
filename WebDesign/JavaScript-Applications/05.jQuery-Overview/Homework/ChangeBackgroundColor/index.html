@@ -1,15 +1,32 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Color</title>
-    <link href="scripts/spectrum.css" rel="stylesheet" />
-    <script src="scripts/jquery-2.1.0.min.js"></script>
-    <script src="scripts/spectrum.js"></script>
-    <script src="scripts/docs/toc.js"></script>
-    <script src="scripts/utils.js"></script>
-</head>
-<body>
-    <input type="color" id="color" name="color"/>
-    <script src="scripts/script.js"></script>
-</body>
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Color</title>
+        <script src="scripts/jquery-2.1.0.min.js"></script>
+        <script src="scripts/webshims/js-webshim/minified/extras/modernizr-custom.js"></script>
+        <script src="scripts/webshims/js-webshim/minified/polyfiller.js"></script>
+        <script src="scripts/script.js"></script>
+		<script>
+		    webshims.setOptions('forms', {
+		        lazyCustomMessages: true,
+		        replaceValidationUI: true,
+		        addValidators: true,
+		        customDatalist: true
+		    });
+
+		    webshims.setOptions('forms-ext', {
+		        replaceUI: true,
+		        "types": "color number"
+		    });
+
+		    // load the forms polyfill
+		    webshims.polyfill('forms forms-ext');
+
+		</script>
+
+	</head>
+
+	<body>
+    <input type="color" id="color" />
+	</body>
 </html>
