@@ -87,6 +87,26 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ChangeBackgroundColor", "ht
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Grid", "Grid\", "{EFA3E21E-B9C5-4FB4-8853-58D57DC2707C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Grid"
+		Debug.AspNetCompiler.PhysicalPath = "Grid\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Grid\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Grid"
+		Release.AspNetCompiler.PhysicalPath = "Grid\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Grid\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "18507"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +120,8 @@ Global
 		{3A83B59A-E613-4E65-9784-37EBB25B77DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{615E7AA2-A993-4F9E-A292-857B658F63C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{615E7AA2-A993-4F9E-A292-857B658F63C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA3E21E-B9C5-4FB4-8853-58D57DC2707C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA3E21E-B9C5-4FB4-8853-58D57DC2707C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
