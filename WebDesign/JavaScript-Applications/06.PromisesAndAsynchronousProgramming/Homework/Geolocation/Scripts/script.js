@@ -47,8 +47,8 @@ var api = (function ($) {
 
         imgElement.prop("src", imgSrc);
         locationElement.append(imgElement);
-        //imgElement.fadeOut(0);
-        //imgElement.fadeIn(5000);
+        imgElement.fadeOut(0);
+        imgElement.fadeIn(5000);
     }
 
     function viewError(err) {
