@@ -3,7 +3,7 @@
 }
 
 li {
-    background-image: url(/images/closed.png);
+    background-image: url(images/closed.png);
     background-position: top left;
     background-repeat: no-repeat;
     -moz-background-size: 20px;
@@ -20,5 +20,5 @@ li {
     }
 
     li.opened {
-        background-image: url(/images/opened.png);
+        background-image: url(images/opened.png);
     }
