@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "01.StudentsArray", "http://localhost:7342", "{98A1E737-F180-4C35-AEC4-82D9F35B9B76}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_7342"
+		Debug.AspNetCompiler.PhysicalPath = "01.StudentsArray\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7342\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_7342"
+		Release.AspNetCompiler.PhysicalPath = "01.StudentsArray\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7342\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "01.StudentsArray\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "02.FundStudentWithAge", "http://localhost:8964", "{E47289F3-6012-445E-B7CA-598FD9D59C8E}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_8964"
+		Debug.AspNetCompiler.PhysicalPath = "02.FundStudentWithAge\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8964\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_8964"
+		Release.AspNetCompiler.PhysicalPath = "02.FundStudentWithAge\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8964\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "02.FundStudentWithAge\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "03.FindStidentWithMaxMarks", "http://localhost:9091", "{321D53F2-4371-4F53-B276-B8E3804850A2}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_9091"
+		Debug.AspNetCompiler.PhysicalPath = "03.FindStidentWithMaxMarks\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9091\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_9091"
+		Release.AspNetCompiler.PhysicalPath = "03.FindStidentWithMaxMarks\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9091\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "03.FindStidentWithMaxMarks\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98A1E737-F180-4C35-AEC4-82D9F35B9B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A1E737-F180-4C35-AEC4-82D9F35B9B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47289F3-6012-445E-B7CA-598FD9D59C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47289F3-6012-445E-B7CA-598FD9D59C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{321D53F2-4371-4F53-B276-B8E3804850A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{321D53F2-4371-4F53-B276-B8E3804850A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
