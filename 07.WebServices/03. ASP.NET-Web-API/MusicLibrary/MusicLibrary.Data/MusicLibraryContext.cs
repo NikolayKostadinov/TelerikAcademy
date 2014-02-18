@@ -8,7 +8,7 @@
     public class MusicLibraryContext : DbContext
     {
         public MusicLibraryContext()
-            : base("MusicLibrary") 
+            : base("MusicLibraryHome") 
         { 
         }
 

@@ -12,21 +12,21 @@
         private static void Main(string[] args)
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MusicLibraryContext, Configuration>());
-            var myArtist = new Artist()
-            {
-                Country = "USA",
-                DateOfBirth = new DateTime(1997, 12, 5),
-                Name = "Some Idiot"
-            };
-
-
-            var mySong = new Song()
+            
+            Song mySong = new Song()
                     {
                         Gender = "Rock",
                         Title = "A Song Of An Idiot",
                         Year = 2014,
                     };
 
+            Artist myArtist = new Artist()
+            {
+                Country = "USA",
+                DateOfBirth = new DateTime(1997, 12, 5),
+                Name = "Some Idiot"
+            };
+            
             Album myAlbum = new Album()
             {
                 Producer = "Some fucking Idiot",
@@ -41,10 +41,12 @@
 
             using (MusicLibraryContext context = new MusicLibraryContext())
             {
-                context.Songs.Add(mySong);
+                
                 context.Artists.Add(myArtist);
                 context.Albums.Add(myAlbum);
+                context.Songs.Add(mySong);
                 context.SaveChanges();
+
             }
         }
     }

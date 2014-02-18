@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-   
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("Albums")]
     public class Album
     {
         private ICollection<Artist> artists;
@@ -28,28 +30,14 @@
 
         public virtual ICollection<Artist> Artists
         {
-            get
-            {
-                return this.artists;
-            }
-
-            set
-            {
-                this.artists = value;
-            }
+            get { return this.artists; }
+            set { this.artists = value; }
         }
 
-	    public virtual ICollection<Song> Songs
-	    {
-		    get 
-            { 
-                return this.songs;
-            }
-
-		    set 
-            { 
-                this.songs = value;
-            }
-	    }
+        public virtual ICollection<Song> Songs
+        {
+            get { return this.songs; }
+            set { this.songs = value; }
+        }
     }
 }

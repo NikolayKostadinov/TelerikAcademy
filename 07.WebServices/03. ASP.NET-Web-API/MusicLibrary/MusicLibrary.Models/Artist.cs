@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
+    [Table("Artists")]
     public class Artist
     {
         private ICollection<Song> songs;

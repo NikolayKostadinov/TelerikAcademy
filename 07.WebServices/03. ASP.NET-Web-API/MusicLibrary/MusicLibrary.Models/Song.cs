@@ -1,12 +1,13 @@
 ﻿namespace MusicLibrary.Models
 {
     using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+    using System.Text;
 
+    [Table("Songs")]
     public class Song
     {
         [Key]
@@ -24,5 +25,10 @@ using System.Text;
         public int ArtistId { get; set; }
 
         public Artist Artist { get; set; }
+
+        [ForeignKey("Album")]
+        public int AlbumId { get; set; }
+
+        public Album Album { get; set; }
     }
 }
