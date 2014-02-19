@@ -4,40 +4,36 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Runtime.Serialization;
 
     [Table("Albums")]
+    [DataContract(IsReference = true)]
     public class Album
     {
-        private ICollection<Artist> artists;
-        private ICollection<Song> songs;
-
         public Album()
         {
-            this.artists = new HashSet<Artist>();
-            this.songs = new HashSet<Song>();
+            this.Artists = new HashSet<Artist>();
+            this.Songs = new HashSet<Song>();
         }
 
         [Key]
+        [DataMember]
         public int AlbumId { get; set; }
 
-        [MaxLength(50)]
+        [Required]
+        [DataMember]
         public string Title { get; set; }
 
-        public int Year { get; set; }
+        [DataMember]
+        public virtual DateTime? ReleaseDate { get; set; }
 
-        [MaxLength(50)]
+        [DataMember]
         public string Producer { get; set; }
 
-        public virtual ICollection<Artist> Artists
-        {
-            get { return this.artists; }
-            set { this.artists = value; }
-        }
+        [DataMember]
+        public virtual ICollection<Artist> Artists { get; set; }
 
-        public virtual ICollection<Song> Songs
-        {
-            get { return this.songs; }
-            set { this.songs = value; }
-        }
+        [DataMember]
+        public virtual ICollection<Song> Songs { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 namespace MusicLibrary.Data.Migrations
 {
     using System;
+    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
     using MusicLibrary.Models;
@@ -11,13 +12,10 @@ namespace MusicLibrary.Data.Migrations
         {
             this.AutomaticMigrationsEnabled = true;
             this.AutomaticMigrationDataLossAllowed = true;
-            ContextKey = "MusicLibrary.Data.MusicLibraryContext";
-
         }
 
         protected override void Seed(MusicLibraryContext context)
         {
-
             var songs = new Song[] {
                 new Song { Gender = "Metal", Title = "01.Kill 'Em All", Year = 1984 },
                 new Song { Gender = "Metal", Title = "02.Kill 'Em All", Year = 1984 },
@@ -41,20 +39,20 @@ namespace MusicLibrary.Data.Migrations
             {
                 Country = "USA",
                 Name = "Metallica",
-                DateOfBirth = new DateTime(1982, 03, 12)
+                BirthDate = new DateTime(1982, 03, 12)
             };
 
             var album1 = new Album()
             {
                 Title = "Kill 'Em All",
-                Year = 1984,
+                ReleaseDate = new DateTime(1988,10,3),
                 Producer = "Black Shed",
             };
 
             var album2 = new Album()
             {
                 Title = "...And Justice For All",
-                Year = 1988,
+                ReleaseDate = new DateTime(1988,10,3),
                 Producer = "Bob Rock",
             };
 
@@ -63,12 +61,11 @@ namespace MusicLibrary.Data.Migrations
 
             foreach (var song in songs)
             {
-                artist.Songs.Add(song);
                 if (song.Year == 1984)
                 {
                     album1.Songs.Add(song);
                 }
-                else 
+                else
                 {
                     album2.Songs.Add(song);
                 }

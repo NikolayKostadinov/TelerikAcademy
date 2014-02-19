@@ -5,30 +5,39 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Runtime.Serialization;
     using System.Text;
 
     [Table("Songs")]
+    [DataContract(IsReference = true)]
     public class Song
     {
         [Key]
+        [DataMember]
         public int SongId { get; set; }
 
-        [MaxLength(50)]
+        [Required]
+        [DataMember]
         public string Title { get; set; }
 
+        [DataMember]
         public int Year { get; set; }
 
-        [MaxLength(30)]
+        [DataMember]
         public string Gender { get; set; }
 
         [ForeignKey("Artist")]
+        [DataMember]
         public int ArtistId { get; set; }
 
-        public Artist Artist { get; set; }
+        [DataMember]
+        public virtual Artist Artist { get; set; }
 
         [ForeignKey("Album")]
+        [DataMember]
         public int AlbumId { get; set; }
 
-        public Album Album { get; set; }
+        [DataMember]
+        public virtual Album Album { get; set; }
     }
 }
