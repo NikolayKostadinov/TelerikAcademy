@@ -45,7 +45,7 @@ namespace MusicLibrary.Data.Migrations
             var album1 = new Album()
             {
                 Title = "Kill 'Em All",
-                ReleaseDate = new DateTime(1988,10,3),
+                ReleaseDate = new DateTime(1983,5,2),
                 Producer = "Black Shed",
             };
 
