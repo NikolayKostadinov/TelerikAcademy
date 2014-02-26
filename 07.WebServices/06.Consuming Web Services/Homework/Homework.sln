@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedzillaReader.Models", "FeedzillaReader.Models\FeedzillaReader.Models.csproj", "{4181B4BB-1455-4DBC-A53F-254C8BE5C761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedzillaReader.Console", "FeedzillaReader.Console\FeedzillaReader.Console.csproj", "{2AF6B9E9-5CD0-47B2-B675-1B9DD6B7F7C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BC5717F0-3318-46BD-AF88-CD348B47021D}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4181B4BB-1455-4DBC-A53F-254C8BE5C761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4181B4BB-1455-4DBC-A53F-254C8BE5C761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4181B4BB-1455-4DBC-A53F-254C8BE5C761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4181B4BB-1455-4DBC-A53F-254C8BE5C761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF6B9E9-5CD0-47B2-B675-1B9DD6B7F7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF6B9E9-5CD0-47B2-B675-1B9DD6B7F7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF6B9E9-5CD0-47B2-B675-1B9DD6B7F7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF6B9E9-5CD0-47B2-B675-1B9DD6B7F7C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
