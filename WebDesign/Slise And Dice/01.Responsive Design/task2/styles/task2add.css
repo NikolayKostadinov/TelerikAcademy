@@ -1,9 +1,9 @@
-﻿@media only screen and (max-width: 1024px) {
+@media only screen and (max-device-width: 1024px) {
   div#wrapper {
     width: 95%;
   }
 }
-@media only screen and (max-width: 780px) {
+@media only screen and (max-device-width: 780px) {
   div#wrapper > aside {
     float: none;
     width: 95%;
@@ -33,7 +33,7 @@
     width: 100%;
   }
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-device-width: 640px) {
   div#wrapper header nav {
     float: left;
     margin-left: 1%;
@@ -48,7 +48,7 @@
     padding: 5px 5%;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-device-width: 530px) {
   div#wrapper header,
   div#wrapper header nav,
   div#wrapper header nav ul,

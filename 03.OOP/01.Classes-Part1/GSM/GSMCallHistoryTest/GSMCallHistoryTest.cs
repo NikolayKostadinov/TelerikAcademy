@@ -27,6 +27,8 @@
                 myGSM.AddCall(call);
             }
 
+            Console.WriteLine(GSM.Iphone4S);
+
             DisplayCallHistory(myGSM);
             Console.ReadKey();
             DeleteMaxDurationCall(myGSM);

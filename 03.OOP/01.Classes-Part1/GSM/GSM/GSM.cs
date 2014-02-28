@@ -1,7 +1,7 @@
 ﻿namespace GSM
 {
     using System;
-using System.Collections.Generic;
+    using System.Collections.Generic;
 
     public class GSM
     {
@@ -19,7 +19,7 @@ using System.Collections.Generic;
         {
             this.Model = model;
             this.Manufacturer = manufacturer;
-            this.CallHistory = new List<Call>(); 
+            this.CallHistory = new List<Call>();
         }
 
         public GSM(
@@ -118,26 +118,26 @@ using System.Collections.Generic;
 
         public void AddCall(Call call)
         {
-            this.CallHistory.Add(call);  
+            this.CallHistory.Add(call);
         }
 
         public void DeleteCall(Call call)
         {
-            this.CallHistory.Remove(call); 
+            this.CallHistory.Remove(call);
         }
 
-        public void ClearCallHistory() 
+        public void ClearCallHistory()
         {
             this.CallHistory.Clear();
         }
 
-        public double CalculateCallsDuration() 
+        public double CalculateCallsDuration()
         {
             // TODO: calculate call duration in minutes
             double sumDuration = 0;
             foreach (Call item in this.CallHistory)
             {
-                sumDuration += item.Duration; 
+                sumDuration += item.Duration;
             }
 
             sumDuration = Math.Ceiling((double)(sumDuration / 60));
@@ -161,10 +161,10 @@ using System.Collections.Generic;
                 "GSM display parameters: \n{5,20}\n",
                 this.Manufacturer,
                 this.Model,
-                this.Owner,
+                this.Owner ?? "",
                 this.Price,
-                this.Battery.ToString(),
-                this.Display.ToString());
+                this.Battery != null ? this.Battery.ToString() : "",
+                this.Battery != null ? this.Display.ToString() : "");
         }
     }
 }
