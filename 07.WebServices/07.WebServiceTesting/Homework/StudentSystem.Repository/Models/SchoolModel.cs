@@ -19,7 +19,5 @@
 
         public string Location { get; set; }
 
-        public IEnumerable<StudentModel> Students { get; set; }
-
     }
 }

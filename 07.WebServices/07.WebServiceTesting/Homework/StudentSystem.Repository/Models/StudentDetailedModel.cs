@@ -9,11 +9,11 @@
     using SchoolSystem.Data;
     using SchoolSystem.Models;
 
-    public class StudentModel
+    public class StudentDetailedModel
     {
-        public static Expression<Func<Student, StudentModel>> FormStudent
+        public static Expression<Func<Student, StudentDetailedModel>> FormStudent
         {
-            get { return x => new StudentModel { StudentId = x.StudentId, FirstName = x.FirstName, LastName = x.LastName, Age = x.Age}; }
+            get { return x => new StudentDetailedModel { StudentId = x.StudentId, FirstName = x.FirstName, LastName = x.LastName, Age = x.Age, Marks = x.Marks.AsQueryable().Select(MarkModel.FromMark) }; }
         }
 
         public int StudentId { get; set; }
@@ -24,5 +24,6 @@
 
         public int Age { get; set; }
 
+        public IQueryable<MarkModel> Marks { get; private set; }
     }
 }

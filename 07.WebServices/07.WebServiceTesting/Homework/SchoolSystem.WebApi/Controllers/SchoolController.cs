@@ -28,22 +28,19 @@ namespace SchoolSystem.WebApi.Controllers
         }
 
         // GET api/school
-        public IQueryable<SchoolModel> Get()
+        public IEnumerable<SchoolModel> Get()
         {
             var schools = this.repository.All().Select(SchoolModel.FormSchool);
-            foreach (var school in schools)
-            {
-                int id = school.SchoolId;
-                school.Students = this.repository.All().Where(x => x.SchoolId == id).FirstOrDefault().Students.AsQueryable().Select(StudentModel.FormStudent);
-            }
+            
+
+
             return schools;
         }
 
         //GET api/school/5
-        public SchoolModel Get(int id)
+        public SchoolDetailedModel Get(int id)
         {
-            var school = this.repository.All().Where(x => x.SchoolId == id).Select(SchoolModel.FormSchool).FirstOrDefault();
-            school.Students = this.repository.All().Where(x => x.SchoolId == id).FirstOrDefault().Students.AsQueryable().Select(StudentModel.FormStudent);            
+            var school = this.repository.All().Where(x => x.SchoolId == id).Select(SchoolDetailedModel.FormSchool).FirstOrDefault();      
             return school;
         }
 
@@ -58,8 +55,20 @@ namespace SchoolSystem.WebApi.Controllers
         }
 
         // DELETE api/school/5
-        public void Delete(int id)
+        public HttpResponseMessage Delete(int id)
         {
+            try
+            {
+                this.repository.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
+
+            string successMessage = string.Format("Record ID {0} was deleted", id);
+
+            return this.Request.CreateResponse(HttpStatusCode.Accepted, successMessage);
         }
     }
 }

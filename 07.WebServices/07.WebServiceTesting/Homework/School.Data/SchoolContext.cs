@@ -8,7 +8,7 @@
     public class SchoolContext : DbContext
     {
         public SchoolContext()
-            : base("SchoolDb")
+            : base("SchoolDbHome")
         {
         }
 

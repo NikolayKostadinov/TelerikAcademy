@@ -19,7 +19,7 @@ namespace SchoolSystem.WebApi
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SchoolContext, Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<SchoolContext, Configuration>());
 
             AreaRegistration.RegisterAllAreas();
 

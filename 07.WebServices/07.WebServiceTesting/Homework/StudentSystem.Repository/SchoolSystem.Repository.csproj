@@ -54,7 +54,9 @@
     <Compile Include="EfRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Models\MarkModel.cs" />
+    <Compile Include="Models\SchoolDetailedModel.cs" />
     <Compile Include="Models\SchoolModel.cs" />
+    <Compile Include="Models\StudentDetailedModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
