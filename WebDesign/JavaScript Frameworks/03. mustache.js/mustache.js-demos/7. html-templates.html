@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/mustache.js"></script>
+    <script src="Scripts/TableView.js"></script>
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse:collapse;
+        }
+    </style>
+</head>
+<body>
+    <script type="x-mustache-template" id="person-template">	
+			<strong>{{fullname}}</strong>
+			<ul>
+				{{#marks}} 
+					<li>
+						{{subject}}: <strong>{{score}}</strong>							
+					</li>
+                {{/marks}}
+                    {{^marks}}	   
+                    <li>
+                        This student has no marks, yet	  						
+                    </li>
+                    {{/marks}}
+                </ul>			
+    </script>
+
+     <div id="content"></div>
+     <script src="Scripts/scripts.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@
 
         T Get(int id);
 
-        void Add(T item);
+        T Add(T item);
 
         void Delete(int id);
 

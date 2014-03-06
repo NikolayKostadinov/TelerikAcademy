@@ -34,7 +34,7 @@
             return this.DbSet.Find(id);
         }
 
-        public void Add(T item)
+        public T Add(T item)
         {
             DbEntityEntry entry = this.Context.Entry(item);
             if (entry.State != EntityState.Detached)
@@ -43,10 +43,12 @@
             }
             else
             {
-                this.DbSet.Add(item);
+                 item = this.DbSet.Add(item);
             }
 
             this.Context.SaveChanges();
+
+            return item;
         }
 
         public virtual void Delete(T entity)

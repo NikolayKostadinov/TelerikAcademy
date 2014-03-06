@@ -31,9 +31,6 @@ namespace SchoolSystem.WebApi.Controllers
         public IEnumerable<SchoolModel> Get()
         {
             var schools = this.repository.All().Select(SchoolModel.FormSchool);
-            
-
-
             return schools;
         }
 
@@ -45,8 +42,21 @@ namespace SchoolSystem.WebApi.Controllers
         }
 
         // POST api/school
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]School value)
         {
+            try
+            {
+                this.repository.Add(value);
+                var response = Request.CreateResponse<School>(HttpStatusCode.Created, value);
+                var resourceLink = Url.Link("DefaultApi", new { id = value.SchoolId });
+                response.Headers.Location = new Uri(resourceLink);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                var response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                return response;
+            }
         }
 
         // PUT api/school/5
