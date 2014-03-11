@@ -13,7 +13,7 @@
     {
         public static Expression<Func<Student, StudentModel>> FormStudent
         {
-            get { return x => new StudentModel { StudentId = x.StudentId, FirstName = x.FirstName, LastName = x.LastName, Age = x.Age}; }
+            get { return x => new StudentModel { StudentId = x.StudentId, FirstName = x.FirstName, LastName = x.LastName, Age = x.Age, Marks = x.Marks}; }
         }
 
         public int StudentId { get; set; }
@@ -24,5 +24,6 @@
 
         public int Age { get; set; }
 
+        public virtual ICollection<Mark> Marks { get; private set; }
     }
 }

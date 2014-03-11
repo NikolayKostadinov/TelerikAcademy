@@ -8,7 +8,7 @@
     public class SchoolContext : DbContext
     {
         public SchoolContext()
-            : base("SchoolDb")
+            : base("SchoolDbHome")
         {
         }
 
@@ -23,7 +23,6 @@
             SetUpSchoolsEntity(modelBuilder);
             SetUpStudentsEntity(modelBuilder);
             SetUpMarksEntity(modelBuilder);
-
             base.OnModelCreating(modelBuilder);
         }
 

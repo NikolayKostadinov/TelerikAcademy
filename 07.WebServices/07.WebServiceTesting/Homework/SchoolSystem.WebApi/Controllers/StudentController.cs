@@ -45,13 +45,42 @@ namespace SchoolSystem.WebApi.Controllers
         }
 
         // POST api/school
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]Student student)
         {
+            if (student == null)
+            {
+                var errorResponse = this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Student cannot be empty object!!!");
+                return errorResponse;
+            }
+
+            if (string.IsNullOrEmpty(student.FirstName.Trim()))
+            {
+                var errorResponse = this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid student's first name!!!");
+                return errorResponse;
+            }
+
+            if (string.IsNullOrEmpty(student.LastName.Trim()))
+            {
+                var errorResponse = this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid Last Name!!!");
+                return errorResponse;
+            }
+
+            if (student.School == null)
+            {
+                var errorResponse = this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid School!!!");
+                return errorResponse;
+            }
+
+            this.repository.Add(student);
+
+            var successResponse = this.Request.CreateResponse(HttpStatusCode.Created);
+            return successResponse;
         }
 
         // PUT api/school/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Student student)
         {
+
         }
 
         // DELETE api/school/5
