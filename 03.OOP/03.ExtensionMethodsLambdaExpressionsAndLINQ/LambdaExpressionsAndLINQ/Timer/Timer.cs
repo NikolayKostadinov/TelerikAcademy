@@ -25,7 +25,7 @@
             this.timerInterval = timerInterval;
             this.timerAction = timerAction;
            
-            Thread.Sleep(timerInterval * 1000); 
+            //Thread.Sleep(timerInterval * 1000); 
         }
 
         public void StopTimer() 
