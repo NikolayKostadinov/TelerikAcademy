@@ -10,7 +10,16 @@
     {
         public static Expression<Func<School, SchoolDetailedModel>> FormSchool
         {
-            get { return x => new SchoolDetailedModel { SchoolId = x.SchoolId, Name = x.Name, Location = x.Location, Students = x.Students.AsQueryable().Select(StudentDetailedModel.FormStudent) }; }
+            get 
+            { 
+                return x => new SchoolDetailedModel 
+                { 
+                    SchoolId = x.SchoolId, 
+                    Name = x.Name, 
+                    Location = x.Location, 
+                    Students = x.Students.AsQueryable().Select(StudentDetailedModel.FormStudent) 
+                }; 
+            }
         }
 
         public int SchoolId { get; set; }

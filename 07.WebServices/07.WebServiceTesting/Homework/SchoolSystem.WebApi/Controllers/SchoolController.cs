@@ -8,6 +8,7 @@ using SchoolSystem.Models;
 using SchoolSystem.Data;
 using SchoolSystem.Repository;
 using SchoolSystem.Repository.Models;
+using SchoolSystem.WebApi.Helpers;
 
 
 namespace SchoolSystem.WebApi.Controllers
@@ -52,6 +53,7 @@ namespace SchoolSystem.WebApi.Controllers
                 response.Headers.Location = new Uri(resourceLink);
                 return response;
             }
+
             catch (Exception ex)
             {
                 var response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
@@ -60,8 +62,19 @@ namespace SchoolSystem.WebApi.Controllers
         }
 
         // PUT api/school/5
-        public void Put(int id, [FromBody]string value)
+        public HttpResponseMessage Put(int id, [FromBody]School school)
         {
+            if (this.repository.Get(id) != null)
+            {
+                this.repository.Update(id, school);
+                return this.Request.CreateResponse(HttpStatusCode.Accepted);
+            }
+            else 
+            {
+                var response = this.Request.CreateResponse(HttpStatusCode.BadRequest);
+                response.ReasonPhrase = "The record you have try to change not found!";
+                return response;
+            }
         }
 
         // DELETE api/school/5
@@ -69,6 +82,7 @@ namespace SchoolSystem.WebApi.Controllers
         {
             try
             {
+                this.repository.DeleteChilds(id);
                 this.repository.Delete(id);
             }
             catch (Exception ex)

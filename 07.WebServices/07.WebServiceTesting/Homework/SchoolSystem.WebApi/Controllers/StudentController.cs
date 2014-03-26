@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Net;
+using SchoolSystem.WebApi.Helpers;
 
 namespace SchoolSystem.WebApi.Controllers
 {
@@ -59,6 +60,7 @@ namespace SchoolSystem.WebApi.Controllers
         {
             try
             {
+                this.repository.DeleteChilds(id);
                 this.repository.Delete(id);
             }
             catch (Exception ex)
