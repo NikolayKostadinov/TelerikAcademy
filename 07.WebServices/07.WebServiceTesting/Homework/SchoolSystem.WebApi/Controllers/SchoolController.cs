@@ -23,10 +23,10 @@ namespace SchoolSystem.WebApi.Controllers
             this.repository = repository;
         }
 
-        public SchoolController() 
-        {
-            this.repository = new EfRepository<School>(new SchoolContext());
-        }
+        //public SchoolController() 
+        //{
+        //    this.repository = new EfRepository<School>(new SchoolContext());
+        //}
 
         // GET api/school
         public IEnumerable<SchoolModel> Get()
@@ -43,13 +43,13 @@ namespace SchoolSystem.WebApi.Controllers
         }
 
         // POST api/school
-        public HttpResponseMessage Post([FromBody]School value)
+        public HttpResponseMessage Post([FromBody]School school)
         {
             try
             {
-                this.repository.Add(value);
-                var response = Request.CreateResponse<School>(HttpStatusCode.Created, value);
-                var resourceLink = Url.Link("DefaultApi", new { id = value.SchoolId });
+                this.repository.Add(school);
+                var response = Request.CreateResponse<School>(HttpStatusCode.Created, school);
+                var resourceLink = Url.Link("DefaultApi", new { id = school.SchoolId });
                 response.Headers.Location = new Uri(resourceLink);
                 return response;
             }
