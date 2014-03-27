@@ -57,10 +57,6 @@
             modelBuilder.Entity<Student>()
                 .Property(x => x.Grade)
                 .IsRequired();
-
-            modelBuilder.Entity<Student>()
-                .Property(x => x.SchoolId)
-                .IsOptional();
         }
 
         private static void SetUpSchoolsEntity(DbModelBuilder modelBuilder)

@@ -43,7 +43,7 @@
             set { this.grade = value; }
         }
 
-        public int SchoolId { get; set; }
+        //public int SchoolId { get; set; }
 
         public School School { get; set; }
 

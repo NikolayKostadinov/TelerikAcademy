@@ -54,7 +54,7 @@ namespace SchoolSystem.WebApi.Controllers
 
         public IQueryable<StudentDetailedModel> GetStudentBySchool(int schoolId)
         {
-            return this.repository.All().Where(x => x.SchoolId == schoolId).Select(StudentDetailedModel.FormStudent);
+            return this.repository.All().Where(x => x.School.SchoolId == schoolId).Select(StudentDetailedModel.FormStudent);
         }
 
         // POST api/student
@@ -64,7 +64,7 @@ namespace SchoolSystem.WebApi.Controllers
             {
                 this.repository.Add(student);
                 var response = Request.CreateResponse<Student>(HttpStatusCode.Created, student);
-                var resourceLink = Url.Link("DefaultApi", new { id = student.SchoolId });
+                var resourceLink = Url.Link("DefaultApi", new { id = student.StudentId });
                 response.Headers.Location = new Uri(resourceLink);
                 return response;
             }

@@ -1,24 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Transactions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SchoolSystem.Data;
 using SchoolSystem.Models;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Transactions;
 
 namespace SchoolSystem.UnitTest
 {
-
     [TestClass]
-    class StudentRepositoryTests
+    public class StudentRepositoryTests
     {
-        public DbContext DbContext { get; set; }
+        public DbContext dbContext { get; set; }
         private static TransactionScope tranScope;
 
         public StudentRepositoryTests()
         {
-            this.DbContext = new SchoolContext();
+            this.dbContext = new SchoolContext();
         }
 
         [TestInitialize]
@@ -59,8 +58,8 @@ namespace SchoolSystem.UnitTest
             };
 
             //act
-            DbContext.Set<Student>().Add(student);
-            DbContext.SaveChanges();
+            dbContext.Set<Student>().Add(student);
+            dbContext.SaveChanges();
 
             //assert
             var studentMarks = student.Marks.ToList();

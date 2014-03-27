@@ -13,7 +13,7 @@
     {
         public static Expression<Func<Student, StudentModel>> FormStudent
         {
-            get { return x => new StudentModel { StudentId = x.StudentId, FirstName = x.FirstName, LastName = x.LastName, Age = x.Age, SchoolName = x.School.Name, SchoolId = x.SchoolId}; }
+            get { return x => new StudentModel { StudentId = x.StudentId, FirstName = x.FirstName, LastName = x.LastName, Age = x.Age, SchoolName = x.School.Name, SchoolId = (x.School != null) ? x.School.SchoolId : 0 }; }
         }
 
         public int StudentId { get; set; }
