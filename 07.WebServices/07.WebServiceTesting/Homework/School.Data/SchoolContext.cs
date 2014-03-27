@@ -57,6 +57,10 @@
             modelBuilder.Entity<Student>()
                 .Property(x => x.Grade)
                 .IsRequired();
+
+            modelBuilder.Entity<Student>()
+                .Property(x => x.SchoolId)
+                .IsOptional();
         }
 
         private static void SetUpSchoolsEntity(DbModelBuilder modelBuilder)
@@ -77,7 +81,7 @@
 
             modelBuilder.Entity<School>()
                 .Property(x => x.Name)
-                .IsRequired().HasMaxLength(50)
+                .IsOptional().HasMaxLength(50)
                 .IsUnicode(true);
         }
     }

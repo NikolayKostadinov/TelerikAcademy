@@ -19,7 +19,7 @@
 
             set 
             { 
-                if (string.IsNullOrEmpty(value.Trim()))
+                if (value == null || string.IsNullOrEmpty(value.Trim()))
                 {
                     throw new ArgumentException("The name of the subject can't be empty!");
                 }
@@ -39,7 +39,7 @@
             {
                 if (value < 2m || value > 6m)
                 {
-                    throw new ArgumentException(string.Format("The value of the mark must be between 2 and 6.\nYou have entered {0}", value));
+                    throw new ArgumentOutOfRangeException(string.Format("The value of the mark must be between 2 and 6.\nYou have entered {0}", value));
                 }
 
                 this.value = value;

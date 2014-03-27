@@ -1,42 +1,55 @@
 ﻿using System.Net.Http;
-using SchoolSystem.Data;
 using SchoolSystem.Models;
 using SchoolSystem.Repository;
 using SchoolSystem.Repository.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
 using System.Net;
+using SchoolSystem.WebApi.Helpers;
 
 namespace SchoolSystem.WebApi.Controllers
 {
     public class StudentController : ApiController
     {
-         private readonly IRepository<Student> repository;
+        private readonly IRepository<Student> repository;
 
-        public StudentController(IRepository<Student> repository) 
+        public StudentController(IRepository<Student> repository)
         {
             this.repository = repository;
         }
 
-        public StudentController() 
-        {
-            this.repository = new EfRepository<Student>(new SchoolContext());
-        }
+        //public StudentController() 
+        //{
+        //    this.repository = new EfRepository<Student>(new SchoolContext());
+        //}
 
-        // GET api/school
+        // GET api/student
         public IEnumerable<StudentModel> Get()
         {
             return this.repository.All().Select(StudentModel.FormStudent);
         }
 
-        //GET api/school/5
+        //GET api/student/5
         public StudentDetailedModel Get(int id)
         {
-            return this.repository.All().Where(x => x.StudentId == id).Select(StudentDetailedModel.FormStudent).FirstOrDefault();      
+            return this.repository.All().Where(x => x.StudentId == id).Select(StudentDetailedModel.FormStudent).FirstOrDefault();
+        }
+
+        //GET api/student/5
+        [HttpGet]
+        public IQueryable<StudentDetailedModel> Get(string subject, decimal value)
+        {
+            var students = this.repository.All().Where(
+                y => (
+                    y.Marks
+                    .Where(
+                    x => x.Subject.ToLower() == subject.ToLower() 
+                        && x.Value >= value).FirstOrDefault()) != null)
+                .Select(StudentDetailedModel.FormStudent);
+
+            return students;
         }
 
         public IQueryable<StudentDetailedModel> GetStudentBySchool(int schoolId)
@@ -44,58 +57,55 @@ namespace SchoolSystem.WebApi.Controllers
             return this.repository.All().Where(x => x.SchoolId == schoolId).Select(StudentDetailedModel.FormStudent);
         }
 
-        // POST api/school
+        // POST api/student
         public HttpResponseMessage Post([FromBody]Student student)
         {
-            if (student == null)
+            try
             {
-                var errorResponse = this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Student cannot be empty object!!!");
-                return errorResponse;
+                this.repository.Add(student);
+                var response = Request.CreateResponse<Student>(HttpStatusCode.Created, student);
+                var resourceLink = Url.Link("DefaultApi", new { id = student.SchoolId });
+                response.Headers.Location = new Uri(resourceLink);
+                return response;
             }
 
-            if (string.IsNullOrEmpty(student.FirstName.Trim()))
+            catch (Exception ex)
             {
-                var errorResponse = this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid student's first name!!!");
-                return errorResponse;
+                var response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                return response;
             }
-
-            if (string.IsNullOrEmpty(student.LastName.Trim()))
-            {
-                var errorResponse = this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid Last Name!!!");
-                return errorResponse;
-            }
-
-            if (student.School == null)
-            {
-                var errorResponse = this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid School!!!");
-                return errorResponse;
-            }
-
-            this.repository.Add(student);
-
-            var successResponse = this.Request.CreateResponse(HttpStatusCode.Created);
-            return successResponse;
         }
 
-        // PUT api/school/5
-        public void Put(int id, [FromBody]Student student)
+        // PUT api/student/5
+        public HttpResponseMessage Put(int id, [FromBody]Student student)
         {
-
+            if (this.repository.Get(id) != null)
+            {
+                this.repository.Update(id, student);
+                return this.Request.CreateResponse(HttpStatusCode.Accepted);
+            }
+            else
+            {
+                var response = this.Request.CreateResponse(HttpStatusCode.BadRequest);
+                response.ReasonPhrase = "The record you have try to change not found!";
+                return response;
+            }
         }
 
-        // DELETE api/school/5
+        // DELETE api/student/5
         public HttpResponseMessage Delete(int id)
         {
             try
             {
+                this.repository.DeleteChilds(id);
                 this.repository.Delete(id);
             }
             catch (Exception ex)
             {
-                return this.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);  
+                return this.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
             }
 
-            string successMessage = string.Format("Record ID {0} was deleted",id);
+            string successMessage = string.Format("Record ID {0} was deleted", id);
 
             return this.Request.CreateResponse(HttpStatusCode.Accepted, successMessage);
         }

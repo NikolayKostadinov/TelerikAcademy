@@ -9,6 +9,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using SchoolSystem.Data;
 using SchoolSystem.Data.Migrations;
+using SchoolSystem.WebApi.App_Start;
 
 namespace SchoolSystem.WebApi
 {
@@ -19,7 +20,7 @@ namespace SchoolSystem.WebApi
     {
         protected void Application_Start()
         {
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<SchoolContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SchoolContext, Configuration>());
 
             AreaRegistration.RegisterAllAreas();
 
@@ -27,6 +28,7 @@ namespace SchoolSystem.WebApi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AutofacWebAPI.Initialize(GlobalConfiguration.Configuration);
         }
     }
 }

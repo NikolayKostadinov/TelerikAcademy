@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Telerik.JustMock;
-using Places.Repositories;
-using Places.Models;
-using System.Linq;
-using System.Collections.Generic;
-using Places.Services.Controllers;
-using Places.Services.Models;
+using System.Web.Http.Controllers;
 using System.Web.Http.Hosting;
 using System.Web.Http.Routing;
-using System.Web.Http.Controllers;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Places.Models;
+using Places.Repositories;
+using Places.Services.Controllers;
+using Places.Services.Models;
 using Places.Services.Tests.Fakes;
+using Telerik.JustMock;
+using Telerik.JustMock.Helpers;
 
 namespace Places.Services.Tests.Controllers.Tests
 {

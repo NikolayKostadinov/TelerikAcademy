@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C166A10-EBE0-4A9E-9D77-C6F9622A5277}</ProjectGuid>
+    <ProjectGuid>{944D77B6-B4BF-4B3C-A6BD-68A374368C98}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Places.Repositories.Tests</RootNamespace>
-    <AssemblyName>Places.Repositories.Tests</AssemblyName>
+    <RootNamespace>SchoolSystem.UnitTest</RootNamespace>
+    <AssemblyName>SchoolSystem.UnitTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,17 +36,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.0-beta1\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Transactions" />
-    <Reference Include="Telerik.JustMock">
-      <HintPath>..\JustMock\Telerik.JustMock.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -61,24 +58,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DbCategoriesRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MarkRepositoryTests.cs" />
+    <Compile Include="StudentRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Places.DataLayer\Places.DataLayer.csproj">
-      <Project>{F1C06354-B30C-4044-A440-CD4FB8620A30}</Project>
-      <Name>Places.DataLayer</Name>
+    <ProjectReference Include="..\School.Data\SchoolSystem.Data.csproj">
+      <Project>{0D15192E-ED94-4029-B543-A08B5FF544CE}</Project>
+      <Name>SchoolSystem.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Places.Models\Places.Models.csproj">
-      <Project>{1D25150A-5180-4BD7-A181-435E4A62A551}</Project>
-      <Name>Places.Models</Name>
+    <ProjectReference Include="..\School.Models\SchoolSystem.Models.csproj">
+      <Project>{A05BE02C-A36C-4DF6-A5D3-F545E79923B1}</Project>
+      <Name>SchoolSystem.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Places.Repositories\Places.Repositories.csproj">
-      <Project>{EB32C3EB-BDC7-4C3D-9035-D7F2E13BDD33}</Project>
-      <Name>Places.Repositories</Name>
+    <ProjectReference Include="..\StudentSystem.Repository\SchoolSystem.Repository.csproj">
+      <Project>{108BE783-1680-4794-8480-5E456415259A}</Project>
+      <Name>SchoolSystem.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>
