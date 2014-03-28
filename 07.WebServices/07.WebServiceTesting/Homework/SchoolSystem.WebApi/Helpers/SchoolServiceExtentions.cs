@@ -12,13 +12,13 @@ namespace SchoolSystem.WebApi.Helpers
         {
             var studentsRepo = new EfRepository<Student>(new SchoolContext());
 
-            var studentsFromSchool = studentsRepo.All().Where(x => x.SchoolId == schoolId).ToList();
+            var studentsFromSchool = studentsRepo.All().Where(x => x.School.SchoolId == schoolId).ToList();
 
 
 
             foreach (Student student in studentsFromSchool)
-            {
-                studentsRepo.DeleteChilds(student.SchoolId);
+            {    
+                studentsRepo.DeleteChilds(student.School.SchoolId);
                 studentsRepo.Delete(student.StudentId);
             }
         }

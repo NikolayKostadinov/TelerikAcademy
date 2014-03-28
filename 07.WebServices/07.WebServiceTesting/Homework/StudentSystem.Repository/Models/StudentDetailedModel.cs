@@ -13,7 +13,16 @@
     {
         public static Expression<Func<Student, StudentDetailedModel>> FormStudent
         {
-            get { return x => new StudentDetailedModel { StudentId = x.StudentId, FirstName = x.FirstName, LastName = x.LastName, Age = x.Age, Marks = x.Marks.AsQueryable().Select(MarkModel.FromMark) }; }
+            get 
+            { 
+                return x => new StudentDetailedModel { 
+                    StudentId = x.StudentId, 
+                    FirstName = x.FirstName, 
+                    LastName = x.LastName, 
+                    Age = x.Age, 
+                    Marks = x.Marks.AsQueryable().Select(MarkModel.FromMark).ToList<MarkModel>() 
+                }; 
+            }
         }
 
         public int StudentId { get; set; }
@@ -24,6 +33,8 @@
 
         public int Age { get; set; }
 
-        public IQueryable<MarkModel> Marks { get; private set; }
+        public School School { get; private set; } 
+
+        public virtual ICollection<MarkModel> Marks { get; private set; }
     }
 }

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 using System.Transactions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SchoolSystem.Data;
 using SchoolSystem.Models;
+using System.Collections.Generic;
 
 namespace SchoolSystem.UnitTest
 {
@@ -18,7 +20,7 @@ namespace SchoolSystem.UnitTest
             this.dbContext = new SchoolContext();
         }
         
-            [TestInitialize]
+        [TestInitialize]
         public void InitializeTest() 
         {
             tranScope = new TransactionScope();

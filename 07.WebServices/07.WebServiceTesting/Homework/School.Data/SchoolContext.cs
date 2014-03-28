@@ -8,7 +8,7 @@
     public class SchoolContext : DbContext
     {
         public SchoolContext()
-            : base("SchoolDb")
+            : base("SchoolDbHome")
         {
         }
 
@@ -23,7 +23,6 @@
             SetUpSchoolsEntity(modelBuilder);
             SetUpStudentsEntity(modelBuilder);
             SetUpMarksEntity(modelBuilder);
-
             base.OnModelCreating(modelBuilder);
         }
 
@@ -58,10 +57,6 @@
             modelBuilder.Entity<Student>()
                 .Property(x => x.Grade)
                 .IsRequired();
-
-            modelBuilder.Entity<Student>()
-                .Property(x => x.SchoolId)
-                .IsOptional();
         }
 
         private static void SetUpSchoolsEntity(DbModelBuilder modelBuilder)
