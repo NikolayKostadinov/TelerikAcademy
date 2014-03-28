@@ -28,7 +28,8 @@ namespace SchoolSystem.WebApi.Controllers
         // GET api/student
         public IEnumerable<StudentModel> Get()
         {
-            return this.repository.All().Select(StudentModel.FormStudent);
+            var students = this.repository.All().Select(StudentModel.FormStudent);
+            return students;
         }
 
         //GET api/student/5
