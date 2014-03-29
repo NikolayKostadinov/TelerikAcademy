@@ -63,9 +63,9 @@ namespace SchoolSystem.WebApi.Controllers
         {
             try
             {
-                this.repository.Add(student);
-                var response = Request.CreateResponse<Student>(HttpStatusCode.Created, student);
-                var resourceLink = Url.Link("DefaultApi", new { id = student.StudentId });
+                var resultStudent = this.repository.Add(student);
+                var response = Request.CreateResponse<Student>(HttpStatusCode.Created, resultStudent);
+                var resourceLink = Url.Link("DefaultApi", new { id = resultStudent.StudentId });
                 response.Headers.Location = new Uri(resourceLink);
                 return response;
             }
@@ -103,12 +103,15 @@ namespace SchoolSystem.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return this.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
             }
 
             string successMessage = string.Format("Record ID {0} was deleted", id);
 
-            return this.Request.CreateResponse(HttpStatusCode.Accepted, successMessage);
+            var response = this.Request.CreateResponse(HttpStatusCode.Accepted);
+            response.ReasonPhrase = successMessage;
+
+            return response;
         }
 
     }

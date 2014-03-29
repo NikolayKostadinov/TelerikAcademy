@@ -71,8 +71,7 @@ namespace SchoolSystem.UnitTest
                 student.Marks.Count == 1 &&
                 studentMarks[0].Subject == mark.Subject &&
                 studentMarks[0].Value == mark.Value;
-            var expected = true;
-            Assert.AreEqual(expected, actual);
+            Assert.IsTrue(actual);
         }
 
         [TestMethod]
@@ -164,6 +163,7 @@ namespace SchoolSystem.UnitTest
 
             dbContext.Set<School>().Add(school);
             dbContext.Set<Student>().Add(student);
+            dbContext.Set<Mark>().Add(mark);
             dbContext.SaveChanges();
             
             //act
