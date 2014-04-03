@@ -20,7 +20,9 @@
                     FirstName = x.FirstName, 
                     LastName = x.LastName, 
                     Age = x.Age, 
-                    Marks = x.Marks.AsQueryable().Select(MarkModel.FromMark).ToList<MarkModel>() 
+                    Marks = x.Marks.AsQueryable().Select(MarkModel.FromMark).ToList<MarkModel>(),
+                    ScoolId = x.School != null ? x.School.SchoolId : 0,
+                    ScoolName = x.School != null ? x.School.Name : string.Empty
                 }; 
             }
         }
@@ -33,7 +35,9 @@
 
         public int Age { get; set; }
 
-        public School School { get; private set; } 
+        public int ScoolId { get; private set; } 
+
+        public string ScoolName { get; private set; } 
 
         public virtual ICollection<MarkModel> Marks { get; private set; }
     }
