@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net_Web_API_Application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net_Single_Page_application", "Asp.Net_Single_Page_application\Asp.Net_Single_Page_application.csproj", "{52660244-0B95-4A42-B3C6-8FA2FA7F7E4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfNumbers.WebForms", "SumOfNumbers\SumOfNumbers.WebForms.csproj", "{ADA64172-B002-4900-9413-A2A612B99905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfNumbers.MVC", "SumOfNumbers.MVC\SumOfNumbers.MVC.csproj", "{16344BF3-D999-4D39-A91D-FCBAEE4C5A8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{52660244-0B95-4A42-B3C6-8FA2FA7F7E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52660244-0B95-4A42-B3C6-8FA2FA7F7E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52660244-0B95-4A42-B3C6-8FA2FA7F7E4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA64172-B002-4900-9413-A2A612B99905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA64172-B002-4900-9413-A2A612B99905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA64172-B002-4900-9413-A2A612B99905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA64172-B002-4900-9413-A2A612B99905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16344BF3-D999-4D39-A91D-FCBAEE4C5A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16344BF3-D999-4D39-A91D-FCBAEE4C5A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16344BF3-D999-4D39-A91D-FCBAEE4C5A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16344BF3-D999-4D39-A91D-FCBAEE4C5A8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
