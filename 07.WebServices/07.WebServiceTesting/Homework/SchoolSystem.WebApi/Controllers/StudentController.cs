@@ -20,11 +20,6 @@ namespace SchoolSystem.WebApi.Controllers
             this.repository = repository;
         }
 
-        //public StudentController() 
-        //{
-        //    this.repository = new EfRepository<Student>(new SchoolContext());
-        //}
-
         // GET api/student
         public IEnumerable<StudentModel> Get()
         {
