@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net_Web_Forms_Application", "Asp.Net_Web_Forms_Application\Asp.Net_Web_Forms_Application.csproj", "{3FC65085-E3CA-4F42-AE49-8D3F9206A1FF}"
 EndProject
@@ -14,6 +14,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfNumbers.WebForms", "SumOfNumbers\SumOfNumbers.WebForms.csproj", "{ADA64172-B002-4900-9413-A2A612B99905}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfNumbers.MVC", "SumOfNumbers.MVC\SumOfNumbers.MVC.csproj", "{16344BF3-D999-4D39-A91D-FCBAEE4C5A8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8294626A-E24C-4793-B7B7-DFB45F458186}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

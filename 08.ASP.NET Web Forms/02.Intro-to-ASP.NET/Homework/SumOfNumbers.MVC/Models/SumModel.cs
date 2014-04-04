@@ -13,7 +13,7 @@ namespace SumOfNumbers.MVC.Models
         public int FirstNumber { get; set; }
 
         [Required]
-        [Display(Name = "СецондNumber")]
+        [Display(Name = "SecondNumber")]
         public int SecondNumber { get; set; }
 
         [Display(Name = "Result")]

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model SumOfNumbers.MVC.Models.SumModel
+@{
     ViewBag.Title = "Sum";
 }
 
@@ -23,8 +24,10 @@
             @Html.TextBoxFor(m => m.SecondNumber)
         </div>
         <input type="submit" value="Sum numbers" />
+        <br />
         <div>
-            @Html.DisplayTextFor(m => m.Result)
+            <br />
+            <label>Result is: @ViewBag.Result</label>
         </div>
     }
 </body>
