@@ -1,0 +1,19 @@
+﻿.inputstudent{
+    position: absolute;
+    left: 125px;
+}
+
+.name{
+    width: 173px;
+}
+
+.panels {
+    top:10px;
+    float:left;
+    height:130px;
+}
+
+#DropDownListUniversity {
+    width: 173px;
+}
+
