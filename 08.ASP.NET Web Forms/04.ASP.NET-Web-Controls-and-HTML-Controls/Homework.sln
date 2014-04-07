@@ -5,6 +5,12 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlServerControllsRandomGenerator", "HtmlServerControllsRandomGenerator\HtmlServerControllsRandomGenerator.csproj", "{D33758D1-D9A7-45B6-B63B-0D5E071324E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetWebControllsRandomGenerator", "AspNetWebControllsRandomGenerator\AspNetWebControllsRandomGenerator.csproj", "{1A1ED9DF-8520-4355-B63D-9B7CAA310022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Copier", "Copier\Copier.csproj", "{363A43B9-ECD1-492C-B383-5DA8EA5FB28E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRegistrationForm", "StudentRegistrationForm\StudentRegistrationForm.csproj", "{1C9A8355-6E34-42D3-B2AB-61AD2365330E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{D33758D1-D9A7-45B6-B63B-0D5E071324E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D33758D1-D9A7-45B6-B63B-0D5E071324E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D33758D1-D9A7-45B6-B63B-0D5E071324E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A1ED9DF-8520-4355-B63D-9B7CAA310022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1ED9DF-8520-4355-B63D-9B7CAA310022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1ED9DF-8520-4355-B63D-9B7CAA310022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1ED9DF-8520-4355-B63D-9B7CAA310022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{363A43B9-ECD1-492C-B383-5DA8EA5FB28E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363A43B9-ECD1-492C-B383-5DA8EA5FB28E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363A43B9-ECD1-492C-B383-5DA8EA5FB28E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363A43B9-ECD1-492C-B383-5DA8EA5FB28E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C9A8355-6E34-42D3-B2AB-61AD2365330E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9A8355-6E34-42D3-B2AB-61AD2365330E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9A8355-6E34-42D3-B2AB-61AD2365330E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9A8355-6E34-42D3-B2AB-61AD2365330E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
