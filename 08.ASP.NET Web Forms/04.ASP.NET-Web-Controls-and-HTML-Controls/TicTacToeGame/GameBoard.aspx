@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GameBoard.aspx.cs" Inherits="TicTacToeGame.GameBoard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GameBoard.aspx.cs" Inherits="TicTacToeGame.GameBoard" EnableSessionState="True" %>
 
 <!DOCTYPE html>
 

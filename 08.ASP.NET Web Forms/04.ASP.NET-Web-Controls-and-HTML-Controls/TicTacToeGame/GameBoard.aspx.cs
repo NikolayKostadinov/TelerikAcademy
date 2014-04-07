@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -10,25 +11,45 @@ namespace TicTacToeGame
 {
     public partial class GameBoard : System.Web.UI.Page
     {
-        private static string gamerSign = "X";
-        private static string botSign = "O";
-        private static string[,] gameBoard = null;
+        private string gamerSign = "X";
+        private string botSign = "O";
+        private string[,] gameBoard = null;
         private static Random randomGenerator = new Random();
+
+        public GameBoard() 
+        {
+            if (gameBoard == null)
+            {
+                this.gameBoard = new string[3, 3];
+            }
+        }
 
         public void Button_Click(object sender, EventArgs e)
         {
-            
-
+            GetButtons();
             if (gameBoard == null)
             {
                 gameBoard = new string[3, 3];
             }
+
             SetSimbol(sender, gamerSign);
             MakeReaction(sender);
             GenerateNextMove();
         }
+  
+        private void GetButtons()
+        {
+            var buttons = this.Buttons.FindControlsOfType<Button>();
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    this.gameBoard[row, col] = buttons[row * 3 + col].Text.Trim();
+                }
+            }
+        }
 
-        private static void SetSimbol(object sender, string simbol)
+        private void SetSimbol(object sender, string simbol)
         {
             var senderButton = (sender as Button).CommandArgument;
             var buttonId = int.Parse(senderButton);
@@ -38,7 +59,7 @@ namespace TicTacToeGame
             {
                 (sender as Button).Text = simbol;
             }
-
+            GetButtons();
             gameBoard[row, col] = simbol;
         }
   
@@ -87,7 +108,7 @@ namespace TicTacToeGame
                 int ix = 0;
                 while (ix < 9) 
                 {
-                    if (nextSelectionId==8)
+                    if (nextSelectionId == 8)
                     {
                         nextSelectionId = 0;
                     }
@@ -99,7 +120,6 @@ namespace TicTacToeGame
                         MakeReaction(buttons[nextSelectionId]);
                         return;
                     }
-
                 }
             }
         }
@@ -123,7 +143,7 @@ namespace TicTacToeGame
 
                 if (!(string.IsNullOrEmpty(gameBoard[0, index])) && gameBoard[0, index] == gameBoard[1, index] && gameBoard[0, index] == gameBoard[2, index]) 
                 {
-                    winner = (gameBoard[0,index] == gamerSign) ? "You win!" : "Computer wins";
+                    winner = (gameBoard[0, index] == gamerSign) ? "You win!" : "Computer wins";
                     return true;
                 }
             }
@@ -177,6 +197,21 @@ namespace TicTacToeGame
                     gamerSign = "O";
                     botSign = "X";
                 }
+            }
+          
+            if (this.gameBoard!=null)
+            {
+                StringBuilder text = new StringBuilder();
+                for (int row = 0; row < 3; row++)
+                {
+                    for (int col = 0; col < 3; col++)
+                    {
+                        text.Append(this.gameBoard[row, col] + " ");
+                    }
+                    text.Append("\r\n");
+                }
+
+                this.LabelMessage.Text=text.ToString();
             }
         }
 
