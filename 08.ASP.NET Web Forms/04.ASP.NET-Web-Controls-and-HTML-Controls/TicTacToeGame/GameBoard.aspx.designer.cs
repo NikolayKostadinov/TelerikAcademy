@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StudentRegistrationForm {
+namespace TicTacToeGame {
     
     
-    public partial class StudentForm {
+    public partial class GameBoard {
         
         /// <summary>
         /// form1 control.
@@ -22,129 +22,138 @@ namespace StudentRegistrationForm {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// PanelSubmit control.
+        /// PanelMarkSelection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelSubmit;
+        protected global::System.Web.UI.WebControls.Panel PanelMarkSelection;
         
         /// <summary>
-        /// PanelStudent control.
+        /// RadioButtonX control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelStudent;
+        protected global::System.Web.UI.WebControls.RadioButton RadioButtonX;
         
         /// <summary>
-        /// LabelFirstName control.
+        /// RadioButtonO control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelFirstName;
+        protected global::System.Web.UI.WebControls.RadioButton RadioButtonO;
         
         /// <summary>
-        /// TextBoxFirstName control.
+        /// Buttons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxFirstName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Buttons;
         
         /// <summary>
-        /// LabelLastName control.
+        /// Button0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelLastName;
+        protected global::System.Web.UI.WebControls.Button Button0;
         
         /// <summary>
-        /// TextBoxLastName control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxLastName;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// LabelFacultyNumber control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelFacultyNumber;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// TextBoxFacultyNumber control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxFacultyNumber;
+        protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
-        /// LabelUniversity control.
+        /// Button4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUniversity;
+        protected global::System.Web.UI.WebControls.Button Button4;
         
         /// <summary>
-        /// DropDownListUniversity control.
+        /// Button5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListUniversity;
+        protected global::System.Web.UI.WebControls.Button Button5;
         
         /// <summary>
-        /// PanelSpecialties control.
+        /// Button6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelSpecialties;
+        protected global::System.Web.UI.WebControls.Button Button6;
         
         /// <summary>
-        /// ListBoxCourses control.
+        /// Button7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxCourses;
+        protected global::System.Web.UI.WebControls.Button Button7;
         
         /// <summary>
-        /// ButtonSubmit control.
+        /// Button8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
+        protected global::System.Web.UI.WebControls.Button Button8;
         
         /// <summary>
-        /// Result control.
+        /// LabelMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Result;
+        protected global::System.Web.UI.WebControls.Label LabelMessage;
+        
+        /// <summary>
+        /// ButtonNewGame control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonNewGame;
     }
 }

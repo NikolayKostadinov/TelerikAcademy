@@ -10,8 +10,11 @@
 .panels {
     top:10px;
     float:left;
-    height:130px;
+    }
+.clear {
+    clear:both;
 }
+
 
 #DropDownListUniversity {
     width: 173px;

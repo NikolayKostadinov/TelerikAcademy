@@ -1,0 +1,26 @@
+﻿body, table, td, tr, .button{
+    margin:0px;
+    padding:0px;
+    border-collapse:collapse;
+}
+
+tr td {
+    border: 1px solid black;
+    height:30px;
+    width:30px;
+}
+
+tr {
+    height:30px;
+}
+
+#Buttons {
+    margin:50px;
+}
+
+.button {
+    height:30px;
+    width:30px;
+    background-color:white;
+    text-align:center;
+}

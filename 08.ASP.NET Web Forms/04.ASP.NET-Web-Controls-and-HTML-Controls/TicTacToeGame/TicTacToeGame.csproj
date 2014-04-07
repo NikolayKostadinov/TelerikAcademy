@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D33758D1-D9A7-45B6-B63B-0D5E071324E7}</ProjectGuid>
+    <ProjectGuid>{B7EA84BF-02FB-42EB-BEA7-AB05FCE623EB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HtmlServerControllsRandomGenerator</RootNamespace>
-    <AssemblyName>HtmlServerControllsRandomGenerator</AssemblyName>
+    <RootNamespace>TicTacToeGame</RootNamespace>
+    <AssemblyName>TicTacToeGame</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -66,18 +66,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RandomGenerator.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="GameBoard.aspx" />
+    <Content Include="style.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomGenerator.aspx.cs">
-      <DependentUpon>RandomGenerator.aspx</DependentUpon>
+    <Compile Include="ControllExtention.cs" />
+    <Compile Include="GameBoard.aspx.cs">
+      <DependentUpon>GameBoard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RandomGenerator.aspx.designer.cs">
-      <DependentUpon>RandomGenerator.aspx</DependentUpon>
+    <Compile Include="GameBoard.aspx.designer.cs">
+      <DependentUpon>GameBoard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -92,9 +96,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>35395</DevelopmentServerPort>
+          <DevelopmentServerPort>41443</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:35395/</IISUrl>
+          <IISUrl>http://localhost:41443/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

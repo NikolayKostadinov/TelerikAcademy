@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Copier", "Copier\Copier.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRegistrationForm", "StudentRegistrationForm\StudentRegistrationForm.csproj", "{1C9A8355-6E34-42D3-B2AB-61AD2365330E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeGame", "TicTacToeGame\TicTacToeGame.csproj", "{B7EA84BF-02FB-42EB-BEA7-AB05FCE623EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1C9A8355-6E34-42D3-B2AB-61AD2365330E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C9A8355-6E34-42D3-B2AB-61AD2365330E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C9A8355-6E34-42D3-B2AB-61AD2365330E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7EA84BF-02FB-42EB-BEA7-AB05FCE623EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7EA84BF-02FB-42EB-BEA7-AB05FCE623EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7EA84BF-02FB-42EB-BEA7-AB05FCE623EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7EA84BF-02FB-42EB-BEA7-AB05FCE623EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
