@@ -13,14 +13,35 @@ namespace TicTacToeGame
     {
         private string gamerSign = "X";
         private string botSign = "O";
-        private string[,] gameBoard = null;
+        private string[,] gameBoard = new string[3, 3];
         private static Random randomGenerator = new Random();
 
-        public GameBoard() 
+        public List<string> PersistentGameBoard
         {
-            if (gameBoard == null)
+            get 
             {
-                this.gameBoard = new string[3, 3];
+                var tempList = new List<string>(9);
+                if (this.gameBoard != null)
+                { 
+                    for (int row = 0; row < 3; row++)
+                    {
+                        for (int col = 0; col < 3; col++)
+                        {
+                            tempList.Add(this.gameBoard[row, col]);
+                        }
+                    }
+                }
+                return tempList;
+            }
+            set 
+            {
+                for (int row = 0; row < 3; row++)
+                {
+                    for (int col = 0; col < 3; col++)
+                    {
+                        this.gameBoard[row, col] = value[row * 3 + col] ?? null;
+                    }
+                }
             }
         }
 
@@ -35,17 +56,33 @@ namespace TicTacToeGame
             SetSimbol(sender, gamerSign);
             MakeReaction(sender);
             GenerateNextMove();
+            PersistState();
+        }
+  
+        /// <summary>
+        /// Persists the state.
+        /// </summary>
+        private void PersistState()
+        {
+            if (this.ViewState["status"] == null)
+            {
+                ViewState.Add("status", this.PersistentGameBoard);
+            }
+            else
+            {
+                ViewState["status"] = this.PersistentGameBoard;
+            }
         }
   
         private void GetButtons()
         {
-            var buttons = this.Buttons.FindControlsOfType<Button>();
-            for (int row = 0; row < 3; row++)
+            if (this.ViewState["status"] == null)
             {
-                for (int col = 0; col < 3; col++)
-                {
-                    this.gameBoard[row, col] = buttons[row * 3 + col].Text.Trim();
-                }
+                this.gameBoard = new string[3, 3];
+            }
+            else
+            {
+                this.PersistentGameBoard = (List<string>)this.ViewState["status"];
             }
         }
 
@@ -58,9 +95,8 @@ namespace TicTacToeGame
             if (string.IsNullOrEmpty((sender as Button).Text.Trim()))
             {
                 (sender as Button).Text = simbol;
+                this.gameBoard[row, col] = simbol;
             }
-            GetButtons();
-            gameBoard[row, col] = simbol;
         }
   
         private void MakeReaction(object sender)
@@ -71,6 +107,7 @@ namespace TicTacToeGame
             {
                 SetButtonsState(false);
                 gameBoard = null;
+                this.ViewState["status"] = null;
                 this.LabelMessage.Text = winner;
             }
         }
@@ -199,7 +236,7 @@ namespace TicTacToeGame
                 }
             }
           
-            if (this.gameBoard!=null)
+            if (this.gameBoard != null)
             {
                 StringBuilder text = new StringBuilder();
                 for (int row = 0; row < 3; row++)
@@ -211,7 +248,7 @@ namespace TicTacToeGame
                     text.Append("\r\n");
                 }
 
-                this.LabelMessage.Text=text.ToString();
+                this.LabelMessage.Text = text.ToString();
             }
         }
 
@@ -224,6 +261,7 @@ namespace TicTacToeGame
                 button.Text = " ";
                 button.Enabled = true;
                 this.LabelMessage.Text = "";
+                this.ViewState["status"] = null;
             }
         }
     }
