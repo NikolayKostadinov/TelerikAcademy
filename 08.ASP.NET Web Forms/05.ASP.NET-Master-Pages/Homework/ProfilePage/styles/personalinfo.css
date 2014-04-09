@@ -1,0 +1,26 @@
+﻿img {
+    float:left;
+}
+
+.terms {
+    float: left;
+    padding: 0; 
+    margin:0 10px 0 10px;
+}
+dl {
+    clear: left;
+    margin:0 5px 0 5px;
+}     
+
+dt {
+    margin: 5px 0 5px 0;
+}
+
+dd {
+    margin:5px 0px 5px 10px;
+}
+
+picontainer {
+    clear:both;
+    margin:0;
+}

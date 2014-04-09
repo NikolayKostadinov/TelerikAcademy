@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ProfilePage.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title>Personal Profile</title>
+        <link href="styles/masterstyle.css" rel="stylesheet" />
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <header>
+                <h1>User's Profile</h1>
+            </header>
+            <div>
+                <aside id="sidebar">
+                    <div class="sidebar-title">Menu</div>
+                    <ul>
+                        <li>
+                            <a href="~/PersonalInfo.aspx" runat="server">Personal Info</a>
+                        </li>
+                        <li>
+                            <a href="~/Friends.aspx" runat="server">Frienfs</a>
+                        </li>
+                        <li>
+                            <a href="~/AdditionalInfo.aspx" runat="server">Additional Information</a>
+                        </li>
+                    </ul>
+                </aside>
+                <section id="main-content">
+                    <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </section>
+            </div>
+            <footer>
+                <h2> Manhattan Technology Ltd &reg;</h2>
+            </footer>
+        </form>
+    </body>
+</html>
