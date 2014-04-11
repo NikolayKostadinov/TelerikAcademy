@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DCBE7DD0-CE9A-49F3-9171-F96271DE227B}</ProjectGuid>
+    <ProjectGuid>{25DB6EA7-8ED1-4428-BC22-FB01EF7163A5}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmployeesList</RootNamespace>
-    <AssemblyName>EmployeesList</AssemblyName>
+    <RootNamespace>EmployeesFormview</RootNamespace>
+    <AssemblyName>EmployeesFormview</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -63,7 +63,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EmpDetails.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -73,6 +72,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EmpDetails.aspx" />
     <Content Include="Employees.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -162,9 +162,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>18230</DevelopmentServerPort>
+          <DevelopmentServerPort>21251</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:18230/</IISUrl>
+          <IISUrl>http://localhost:21251/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
