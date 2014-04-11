@@ -12,9 +12,9 @@
             <div>
                 <asp:Panel ID="PanelMarkSelection" runat="server">
                     <asp:Label Text="Mark X" runat="server" AssociatedControlID="RadioButtonX" />
-                    <asp:RadioButton ID="RadioButtonX" runat="server" Checked="True" GroupName="MarkRadios" OnCheckedChanged ="RadioButton_CheckedChanged" AutoPostBack="True" />
+                    <asp:RadioButton ID="RadioButtonX" runat="server" Checked="True" GroupName="MarkRadios" OnCheckedChanged ="RadioButton_CheckedChanged" AutoPostBack="true" />
                     <asp:Label Text="Mark O" runat="server" AssociatedControlID="RadioButtonO" />
-                    <asp:RadioButton ID="RadioButtonO" runat="server" GroupName="MarkRadios" OnCheckedChanged ="RadioButton_CheckedChanged"/>
+                    <asp:RadioButton ID="RadioButtonO" runat="server" GroupName="MarkRadios" OnCheckedChanged ="RadioButton_CheckedChanged" AutoPostBack="true"/>
                 </asp:Panel>
                 <div id="Buttons" runat="server">
                     <asp:button text=" " runat="server" ID="Button0" CommandArgument="0" OnClick="Button_Click" CssClass="button"/>

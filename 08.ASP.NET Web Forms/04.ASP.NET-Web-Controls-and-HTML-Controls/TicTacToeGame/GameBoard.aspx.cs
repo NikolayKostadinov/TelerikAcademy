@@ -16,6 +16,38 @@ namespace TicTacToeGame
         private string[,] gameBoard = new string[3, 3];
         private static Random randomGenerator = new Random();
 
+        public GameBoard() 
+        {
+            GetGameSigns();
+        }
+
+        private void GetGameSigns()
+        {
+            this.gamerSign = (string)ViewState["gamerSign"] ?? "X";
+            this.botSign = (string)ViewState["botSign"] ?? "O";
+        }
+
+        private void PersistGameSigns()
+        {
+            if (this.ViewState["gamerSign"] == null)
+            {
+                ViewState.Add("gamerSign", this.gamerSign);
+            }
+            else 
+            {
+                ViewState["gamerSign"] = this.gamerSign;
+            }
+
+            if (ViewState["botSign"] == null)
+            {
+                ViewState.Add("botSign", this.botSign);
+            }
+            else 
+            {
+                this.ViewState["botSign"] = this.botSign;
+            }
+        }
+
         public List<string> PersistentGameBoard
         {
             get 
@@ -201,7 +233,9 @@ namespace TicTacToeGame
 
         public void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (gameBoard == null)
+            GetButtons();
+            if (string.IsNullOrEmpty(
+                string.Join("", this.PersistentGameBoard).Trim() ?? ""))
             {
                 if ((sender as RadioButton).ID == this.RadioButtonX.ID)
                 {
@@ -213,6 +247,7 @@ namespace TicTacToeGame
                     gamerSign = "O";
                     botSign = "X";
                 }
+                PersistGameSigns();
             }
             else 
             {
@@ -222,34 +257,7 @@ namespace TicTacToeGame
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (gameBoard == null)
-            {
-                if (this.RadioButtonX.Checked)
-                {
-                    gamerSign = "X";
-                    botSign = "O";
-                }
-                else
-                {
-                    gamerSign = "O";
-                    botSign = "X";
-                }
-            }
-          
-            if (this.gameBoard != null)
-            {
-                StringBuilder text = new StringBuilder();
-                for (int row = 0; row < 3; row++)
-                {
-                    for (int col = 0; col < 3; col++)
-                    {
-                        text.Append(this.gameBoard[row, col] + " ");
-                    }
-                    text.Append("\r\n");
-                }
-
-                this.LabelMessage.Text = text.ToString();
-            }
+            GetGameSigns();
         }
 
         protected void ButtonNewGame_Click(object sender, EventArgs e)
