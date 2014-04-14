@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="2. EntityDataSourceListBox" Category="Project" Bounds="630.4,0,160.076666666667,25.96" Label="2. EntityDataSourceListBox" />
+    <Node Id="3. EFDataSourceMasterDetailsDemo" Category="Project" Bounds="390.694990641276,-0.666700762939454,209.486666666667,25.96" Label="3. EFDataSourceMasterDetailsDemo" />
+    <Node Id="4. EFDataSourceEditableListView" Category="Project" Bounds="169.114998270671,-0.666700762939454,190.646666666667,25.96" Label="4. EFDataSourceEditableListView" />
+    <Node Id="6. ModelBindingDemo" Category="Project" Bounds="0,0,138.876666666667,25.96" Label="6. ModelBindingDemo" />
+    <Node Id="EntityFramework 6.0.0-rc1" Category="Package" Bounds="329.846687825521,55.2933992370605,157.183333333333,25.96" Label="EntityFramework 6.0.0-rc1" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="2. EntityDataSourceListBox" Target="EntityFramework 6.0.0-rc1" Category="Installed Package" Bounds="488.185008334374,25.9599995422363,151.359532038315,27.7125268298546" />
+    <Link Source="3. EFDataSourceMasterDetailsDemo" Target="EntityFramework 6.0.0-rc1" Category="Installed Package" Bounds="436.18744009936,25.2932992370605,39.0711557496412,25.1313396530244" />
+    <Link Source="4. EFDataSourceEditableListView" Target="EntityFramework 6.0.0-rc1" Category="Installed Package" Bounds="297.839277940566,25.2932992370605,68.8093030517848,26.7401032477485" />
+    <Link Source="6. ModelBindingDemo" Target="EntityFramework 6.0.0-rc1" Category="Installed Package" Bounds="138.581448026972,24.257751051991,183.877420213673,29.991760979245" />
+  </Links>
+  <Categories>
+    <Category Id="Installed Package" />
+    <Category Id="Package" />
+    <Category Id="Project" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+  </Styles>
+</DirectedGraph>
