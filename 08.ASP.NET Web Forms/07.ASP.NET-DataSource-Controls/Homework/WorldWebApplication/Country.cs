@@ -22,6 +22,7 @@ namespace WorldWebApplication
     
         public string Code { get; set; }
         public string Name { get; set; }
+        public byte[] Flag { get; set; }
         public int ContinentId { get; set; }
         public string Region { get; set; }
         public float SurfaceArea { get; set; }
@@ -35,7 +36,6 @@ namespace WorldWebApplication
         public string HeadOfState { get; set; }
         public Nullable<int> Capital { get; set; }
         public string Code2 { get; set; }
-        public byte[] Flag { get; set; }
     
         public virtual ICollection<City> Cities { get; set; }
         public virtual Continent Continent { get; set; }

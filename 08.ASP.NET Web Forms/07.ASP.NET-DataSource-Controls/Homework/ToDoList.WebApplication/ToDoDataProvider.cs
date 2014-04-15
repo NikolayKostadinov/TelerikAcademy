@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
-using ToDoLost.Data.Models;
+using ToDoList.Data.Models;
 using ToDoList.Repositories;
 
 namespace ToDoList.WebApplication
@@ -20,6 +20,21 @@ namespace ToDoList.WebApplication
         public IQueryable<Category> GetAllCategories() 
         {
             return this.categories.All();
+        }
+
+        public void DeleteCategory(Category category) 
+        {
+            this.categories.Delete(category.CategoryId);
+        }
+
+        public void UpdateCategory(Category category)
+        {
+            this.categories.Update(category.CategoryId, category);
+        }
+
+        public void InsertCategory(Category category) 
+        {
+            this.categories.Add(category);
         }
     }
 }

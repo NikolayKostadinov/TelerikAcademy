@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\TelerikAcademyHomeworks\Homeworks\08.ASP.NET Web Forms\07.ASP.NET-DataSource-Controls\Homework\WorldWebApplication\WorldModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\TelericAcademy\Homeworks\08.ASP.NET Web Forms\07.ASP.NET-DataSource-Controls\Homework\WorldWebApplication\WorldModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -25,10 +25,9 @@ namespace WorldWebApplication
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Continent> Continents { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<CountryLanguage> CountryLanguages { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

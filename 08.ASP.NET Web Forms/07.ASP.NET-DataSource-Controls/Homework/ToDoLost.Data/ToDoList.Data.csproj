@@ -7,8 +7,8 @@
     <ProjectGuid>{F228680B-7F8D-403D-BAB6-5A5F55F8BACC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ToDoLost.Data</RootNamespace>
-    <AssemblyName>ToDoLost.Data</AssemblyName>
+    <RootNamespace>ToDoList.Data</RootNamespace>
+    <AssemblyName>ToDoList.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,10 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201404141059441_Popolate.cs" />
-    <Compile Include="Migrations\201404141059441_Popolate.Designer.cs">
-      <DependentUpon>201404141059441_Popolate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Mapping\CategoryMap.cs" />
@@ -61,11 +57,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201404141059441_Popolate.resx">
-      <DependentUpon>201404141059441_Popolate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

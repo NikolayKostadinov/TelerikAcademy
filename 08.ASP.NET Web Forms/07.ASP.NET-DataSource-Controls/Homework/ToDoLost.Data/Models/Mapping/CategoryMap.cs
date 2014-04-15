@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
-namespace ToDoLost.Data.Models.Mapping
+namespace ToDoList.Data.Models.Mapping
 {
     public class CategoryMap : EntityTypeConfiguration<Category>
     {

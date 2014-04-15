@@ -3,94 +3,103 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-        <asp:ObjectDataSource ID="ObjectDataSourceCategories" runat="server"
-            SelectMethod="GetAllCategories" TypeName="ToDoList.WebApplication.ToDoDataProvider">
-        </asp:ObjectDataSource>
-    
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="ObjectDataSourceCategories" ItemType="ToDoLost.Data.Models.Category">
-            <EditItemTemplate>
-                <tr style="background-color:#008A8C;color: #FFFFFF;">
-                    <td>
-                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="CategoryIdTextBox" runat="server" Text='<%# Bind("CategoryId") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
-                    </td>
-                </tr>
-            </EditItemTemplate>
-            <EmptyDataTemplate>
-                <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
-                    <tr>
-                        <td>No data was returned.</td>
-                    </tr>
-                </table>
-            </EmptyDataTemplate>
-            <InsertItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="CategoryIdTextBox" runat="server" Text='<%# Bind("CategoryId") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
-                    </td>
-                </tr>
-            </InsertItemTemplate>
-            <ItemTemplate>
-                <tr style="background-color:#DCDCDC;color: #000000;">
-                    <td>
-                        <%#: Item.Name %>
-                    </td>
-                </tr>
-            </ItemTemplate>
-            <LayoutTemplate>
-                <table runat="server">
-                    <tr runat="server">
-                        <td runat="server">
-                            <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
-                                <tr runat="server" style="background-color:#DCDCDC;color: #000000;">
-                                    <th runat="server">Category</th>
-                                </tr>
-                                <tr id="itemPlaceholder" runat="server">
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;"></td>
-                    </tr>
-                </table>
-            </LayoutTemplate>
-            <SelectedItemTemplate>
-                <tr style="background-color:#008A8C;font-weight: bold;color: #FFFFFF;">
-                    <td>
-                        <asp:Label ID="CategoryIdLabel" runat="server" Text='<%# Eval("CategoryId") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="TodosLabel" runat="server" Text='<%# Eval("Todos") %>' />
-                    </td>
-                </tr>
-            </SelectedItemTemplate>
-        </asp:ListView>
-    
-    </div>
-    </form>
-</body>
+    <head runat="server">
+        <title></title>
+        <link href="main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <div>
+
+                <asp:ObjectDataSource ID="ObjectDataSourceCategories" runat="server"
+                    SelectMethod="GetAllCategories" 
+                    TypeName="ToDoList.WebApplication.ToDoDataProvider" 
+                    DataObjectTypeName="ToDoList.Data.Models.Category" 
+                    DeleteMethod="DeleteCategory" 
+                    InsertMethod="InsertCategory" 
+                    UpdateMethod="UpdateCategory">
+                </asp:ObjectDataSource>
+                <fieldset>
+                    <legend>Categories</legend>
+                <asp:ListView ID="ListView1" runat="server" 
+                    DataSourceID="ObjectDataSourceCategories" 
+                    ItemType="ToDoList.Data.Models.Category"
+                    DataKeyNames="CategoryId">
+                    <EditItemTemplate>
+                        <tr class="edit-template">
+                            <td>
+                                <asp:ImageButton ID="UpdateButton" runat="server" CommandName="Update" Text="Update" ImageUrl="~/images/update.png" ToolTip="Update" Height="20px" Width ="20px"/>
+                                <asp:ImageButton ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" ImageUrl="~/images/cancel.png" ToolTip="Cancel" Height="20px" Width ="20px"/>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                            </td>
+                        </tr>
+                    </EditItemTemplate>
+                    <EmptyDataTemplate>
+                        <table runat="server" style="">
+                            <tr>
+                                <td>No data was returned.</td>
+                            </tr>
+                        </table>
+                    </EmptyDataTemplate>
+                    <InsertItemTemplate>
+                        <tr class="insert-template">
+                            <td>
+                                <asp:ImageButton ID="InsertButton" runat="server" CommandName="Insert" ImageUrl="~/images/insert.png" OnClick="InsertButton_Click1" Text="Insert" Height="20px" Width ="20px" />
+                                <asp:ImageButton ID="CancelButton" runat="server" CommandName="Cancel" ImageUrl="~/images/cancel.png" Text="Clear" Height="20px" Width ="20px"/>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                            </td>
+                        </tr>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <tr class="item-template">
+                            <td>
+                                <asp:ImageButton ID="SelectButton" runat="server" CommandName="Select" Text="Select" ImageUrl ="~/images/select.png" ToolTip="Select" Height="20px" Width ="20px"/>
+                                <asp:ImageButton ID="EditButton" runat="server" CommandName="Edit" Text="Edit" ImageUrl ="~/images/Edit.png" ToolTip="Edit" Height="20px" Width ="20px"/>
+                                <asp:ImageButton ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" ImageUrl ="~/images/Delete.png" ToolTip="Delete" Height="20px" Width ="20px"/>
+                            </td>
+                            <td>
+                                <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <asp:ImageButton ID="InsertButton" runat="server" OnClick="InsertButton_Click" ImageUrl="~/images/insert.png" Height="20px" Width ="20px" /> 
+                        <asp:Label ID="LabelInsert" runat="server" AssociatedControlID="InsertButton">Create New Category</asp:Label>
+                        <table runat="server">
+                            <tr runat="server">
+                                <td runat="server">
+                                    <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+                                        <tr runat="server" style="">
+                                            <th runat="server"></th>
+                                            <th runat="server"></th>
+                                        </tr>
+                                        <tr id="itemPlaceholder" runat="server">
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </LayoutTemplate>
+                    <SelectedItemTemplate>
+                        <tr style="">
+                            <td>
+                                <asp:ImageButton ID="SelectButton" runat="server" CommandName="Select" Text="Select" ImageUrl ="~/images/select.png" ToolTip="Select" Height="20px" Width ="20px"/>
+                                <asp:ImageButton ID="EditButton" runat="server" CommandName="Edit" Text="Edit" ImageUrl ="~/images/Edit.png" ToolTip="Edit" Height="20px" Width ="20px"/>
+                                <asp:ImageButton ID="DeleteButton" runat="server" CommandName="Delete" CommandArgument="<%# new ToDoList.Data.Models.Category() { CategoryId=Item.CategoryId }%>" Text="Delete" ImageUrl ="~/images/Delete.png" ToolTip="Delete" Height="20px" Width ="20px"/>
+                            </td>
+                            <td>
+                                <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                            </td>
+                        </tr>
+                    </SelectedItemTemplate>
+                </asp:ListView>
+                </fieldset>
+                <asp:Label ID="Messages" Text="" runat="server" />
+            </div>
+        </form>
+    </body>
 </html>

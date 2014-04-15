@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ToDoLost.Data.Models
+namespace ToDoList.Data.Models
 {
     public partial class Category
     {

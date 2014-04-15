@@ -1,13 +1,13 @@
-namespace ToDoLost.Data.Migrations
+namespace ToDoList.Data.Migrations
 {
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using ToDoLost.Data.Models;
+    using ToDoList.Data.Models;
 
-    public sealed class Configuration : DbMigrationsConfiguration<ToDoLost.Data.Models.TodoListContext>
+    public sealed class Configuration : DbMigrationsConfiguration<TodoListContext>
     {
         public Configuration()
         {
@@ -15,7 +15,7 @@ namespace ToDoLost.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(ToDoLost.Data.Models.TodoListContext context)
+        protected override void Seed(TodoListContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -38,11 +38,10 @@ namespace ToDoLost.Data.Migrations
             ICollection<Category> categories= new List<Category>(){ new Category {Name = "Urgent"}};
 
             context.Categories.AddOrUpdate(
-                c => c,
+                c => c.Name,
                 new Category {Name = "Urgent", Todos = todos}
                 );
-            context.Todos.AddOrUpdate(t=>t, todos.ToArray());
-            context.SaveChanges();
+            context.Todos.AddOrUpdate(t=> t.Title, todos.ToArray());
         }
     }
 }

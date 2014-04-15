@@ -1,0 +1,17 @@
+﻿fieldset {
+    display: inline;
+}
+
+.item-template td {
+    border: 2px groove threedface;
+    border-spacing: 0;
+}
+
+table {
+    border:none;
+    border-collapse:collapse;
+}
+
+.insert-template td {
+    background-color:lightblue;
+}

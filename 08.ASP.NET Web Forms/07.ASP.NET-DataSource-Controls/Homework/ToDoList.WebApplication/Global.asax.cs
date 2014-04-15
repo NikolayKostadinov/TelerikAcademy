@@ -5,8 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
-using ToDoLost.Data.Migrations;
-using ToDoLost.Data.Models;
+using ToDoList.Data.Migrations;
+using ToDoList.Data.Models;
 using ToDoList.Repositories;
 
 namespace ToDoList.WebApplication
@@ -16,7 +16,7 @@ namespace ToDoList.WebApplication
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TodoListContext, Configuration>());
+           // Database.SetInitializer(new MigrateDatabaseToLatestVersion<TodoListContext, Configuration>());
         }
     }
 }

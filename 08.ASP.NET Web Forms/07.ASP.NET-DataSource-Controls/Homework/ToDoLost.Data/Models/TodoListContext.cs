@@ -1,18 +1,18 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using ToDoLost.Data.Models.Mapping;
+using ToDoList.Data.Models.Mapping;
 
-namespace ToDoLost.Data.Models
+namespace ToDoList.Data.Models
 {
     public partial class TodoListContext : DbContext
     {
-        static TodoListContext()
-        {
-            Database.SetInitializer<TodoListContext>(null);
-        }
+        //static TodoListContext()
+        //{
+        //    Database.SetInitializer<TodoListContext>();
+        //}
 
         public TodoListContext()
-            : base("Name=TodoListContext")
+            : base("Name=TodoListContextWork")
         {
         }
 

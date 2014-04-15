@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
-using ToDoLost.Data;
-using ToDoLost.Data.Models;
+using ToDoList.Data;
+using ToDoList.Data.Models;
 
 namespace ToDoPopulator
 {
@@ -10,10 +10,13 @@ namespace ToDoPopulator
     {
         static void Main(string[] args)
         {
-            using (var context = new ToDoLost.Data.Models.TodoListContext())
+            using (var context = new TodoListContext())
             {
-                //context.Entry(context.Todos).State = EntityState.Modified;
-                //context.Entry(context.Categories).State = EntityState.Modified;
+                var category = new Category()
+                {
+                    Name = "Test",
+                };
+                context.Categories.Add(category);
                 context.SaveChanges();
             }
         }
