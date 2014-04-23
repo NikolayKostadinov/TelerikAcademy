@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using ToDoList.Data.Models;
@@ -10,31 +9,36 @@ namespace ToDoList.WebApplication
 {
     public class ToDoDataProvider
     {
-        private IRepository<Category> categories = new EfRepository<Category>(new TodoListContext());
-        
-        public IRepository<Category> Categories
+        private IRepository<Todo> todos = new EfRepository<Todo>(new TodoListContext());
+
+        public IRepository<Todo> Todos
         {
-            get { return this.categories; }
+            get { return this.todos; }
         }
 
-        public IQueryable<Category> GetAllCategories() 
+        public ICollection<Todo> GetAllToDos()
         {
-            return this.categories.All();
+            return this.todos.All().ToList();
         }
 
-        public void DeleteCategory(Category category) 
+        public ICollection<Todo> GetAllToDos(int categoryId)
         {
-            this.categories.Delete(category.CategoryId);
+            return this.todos.All().Where(x => x.CategoryId == categoryId).ToList();
         }
 
-        public void UpdateCategory(Category category)
+        public void DeleteTodo(Todo todo)
         {
-            this.categories.Update(category.CategoryId, category);
+            this.todos.Delete(todo.TodoId);
         }
 
-        public void InsertCategory(Category category) 
+        public void UpdateToDo(Todo todo)
         {
-            this.categories.Add(category);
+            this.todos.Update(todo.TodoId, todo);
+        }
+
+        public void InsertTodo(Todo todo)
+        {
+            this.todos.Add(todo);
         }
     }
 }

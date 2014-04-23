@@ -31,21 +31,30 @@ namespace ToDoList.WebApplication {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceCategories;
         
         /// <summary>
-        /// ListView1 control.
+        /// ListViewCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.ListView ListViewCategories;
         
         /// <summary>
-        /// Messages control.
+        /// ObjectDataSourceTodo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Messages;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceTodo;
+        
+        /// <summary>
+        /// ListViewTodo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListViewTodo;
     }
 }

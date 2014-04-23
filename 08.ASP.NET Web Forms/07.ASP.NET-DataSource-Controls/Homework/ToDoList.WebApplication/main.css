@@ -2,9 +2,19 @@
     display: inline;
 }
 
-.item-template td {
+.item-template>td, .selected-template>td, .edit-template>td {
     border: 2px groove threedface;
     border-spacing: 0;
+    margin:0;
+    padding:0 3px ;
+}
+
+    tr.item-template:nth-child(2n+1) {
+        background-color:aliceblue
+    }
+
+.selected-template td {
+    background-color:#8f9ad8
 }
 
 table {
@@ -12,6 +22,32 @@ table {
     border-collapse:collapse;
 }
 
-.insert-template td {
+.insert-template>td {
     background-color:lightblue;
+}
+
+.image-button {
+    padding:0;
+    margin-left:3px;
+}
+
+.image-buttons {
+    margin:0;
+    padding:0;
+    width:80px;
+}
+
+.todo-headers th{
+    border: 2px groove threedface;
+    background:border-box center;
+    background-color:#9eb7ca;
+}
+.todo-body {
+    width:500px;
+}
+
+.todo-body-text {
+    height:95%;
+    width:95%;
+    margin:10px;
 }

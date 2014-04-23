@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0" Timestamp="6e6079fc-f76d-4cbf-a316-7114f6f25cb4">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings Version="2">
+      <FilePath>
+        <FileRelativePath>ToDoList.WebApplication/ToDoDataProvider.cs</FileRelativePath>
+        <ProjectRelativePath>ToDoList.WebApplication/ToDoList.WebApplication.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>16669945467358041146</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>17587397098964977211</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>8139281303601691630</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>9468645315041398825</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>3696816822232621823</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <FileRelativePath>ToDoList.WebApplication/CategoryDataProvider.cs</FileRelativePath>
+        <ProjectRelativePath>ToDoList.WebApplication/ToDoList.WebApplication.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>3468898137109151920</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>18373699383707796661</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <FileRelativePath>WorldWebApplication/City.cs</FileRelativePath>
+        <ProjectRelativePath>WorldWebApplication/WorldWebApplication.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>8507710061414925026</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>
