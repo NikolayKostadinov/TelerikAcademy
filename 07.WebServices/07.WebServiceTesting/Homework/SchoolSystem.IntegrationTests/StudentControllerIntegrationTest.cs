@@ -35,7 +35,7 @@ namespace SchoolSystem.IntegrationTests
 
             var response = server.CreateGetRequest("api/Student");
 
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);    
             Assert.IsNotNull(response.Content);
         }
 
@@ -54,9 +54,7 @@ namespace SchoolSystem.IntegrationTests
 
             var response = server.CreatePostRequest("api/Student",
                 new Student()
-                {
-                    FirstName = null
-                });
+                );
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
         }

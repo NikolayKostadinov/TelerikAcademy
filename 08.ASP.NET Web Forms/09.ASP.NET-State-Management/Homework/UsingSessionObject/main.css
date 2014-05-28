@@ -1,0 +1,22 @@
+﻿.inline {
+    display:inline;
+}
+
+#tbInput {
+    width:500px;
+}
+
+#lbOutput{
+    clear:both;
+    display:block;
+    width:565px;
+    height:400px;
+    overflow-y:scroll;
+    border:1px solid black;
+}
+
+hr {
+    float:left;
+    align-self:flex-start;
+    width:565px;
+}

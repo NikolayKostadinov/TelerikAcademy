@@ -7,7 +7,6 @@
     {
         private decimal value;
         private string subject;
-
         public int MarkId { get; set; }
 
         public string Subject

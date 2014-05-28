@@ -27,12 +27,14 @@
             }
             set
             {
-                if (value == null || string.IsNullOrEmpty(value.Trim()))
+                if (value == null || string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentNullException("FirstName");   
+                    throw new ArgumentNullException("FirstName");
                 }
-
-                this.firstName = value;
+                else
+                {
+                    this.firstName = value;
+                }
             }
         }
 
@@ -44,12 +46,14 @@
             }
             set
             {
-                if (value == null || string.IsNullOrEmpty(value.Trim()))
+                if (value == null || string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentNullException("LastName");   
+                    throw new ArgumentNullException("LastName");
                 }
-
-                this.lastName = value;
+                else
+                {
+                    this.lastName = value;
+                }
             }
         }
 
@@ -65,8 +69,8 @@
                 {
                     throw new ArgumentOutOfRangeException("Age");
                 }
-
-                this.age = value;
+                else{
+                this.age = value;}
             }
         }
 

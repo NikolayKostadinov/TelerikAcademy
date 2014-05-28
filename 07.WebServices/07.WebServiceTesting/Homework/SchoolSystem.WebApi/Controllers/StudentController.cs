@@ -41,7 +41,7 @@ namespace SchoolSystem.WebApi.Controllers
                 y => (
                     y.Marks
                     .Where(
-                    x => x.Subject.ToLower() == subject.ToLower() 
+                    x => x.Subject.ToLower() == subject.ToLower()
                         && x.Value >= value).FirstOrDefault()) != null)
                 .Select(StudentDetailedModel.FormStudent);
 
@@ -58,6 +58,11 @@ namespace SchoolSystem.WebApi.Controllers
         {
             try
             {
+                if (string.IsNullOrEmpty(student.FirstName) || string.IsNullOrEmpty(student.LastName))
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "FirstName and LastName of student cannot be null!");
+                }
+
                 var resultStudent = this.repository.Add(student);
                 var response = Request.CreateResponse<Student>(HttpStatusCode.Created, resultStudent);
                 var resourceLink = Url.Link("DefaultApi", new { id = resultStudent.StudentId });
