@@ -1,0 +1,8 @@
+﻿.Image {
+    width: 475px;
+    margin: 0px auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px groove gray;
+    background-color: Silver;
+}
