@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Calculator.Domain.Unit">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAgAAQAAAACAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Unit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Calculator.Domain.MeasureFactorCalculator">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>MeasureFactorCalculator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Domain.BasicCalculator">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BasicCalculator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Calculator.Domain.ICalculator" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICalculator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Calculator.Domain.IUnit" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAgAAQAAAACAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>IUnit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Calculator.Domain.Measure" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAgoAAQAAAAAAAAAFAQAAAAygBgACAFEAAA=</HashCode>
+      <FileName>Measure.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Calculator.Domain.KiloMultiplier" Collapsed="true">
+    <Position X="8.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>KiloMultiplier.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
