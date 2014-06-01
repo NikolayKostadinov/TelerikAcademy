@@ -15,6 +15,6 @@ namespace Calculator.Domain
 
         double Value { get; set; }
 
-        bool isByte { get; set; }
+        bool isByte { get; }
     }
 }

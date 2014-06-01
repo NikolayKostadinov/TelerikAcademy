@@ -16,8 +16,12 @@ namespace Calculator.Domain
         public static double CalculateFactor(this IUnit unit, KiloMultiplier multiplier)
         {
             int unitPowValue = (int)unit.Name;
+            if (unitPowValue > 9)
+            {
+                unitPowValue = unitPowValue % 10;
+            }
             int multiplierValue = (int)multiplier;
-            double factor = Math.Pow(multiplierValue, unitPowValue) * (unit.isByte ? 1 : 8);
+            double factor = Math.Pow(multiplierValue, unitPowValue) * (unit.isByte ? 8:1);
             return factor;
         }
     }
