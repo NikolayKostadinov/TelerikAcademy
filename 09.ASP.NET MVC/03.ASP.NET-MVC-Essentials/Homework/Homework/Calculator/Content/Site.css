@@ -40,3 +40,11 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.table tbody tr:nth-child(2n+1) {
+    background-color:#F0F0F0;
+}
+
+.table thead tr{
+    border-top: 0px;
+}

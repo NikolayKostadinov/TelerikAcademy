@@ -13,7 +13,7 @@ namespace test
         {
             IUnit unit = new Unit() { Name = Measure.MegaByte, Value = 1};
 
-            Measures m = new Measures(unit, KiloMultiplier.k2);
+            MeasuresCalculator m = new MeasuresCalculator(unit, KiloMultiplier.k2);
 
             foreach (var item in m.Units)
             {
