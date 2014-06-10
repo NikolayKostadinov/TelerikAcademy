@@ -1,0 +1,70 @@
+﻿@using AspMvcUserAdministration.Models;
+@using Microsoft.AspNet.Identity.EntityFramework;
+
+<h2>Index</h2>
+
+@(Html.Kendo()
+            .Grid<ApplicationUser>()
+            .HtmlAttributes(new { style = "width:1200px" })
+    .Name("users")
+    .DataSource(data =>
+    {
+        data.Ajax()
+        .Model(m => m.Id(u => u.Id))
+        .PageSize(300)
+        .ServerOperation(true)
+        .Read("ReadAllUsers", "UserAdministration");
+    })
+    .Columns(columns =>
+        {
+            columns.Bound(model => model.Id).Width(300);
+            columns.Bound(model => model.UserName).Width(250);
+            columns.Bound(model => model.Email).Width(250);
+            columns.Bound(model => model.AccessFailedCount).Width(100);
+            columns.Bound(model => model.PhoneNumber).Width(250);
+        }
+    )
+    .Pageable()
+        .Sortable(sort =>
+        {
+            sort.SortMode(GridSortMode.MultipleColumn);
+        })
+    .Groupable()
+    .Filterable()
+    .Resizable(resize => resize.Columns(true))
+        .Scrollable(scroll =>
+        {
+            scroll.Enabled(true);
+            scroll.Height(500);
+        })
+    .ClientDetailTemplateId("template")
+        .Reorderable(order =>
+        {
+            order.Columns(true);
+        })
+    .Events(events => events.DataBound("dataBound"))
+)
+
+<script id="template" type="text/kendo-tmpl">
+    @(Html.Kendo().Grid<IdentityRole>()
+            .Name("user_#=Id#_roles")
+            .Columns(columns =>
+            {
+                columns.Bound(r => r.Id).Width(20);
+                columns.Bound(r => r.Name).Width(110);
+            })
+                            .DataSource(dataSource => dataSource.Ajax()
+                                .PageSize(10)
+                                .Read(read => read.Action("GetRolesByUser", "UserAdministration", new { userId = "#=Id#" }))
+            )
+            .Pageable()
+            .Sortable()
+                    .ToClientTemplate()
+    )
+</script>
+
+<script>
+    function dataBound() {
+        this.expandRow(this.tbody.find("tr.k-master-row").first());
+    }
+</script>

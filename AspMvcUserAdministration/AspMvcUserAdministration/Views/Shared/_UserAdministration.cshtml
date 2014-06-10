@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated && User.IsInRole("Administrator"))
+{
+    <ul class="nav navbar-nav navbar-left">
+        <li>@Html.ActionLink("User Administration", "Index", "UserAdministration")</li>
+    </ul>
+}
