@@ -1,0 +1,38 @@
+﻿@using AspMvcUserAdministration.Models.ViewModels;
+
+@model AccountViewModel
+
+@Html.HiddenFor(model => model.Id)
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.UserName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.UserName)
+    @Html.ValidationMessageFor(model => model.UserName)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.PhoneNumber)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PhoneNumber)
+    @Html.ValidationMessageFor(model => model.PhoneNumber)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.Roles)
+</div>
+<div class="editor-field">
+    @(Html.Kendo()
+        .MultiSelect()
+        .Name("Roles")
+        .Placeholder("Select Roles...")
+        .DataValueField("Id")
+        .DataTextField("Name")
+        .DataSource(data=>data.Custom())
+        .BindTo((System.Collections.IEnumerable)ViewData["Roles"])
+        .AutoBind(true)
+        .Value(Model.SelectedRoles)
+    )
+    @Html.ValidationMessageFor(model => model.Roles)
+</div>
+
