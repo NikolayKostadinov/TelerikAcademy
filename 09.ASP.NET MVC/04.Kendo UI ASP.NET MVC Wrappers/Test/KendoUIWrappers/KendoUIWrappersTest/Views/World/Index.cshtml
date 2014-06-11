@@ -1,0 +1,65 @@
+﻿@using Countries.Data.Models;
+@using Countries.Data.ViewModels;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>World Details</h2>
+<hr />
+
+@(Html.Kendo()
+            .Grid<CountryViewModel>()
+            .HtmlAttributes(new { style = "width:1200px" })
+    .Name("CountriesDetails")
+    .DataSource(data =>
+    {
+        data.Ajax()
+        .Model(m => m.Id(c => c.Code))
+        .PageSize(300)
+        .ServerOperation(true)
+        .Read("ReadCountries", "World");
+    })
+    .Columns(columns =>
+        {
+            columns.Bound(model => model.Code).Width(50);
+            columns.Bound(model => model.Flag).ClientTemplate
+                (
+                "<img src='data:image/png;base64,#:Flag#' style='height: 30px; width: 30px;' />"
+                ).Width(50);
+            columns.Bound(model => model.Name).Width(150);
+            columns.Bound(model => model.Continent).Width(130);
+            columns.Bound(model => model.Region);
+            columns.Bound(model => model.SurfaceArea);
+            columns.Bound(model => model.IndepYear);
+            columns.Bound(model => model.Population);
+            columns.Bound(model => model.LifeExpectancy);
+            columns.Bound(model => model.GNP);
+            columns.Bound(model => model.GNPOld);
+            columns.Bound(model => model.LocalName);
+            columns.Bound(model => model.GovernmentForm);
+            columns.Bound(model => model.HeadOfState);
+            columns.Bound(model => model.Capital);
+            columns.Bound(model => model.Code2);
+            columns.Bound(model => model.CountryLanguages);
+        }
+    )
+    .Pageable()
+        .Sortable(sort => {
+            sort.SortMode(GridSortMode.MultipleColumn);
+        })
+    .Groupable()
+    .Filterable()
+    .Resizable(resize => resize.Columns(true))
+        .Scrollable(scroll =>
+        {
+            scroll.Enabled(true);
+            scroll.Height(500);
+        })
+        .Reorderable(order =>
+        {
+            order.Columns(true);
+        })
+
+)
+

@@ -1,0 +1,23 @@
+﻿@model HandleErrorInfo
+
+@{
+    ViewBag.Title = "Sorry, there was a problem!";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Argument Error</title>
+</head>
+<body>
+    <h2>Sorry</h2>
+    <span class="alert-danger">
+        @(((ArgumentException)Model.Exception).Message)
+    </span>
+    <div>
+        @Html.ActionLink("Change value and try again", "Index")
+    </div>
+</body>
+</html>
+
