@@ -91,6 +91,16 @@
             }
         }
 
+        public virtual void Delete(string id)
+        {
+            var entity = this.GetById(id);
+
+            if (entity != null)
+            {
+                this.Delete(entity);
+            }
+        }
+
         public virtual void Detach(T entity)
         {
             DbEntityEntry entry = this.Context.Entry(entity);

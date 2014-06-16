@@ -26,17 +26,10 @@ namespace AspMvcUserAdministration.Helpers
         {
             user.UserName = userView.UserName;
             user.PhoneNumber = userView.PhoneNumber;
-            //user.Roles.Clear();
-            //foreach (var roleId in userView.UserInRole)
-            //{
-            //    user.Roles.Add(roleId);
-            //}
-            if (userView.SelectedRoles.Count() > 0)
+            user.Roles.Clear();
+            foreach (var role in userView.UserInRole)
             {
-                foreach (var roleId in userView.SelectedRoles)
-                {
-                    user.Roles.Add(new IdentityUserRole() { UserId = user.Id, RoleId = roles[roleId].Id });
-                }
+                user.Roles.Add(role);
             }
         }
     }

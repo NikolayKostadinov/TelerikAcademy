@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using AspMvcUserAdministration.Data;
+using AspMvcUserAdministration.Models;
 using AspMvcUserAdministration.Models.ViewModels;
 using Kendo.Mvc.UI;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Kendo.Mvc.Extensions;
@@ -46,12 +48,13 @@ namespace AspMvcUserAdministration.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult UpdateUser([DataSourceRequest] DataSourceRequest request, AccountViewModel userAccount) 
+        public ActionResult UpdateUser(AccountViewModel userAccount,[DataSourceRequest] DataSourceRequest request)
         {
             try
             {
+
                 var persistentUser = db.Users.GetById(userAccount.Id);
-                persistentUser.CopyPropFromAccountViewModel(userAccount,roles);
+                persistentUser.CopyPropFromAccountViewModel(userAccount, roles);
                 db.Users.Update(persistentUser);
                 db.SaveChanges();
                 return Json(new[] { persistentUser.ToAccountViewModel() }.ToDataSourceResult(request, ModelState));
@@ -61,6 +64,58 @@ namespace AspMvcUserAdministration.Controllers
                 ModelState.AddModelError(ex.GetType().ToString(), ex.Message);
                 return Json(new[] { userAccount }.ToDataSourceResult(request, ModelState));
             }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> _AddNewUser(RegisterViewModel model, string urlToRedirect)
+        {
+            if (ModelState.IsValid)
+            {
+                var UserManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var user = new ApplicationUser() { UserName = model.UserName, Email = model.Email };
+                IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    return Redirect(urlToRedirect);
+                }
+                else
+                {
+                    AddErrors(result);
+                }
+            }
+            ViewBag.Visible = true;
+            return View(model);
+        }
+
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult DeleteUser([DataSourceRequest]DataSourceRequest request, AccountViewModel user)
+        {
+
+                if (user != null && ModelState.IsValid)
+                {
+                        if (user.Id == User.Identity.GetUserId())
+                        {
+                            ModelState.AddModelError("", "You cannot delete current user.");
+                        }
+                        else
+                        {
+                            db.Users.Delete(user.Id);
+                            db.SaveChanges();
+                        }
+                }
+
+                var users = db.Users.All().Select(AccountViewModel.ToAccountViewModel).ToList();
+
+                return Json(users.ToDataSourceResult(request, ModelState));
         }
     }
 }

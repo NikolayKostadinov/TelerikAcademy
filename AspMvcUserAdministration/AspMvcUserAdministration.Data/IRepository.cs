@@ -18,6 +18,8 @@
 
         void Delete(int id);
 
+        void Delete(string id);
+
         void Detach(T entity);
     }
 }

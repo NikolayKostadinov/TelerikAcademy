@@ -1,8 +1,12 @@
 ﻿@using AspMvcUserAdministration.Models.ViewModels;
 @using Microsoft.AspNet.Identity.EntityFramework;
 
-<h2>Администриране на потребители</h2>
+@model AccountViewModel
 
+<h2>Администриране на потребители</h2>
+@Html.AntiForgeryToken()
+<input type="button" id="add_new_user" value="Add New User" onclick="add_new_user()" class="k-button k-button-icontext k-grid-edit" />
+@Html.ValidationSummary("", new { Id = "validation_summary", @class = "text-danger" })
 @(Html.Kendo()
       .Grid<AccountViewModel>()
       .HtmlAttributes(new { style = "width:1200px" })
@@ -10,15 +14,13 @@
       .DataSource(data =>
       {
           data.Ajax()
-              .Model(m =>  m.Id(u => u.Id))
+              .Model(m => m.Id(u => u.Id))
               .PageSize(300)
-              .Events(events => events.Error("error_handler"))
+              .Events(events => { events.Error("error_handler"); })
               .ServerOperation(true)
-              .Create("CreateUser", "UserAdministration")
               .Read("ReadAllUsers", "UserAdministration")
               .Update("UpdateUser", "UserAdministration")
               .Destroy("DeleteUser", "UserAdministration");
-
       })
       .Columns(columns =>
       {
@@ -27,7 +29,6 @@
           columns.Bound(model => model.PhoneNumber).Width(150).Title("Телефон за контакти");
           columns.Command(command => { command.Edit(); command.Destroy(); }).Width(160);
       })
-      .ToolBar(toolbar => toolbar.Create())
       .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("_EditAccount"))
       .Pageable()
       .Sortable()
@@ -44,9 +45,21 @@
       {
           order.Columns(true);
       })
-      .Events(events => events.DataBound("dataBound"))
-
 )
+
+@(Html.Partial("_AddNewUser"))
+<script>
+    function add_new_user() {
+        var wnd = $("#AddNewUser").data("kendoWindow");
+        wnd.center().open();
+    }
+
+    function close_window(arg) {
+        $("#cancel").click(function () {
+            window.close();
+        });
+    }
+</script>
 
 <script id="template" type="text/kendo-tmpl">
     @(Html.Kendo()
@@ -82,7 +95,20 @@
                     });
                 }
             });
-            alert(message);
+            $("#validation_summary").text(message);
+            $("#users").data('kendoGrid').dataSource.read();
+            $("#users").data('kendoGrid').refresh();
+
         }
     }
+    (function (ev) {
+        window.addEventListener('click', OnClick, false);
+        function OnClick(ev) {
+            if ($("#validation_summary").text() != "") {
+                $("#validation_summary").text("");
+                e.errors = null;
+            }
+        }
+    })()
 </script>
+

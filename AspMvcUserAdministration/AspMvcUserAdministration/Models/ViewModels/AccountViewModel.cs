@@ -14,7 +14,7 @@ namespace AspMvcUserAdministration.Models.ViewModels
     public class AccountViewModel
     {
         private IUowData db;
-        private HashSet<IdentityRole> roles = new HashSet<IdentityRole>();
+        private ICollection<IdentityUserRole> userInRoles = new HashSet<IdentityUserRole>();
 
         public AccountViewModel()
         {
@@ -42,8 +42,6 @@ namespace AspMvcUserAdministration.Models.ViewModels
             }
         }
 
-        public IEnumerable<int> SelectedRoles { get; set; }
-
         public string Id { get; set; }
 
         public string UserName { get; set; }
@@ -52,41 +50,51 @@ namespace AspMvcUserAdministration.Models.ViewModels
 
         public string PhoneNumber { get; set; }
 
-        public ICollection<IdentityUserRole> UserInRole { get; set; }
+        public ICollection<IdentityUserRole> UserInRole 
+        {
+            get 
+            {
+                return this.userInRoles;
+            }
+            set 
+            {
+                this.userInRoles = value;
+            }
+        }
 
-        [UIHint("RoleEditor")]
-        public HashSet<IdentityRole> Roles
+        public ICollection<RoleViewModel> Roles
         {
             get
             {
-                HashSet<IdentityRole> userInRoles = new HashSet<IdentityRole>();
-                if (UserInRole == null)
-                { 
-                    return null; 
-                }
-                foreach (var role in this.UserInRole)
+                if (this.userInRoles == null)
                 {
-                    userInRoles.Add(db.Roles.GetById(role.RoleId));
+                    return null;
                 }
+                else
+                {
+                    HashSet<RoleViewModel> usersRoles = new HashSet<RoleViewModel>();
 
-                this.roles = userInRoles;
-                return this.roles;
+                    foreach (var role in this.userInRoles)
+                    {
+                        var currentRole = db.Roles.GetById(role.RoleId);
+                        usersRoles.Add(new RoleViewModel() { Id = currentRole.Id, Name = currentRole.Name });
+                    }
+
+                   return usersRoles;
+                }
             }
             set 
             {
                 if (value == null)
                 {
-                    this.roles = null;
                     return;
                 }
                 else
                 {
-                    this.roles.Clear();
-                    this.UserInRole.Clear();
+                    this.userInRoles.Clear();
 
                     foreach (var role in value) 
                     {
-                        this.roles.Add(role);
                         this.UserInRole.Add(new IdentityUserRole() { UserId = this.Id, RoleId = role.Id });
                     }
                 }

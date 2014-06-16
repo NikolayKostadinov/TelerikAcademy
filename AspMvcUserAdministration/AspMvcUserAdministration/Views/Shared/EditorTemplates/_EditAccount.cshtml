@@ -1,4 +1,5 @@
 ﻿@using AspMvcUserAdministration.Models.ViewModels;
+@using Microsoft.AspNet.Identity.EntityFramework;
 
 @model AccountViewModel
 
@@ -28,11 +29,9 @@
         .Placeholder("Select Roles...")
         .DataValueField("Id")
         .DataTextField("Name")
-        .DataSource(data=>data.Custom())
         .BindTo((System.Collections.IEnumerable)ViewData["Roles"])
         .AutoBind(true)
-        .Value(Model.SelectedRoles)
+        .Value(Model.Roles)
     )
     @Html.ValidationMessageFor(model => model.Roles)
 </div>
-
