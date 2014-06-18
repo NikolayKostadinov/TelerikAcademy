@@ -1,10 +1,17 @@
-﻿<div class="col-lg-4">
-    @(Html.Kendo()
-      .Upload()
-      .Name("uppload_controll")
-      .Async(a => a
-                   .Save("SaveAndPersist", "FileUppload")
-                   .Remove("RemoveAndPersist", "FileUppload")
-                   .AutoUpload(true))
-    )
+﻿@{
+    ViewBag.Title = "UploadFile";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="form-group">
+   @(Html.Kendo().Upload()
+              .Name("upload")
+              .Async(a => a
+                         .Save("SaveAndPersist", "FileUppload")
+                         .Remove("RemoveAndPersist", "FileUppload")
+                  .AutoUpload(true)
+              )
+)
+
 </div>

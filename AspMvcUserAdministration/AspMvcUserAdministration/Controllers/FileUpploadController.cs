@@ -35,21 +35,21 @@ namespace AspMvcUserAdministration.Controllers
         public ActionResult RemoveAndPersist(string[] fileNames)
         {
             // The parameter of the Remove action must be called "fileNames"
-            //if (fileNames != null)
-            //{
-            //    if (fileNames != null)
-            //    {
-            //        foreach (var file in fileNames)
-            //        {
-            //            var fileName = Path.GetFileName(file);
-            //            var physicalPath = Path.Combine(Server.MapPath("~/App_Data"), fileName);
+            if (fileNames != null)
+            {
+                //if (fileNames != null)
+                //{
+                //    foreach (var file in fileNames)
+                //    {
+                //        var fileName = Path.GetFileName(file);
+                //        var physicalPath = Path.Combine(Server.MapPath("~/App_Data"), fileName);
 
-            //            file.SaveAs(physicalPath);
-            //        }
-            //    }
+                //        file.SaveAs(physicalPath);
+                //    }
+                //}
 
-            //    return Content("");
-            //}
+                return Content("");
+            }
 
             // Return an empty string to signify success
             return Content("");
