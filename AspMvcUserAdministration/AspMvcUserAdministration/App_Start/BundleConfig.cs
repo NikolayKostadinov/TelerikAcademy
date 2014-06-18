@@ -17,7 +17,7 @@ namespace AspMvcUserAdministration
 
 
             // The Kendo CSS bundle
-            bundles.Add(new StyleBundle("~/Content/kendo").Include(
+            bundles.Add(new StyleBundle("~/Content/kendo/styles").Include(
                         "~/Content/Kendo/kendo.common.min.css",
                         "~/Content/Kendo/kendo.default.min.css"));
 
@@ -36,7 +36,7 @@ namespace AspMvcUserAdministration
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/css/styles").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             //// Set EnableOptimizations to false for debugging. For more information,

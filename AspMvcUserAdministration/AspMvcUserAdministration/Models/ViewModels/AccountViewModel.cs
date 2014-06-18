@@ -44,10 +44,14 @@ namespace AspMvcUserAdministration.Models.ViewModels
 
         public string Id { get; set; }
 
+        [Required]
         public string UserName { get; set; }
 
+        [Required]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
 
         public ICollection<IdentityUserRole> UserInRole 

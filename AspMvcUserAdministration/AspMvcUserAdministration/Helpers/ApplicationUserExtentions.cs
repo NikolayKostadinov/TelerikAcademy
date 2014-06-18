@@ -25,6 +25,7 @@ namespace AspMvcUserAdministration.Helpers
         public static void CopyPropFromAccountViewModel(this ApplicationUser user, AccountViewModel userView,IList<IdentityRole> roles) 
         {
             user.UserName = userView.UserName;
+            user.Email = userView.Email;
             user.PhoneNumber = userView.PhoneNumber;
             user.Roles.Clear();
             foreach (var role in userView.UserInRole)

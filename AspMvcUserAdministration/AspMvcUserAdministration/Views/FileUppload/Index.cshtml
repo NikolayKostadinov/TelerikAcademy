@@ -1,0 +1,10 @@
+﻿<div class="col-lg-4">
+    @(Html.Kendo()
+      .Upload()
+      .Name("uppload_controll")
+      .Async(a => a
+                   .Save("SaveAndPersist", "FileUppload")
+                   .Remove("RemoveAndPersist", "FileUppload")
+                   .AutoUpload(true))
+    )
+</div>

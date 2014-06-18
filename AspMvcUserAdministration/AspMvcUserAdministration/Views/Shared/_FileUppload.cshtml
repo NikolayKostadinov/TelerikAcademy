@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated && (User.IsInRole("Administrator") || User.IsInRole("Upploader")))
+{
+    <ul class="nav navbar-nav navbar-left">
+        <li>@Html.ActionLink("Uppload File", "Index", "FileUppload")</li>
+    </ul>
+}
