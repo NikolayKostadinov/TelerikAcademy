@@ -26,10 +26,9 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @Html.Partial("_FileUppload")
+                    @Html.Partial("_UserAdministration")
                 </ul>
-                @Html.Partial("_FileUppload")
-                @Html.Partial("_UserAdministration")
-                @Html.Partial("_ResetPassword")
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

@@ -1,0 +1,4 @@
+﻿@if (Request.IsAuthenticated && User.IsInRole("Administrator"))
+{
+    <li>@Html.ActionLink("Administration", "Index", "UserAdministration")</li>
+}

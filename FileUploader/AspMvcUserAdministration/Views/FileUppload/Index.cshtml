@@ -1,0 +1,35 @@
+﻿@using FileUpload.Models.FileModels
+
+@model IEnumerable<FileDescription>
+@{
+    ViewBag.Title = "Изпращане на файл със заявки за експедиция";
+}
+
+<h2>@ViewBag.Title</h2>
+@Html.AntiForgeryToken()
+<h3 id="errors" class="text-danger"></h3>
+<div class="form-group">
+    @(Html.Kendo()
+          .Upload()
+          .Name("upload")
+          .HtmlAttributes(new { enctype = "multipart/form-data" })
+          .Async(a => a
+                       .Save("SaveAndPersist", "FileUppload")
+                       .AutoUpload(true))
+          .Events(events =>
+          {
+              events.Error("onError");
+              events.Success("onSuccess");
+              events.Select("onSelect");
+          })
+          .Messages(m => m.Select("Изберете файл за изпращане"))
+          .Multiple(false)
+    )
+</div>
+<div id="summary">
+</div>
+
+<div id="grid-result">
+</div>
+
+<script src="~/Content/Scripts/FileUploadIndex.js"></script>

@@ -3,15 +3,71 @@
 }
 
 <h2>@ViewBag.Title</h2>
-
+@Html.AntiForgeryToken()
+<h3 id="errors" class="text-danger"></h3>
 <div class="form-group">
-   @(Html.Kendo().Upload()
-              .Name("upload")
-              .Async(a => a
-                         .Save("SaveAndPersist", "FileUppload")
-                         .Remove("RemoveAndPersist", "FileUppload")
-                  .AutoUpload(true)
-              )
-)
-
+    @(Html.Kendo()
+          .Upload()
+          .Name("upload")
+            //.HtmlAttributes(new { enctype = "multipart/form-data" })
+          .Async(a => a
+                       .Save("SaveAndPersist", "FileUppload")
+                       .AutoUpload(true))
+          .Events(events =>
+          {
+              events.Error("onError");
+              events.Success("onSuccess");
+              events.Select("onSelect");
+          })
+    )
 </div>
+
+<script>
+    function onError(e) {
+        var inputFilesInfo = getFileInfo(e);
+        var messages = "";
+        if (e.XMLHttpRequest.status == 500) {
+            for (var id in inputFilesInfo) {
+                messages += "Fail \"" + inputFilesInfo[id].text
+                            + "\" with size: " + inputFilesInfo[id].size + "KB"
+                            + " cannot be " + e.operation + "." +
+                            ((inputFilesInfo[id].size > 1024) ? "<br /> File cannot be larger than 10MB!<br />" : "<br />");
+            }
+        } else if (e.XMLHttpRequest.status==200) {
+            messages = e.XMLHttpRequest.responseText;
+        }
+        $("#errors").html(messages);
+    }
+    function onSuccess(e) {
+        $("#errors").text("");
+        if (e.response.status == "Error") {
+            $("#errors").html(e.response.message);
+            $("#upload").kendoUpload().onError();
+        }
+    }
+
+    function getFileInfo(e) {
+        return $.map(e.files, function (file) {
+            var info = { "text": "", "size": 0 };
+            info.text = file.name;
+
+            // File size is not available in all browsers
+            if (file.size > 0) {
+                info.size = +Math.ceil(file.size / 1024);
+            }
+            return info;
+        });
+    }
+
+    var onSelect = function (e) {
+        $.each(e.files, function (index, file) {
+            var ok = file.extension == ".txt"
+                     || file.extension == ".TXT";
+
+            if (!ok) {
+                e.preventDefault();
+                alert("Please upload only \".txt\" text files!");
+            }
+        });
+    };
+</script>

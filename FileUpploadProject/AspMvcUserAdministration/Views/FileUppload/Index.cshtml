@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Изпращане на файл със заявки за експедиция";
+}
+
+<h2>@ViewBag.Title</h2>
+@Html.AntiForgeryToken()
+<h3 id="errors" class="text-danger"></h3>
+<div class="form-group">
+    @(Html.Kendo()
+          .Upload()
+          .Name("upload")
+            //.HtmlAttributes(new { enctype = "multipart/form-data" })
+          .Async(a => a
+                       .Save("SaveAndPersist", "FileUppload")
+                       .AutoUpload(true))
+          .Events(events =>
+          {
+              events.Error("onError");
+              events.Success("onSuccess");
+              events.Select("onSelect");
+          })
+          .Messages(m => m.Select("Изберете файл за изпращане"))
+          .Multiple(false)
+    )
+</div>
+
+<script>
+    function onError(e) {
+        var inputFilesInfo = getFileInfo(e);
+        var messages = "";
+        if (e.XMLHttpRequest.status == 500) {
+            for (var id in inputFilesInfo) {
+                messages += "Файлът \"" + inputFilesInfo[id].text
+                            + "\" с размер: " + inputFilesInfo[id].size + "KB"
+                            + " не може да бъде качен." +
+                            ((inputFilesInfo[id].size > 1024) ? "<br /> Размера на файла не може да надвишава 10MB!<br />" : "<br />");
+            }
+        } else if (e.XMLHttpRequest.status == 200) {
+            messages = e.XMLHttpRequest.responseText;
+        }
+        $("#errors").html(messages);
+    }
+    function onSuccess(e) {
+        @*@(Html.Kendo()
+      .Grid<FileResultModel>()
+      .HtmlAttributes(new { style = "width:1200px" })
+      .Name("users")
+      .DataSource(data =>
+      {
+          data.Ajax()
+              .Model(m => m.Id(u => u.Id))
+              .PageSize(300)
+              .Events(events => { events.Error("error_handler"); })
+              .ServerOperation(true)
+              .Read("ReadAllUsers", "UserAdministration")
+              .Update("UpdateUser", "UserAdministration")
+              .Destroy("DeleteUser", "UserAdministration");
+      })
+      .Columns(columns =>
+      {
+          columns.Bound(model => model.UserName).Width(250).Title("Потребителско име");
+          columns.Bound(model => model.Email).Width(250).Title("e-mail");
+          columns.Bound(model => model.PhoneNumber).Width(150).Title("Телефон за контакти");
+          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(160);
+      })
+      .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("_EditAccount"))
+      .Pageable()
+      .Sortable()
+      .Groupable()
+      .Filterable()
+      .Resizable(resize => resize.Columns(true))
+      .Scrollable(scroll =>
+      {
+          scroll.Enabled(true);
+          scroll.Height(500);
+      })
+      .ClientDetailTemplateId("template")
+      .Reorderable(order =>
+      {
+          order.Columns(true);
+      })
+)*@
+    }
+
+    function getFileInfo(e) {
+        return $.map(e.files, function (file) {
+            var info = { "text": "", "size": 0 };
+            info.text = file.name;
+
+            // File size is not available in all browsers
+            if (file.size > 0) {
+                info.size = +Math.ceil(file.size / 1024);
+            }
+            return info;
+        });
+    }
+
+    var onSelect = function (e) {
+        $.each(e.files, function (index, file) {
+            var ok = file.extension == ".txt"
+                     || file.extension == ".TXT";
+
+            if (!ok) {
+                e.preventDefault();
+                alert("Моля качвайте само текстови файлове с разширение \".txt\"!");
+            }
+        });
+    };
+</script>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -16,43 +17,38 @@ namespace AspMvcUserAdministration.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveAndPersist(IEnumerable<HttpPostedFileBase> upload)
         {
+            StringBuilder messageBuilder = new StringBuilder();
+
             if (upload != null)
             {
+                
                 foreach (var file in upload)
                 {
                     var fileName = Path.GetFileName(file.FileName);
                     var physicalPath = Path.Combine(Server.MapPath("~/App_Data"), fileName);
-
-                    file.SaveAs(physicalPath);
+                    if (!System.IO.File.Exists(physicalPath))
+                    {
+                        file.SaveAs(physicalPath);
+                    }
+                    else 
+                    {
+                        messageBuilder.Append("File \"" + file.FileName + "\" allready exists!<br />");
+                    }
                 }
             }
 
-            return Content("");
-        }
-
-        public ActionResult RemoveAndPersist(string[] fileNames)
-        {
-            // The parameter of the Remove action must be called "fileNames"
-            if (fileNames != null)
+            if (messageBuilder.Length > 0)
             {
-                //if (fileNames != null)
-                //{
-                //    foreach (var file in fileNames)
-                //    {
-                //        var fileName = Path.GetFileName(file);
-                //        var physicalPath = Path.Combine(Server.MapPath("~/App_Data"), fileName);
-
-                //        file.SaveAs(physicalPath);
-                //    }
-                //}
-
+                return Content(messageBuilder.ToString());
+            }
+            else 
+            {
                 return Content("");
             }
-
-            // Return an empty string to signify success
-            return Content("");
         }
     }
 }

@@ -1,0 +1,114 @@
+﻿@using FileUpload.Models.ViewModels;
+@using Microsoft.AspNet.Identity.EntityFramework;
+
+@model AccountViewModel
+
+<h2>Администриране на потребители</h2>
+@Html.AntiForgeryToken()
+<input type="button" id="add_new_user" value="Add New User" onclick="add_new_user()" class="k-button k-button-icontext k-grid-edit" />
+@Html.ValidationSummary("", new { Id = "validation_summary", @class = "text-danger" })
+@(Html.Kendo()
+      .Grid<AccountViewModel>()
+      .HtmlAttributes(new { style = "width:1200px" })
+      .Name("users")
+      .DataSource(data =>
+      {
+          data.Ajax()
+              .Model(m => m.Id(u => u.Id))
+              .PageSize(300)
+              .Events(events => { events.Error("error_handler"); })
+              .ServerOperation(true)
+              .Read("ReadAllUsers", "UserAdministration")
+              .Update("UpdateUser", "UserAdministration")
+              .Destroy("DeleteUser", "UserAdministration");
+      })
+      .Columns(columns =>
+      {
+          columns.Bound(model => model.UserName).Width(250).Title("Потребителско име");
+          columns.Bound(model => model.Email).Width(250).Title("e-mail");
+          columns.Bound(model => model.PhoneNumber).Width(150).Title("Телефон за контакти");
+          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(160);
+      })
+      .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("_EditAccount"))
+      .Pageable()
+      .Sortable()
+      .Groupable()
+      .Filterable()
+      .Resizable(resize => resize.Columns(true))
+      .Scrollable(scroll =>
+      {
+          scroll.Enabled(true);
+          scroll.Height(500);
+      })
+      .ClientDetailTemplateId("template")
+      .Reorderable(order =>
+      {
+          order.Columns(true);
+      })
+)
+
+@(Html.Partial("_AddNewUser"))
+<script>
+    function add_new_user() {
+        var wnd = $("#AddNewUser").data("kendoWindow");
+        wnd.center().open();
+    }
+
+    function close_window(arg) {
+        $("#cancel").click(function () {
+            window.close();
+        });
+    }
+</script>
+
+<script id="template" type="text/kendo-tmpl">
+    @(Html.Kendo()
+          .Grid<IdentityRole>()
+          .Name("user_#=Id#_roles")
+          .Columns(columns =>
+          {
+              columns.Bound(r => r.Name).Width(110).Title("Role");
+          })
+          .DataSource(dataSource => dataSource.Ajax()
+                                              .PageSize(10)
+                                              .Read(read => read.Action("GetRolesByUser", "UserAdministration", new { userId = "#=Id#" })))
+          .Pageable()
+          .Sortable()
+          .ToClientTemplate()
+    )
+</script>
+
+<script>
+    function dataBound() {
+        this.expandRow(this.tbody.find("tr.k-master-row").first());
+    }
+</script>
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            $("#validation_summary").text(message);
+            $("#users").data('kendoGrid').dataSource.read();
+            $("#users").data('kendoGrid').refresh();
+
+        }
+    }
+    (function (ev) {
+        window.addEventListener('click', OnClick, false);
+        function OnClick(ev) {
+            if ($("#validation_summary").text() != "") {
+                $("#validation_summary").text("");
+                e.errors = null;
+            }
+        }
+    })()
+</script>
+
