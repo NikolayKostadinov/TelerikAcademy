@@ -1,0 +1,64 @@
+﻿@using FileUpload.Models;
+@using FileUpload.Models.FileViewModels;
+
+@{
+    ViewBag.Title = "Разглеждане на детайли за изпратени файлове";
+}
+
+<h2>@ViewBag.Title</h2>
+@Html.AntiForgeryToken()
+@(Html.Kendo()
+      .Grid<FileDescriptionViewModel>()
+      .HtmlAttributes(new { style = "width:1200px" })
+      .Name("files")
+      .DataSource(data =>
+      {
+          data.Ajax()
+              .Model(m => m.Id("Id"))
+              .PageSize(20)
+              .ServerOperation(true)
+              .Read(read => read.Action("GetUploadedFiles", "FileUppload").Data("sendAntiForgery"));
+      })
+      .Columns(columns =>
+      {
+          columns.Bound(model => model.Id).Width(50).Title("№");
+          columns.Bound(model => model.FileName).Width(400).Title("Име на файл");
+          columns.Bound(model => model.Size).Width(100).Title("Размер(KB)");//.Format("{0:#KB}");
+          columns.Bound(model => model.UploadTime).Width(150).Title("Получен ").Format("{0:HH:mm:ss tt - dd/MM/yyyy}");
+          columns.Bound(model => model.UserName).Width(150).Title("Изпратен от");
+      })
+      .Pageable()
+      .Sortable()
+      .Filterable()
+      .Resizable(resize => resize.Columns(true))
+      .Scrollable(scroll =>
+      {
+          scroll.Enabled(true);
+          scroll.Height(500);
+      })
+      .ClientDetailTemplateId("fileDetails")
+)
+
+<script id="fileDetails" type="text/kendo-tmpl">
+    @(Html.Kendo()
+          .Grid<UploadResultViewModel>()
+          .Name("file_#=Id#_requests")
+          .Columns(columns =>
+          {
+              columns.Bound(model => model.RowNumber).Width(60).Title("Ред №");
+              columns.Bound(model => model.Message).Title("Съобщение");
+              columns.Bound(model => model.Status).Width(100).Title("Статус");
+          })
+          .DataSource(dataSource => dataSource.Ajax()
+                                              .PageSize(10)
+                                                      .Read(read => read.Action("GetUploadedFileDetails", "FileUppload", new { fileId = "#=Id#" }).Data("sendAntiForgery")))
+        .Pageable()
+        .Sortable()
+        .Scrollable(scroll =>
+        {
+            scroll.Enabled(true);
+            scroll.Height(330);
+        })
+        .ToClientTemplate()
+    )
+</script>

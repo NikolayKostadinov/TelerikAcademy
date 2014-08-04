@@ -1,0 +1,52 @@
+﻿@using FileUpload.Utility;
+
+@model FileUpload.Models.RegisterViewModel
+@(Html.Kendo()
+      .Window()
+      .Name("AddNewUser")
+      .Title("Add New User")
+      .Visible(ViewBag.Visible != null ? (bool)ViewBag.Visible : false)
+      .Modal(true)
+      .Draggable(true)
+      .Width(500)
+          .Events(events => { events.Open("onAddNewUserOpen"); events.Error("onAddNewUserError"); })
+.Content(@<text>
+        <form action="/UserAdministration/_AddNewUser" method="post">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            @Html.Hidden("urlToRedirect", "Index")
+            <div class="form-group">
+                <div class="col-md-2">
+                    @Html.LabelFor(m => m.UserName, new { @class = "editor-label" })
+                </div>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "editor-field" })
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    @Html.LabelFor(m => m.Email, new { @class = "editor-label" })
+                </div>
+                @Html.TextBoxFor(m => m.Email, new { @class = "editor-field" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-2">
+                    @Html.LabelFor(m => m.Password, new { @class = "editor-label" })
+                </div>
+                @Html.PasswordFor(m => m.Password, new { @class = "editor-field" })
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "editor-label" })
+                </div>
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "editor-field" })
+            </div>
+            <div class="k-edit-buttons k-state-default">
+                <input type="submit" name="CreateUser" value="Create User" class="k-button k-button-icontext k-grid-edit" />
+                <input type="button" value="Cancel" id="cancel" onclick="javascript: $('#AddNewUser').data('kendoWindow').close();" class="k-button k-button-icontext k-grid-edit" />
+            </div>
+        </form>
+</text>))
+<script>
+   
+</script>

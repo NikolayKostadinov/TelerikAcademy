@@ -1,0 +1,108 @@
+﻿@using FileUpload.Models;
+@using FileUpload.Models.LogModels;
+
+<style>
+    div.datetimepicker {
+        width: 250px;
+        display: inline-block;
+    }
+    div.toolbar {
+        border-width: 1px;
+    }
+</style>
+@{
+    ViewBag.Title = "Разглеждане на журнал на приложението";
+}
+
+<h2>@ViewBag.Title</h2>
+@Html.AntiForgeryToken()
+<div class="toolbar k-toolbar k-grid-toolbar k-grid-top" style="width:1200px">
+    <label for="begining">От:</label>
+    <div class="datetimepicker">
+        @(Html.Kendo()
+              .DateTimePicker()
+              .Name("start")
+              .TimeFormat("HH:mm:ss")
+              .Value(DateTime.Today.AddDays(-1))
+              .Culture("bg-BG")
+              .Events(ev => ev.Change(@<text>
+            function() {
+            var grid = $("#tracelog").data("kendoGrid");
+            grid.dataSource.read();
+            }
+            </text>))
+        )
+    </div>
+    <label for="ending" style="margin-left:3em">До:</label>
+    <div class="datetimepicker">
+        @(Html.Kendo()
+              .DateTimePicker()
+              .Name("end")
+              .TimeFormat("HH:mm:ss")
+              .Value(DateTime.Now)
+              .Culture("bg-BG")
+              .Events(ev => ev.Change(@<text>
+            function() {
+            var grid = $("#tracelog").data("kendoGrid");
+            grid.dataSource.read();
+            }
+            </text>))
+        )
+    </div>
+</div>
+@(Html.Kendo()
+      .Grid<TraceLogMessage>()
+      .HtmlAttributes(new { style = "width:1200px" })
+      .Name("tracelog")
+      .DataSource(data =>
+      {
+          data.Ajax()
+              .Model(m => m.Id(message => message.Id))
+              .PageSize(20)
+              .ServerOperation(true)
+              .Read(read => read.Action("GetTraseLog", "TraceLog").Data("getDataPickersValue"));
+      })
+
+      .Columns(columns =>
+      {
+          columns.Bound(model => model.Status).Width(30).Title("Статус");
+          columns.Bound(model => model.Id).Width(60).Title("№");
+          columns.Bound(model => model.TimeStamp).Width(130).Title("Времеви отпечатък");
+          columns.Bound(model => model.UserName).Width(100).Title("Потребител");
+          columns.Bound(model => model.Controller).Width(150).Title("Контролер");
+          columns.Bound(model => model.Action).Width(150).Title("Екшън");
+          columns.Bound(model => model.Message).Width(150).Title("Съобщение")
+          ;
+      })
+
+      .ClientRowTemplate(
+                         "<tr class='#:Status=='3'?'pink': Status =='2'?'yellow': 'white' #' data-uid='#= uid #'>" +
+                         "<td class='#:Status=='3'? 'error': Status=='2'? 'warning': 'ok' #' style='padding-left: 30px; color: transparent'>#:Status#</td>" +
+                         "<td>#:Id#</td>" +
+                         "<td>#:kendo.toString(TimeStamp,'dd.MM.yyyy г. HH:mm:ss ч.')#</td>" +
+                         "<td>#:UserName#</td>" +
+                         "<td>#:Controller#</td>" +
+                         "<td>#:Action#</td>" +
+                         "<td>#:Message#</td>" +
+                         "</tr>")
+      .Pageable()
+      .Sortable()
+      .Filterable()
+      .Resizable(resize => resize.Columns(true))
+      .Scrollable(scroll =>
+      {
+          scroll.Enabled(true);
+          scroll.Height(500);
+      })
+    
+)
+
+<script>
+    function getDataPickersValue() {
+        var aft = sendAntiForgery();
+        var requestData = { begining: null, ending: null, "__RequestVerificationToken": aft.__RequestVerificationToken };
+        requestData.begining = Globalize.format($("#start").data("kendoDateTimePicker").value(), 'dd.MM.yyyy г. HH:mm:ss ч.');
+        requestData.ending = Globalize.format($("#end").data("kendoDateTimePicker").value(), 'dd.MM.yyyy г. HH:mm:ss ч.');
+        return requestData;
+    }
+</script>

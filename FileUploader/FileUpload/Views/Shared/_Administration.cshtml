@@ -1,0 +1,14 @@
+﻿@if (Request.IsAuthenticated && User.IsInRole("Administrator"))
+{
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Администриране
+         <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li>@Html.ActionLink("Администриране на потребители", "Index", "UserAdministration")</li>
+            <li>@Html.ActionLink("Детайли за файловете", "UploadedFilesDetails", "FileUppload")</li>
+            <li>@Html.ActionLink("Журнал на приложението", "Index", "TraceLog")</li>
+
+        </ul>
+    </li>
+}

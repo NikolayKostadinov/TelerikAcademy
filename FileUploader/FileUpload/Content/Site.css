@@ -1,0 +1,71 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-brand {
+    /*margin-top:0;
+    margin-bottom:0;
+    padding-top:0;
+    padding-bottom:0;*/
+    width: 120px;
+    height: 50px;
+    background: url("/Content/Images/BMS-Logo-Horizontal.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.pink {
+    background-color: pink;
+    color:red;
+}
+
+.yellow {
+    background-color: lightyellow;
+    color:orange;
+}
+
+.ok {
+    background: url("/Content/Images/ok.png");
+    background-size: 25px 25px;
+    background-position: 3px center;
+    background-repeat: no-repeat;
+}
+
+.warning {
+    background: url("/Content/Images/warning.png");
+    background-size: 25px 25px;
+    background-position: 3px center;
+    background-repeat: no-repeat;
+}
+
+.error {
+    background: url("/Content/Images/error.png");
+    background-size: 25px 25px;
+    background-position: 3px center;
+    background-repeat: no-repeat;
+}
+
+.summary {
+    padding-left: 40px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#summary {
+    margin-bottom: 15px;
+}
+

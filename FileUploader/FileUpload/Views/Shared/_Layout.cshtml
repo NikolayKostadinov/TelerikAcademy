@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Изпращане на заявки </title>
+    <link rel="icon" type="image/png" href="~/Content/Images/favicon.png">
+    <!--[if IE]>
+    <link rel="shortcut icon" href="~/Content/Images/favicon.png" type="image/vnd.microsoft.icon" />
+    <![endif]-->
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+    @Styles.Render("~/Content/kendo/styles")
+    @Styles.Render("~/Content/css/styles")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink(" ", "Index", "Home", null, new { @class = "navbar-brand"})
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Начало", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
+                    @Html.Partial("_FileUppload")
+                    @Html.Partial("_Administration")
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Business Management Systems Ltd.</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/customscripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
