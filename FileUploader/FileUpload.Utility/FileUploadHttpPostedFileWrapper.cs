@@ -1,4 +1,5 @@
-﻿using System;
+﻿# define DEBUG
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,17 +26,37 @@ namespace FileUpload.Utility
             this.postedFile = file;
         }
 
+        /// <summary>
+        /// Save file to disk
+        /// </summary>
+        /// <param name="filename">file name together with full path</param>
+        /// <exception cref="UnauthorizedAccessException">System.UnauthorizedAccessException</exception>
+        /// <exception cref="System.InvalidOperationException">System.InvalidOperationException</exception>
+        /// <exception cref="System.IO.IOException">System.IO.IOException</exception>
+
         public void SaveAs(string filename)
         {
             string path = Path.GetDirectoryName(filename);
             if(!Directory.Exists(path))
             {
-                throw new DirectoryNotFoundException("Пътят " + path + " не е намерен!");
+                try
+                {
+                    Directory.CreateDirectory(path);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    throw new UnauthorizedAccessException(string.Format("Не оторизиран опит за създаване на директория {0}", path));
+                }
+
             }
+#if !DEBUG
             if (!CheckForEnoughtFreeSpace(filename)) 
             {
+
                 throw new System.IO.IOException("Няма достатъчно дисково пространство за извършване на операцията!");
             }
+#endif
+
             if (System.IO.File.Exists(filename))
             {
                 throw new System.IO.IOException("Файлът \"" + postedFile.FileName + "\" вече съществува.<br /> Моля изпратете файл с друго име!");  
@@ -55,7 +76,7 @@ namespace FileUpload.Utility
             }
             catch (Exception ex) 
             {
-                throw new InvalidOperationException("Файлът неможе да бъде качен.");
+                throw new InvalidOperationException("Файлът неможе да бъде качен.", ex);
             }
         }
   

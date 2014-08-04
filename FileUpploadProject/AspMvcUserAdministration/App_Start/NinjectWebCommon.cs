@@ -5,7 +5,6 @@ namespace FileUpload.App_Start
 {
     using System;
     using System.Web;
-
     using FileUpload.Data;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
     using Ninject;

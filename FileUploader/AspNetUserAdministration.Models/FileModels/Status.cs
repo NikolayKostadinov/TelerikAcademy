@@ -1,9 +1,0 @@
-namespace FileUpload.Models
-{
-    public enum Status
-    {
-        Ok = 1,
-        Warning = 2,
-        Error = 3
-    }
-}

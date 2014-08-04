@@ -32,9 +32,17 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AspMvcUserAdministration\bin\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FileUpload.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FileUpload\bin\FileUpload.Models.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -57,19 +65,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AspMvcUserAdministration.Data\FileUpload.Data.csproj">
-      <Project>{44F951D6-04F0-4FE1-A95F-2861E57ABED3}</Project>
-      <Name>FileUpload.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AspNetUserAdministration.Models\FileUpload.Models.csproj">
-      <Project>{1D57F4C0-ED41-416E-AD31-726DE978E048}</Project>
-      <Name>FileUpload.Models</Name>
-    </ProjectReference>
+    <Compile Include="WindowPosition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Service References\CacheFileUploadService\FileUpload.Utility.CacheFileUploadService.ArrayOfErrorMessageErrorMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload", "AspMvcUserAdministration\FileUpload.csproj", "{ACE3D32A-0A87-4139-AB1D-93BCC3439DFE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload.Models", "AspNetUserAdministration.Models\FileUpload.Models.csproj", "{1D57F4C0-ED41-416E-AD31-726DE978E048}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload.Data", "AspMvcUserAdministration.Data\FileUpload.Data.csproj", "{44F951D6-04F0-4FE1-A95F-2861E57ABED3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload.Utility", "FileUpload.Utility\FileUpload.Utility.csproj", "{167493A1-0229-42AD-AAF2-12CB4E945104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload", "FileUpload\FileUpload.csproj", "{ACE3D32A-0A87-4139-AB1D-93BCC3439DFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload.Models", "FileUpload.Models\FileUpload.Models.csproj", "{1D57F4C0-ED41-416E-AD31-726DE978E048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload.Data", "FileUpload.Data\FileUpload.Data.csproj", "{44F951D6-04F0-4FE1-A95F-2861E57ABED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload.Tests", "FileUpload.Tests\FileUpload.Tests.csproj", "{2D99CB9F-8DCF-4915-B459-02C1481F87C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{167493A1-0229-42AD-AAF2-12CB4E945104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{167493A1-0229-42AD-AAF2-12CB4E945104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{167493A1-0229-42AD-AAF2-12CB4E945104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{167493A1-0229-42AD-AAF2-12CB4E945104}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ACE3D32A-0A87-4139-AB1D-93BCC3439DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ACE3D32A-0A87-4139-AB1D-93BCC3439DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACE3D32A-0A87-4139-AB1D-93BCC3439DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,10 +35,10 @@ Global
 		{44F951D6-04F0-4FE1-A95F-2861E57ABED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44F951D6-04F0-4FE1-A95F-2861E57ABED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44F951D6-04F0-4FE1-A95F-2861E57ABED3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{167493A1-0229-42AD-AAF2-12CB4E945104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{167493A1-0229-42AD-AAF2-12CB4E945104}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{167493A1-0229-42AD-AAF2-12CB4E945104}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{167493A1-0229-42AD-AAF2-12CB4E945104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D99CB9F-8DCF-4915-B459-02C1481F87C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D99CB9F-8DCF-4915-B459-02C1481F87C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D99CB9F-8DCF-4915-B459-02C1481F87C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D99CB9F-8DCF-4915-B459-02C1481F87C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
