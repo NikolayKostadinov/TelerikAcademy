@@ -1,0 +1,17 @@
+﻿<Window xmlns:my="clr-namespace:StackingPanelsWPF"  x:Class="StackingPanelsWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="250" Width="175">
+    <StackPanel VerticalAlignment="Stretch">
+        <Border BorderThickness="5" Margin="5" BorderBrush="Black">
+            <StackPanel>
+                <Button Content="Show WrapPanel Example" Click="ShowWrapButton_Click"/>
+                <Button Content="Show DockPanel Example" Click="ShowDockButton_Click"/>
+            </StackPanel>
+        </Border>
+        <my:DockPanelExampleControl x:Name="DockPanelControl" Visibility="Collapsed" VerticalAlignment="Stretch" />
+        <my:WrapPanelExampleControl x:Name="WrapPanelControl" Visibility="Collapsed" VerticalAlignment="Stretch"/>
+
+    </StackPanel>
+
+</Window>
