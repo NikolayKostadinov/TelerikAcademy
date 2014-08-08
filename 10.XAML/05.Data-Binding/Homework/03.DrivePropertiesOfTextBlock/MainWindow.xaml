@@ -1,0 +1,40 @@
+﻿<Window x:Class="_03.DrivePropertiesOfTextBlock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local = "clr-namespace:_03.DrivePropertiesOfTextBlock"
+        Title="MainWindow" Height="350" Width="552">
+    <Window.Resources>
+        <local:ColorConvertor x:Key="colorConvertor" />
+    </Window.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Target="{Binding ElementName=ComboBoxForgroundColor}">_Foregroun Color</Label>
+            <ComboBox Name="ComboBoxForgroundColor" Width="150" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Target="{Binding ElementName=ComboBoxBackgroundColor}" Margin="20,0,0,0">_Backgroun Color</Label>
+            <ComboBox Name="ComboBoxBackgroundColor" Width="150">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        <TextBox 
+            Name="TextBoxColored" 
+            Foreground="{Binding ElementName=ComboBoxForgroundColor, Path=SelectedValue, Converter={StaticResource colorConvertor}}" 
+            Background="{Binding ElementName=ComboBoxBackgroundColor,Path=SelectedValue, Converter={StaticResource colorConvertor}}">
+        </TextBox>
+    </StackPanel>
+</Window>

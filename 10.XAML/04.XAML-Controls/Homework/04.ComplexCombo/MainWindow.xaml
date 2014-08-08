@@ -1,0 +1,42 @@
+﻿<Window x:Class="_04.ComplexCombo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <ComboBox Height="100" MaxWidth="530">
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Image Source="Images\1.jpg" Height="100"></Image>
+            <TextBlock FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" Margin="10" TextWrapping="Wrap" MaxWidth="120" > San Francisco Golden Gate </TextBlock>
+            <TextBlock MaxWidth="260" TextWrapping="Wrap" >
+                The Golden Gate is the North American strait that connects San Francisco Bay to the Pacific Ocean. It is defined by the headlands of the San Francisco Peninsula and the Marin Peninsula, and, since 1937, has been spanned by the Golden Gate Bridge.
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Image Source="Images\2.jpg" Height="100"></Image>
+            <TextBlock FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" Margin="10" TextWrapping="Wrap" MaxWidth="120">San Francisco City</TextBlock>
+            <TextBlock MaxWidth="260" TextWrapping="Wrap" >
+                San Francisco, officially the City and County of San Francisco, is the cultural center and a leading financial hub of the San Francisco Bay Area and Northern California.
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"  Margin="5">
+            <Image Source="Images\6.jpg" Height="100"></Image>
+            <TextBlock FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" Margin="10" TextWrapping="Wrap" MaxWidth="120">San Francisco</TextBlock>
+            <TextBlock MaxWidth="260" TextWrapping="Wrap" >
+                The only consolidated city-county in California,[12] San Francisco encompasses a land area of about 46.9 square miles (121 km2)[13] on the northern end of the San Francisco Peninsula, giving it a density of about 17,867 people per square mile
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Image Source="Images\4.jpg" Height="100" Margin="5"></Image>
+            <TextBlock FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" Margin="10" TextWrapping="Wrap" MaxWidth="120" >San Francisko Architecture</TextBlock>
+            <TextBlock MaxWidth="260" TextWrapping="Wrap" >
+                San Francisco is a popular tourist destination,[19] known for its cool summers, fog, steep rolling hills, eclectic mix of architecture, and landmarks.
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Image Source="Images\5.jpg" Height="100" Margin="5"></Image>
+            <TextBlock FontSize="18" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" Margin="10" TextWrapping="Wrap" MaxWidth="120" >San Francisko Sunset</TextBlock>
+            <TextBlock MaxWidth="260" TextWrapping="Wrap" >
+                Due to its unique geography, and the freeway revolts of the late 1950s,[241] San Francisco is one of the few American cities with arterial thoroughfares instead of having numerous highways within the city.
+            </TextBlock>
+        </StackPanel>
+    </ComboBox>
+</Window>

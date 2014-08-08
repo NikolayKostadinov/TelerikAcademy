@@ -1,0 +1,32 @@
+﻿<Window x:Class="CountryInfoSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vns ="clr-namespace:CountryInfoSystem.ViewModel"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vns:WorlViewModel/>
+    </Window.DataContext>
+    <StackPanel>
+        <StackPanel DataContext="{Binding Countries}">
+            <Label Target="{Binding ElementName=TextBoxCountryName}">_Country Name</Label>
+            <TextBox Name="TextBoxCountryName" Text="{Binding Name}"/>
+            <Label Target="{Binding ElementName=TextBoxGovernmentForm}">_Government Form</Label>
+            <TextBox Name="TextBoxGovernmentForm" Text="{Binding GovernmentForm}"></TextBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <Button Name="PrevCountry" Margin="10,0" Click="PrevCountry_Click">_Prev</Button>
+                <Button Name="NextCountry" Margin="10,0" Click="NextCountry_Click">_Next</Button>
+            </StackPanel>
+            <StackPanel DataContext="{Binding Cities}">
+                <Label Target="{Binding ElementName=TextBoxCityName}">_City</Label>
+                <TextBox Name="TextBoxCityName" Text="{Binding Name ,UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Target="{Binding ElementName=TextBoxPopulation}">_Population</Label>
+                <TextBox Name="TextBoxPopulation" Text="{Binding Population, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <Button Name="PrevCity" Margin="10,0" Click="PrevCity_Click">_Prev</Button>
+                <Button Name="NextCity" Margin="10,0" Click="NextCity_Click">_Next</Button>
+            </StackPanel>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>

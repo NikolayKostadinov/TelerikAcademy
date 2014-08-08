@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<vendors>
+  <vendor>
+    <name>Samsung</name>
+    <phones>
+      <phone>
+        <model>Galaxy S4</model>
+        <year>2014</year>
+        <operatingSystem>
+          <name>Android</name>
+          <version>Jelly bean</version>
+        </operatingSystem>
+        <features>
+          <feature>
+            <name>Screen protection</name>
+            <value>Gorilla glass 2</value>
+          </feature>
+          <feature>
+            <name>Air gestures</name>
+            <value>Yes</value>
+          </feature>
+          <feature>
+            <name>Accelerometer</name>
+            <value>Yes</value>
+          </feature>
+          <feature>
+            <name>Display</name>
+            <value>Full HD Super AMOLED</value>
+          </feature>
+          <feature>
+            <name>Display Resolution</name>
+            <value>1920x1080</value>
+          </feature>
+        </features>
+      </phone>
+      <phone>
+        <model>Galaxy Nexus</model>
+        <year>2011</year>
+        <operatingSystem>
+          <name>Android</name>
+          <version>Ice Cream Sandwich (upgradable to Jelly Bean)</version>
+        </operatingSystem>
+        <features>
+          <feature>
+            <name>Screen protection</name>
+            <value>None</value>
+          </feature>
+          <feature>
+            <name>Air gestures</name>
+            <value>No</value>
+          </feature>
+          <feature>
+            <name>Accelerometer</name>
+            <value>Yes</value>
+          </feature>
+          <feature>
+            <name>Display</name>
+            <value>Super AMOLED</value>
+          </feature>
+          <feature>
+            <name>Display Resolution</name>
+            <value>1280x720</value>
+          </feature>
+        </features> 
+      </phone>
+    </phones>
+  </vendor>
+  <vendor>
+    <name>Apple</name>
+    <phones>
+      <phone>
+        <model>iPhone 5</model>
+        <year>2014</year>
+        <operatingSystem>
+          <name>iOS mobile</name>
+          <version>6</version>
+        </operatingSystem>
+        <features>
+          <feature>
+            <name>Air gestures</name>
+            <value>No</value>
+          </feature>
+          <feature>
+            <name>Accelerometer</name>
+            <value>Yes</value>
+          </feature>
+          <feature>
+            <name>Display</name>
+            <value>Retina Display</value>
+          </feature>
+          <feature>
+            <name>Display Resolution</name>
+            <value>1136x640</value>
+          </feature>
+        </features>
+      </phone>
+    </phones>
+  </vendor>
+  <vendor>
+    <name>HTC</name>
+    <phones>
+      <phone>
+        <model>WindowsPhone 8S</model>
+        <year>2013</year>
+        <operatingSystem>
+          <name>WindowsPhone</name>
+          <version>8</version>
+        </operatingSystem>
+        <features>
+          <feature>
+            <name>Screen protection</name>
+            <value>Gorilla glass</value>
+          </feature>
+          <feature>
+            <name>Air gestures</name>
+            <value>No</value>
+          </feature>
+          <feature>
+            <name>Accelerometer</name>
+            <value>Yes</value>
+          </feature>
+          <feature>
+            <name>Display</name>
+            <value>Super LCD</value>
+          </feature>
+          <feature>
+            <name>Display Resolution</name>
+            <value>480 x 800 pixels</value>
+          </feature>
+        </features>
+      </phone>
+      <phone>
+        <model>One</model>
+        <year>2014</year>
+        <operatingSystem>
+          <name>Android</name>
+          <version>Jelly Bean</version>
+        </operatingSystem>
+        <features>
+          <feature>
+            <name>Screen protection</name>
+            <value>Gorilla Glass 2</value>
+          </feature>
+          <feature>
+            <name>Air gestures</name>
+            <value>No</value>
+          </feature>
+          <feature>
+            <name>Accelerometer</name>
+            <value>Yes</value>
+          </feature>
+          <feature>
+            <name>Display</name>
+            <value>Super LCD3</value>
+          </feature>
+          <feature>
+            <name>Display Resolution</name>
+            <value>1920x1080</value>
+          </feature>
+        </features>
+      </phone>
+    </phones>
+  </vendor>
+</vendors>
+

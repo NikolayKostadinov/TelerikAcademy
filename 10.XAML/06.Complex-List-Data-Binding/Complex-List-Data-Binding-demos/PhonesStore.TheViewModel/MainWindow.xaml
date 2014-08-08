@@ -1,0 +1,15 @@
+﻿<Window x:Class="PhonesStore.TheViewModel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vms="clr-namespace:PhonesStore.ViewModels;assembly=PhonesStore.ViewModels"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vms:PhonesStoreViewModel/>
+    </Window.DataContext>
+    <StackPanel DataContext="{Binding Phones}">
+        <TextBlock Text="{Binding Vendor}"/>
+        <TextBlock Text="{Binding Model}"/>
+        <TextBlock Text="{Binding Year}"/>
+        <Image Source="{Binding ImagePath}"/>
+    </StackPanel>
+</Window>

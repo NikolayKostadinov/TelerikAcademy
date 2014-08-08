@@ -1,0 +1,33 @@
+﻿<Window x:Class="ComplexDataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vms="clr-namespace:PhonesStore.ViewModels;assembly=PhonesStore.ViewModels"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vms:PhonesStoreViewModel/>
+    </Window.DataContext>
+    <StackPanel         
+        DataContext="{Binding Phones}">
+        <StackPanel Orientation="Horizontal"
+                    Margin="15">
+            <TextBlock HorizontalAlignment="Right"
+                       Text="Vendor: "/>
+            <TextBlock FontWeight="Bold"
+                       Text="{Binding Vendor}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Margin="15">
+            <TextBlock HorizontalAlignment="Right"
+                       Text="Model: "/>
+            <TextBlock FontWeight="Bold"
+                       Text="{Binding Model}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Margin="15">
+            <TextBlock HorizontalAlignment="Right"
+                       Text="Year: "/>
+            <TextBlock FontWeight="Bold"
+                       Text="{Binding Year}"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

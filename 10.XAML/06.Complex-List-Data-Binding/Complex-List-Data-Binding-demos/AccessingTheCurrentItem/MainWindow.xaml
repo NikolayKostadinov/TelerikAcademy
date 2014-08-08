@@ -1,0 +1,23 @@
+﻿<Window x:Class="AccessingTheCurrentItem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vms="clr-namespace:PhonesStore.ViewModels;assembly=PhonesStore.ViewModels"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vms:PhonesStoreViewModel />
+    </Window.DataContext>
+    <StackPanel>
+        <DockPanel DataContext="{Binding Phones}">
+            <StackPanel DockPanel.Dock="Left" HorizontalAlignment="Right">
+                <TextBlock Text="{Binding Vendor}" />
+                <TextBlock Text="{Binding Model}" />
+                <TextBlock Text="{Binding Year}" />
+            </StackPanel>
+            <Image Source="{Binding ImagePath}" Height="150"/>
+        </DockPanel>
+        <UniformGrid>
+            <Button Click="OnPrevButtonClick">Previous</Button>
+            <Button Click="OnNextButtonClick">Next</Button>
+        </UniformGrid>
+    </StackPanel>
+</Window>

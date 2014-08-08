@@ -1,0 +1,21 @@
+﻿<Window x:Class="_03.ItemsSelection.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <GroupBox Header="Плодиве и зеленчуци" Width="200" Padding="10">
+            <StackPanel>
+                <CheckBox Checked="OnCheckBoxChecked" Unchecked="OnCheckBoxUnChecked">Ябълки</CheckBox>
+                <CheckBox Checked="OnCheckBoxChecked" Unchecked="OnCheckBoxUnChecked">Круши</CheckBox>
+                <CheckBox Checked="OnCheckBoxChecked" Unchecked="OnCheckBoxUnChecked">Сливи</CheckBox>
+                <CheckBox Checked="OnCheckBoxChecked" Unchecked="OnCheckBoxUnChecked">Грозде</CheckBox>
+                <CheckBox Checked="OnCheckBoxChecked" Unchecked="OnCheckBoxUnChecked">Пипер</CheckBox>
+                <CheckBox Checked="OnCheckBoxChecked" Unchecked="OnCheckBoxUnChecked">Зеле</CheckBox>
+                <CheckBox Checked="OnCheckBoxChecked" Unchecked="OnCheckBoxUnChecked">Патладжан</CheckBox>
+                <CheckBox Checked="OnCheckBoxChecked" Unchecked="OnCheckBoxUnChecked">Картофи</CheckBox>
+            </StackPanel>
+        </GroupBox>
+        <TextBlock Name="TextBlockResult" Width="200" >
+        </TextBlock>
+    </StackPanel>
+</Window>

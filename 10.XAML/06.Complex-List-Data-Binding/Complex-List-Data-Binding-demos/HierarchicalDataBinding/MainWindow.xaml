@@ -1,0 +1,34 @@
+﻿<Window x:Class="HierarchicalDataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vms ="clr-namespace:HierarchicalDataBinding.ViewModels"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vms:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <TreeView ItemsSource="{Binding Vendors}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Phones}">
+                    <TextBlock Text="{Binding Name}"/>
+                    <HierarchicalDataTemplate.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Features}">
+                            <TextBlock>
+                                <TextBlock Text="{Binding Model}"/>                                
+                                (<TextBlock Text="{Binding Path=OperatingSystem.Name}"/> <TextBlock Text="{Binding Path=OperatingSystem.Version}"/>)
+                            </TextBlock>
+
+                            <HierarchicalDataTemplate.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                        <TextBlock Text="{Binding Name}"/>: <TextBlock FontWeight="Bold" Text="{Binding Value}" />
+                                    </TextBlock>
+                                </DataTemplate>
+                            </HierarchicalDataTemplate.ItemTemplate>                            
+                        </HierarchicalDataTemplate>
+                    </HierarchicalDataTemplate.ItemTemplate>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</Window>

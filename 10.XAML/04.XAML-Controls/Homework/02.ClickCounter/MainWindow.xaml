@@ -1,0 +1,9 @@
+﻿<Window x:Class="_02.ClickCounter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <Label Name="LabelButtonClickCount" Width="100" Height="30" Content="" Margin="20,0,0,0"></Label>
+        <Button x:Name="Button" Width="150" Height="30" Content="ClickMe" Click="OnButtonClick"/>
+    </StackPanel>
+</Window>
