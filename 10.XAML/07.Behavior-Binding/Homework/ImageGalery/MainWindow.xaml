@@ -38,14 +38,15 @@
         </TabItem>
         <TabItem Header="Add New Items">
             <TabControl>
-                <TabItem Header="AddNewAlbum" DataContext="{Binding}">
+                <TabItem Header="AddNewAlbum">
+                    <StackPanel DataContext="{Binding }" >
                     <StackPanel DataContext="{Binding NewAlbum}">
                         <StackPanel Orientation="Horizontal">
                             <Label Target="{Binding ElementName=Name}">_Album Name</Label>
                             <TextBox Name="Name" Text="{Binding Name}" MinWidth="200" Width="410"></TextBox>
                         </StackPanel>
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                            <ListView DataContext="{Binding Images}" Height="180">
+                            <ListView ItemsSource="{Binding Images}" Height="180">
                                 <ListView.View>
                                     <GridView>
                                         <GridView.Columns>
@@ -63,6 +64,7 @@
                                 </ListView.View>
                             </ListView>
                         </ScrollViewer>
+                    </StackPanel>
                         <StackPanel DataContext="{Binding NewImage}" Margin="0,10">
                             <StackPanel Orientation="Horizontal">
                                 <Label Target="{Binding ElementName=ImageTitle}">Image _Title</Label>
@@ -73,7 +75,7 @@
                                 <TextBox Name="ImageSource" Text="{Binding ImageSource}" MinWidth="200" Width="410"/>
                             </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0, 10" HorizontalAlignment="Center" DataContext="{Binding ImageGaleryViewModel}">
+                        <StackPanel Orientation="Horizontal" Margin="0, 10" HorizontalAlignment="Center" >
                             <Button Name="AddNewImage" Command="{Binding AddImage}">Add Image</Button>
                             <Button Name="AddNewAlbum" Command="{Binding AddAlbum}" Margin="20,0,0,0">Add Album</Button>
                         </StackPanel>
