@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<phones>
+  <phone>
+    <vendor>Samsung</vendor>
+    <model>Galaxy S4</model>
+    <year>2013</year>
+    <image>..\..\Images\samsung-s4.jpg</image>
+    <os>
+      <name>Android</name>
+      <version>Jelly Bean</version>
+      <manufacturer>Google Inc.</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor>HTC</vendor>
+    <model>WindowsPhone 8X</model>
+    <year>2013</year>
+    <image>..\..\Images\htc-8x.jpg</image>
+    <os>
+      <name>WindowsPhone</name>
+      <version>8</version>
+      <manufacturer>Microsoft</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor>Apple</vendor>
+    <model>iPhone 5</model>
+    <year>2012</year>
+    <image>..\..\..\Images\apple-iphone-5.jpeg</image>
+    <os>
+      <name>iOS</name>
+      <version>6</version>
+      <manufacturer>Apple</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor>HTC</vendor>
+    <model>One</model>
+    <year>2014</year>
+    <image>..\..\..\Images\htc-8x.jpg</image>
+    <os>
+      <name>Android</name>
+      <version>Jelly bean</version>
+      <manufacturer>Google Inc.</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor>Google</vendor>
+    <model>Nexus</model>
+    <year>2014</year>
+    <image>..\..\..\Images\htc-8x.jpg</image>
+    <os>
+      <name>Android</name>
+      <version>Jelly bean</version>
+      <manufacturer>Google Inc.</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor>Nokia</vendor>
+    <model>Lumia 920</model>
+    <year>2014</year>
+    <image>..\..\..\Images\htc-8x.jpg</image>
+    <os>
+      <name>WindowsPhone</name>
+      <version>8</version>
+      <manufacturer>Microsoft</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor>BlackBerry</vendor>
+    <model>Q10</model>
+    <year>2014</year>
+    <image>..\..\..\Images\htc-8x.jpg</image>
+    <os>
+      <name>BlackBerry OS</name>
+      <version>10</version>
+      <manufacturer>BlackBerry</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor>Nokia</vendor>
+    <model>2100</model>
+    <year>2003</year>
+    <image>..\..\..\Images\htc-8x.jpg</image>
+    <os>
+      <name>None</name>
+      <version>None</version>
+      <manufacturer>Nokia</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor>NEW</vendor>
+    <model>aaaa</model>
+    <year>0</year>
+    <image />
+    <os>
+      <name>Android</name>
+      <version>Android</version>
+      <manufacturer>Google Inc.</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor>qwe</vendor>
+    <model>qwe</model>
+    <year>1111</year>
+    <image />
+    <os>
+      <name>BlackBerry OS</name>
+      <version>BlackBerry OS</version>
+      <manufacturer>BlackBerry</manufacturer>
+    </os>
+  </phone>
+  <phone>
+    <vendor />
+    <model />
+    <year>0</year>
+    <image />
+    <os>
+      <name>WindowsPhone</name>
+      <version>WindowsPhone</version>
+      <manufacturer>Microsoft</manufacturer>
+    </os>
+  </phone>
+</phones>

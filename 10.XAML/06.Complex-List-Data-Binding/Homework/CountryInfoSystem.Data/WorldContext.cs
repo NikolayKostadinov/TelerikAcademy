@@ -1,9 +1,9 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using CountryInfoSystem.Data.Mapping;
-using CountryInfoSystem.Model.Models;
+using CountryInfoSystemDAL.Model;
 
-namespace CountryInfoSystem.Data
+namespace CountryInfoSystemDAL.Data
 {
     public partial class WorldContext : DbContext
     {

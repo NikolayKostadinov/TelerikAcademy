@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CountryInfoSystem.Data.Repositories
+namespace CountryInfoSystemDAL.Data.Repositories
 {
     public interface IRepository<T,I>
         where T : class

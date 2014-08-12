@@ -2,37 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
-using CountryInfoSystem.Data;
-using CountryInfoSystem.Data.Repositories;
-using CountryInfoSystem.Model.Models;
+using CountryInfoSystemDAL.Data;
+using CountryInfoSystemDAL.Data.Repositories;
+using CountryInfoSystemDAL.Model;
 
 namespace CountryInfoSystem.ViewModel
 {
     public class WorlViewModel
     {
 
-        private static IRepository<Country,string> countriesRepository = new GenericRepository<Country,string>(new WorldContext());
+        private static IRepository<Country, string> countriesRepository = new GenericRepository<Country, string>(new WorldContext());
 
-        private IList<City> cities;
+        private IEnumerable<City> cities;
 
-        private IList<Country> countries;
+        private IEnumerable<Country> countries;
 
-        //public IList<City> Cities
-        //{
-        //    get
-        //    {
-        //        if (this.cities == null) 
-        //        {
-        //            FillCities();
-        //        }
-        //        return this.cities;
-        //    }
-        //}
-
-        public IList<Country> Countries
+        public IEnumerable<Country> Countries
         {
             get
             {
@@ -46,11 +32,8 @@ namespace CountryInfoSystem.ViewModel
 
         public void PrevCity()
         {
-            if (this.cities == null)
-            {
-                FillCities();
-            }
             var citiesViewCollection = this.GetDefaultView(this.cities);
+
             citiesViewCollection.MoveCurrentToPrevious();
             if (citiesViewCollection.IsCurrentBeforeFirst)
             {
@@ -60,10 +43,6 @@ namespace CountryInfoSystem.ViewModel
 
         public void NextCity()
         {
-            if (this.cities == null) 
-            {
-                FillCities();
-            }
             var citiesViewCollection = this.GetDefaultView(this.cities);
             citiesViewCollection.MoveCurrentToNext();
             if (citiesViewCollection.IsCurrentAfterLast)
@@ -103,7 +82,7 @@ namespace CountryInfoSystem.ViewModel
         {
             var countryViewCollection = this.GetDefaultView(this.countries);
             var currentCountry = (Country)countryViewCollection.CurrentItem;
-            this.cities = countriesRepository.GetById(currentCountry.Code).Cities.ToList();
+            this.cities = currentCountry.Cities;
         }
     }
 }

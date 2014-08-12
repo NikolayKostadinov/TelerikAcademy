@@ -7,7 +7,7 @@
     <ProjectGuid>{808DE2B8-FFBE-46B9-A214-AD171E0FE6BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CountryInfoSystem.Model</RootNamespace>
+    <RootNamespace>CountryInfoSystemDAL.Model</RootNamespace>
     <AssemblyName>CountryInfoSystem.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\City.cs" />
-    <Compile Include="Models\Continent.cs" />
-    <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\CountryLanguage.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="Continent.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="CountryLanguage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

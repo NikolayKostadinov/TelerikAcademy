@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 
-namespace CountryInfoSystem.Data.Repositories
+namespace CountryInfoSystemDAL.Data.Repositories
 {
     public class GenericRepository<T,I> : IRepository<T,I> where T : class
     {

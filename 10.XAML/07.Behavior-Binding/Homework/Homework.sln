@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Image Galery", "01. Image Galery", "{0D024370-2295-4393-B4B1-E85C55907AFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGalery", "ImageGalery\ImageGalery.csproj", "{D49D662A-4BBA-4C45-9078-932B7ED95714}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D49D662A-4BBA-4C45-9078-932B7ED95714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D49D662A-4BBA-4C45-9078-932B7ED95714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D49D662A-4BBA-4C45-9078-932B7ED95714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D49D662A-4BBA-4C45-9078-932B7ED95714}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D49D662A-4BBA-4C45-9078-932B7ED95714} = {0D024370-2295-4393-B4B1-E85C55907AFE}
+	EndGlobalSection
+EndGlobal

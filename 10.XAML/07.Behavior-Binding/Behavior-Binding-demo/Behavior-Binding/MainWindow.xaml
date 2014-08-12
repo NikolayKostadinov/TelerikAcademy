@@ -1,0 +1,48 @@
+﻿<Window x:Class="Behavior_Binding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vms="clr-namespace:Behavior_Binding.ViewModels"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vms:StoreViewModel/>
+    </Window.DataContext>
+    <StackPanel>
+        <!--<ComboBox Name="ListBoxPhones" ItemsSource="{Binding Phones}"
+        IsSynchronizedWithCurrentItem="True">
+        <ComboBox.ItemTemplate>
+        <DataTemplate>
+        <StackPanel>
+        <TextBlock>
+        <TextBlock Text="{Binding Vendor}"/>
+        <TextBlock Text="{Binding Model}"/>
+        </TextBlock>
+        </StackPanel>
+        </DataTemplate>
+        </ComboBox.ItemTemplate>
+        </ComboBox>-->
+        <ItemsControl ItemsSource="{Binding Phones}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <RadioButton
+                        GroupName="phonesRadioButtons"
+                                 Content="{Binding Model}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <StackPanel DataContext="{Binding CurrentPhone}">
+            <TextBlock FontWeight="Bold" 
+                       HorizontalAlignment="Center"
+                       FontSize="24">
+                <TextBlock Text="{Binding Vendor}"/>
+                <TextBlock Text="{Binding Model}"/>
+
+            </TextBlock>
+            <Image Source="{Binding ImagePath}"
+                   Width="300" 
+                   HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Button Command="{Binding Prev}">Prev</Button>
+        <Button Command="{Binding Next}">Next</Button>
+    </StackPanel>
+</Window>

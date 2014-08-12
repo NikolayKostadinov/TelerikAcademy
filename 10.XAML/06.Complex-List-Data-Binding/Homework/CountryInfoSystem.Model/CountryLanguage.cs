@@ -1,7 +1,6 @@
 using System;
-using System.Collections.Generic;
 
-namespace CountryInfoSystem.Model.Models
+namespace CountryInfoSystemDAL.Model
 {
     public partial class CountryLanguage
     {

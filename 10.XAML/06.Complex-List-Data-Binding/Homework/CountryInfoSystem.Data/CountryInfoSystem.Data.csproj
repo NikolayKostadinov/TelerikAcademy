@@ -7,7 +7,7 @@
     <ProjectGuid>{1F9DC468-D287-4E65-A7A0-4F159FC1B5B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CountryInfoSystem.Data</RootNamespace>
+    <RootNamespace>CountryInfoSystemDAL.Data</RootNamespace>
     <AssemblyName>CountryInfoSystem.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
