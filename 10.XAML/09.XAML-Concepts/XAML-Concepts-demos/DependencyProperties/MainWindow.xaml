@@ -1,0 +1,22 @@
+﻿<Window x:Class="DependencyProperties.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels ="clr-namespace:DependencyProperties.ViewModels"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
+
+    <UniformGrid Columns="2">
+        <TextBlock>Current Message:</TextBlock>
+        <TextBlock Text="{Binding Message}"/>
+        <ListBox ItemsSource="{Binding Messages}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Text}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Command="{Binding RaiseMessage}">Add Message</Button>
+    </UniformGrid>
+</Window>

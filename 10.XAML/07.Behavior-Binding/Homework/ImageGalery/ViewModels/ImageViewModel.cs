@@ -13,6 +13,17 @@ namespace ImageGalery.ViewModels
         private string title;
         private string imageSounce;
 
+        public ImageViewModel() : this(string.Empty, string.Empty) { }
+
+        public ImageViewModel(string imageSource):this(string.Empty,imageSource) {}
+
+
+        public ImageViewModel(string title, string imageSource)
+        {
+            this.Title = title;
+            this.ImageSource = imageSource;
+        }
+
         public string Title
         {
             get
@@ -50,5 +61,7 @@ namespace ImageGalery.ViewModels
                 };
             }
         }
+
+        
     }
 }

@@ -1,0 +1,20 @@
+﻿<Window x:Class="Inline_External_Styles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="ButtonStyle" BasedOn="{StaticResource CommonButton}">
+            <Setter Property="BorderBrush" Value="Green"/>
+            <Setter Property="FontSize" Value="33"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Button Content="Hello" Width="100" Height="100">
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+                    <Setter Property="Background" Value="Yellow"/>
+                </Style>
+            </Button.Style>
+        </Button>        
+    </Grid>
+</Window>

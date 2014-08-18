@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <albums>
   <album>
     <name>Album1</name>
@@ -124,6 +124,281 @@
       <image>
         <title>image10</title>
         <source>..\images\Album3\10.jpg</source>
+      </image>
+    </images>
+  </album>
+  <album>
+    <name>Test Album 1</name>
+    <images>
+      <image>
+        <title>Test Image 1</title>
+        <source>..\images\Album2\3.jpg</source>
+      </image>
+      <image>
+        <title>Jaki 1</title>
+        <source>..\images\Album3\4.jpg</source>
+      </image>
+      <image>
+        <title>Jaki 2</title>
+        <source>..\images\Album3\5.jpg</source>
+      </image>
+      <image>
+        <title>Jaki 3</title>
+        <source>..\images\Album3\6.jpg</source>
+      </image>
+    </images>
+  </album>
+  <album>
+    <name>Cars</name>
+    <images>
+      <image>
+        <title>alpha romeo</title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\alfaromeo_147_2006.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\alfaromeo_159_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\audi_a3_2003.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\audi_a4_2002.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\audi_Q7_2007.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\bmw_320d_2006.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\bmw_535d_2005.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\bmw_x3_2007.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\chrysler_300_2006.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\citroen_evasion_1998.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\ford_galaxy_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\hatchback.png</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\honda_accord_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\honda_civic_2006.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\honda_cr-z_2010.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\hyundai_i30_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\hyundai_santafe_2007.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\lancia_ypsilon_2006.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\limousine.png</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\lincoln_2011towncar_2010.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\lincoln_towncar_2006.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\mercedesbenz_aclass.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\mercedesbenz_bclass_lorinzer.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\mercedesbenz_S600_pullman_guard.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\mitsubishi_lancer_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\nissan_almera_2001.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\nissan_qashqai_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\opel_corsa_2004.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\opel_vectra_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\peoplecarrier.png</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\peugeot_407_2006.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\renault_laguna_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\saloon.png</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\suv.png</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\toyota_avensis_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\toyota_corolla_spacio_2007.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\toyota_landcruiser100_2005.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\van.png</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\volvo_c30_2009.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\volvo_s60_2010.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\volvo_xc90_2006.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\vw_golf_2008.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\vw_passat_2005.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\vw_phaeton_2005.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\vw_touareg_2010.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\DemoAppsHub\bin\CarRentalImages\vw_touran_2008.jpg</source>
+      </image>
+    </images>
+  </album>
+  <album>
+    <name>People</name>
+    <images>
+      <image>
+        <title>Alan Smith</title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Alan Smith.jpg</source>
+      </image>
+      <image>
+        <title>Anne Dodsworth</title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Anne Dodsworth.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Bianka Mastoni.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Fannie Duncan.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Hellena Shnaider.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Janet Leverling.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Jaroslav Lokash.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Laura Callahan.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Marshal Duboa.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Paolo Rossini.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Peter Christensen.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Richter Strauss.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Silvester Williams.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2014\Examples\QuickStart\GridView\FirstLook\Images\People\Simonette Saylor.jpg</source>
+      </image>
+      <image>
+        <title></title>
+        <source></source>
       </image>
     </images>
   </album>

@@ -2,13 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vns="clr-namespace:ImageGalery.ViewModels"
-        Title="MainWindow" Height="421" Width="525">
+        Title="MainWindow" Height="479" Width="525">
     <Window.DataContext>
         <vns:ImageGaleryViewModel />
     </Window.DataContext>
     <TabControl>
         <TabItem Header="Show Albums">
-            <TabControl ItemsSource="{Binding Albums}" >
+            <TabControl ItemsSource="{Binding Albums}" 
+                        IsSynchronizedWithCurrentItem="True">
                 <TabControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Name}"/>
@@ -37,43 +38,58 @@
             </TabControl>
         </TabItem>
         <TabItem Header="Add New Items">
-            <TabControl>
+            <TabControl HorizontalAlignment="Left" Width="507">
                 <TabItem Header="AddNewAlbum">
                     <StackPanel DataContext="{Binding }" >
-                    <StackPanel DataContext="{Binding NewAlbum}">
-                        <StackPanel Orientation="Horizontal">
-                            <Label Target="{Binding ElementName=Name}">_Album Name</Label>
-                            <TextBox Name="Name" Text="{Binding Name}" MinWidth="200" Width="410"></TextBox>
+                        <StackPanel DataContext="{Binding NewAlbum}">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Target="{Binding ElementName=Name}">_Album Name</Label>
+                                <TextBox Name="Name" Text="{Binding Name}" MinWidth="200" Width="410"></TextBox>
+                            </StackPanel>
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,10">
+                                <ListView ItemsSource="{Binding Images}"
+                                          Height="180"
+                                          IsSynchronizedWithCurrentItem="True">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridView.Columns>
+                                                <GridViewColumn Header="Image">
+                                                    <GridViewColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <Image Source="{Binding ImageSource}" Width="50"/>
+                                                        </DataTemplate>
+                                                    </GridViewColumn.CellTemplate>
+                                                </GridViewColumn>
+                                                <GridViewColumn Header="Image Title">
+                                                    <GridViewColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel>
+                                                                <TextBox Text="{Binding Title}"></TextBox>
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </GridViewColumn.CellTemplate>
+                                                </GridViewColumn>
+                                                <GridViewColumn Header="Image Source" DisplayMemberBinding="{Binding ImageSource}"/>
+                                            </GridView.Columns>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </ScrollViewer>
                         </StackPanel>
-                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                            <ListView ItemsSource="{Binding Images}" Height="180">
-                                <ListView.View>
-                                    <GridView>
-                                        <GridView.Columns>
-                                            <GridViewColumn Header="Image">
-                                                <GridViewColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <Image Source="{Binding ImageSource}" Width="50"/>
-                                                    </DataTemplate>
-                                                </GridViewColumn.CellTemplate>
-                                            </GridViewColumn>
-                                            <GridViewColumn Header="Image Title" DisplayMemberBinding="{Binding Title}"/>
-                                            <GridViewColumn Header="Image Source" DisplayMemberBinding="{Binding ImageSource}"/>
-                                        </GridView.Columns>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
-                        </ScrollViewer>
-                    </StackPanel>
-                        <StackPanel DataContext="{Binding NewImage}" Margin="0,10">
-                            <StackPanel Orientation="Horizontal">
-                                <Label Target="{Binding ElementName=ImageTitle}">Image _Title</Label>
-                                <TextBox Name="ImageTitle" Text="{Binding Title}" MinWidth="200" Width="410"/>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel DataContext="{Binding NewImage}" >
+                                <StackPanel Orientation="Horizontal" Width="450" Margin="0,10">
+                                    <Label Target="{Binding ElementName=ImageTitle}">Image _Title</Label>
+                                    <TextBox Name="ImageTitle" Text="{Binding Title}" MinWidth="200" Width="386"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Width="450">
+                                    <Label Target="{Binding ElementName=ImageSource}">Image _Source</Label>
+                                    <TextBox Name="ImageSource" Text="{Binding ImageSource}" MinWidth="200" Width="374"/>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <Label Target="{Binding ElementName=ImageSource}">Image _Source</Label>
-                                <TextBox Name="ImageSource" Text="{Binding ImageSource}" MinWidth="200" Width="410"/>
-                            </StackPanel>
+                            <Button Name="OpenButton" Command="{Binding FileOpen}" Margin="10,45,0,0" Width="30" Height="25" RenderTransformOrigin="0.633,1.367">
+                                <Image Source="/Resources/folder_open_add.png" Width="20"/>
+                            </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0, 10" HorizontalAlignment="Center" >
                             <Button Name="AddNewImage" Command="{Binding AddImage}">Add Image</Button>

@@ -1,0 +1,8 @@
+﻿<Window x:Class="Names_Manager_Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Width="260" Height="160" xmlns:my="clr-namespace:Names_Manager_Demo">
+    <Grid>
+        <my:ListNamesUserControl x:Name="listNamesUserControl1"></my:ListNamesUserControl>
+    </Grid>
+</Window>

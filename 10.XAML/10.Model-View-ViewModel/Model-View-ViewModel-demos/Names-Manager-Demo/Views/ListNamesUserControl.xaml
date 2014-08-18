@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="Names_Manager_Demo.ListNamesUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModels="clr-namespace:Names_Manager_Demo.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="260">
+ 
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="150"/>
+      <ColumnDefinition Width="100"/>
+    </Grid.ColumnDefinitions>
+    <ListView x:Name="ListViewNames"
+              ItemsSource="{Binding Names}" 
+              Grid.Column="0" 
+              SelectionMode="Single">
+    </ListView>
+    <StackPanel Grid.Column="1" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center">
+      <TextBox x:Name="TextBoxNewName" Margin="10"/>
+      <Button x:Name="ButtonAddNew" Content="Add New" Click="ButtonAddNew_Click" Margin="10"/>
+      <Button x:Name="ButtonDelete" Content="Delete" Click="ButtonDelete_Click" Margin="10"/>
+    </StackPanel>
+  </Grid>
+</UserControl>

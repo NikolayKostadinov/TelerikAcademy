@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="ImageViewerMVVM.Views.ImageViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:ImageViewerMVVM.ViewModels"
+             mc:Ignorable="d">
+  <UserControl.Resources>
+    <vm:ViewModelImageSource x:Key="viewModel"/>
+  </UserControl.Resources>
+  <Grid DataContext="{StaticResource viewModel}" 
+        PreviewKeyDown="UserControl_PreviewKeyDown" KeyDown="UserControl_PreviewKeyDown"  >
+    <Grid.RowDefinitions>
+      <RowDefinition MinHeight="200" Height="*"/>
+      <RowDefinition Height="50" MinHeight="50" MaxHeight="50"/>
+      <RowDefinition Height="150" MaxHeight="150" MinHeight="150"/>
+    </Grid.RowDefinitions>
+    <UniformGrid Name="GridMainImage" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Columns="1" Rows="1">
+      <Image Name="ImageMain" Source="{Binding CurrentImageSource}"
+             VerticalAlignment="Stretch"/>
+    </UniformGrid>
+    <Grid Name="GridControls" Grid.Row="1">
+      <UniformGrid Name="StackPanelButtons" Columns="2" Rows="1">
+        <Button Name="ButtonAdd" Command="{Binding Add}" MinWidth="150"  
+                Content="Add Image"  HorizontalAlignment="Stretch"
+                Style="{DynamicResource CircledAnimatedButton}"/>
+        <Button Name="ButtonDelete" Command="{Binding Delete}"  MinWidth="150"  
+                Content="Delete Image"   HorizontalAlignment="Stretch"
+                Style="{DynamicResource CircledAnimatedButton}"/>
+      </UniformGrid>
+    </Grid>
+    <Grid Name="GridImageList" Grid.Row="2" Height="150">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="70"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="70"/>
+      </Grid.ColumnDefinitions>
+      <Button Name="ButtonPrevious" Command="{Binding Previous}" Content="Previous"   
+              Grid.Column="0" Style="{DynamicResource CircledAnimatedButton}" Height="50"/>
+      <Button Name="ButtonNext" Command="{Binding Next}"  Content="Next"  
+              Grid.Column="2" Style="{DynamicResource CircledAnimatedButton}"  Height="50"/>
+      <ListView Name="ImageList" 
+                ItemsSource="{Binding ImageSources}" 
+                IsSynchronizedWithCurrentItem="True" SelectionMode="Single"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Margin="0,8" >
+        <ListView.ItemsPanel>
+          <ItemsPanelTemplate>
+            <UniformGrid Rows="1"/>
+          </ItemsPanelTemplate>
+        </ListView.ItemsPanel>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <Image Source="{Binding}" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Stretch" 
+                   MaxHeight="70" MaxWidth="70" 
+                   Height="71" Width="62.5" Margin="5" 
+                   RenderTransformOrigin="0.5,0.5">
+              <Image.RenderTransform>
+                <TransformGroup>
+                  <ScaleTransform/>
+                  <SkewTransform/>
+                  <RotateTransform Angle="-2.337"/>
+                  <TranslateTransform/>
+                </TransformGroup>
+              </Image.RenderTransform>
+            </Image>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </Grid>
+  </Grid>
+</UserControl>
+    

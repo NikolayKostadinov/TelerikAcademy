@@ -70,10 +70,6 @@
     <Compile Include="Commands\CanExecuteDelegate.cs" />
     <Compile Include="Commands\ExecuteDelegate.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +89,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="galery.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -135,7 +134,18 @@
     <Resource Include="images\Album3\9.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="galery.xml" />
+    <Resource Include="galery.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Files-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_open_add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
