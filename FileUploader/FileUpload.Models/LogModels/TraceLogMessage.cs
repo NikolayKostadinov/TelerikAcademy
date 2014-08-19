@@ -11,8 +11,9 @@ namespace FileUpload.Models.LogModels
 {
     public class TraceLogMessage
     {
-        [Key]
+        [Key()]
         public int Id { get; set; }
+        
         [Index(IsClustered = true, IsUnique = false)]
         public DateTime TimeStamp  { get; set; }
         public string UserName { get; set; }

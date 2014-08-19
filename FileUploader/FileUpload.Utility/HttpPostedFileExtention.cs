@@ -9,7 +9,7 @@ namespace FileUpload.Utility
 {
     public static class HttpPostedFileWrapperExtention
     {
-        public static FileDescription ToFileDescription(this FileUploadHttpPostedFileWrapper postedFile, string userId)
+        public static FileDescription ToFileDescription(this FileUploadHttpPostedFileWrapper postedFile, int userId)
         {
             var fileDescription = new FileDescription();
             var fileSize = (int)Math.Ceiling((decimal)(postedFile.ContentLength / 1024));

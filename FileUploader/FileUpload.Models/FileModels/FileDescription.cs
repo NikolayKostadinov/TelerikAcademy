@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using FileUpload.Models.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace FileUpload.Models.FileModels
@@ -23,7 +24,7 @@ namespace FileUpload.Models.FileModels
         public DateTime UploadTime { get; set; }
 
         [ForeignKey("ApplicationUser")]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         public virtual ICollection<UploadResult> UploadResults { get; set; }

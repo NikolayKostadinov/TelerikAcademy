@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web.Mvc;
 using FileUpload.Data;
+using FileUpload.Models.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace FileUpload.Models.ViewModels
@@ -12,7 +13,7 @@ namespace FileUpload.Models.ViewModels
     public class AccountViewModel
     {
         private IUowData db;
-        private ICollection<IdentityUserRole> userInRoles = new HashSet<IdentityUserRole>();
+        private ICollection<UserRoleIntPk> userInRoles = new HashSet<UserRoleIntPk>();
 
         public AccountViewModel() : this(DependencyResolver.Current.GetService(typeof(IUowData)) as IUowData)
         {
@@ -39,7 +40,7 @@ namespace FileUpload.Models.ViewModels
             }
         }
 
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string UserName { get; set; }
@@ -51,7 +52,7 @@ namespace FileUpload.Models.ViewModels
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
 
-        public ICollection<IdentityUserRole> UserInRole 
+        public ICollection<UserRoleIntPk> UserInRole 
         {
             get 
             {
@@ -96,7 +97,7 @@ namespace FileUpload.Models.ViewModels
 
                     foreach (var role in value) 
                     {
-                        this.UserInRole.Add(new IdentityUserRole() { UserId = this.Id, RoleId = role.Id });
+                        this.UserInRole.Add(new UserRoleIntPk() { UserId = this.Id, RoleId = role.Id });
                     }
                 }
             }

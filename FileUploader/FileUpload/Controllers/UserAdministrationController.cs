@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using FileUpload.Data;
 using FileUpload.Models;
+using FileUpload.Models.Identity;
 using FileUpload.Models.ViewModels;
 using Kendo.Mvc.UI;
 using Microsoft.AspNet.Identity;
@@ -23,7 +24,7 @@ namespace FileUpload.Controllers
     public class UserAdministrationController : Controller
     {
         private IUowData db;
-        private IList<IdentityRole> roles;
+        private IList<RoleIntPk> roles;
         public UserAdministrationController(IUowData db)
         {
             this.db = db;
@@ -47,7 +48,7 @@ namespace FileUpload.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult GetRolesByUser(string userId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult GetRolesByUser(int userId, [DataSourceRequest] DataSourceRequest request)
         {
             var userRoles = (db.Users.GetById(userId)).ToAccountViewModel(this.db).Roles;
             return Json(userRoles.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
@@ -114,7 +115,7 @@ namespace FileUpload.Controllers
 
                 if (user != null && ModelState.IsValid)
                 {
-                        if (user.Id == User.Identity.GetUserId())
+                        if (user.Id == int.Parse(User.Identity.GetUserId()))
                         {
                             ModelState.AddModelError("", "You cannot delete current user.");
                         }
@@ -132,7 +133,7 @@ namespace FileUpload.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ResetPassword(string userId, string redirect, string newPassword = "12345678") 
+        public ActionResult ResetPassword(int userId, string redirect, string newPassword = "12345678") 
         {
             var userManager = this.HttpContext.GetOwinContext().GetUserManager<FileUpload.App_Start.ApplicationUserManager>();
             using (var tran = new TransactionScope())

@@ -54,9 +54,13 @@
     <Compile Include="FileModels\FileDescription.cs" />
     <Compile Include="FileModels\Status.cs" />
     <Compile Include="FileModels\UploadResult.cs" />
-    <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="FileViewModels\FileDescriptionViewModel.cs" />
     <Compile Include="FileViewModels\UploadResultViewModel.cs" />
+    <Compile Include="Identity\RoleIntPk.cs" />
+    <Compile Include="Identity\UserClaimIntPk.cs" />
+    <Compile Include="Identity\UserLoginIntPk.cs" />
+    <Compile Include="Identity\UserRoleIntPk.cs" />
     <Compile Include="LogModels\TraceLogMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

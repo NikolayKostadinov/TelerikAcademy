@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using FileUpload.Data.Abstract;
 using FileUpload.Data.Concrete;
-using FileUpload.Models;
 using FileUpload.Models.FileModels;
+using FileUpload.Models.Identity;
 using FileUpload.Models.LogModels;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -34,19 +34,19 @@ namespace FileUpload.Data
 
 
 
-        public IRepository<ApplicationUser, string> Users
+        public IRepository<ApplicationUser, int> Users
         {
             get
             {
-                return this.GetRepository<ApplicationUser,string>();
+                return this.GetRepository<ApplicationUser,int>();
             }
         }
 
-        public IRepository<IdentityRole,string> Roles
+        public IRepository<RoleIntPk, int> Roles
         {
             get
             {
-                return this.GetRepository<IdentityRole,string>();
+                return this.GetRepository<RoleIntPk,int>();
             }
         }
 

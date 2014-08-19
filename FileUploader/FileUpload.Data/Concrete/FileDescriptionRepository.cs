@@ -11,7 +11,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace FileUpload.Data.Concrete
 {
-    public class FileDescriptionRepository : GenericRepository<FileDescription,int>, IRepository<FileDescription,int>
+    public class FileDescriptionRepository : GenericRepository<FileDescription,int>
     {
         public FileDescriptionRepository(DbContext context):base(context)
         {

@@ -1,4 +1,4 @@
-﻿//#define DEBUG
+﻿#define DEBUG
 using System.Transactions;
 using FileUpload.Data;
 using FileUpload.Models.FileModels;
@@ -55,7 +55,7 @@ namespace FileUpload.Controllers
                     using (var tran = new TransactionScope())
                     {
                         file.SaveAs(physicalPath);
-                        fileDescription = file.ToFileDescription(User.Identity.GetUserId());
+                        fileDescription = file.ToFileDescription(int.Parse(User.Identity.GetUserId()));
                         db.FileDescriptions.Add(fileDescription);
                         var uploadResult = FuleUploadUtility.ParseFile(physicalPath, fileDescription);
                         fileDescription.UploadResults = uploadResult;

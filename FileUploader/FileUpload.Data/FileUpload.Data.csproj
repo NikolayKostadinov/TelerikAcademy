@@ -45,6 +45,9 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
       <HintPath>..\AspMvcUserAdministration\bin\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\FileUpload\bin\Microsoft.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -62,33 +65,15 @@
     <Compile Include="Abstract\IUowData.cs" />
     <Compile Include="Mapping\FileDescriptionMap.cs" />
     <Compile Include="Mapping\TraceLogMessageMap.cs" />
-    <Compile Include="Migrations\201406270523178_UploadResultsMigration.cs" />
-    <Compile Include="Migrations\201406270523178_UploadResultsMigration.Designer.cs">
-      <DependentUpon>201406270523178_UploadResultsMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201406271053512_UploadResultLong.cs" />
-    <Compile Include="Migrations\201406271053512_UploadResultLong.Designer.cs">
-      <DependentUpon>201406271053512_UploadResultLong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201406271318087_UploadResultStatus.cs" />
-    <Compile Include="Migrations\201406271318087_UploadResultStatus.Designer.cs">
-      <DependentUpon>201406271318087_UploadResultStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201406271844188_FileUploadNavPropUploadResult.cs" />
-    <Compile Include="Migrations\201406271844188_FileUploadNavPropUploadResult.Designer.cs">
-      <DependentUpon>201406271844188_FileUploadNavPropUploadResult.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201407140955567_AddTraceLog.cs" />
-    <Compile Include="Migrations\201407140955567_AddTraceLog.Designer.cs">
-      <DependentUpon>201407140955567_AddTraceLog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201407161249137_TracelogMessageMapRequired.cs" />
-    <Compile Include="Migrations\201407161249137_TracelogMessageMapRequired.Designer.cs">
-      <DependentUpon>201407161249137_TracelogMessageMapRequired.cs</DependentUpon>
+    <Compile Include="Migrations\201408191332161_CreateTimeStampIndex.cs" />
+    <Compile Include="Migrations\201408191332161_CreateTimeStampIndex.Designer.cs">
+      <DependentUpon>201408191332161_CreateTimeStampIndex.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleStoreIntPk.cs" />
     <Compile Include="UowData.cs" />
+    <Compile Include="UserStoreIntPk.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FileUpload.Models\FileUpload.Models.csproj">
@@ -101,23 +86,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201406270523178_UploadResultsMigration.resx">
-      <DependentUpon>201406270523178_UploadResultsMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201406271053512_UploadResultLong.resx">
-      <DependentUpon>201406271053512_UploadResultLong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201406271318087_UploadResultStatus.resx">
-      <DependentUpon>201406271318087_UploadResultStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201406271844188_FileUploadNavPropUploadResult.resx">
-      <DependentUpon>201406271844188_FileUploadNavPropUploadResult.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201407140955567_AddTraceLog.resx">
-      <DependentUpon>201407140955567_AddTraceLog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201407161249137_TracelogMessageMapRequired.resx">
-      <DependentUpon>201407161249137_TracelogMessageMapRequired.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201408191332161_CreateTimeStampIndex.resx">
+      <DependentUpon>201408191332161_CreateTimeStampIndex.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

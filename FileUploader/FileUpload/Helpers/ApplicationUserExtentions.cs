@@ -1,8 +1,8 @@
 ﻿using FileUpload.Data;
-using FileUpload.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using FileUpload.Models.Identity;
 using FileUpload.Models.ViewModels;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -22,7 +22,7 @@ namespace FileUpload.Helpers
             };
         }
 
-        public static void CopyPropFromAccountViewModel(this ApplicationUser user, AccountViewModel userView,IList<IdentityRole> roles) 
+        public static void CopyPropFromAccountViewModel(this ApplicationUser user, AccountViewModel userView,IList<RoleIntPk> roles) 
         {
             user.UserName = userView.UserName;
             user.Email = userView.Email;

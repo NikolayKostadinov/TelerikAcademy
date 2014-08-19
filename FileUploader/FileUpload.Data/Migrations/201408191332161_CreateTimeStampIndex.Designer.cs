@@ -7,13 +7,13 @@ namespace FileUpload.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class TracelogMessageMapRequired : IMigrationMetadata
+    public sealed partial class CreateTimeStampIndex : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TracelogMessageMapRequired));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateTimeStampIndex));
         
         string IMigrationMetadata.Id
         {
-            get { return "201407161249137_TracelogMessageMapRequired"; }
+            get { return "201408191332161_CreateTimeStampIndex"; }
         }
         
         string IMigrationMetadata.Source
