@@ -23,7 +23,7 @@ namespace FileUpload.Data.Migrations
             var userMgr = new UserManager<ApplicationUser, int>(new UserStoreIntPk(context));
             var roleMgr = new RoleManager<RoleIntPk, int>(new RoleStoreIntPk(context));
 
-            IList<string> roleNames = new List<string>() { "Administrator", "Upploader" };
+            IList<string> roleNames = new List<string>() { "Administrator", "Upploader", "Exporter" };
             string userName = "Admin";
             string password = "12345678";
             string email = "support@bmsys.eu";
