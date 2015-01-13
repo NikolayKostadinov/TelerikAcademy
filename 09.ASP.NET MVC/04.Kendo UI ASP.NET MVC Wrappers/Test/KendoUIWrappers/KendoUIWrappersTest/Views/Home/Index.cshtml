@@ -29,4 +29,22 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
     @(Html.Kendo().Calendar().Name("my-kendo-calendar"))
+
+    <label id="result"></label>
+
+    @using (Html.BeginForm("SetDateTime", "Test", FormMethod.Post))
+    {
+        @(Html.Kendo().DateTimePicker()
+        .Name("datetime")
+        .Value(DateTime.Now)
+        .Events(events=>events.Change("onChange"))
+)
+        <input type="submit" name="submit" value="Submit" />
+    }
 </div>
+<script>
+    function onChange(ev)
+    {
+        $("#result").text($("#datetime").data("kendoDateTimePicker").value());
+    }
+</script>
