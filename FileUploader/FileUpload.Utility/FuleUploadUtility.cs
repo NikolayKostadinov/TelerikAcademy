@@ -8,7 +8,7 @@ using FileUpload.Models.FileModels;
 
 namespace FileUpload.Utility
 {
-    public class FuleUploadUtility
+    public sealed class FuleUploadUtility
     {
         /// <summary>
         /// Sends file to cache for parsing

@@ -14,9 +14,9 @@ namespace FileUpload.Tests
     [TestClass]
     public class FileDescriptionRepositoryTests
     {
-        public DbContext dbContext { get; set; }
+        private readonly DbContext dbContext;
 
-        public IRepository<FileDescription, int> fd;
+        private readonly IRepository<FileDescription, int> fd;
 
         private static TransactionScope tranScope;
 
@@ -49,7 +49,8 @@ namespace FileUpload.Tests
             {
                 FileName = filename,
                 Size = 1,
-                UploadTime = DateTime.Now
+                UploadTime = DateTime.Now,
+                UserId = 1
             };
             fd.Add(fileDescription);
             dbContext.SaveChanges();
@@ -63,15 +64,15 @@ namespace FileUpload.Tests
         public void AddSingleFileDescriptionWithoutFileName()
         {
             //arrange
-            string filename = "TestFileDescription" + DateTime.Today;
-
-            //act
             var fileDescription = new FileDescription()
             {
                 FileName = null,
                 Size = 1,
-                UploadTime = DateTime.Now
+                UploadTime = DateTime.Now,
+                UserId = 1
             };
+
+            //act
             fd.Add(fileDescription);
             dbContext.SaveChanges();
 
@@ -92,7 +93,8 @@ namespace FileUpload.Tests
                 {
                     FileName = filename,
                     Size = 1,
-                    UploadTime = DateTime.Now
+                    UploadTime = DateTime.Now,
+                    UserId = 1
                 };
                 fileDescriptions.Add(fileDescription);
             }
@@ -115,7 +117,8 @@ namespace FileUpload.Tests
             {
                 FileName = null,
                 Size = 1,
-                UploadTime = DateTime.Now
+                UploadTime = DateTime.Now,
+                UserId = 1
             };
             //act
             fd.Add(fileDescription);

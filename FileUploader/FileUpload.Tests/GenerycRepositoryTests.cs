@@ -15,9 +15,9 @@ namespace FileUpload.Tests
     [TestClass]
     public class GenerycRepositoryTests
     {
-        public DbContext dbContext { get; set; }
+        private readonly DbContext dbContext;
 
-        public IRepository<TraceLogMessage, int> tlm;
+        private readonly IRepository<TraceLogMessage, int> tlm;
 
         private static TransactionScope tranScope;
 
