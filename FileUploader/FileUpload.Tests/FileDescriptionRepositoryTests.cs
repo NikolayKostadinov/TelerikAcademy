@@ -14,7 +14,7 @@ namespace FileUpload.Tests
     [TestClass]
     public class FileDescriptionRepositoryTests
     {
-        public DbContext dbContext { get; set; }
+        private readonly DbContext dbContext;
 
         public IRepository<FileDescription, int> fd;
 
@@ -49,7 +49,8 @@ namespace FileUpload.Tests
             {
                 FileName = filename,
                 Size = 1,
-                UploadTime = DateTime.Now
+                UploadTime = DateTime.Now,
+                UserId=1
             };
             fd.Add(fileDescription);
             dbContext.SaveChanges();
@@ -92,7 +93,8 @@ namespace FileUpload.Tests
                 {
                     FileName = filename,
                     Size = 1,
-                    UploadTime = DateTime.Now
+                    UploadTime = DateTime.Now,
+                    UserId = 1
                 };
                 fileDescriptions.Add(fileDescription);
             }

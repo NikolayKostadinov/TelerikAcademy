@@ -1,4 +1,4 @@
-﻿#define DEBUG
+﻿using System.Configuration;
 using System.Transactions;
 using FileUpload.Data;
 using FileUpload.Models.FileModels;
@@ -46,7 +46,12 @@ namespace FileUpload.Controllers
                 var fileDescription = new FileDescription();
                 FileUploadHttpPostedFileWrapper file = new FileUploadHttpPostedFileWrapper(fileBase);
                 var fileName = Path.GetFileName(file.FileName);
-                var physicalPath = Path.Combine(Server.MapPath("~/App_Data"), fileName);
+                string filePath = ConfigurationManager.AppSettings["FileStoragePath"];
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    filePath = "~/App_Data";
+                }
+                var physicalPath = Path.Combine(Server.MapPath(filePath), fileName);
 #if DEBUG
                 physicalPath = @"\\10.94.23.31\FileUploaderTest\"+fileName;
 #endif

@@ -69,3 +69,10 @@ textarea {
     margin-bottom: 15px;
 }
 
+.k-grid-export-image {
+    display: inline-block;
+    background:url('../Content/Images/Excel-icon.png');
+    height: 24px;
+    width: 24px;
+}
+

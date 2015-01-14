@@ -40,6 +40,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
@@ -179,6 +180,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\ExcelController.cs" />
     <Compile Include="Controllers\FileUpploadController.cs" />
     <Compile Include="Controllers\TraceLogController.cs" />
     <Compile Include="Controllers\UserAdministrationController.cs" />
@@ -202,6 +204,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\BMS-Logo-Horizontal.png" />
     <Content Include="Content\Images\error.png" />
+    <Content Include="Content\Images\Excel-icon.png" />
     <Content Include="Content\Images\favicon.png" />
     <Content Include="Content\Images\ok.png" />
     <Content Include="Content\Images\warning.png" />
@@ -426,12 +429,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\CustomScripts\kendoExcelGrid.js" />
     <Content Include="Scripts\CustomScripts\sendAntiForgery.js" />
     <Content Include="Scripts\CustomScripts\SetGlobalization.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.bg-BG.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.bg.js" />
     <Content Include="Scripts\globalize\cultures\globalize.cultures.js" />
     <Content Include="Scripts\globalize\globalize.js" />
+    <None Include="Scripts\Kendo\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\Kendo\jquery-1.9.1.js" />
+    <Content Include="Scripts\Kendo\jquery-1.9.1.min.js" />
     <Content Include="Scripts\Kendo\jquery.min.js" />
     <Content Include="Scripts\Kendo\kendo.all.min.js" />
     <Content Include="Scripts\Kendo\kendo.aspnetmvc.min.js" />
@@ -444,11 +451,12 @@
     <None Include="Properties\PublishProfiles\FileUploader.pubxml" />
     <None Include="Properties\PublishProfiles\FileUploadGeri.pubxml" />
     <None Include="Properties\PublishProfiles\Manhattan.pubxml" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Kendo\jquery-1.9.1.min.map" />
+    <None Include="Scripts\Kendo\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Kendo\jquery.validate.js" />
+    <Content Include="Scripts\Kendo\jquery.validate.min.js" />
+    <Content Include="Scripts\Kendo\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Kendo\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -498,6 +506,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Excel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

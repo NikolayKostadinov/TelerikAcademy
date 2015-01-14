@@ -59,7 +59,7 @@
           data.Ajax()
               .Model(m => m.Id(message => message.Id))
               .PageSize(20)
-              .ServerOperation(true)
+              .ServerOperation(false)
               .Read(read => read.Action("GetTraseLog", "TraceLog").Data("getDataPickersValue"));
       })
 
@@ -98,11 +98,29 @@
 )
 
 <script>
-    function getDataPickersValue() {
+    function getDataPickersValue(pageable) {
         var aft = sendAntiForgery();
         var requestData = { begining: null, ending: null, "__RequestVerificationToken": aft.__RequestVerificationToken };
         requestData.begining = Globalize.format($("#start").data("kendoDateTimePicker").value(), 'dd.MM.yyyy г. HH:mm:ss ч.');
         requestData.ending = Globalize.format($("#end").data("kendoDateTimePicker").value(), 'dd.MM.yyyy г. HH:mm:ss ч.');
         return requestData;
     }
+</script>
+<script src="~/Scripts/CustomScripts/kendoExcelGrid.js"></script>
+<script>
+    $(document).ready(function () {
+        var options = {
+            excel: {
+                cssClass: "k-grid-export-image",
+                title: "tracelog",
+                createUrl: "/Excel/ExportToExcel",
+                downloadUrl: "/Excel/GetExcelFile"
+            }
+        };
+
+        var innerHTML = $(".k-toolbar.k-grid-toolbar").html();
+        var innerHTML = "<a id='exportToExcel' class='k-button k-button-icontext k-grid-export' title='Export to Excel'><div class='k-grid-export-image k-icon'></div>Export</a>" + innerHTML;
+        $(".k-toolbar.k-grid-toolbar").html(innerHTML);
+        $("#exportToExcel").click(function () { ExportToExcel($("#tracelog"), options); });
+    });
 </script>

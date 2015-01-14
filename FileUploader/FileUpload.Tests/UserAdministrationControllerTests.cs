@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Security.Claims;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
@@ -54,12 +55,12 @@ namespace FileUpload.Tests
             //Create Mock repositories
             Mock<IRepository<RoleIntPk, int>> mockRolesRepository = new Mock<IRepository<RoleIntPk, int>>();
             mockRolesRepository.Setup(r => r.All()).Returns(this.roles.AsQueryable());
-            mockRolesRepository.Setup(u => u.GetById(It.IsAny<int>())).Returns((string x) => { return this.roles[int.Parse(x) - 1]; });
+            mockRolesRepository.Setup(u => u.GetById(It.IsAny<int>())).Returns((int x) => { return this.roles[x - 1]; });
             this.rolesRepository = mockRolesRepository.Object;
 
             Mock<IRepository<ApplicationUser, int>> mockUsersRepository = new Mock<IRepository<ApplicationUser, int>>();
             mockUsersRepository.Setup(u => u.All()).Returns(this.users.AsQueryable());
-            mockUsersRepository.Setup(u => u.GetById(It.IsAny<int>())).Returns((string x) => { return this.users[int.Parse(x) - 1]; });
+            mockUsersRepository.Setup(u => u.GetById(It.IsAny<int>())).Returns((int x) => { return this.users[x - 1]; });
             mockUsersRepository.Setup(u => u.Delete(It.IsAny<ApplicationUser>())).Callback((ApplicationUser x) => { this.users.RemoveAt(0); });
             mockUsersRepository.Setup(u => u.Update(It.Is<ApplicationUser>(
                      au => !au.Email.Contains("@")
@@ -70,7 +71,6 @@ namespace FileUpload.Tests
 
             mockUow.Setup(p => p.Roles).Returns(this.rolesRepository);
             mockUow.Setup(p => p.Users).Returns(this.usersRepository);
-
             this.UowData = mockUow.Object;
             var mockControllerContext = new Mock<ControllerContext>();
             mockControllerContext.Setup(x => x.HttpContext).Returns(GetMockedHttpContext());
@@ -86,10 +86,10 @@ namespace FileUpload.Tests
             var response = new Mock<HttpResponseBase>();
             var session = new Mock<HttpSessionStateBase>();
             var server = new Mock<HttpServerUtilityBase>();
-            var user = new Mock<IPrincipal>();
-            var identity = new Mock<IIdentity>();
+            var claim = new Claim("test", "1");
+            var identity = Mock.Of<ClaimsIdentity>(ci => ci.FindFirst(It.IsAny<string>()) == claim);
+            var user = new GenericPrincipal(new GenericIdentity("Test"), new string[] { "test" });
             var urlHelper = new Mock<UrlHelper>();
-
             var routes = new RouteCollection();
             var requestContext = new Mock<RequestContext>();
             requestContext.Setup(x => x.HttpContext).Returns(context.Object);
@@ -97,11 +97,19 @@ namespace FileUpload.Tests
             context.Setup(ctx => ctx.Response).Returns(response.Object);
             context.Setup(ctx => ctx.Session).Returns(session.Object);
             context.Setup(ctx => ctx.Server).Returns(server.Object);
-            context.Setup(ctx => ctx.User).Returns(user.Object);
-            //context.Setup(ctx => ctx.Items["owin.Environment"]).Returns(new Microsoft.Owin.Host.SystemWeb.Resources.HttpContext());
-            user.Setup(ctx => ctx.Identity).Returns(identity.Object);
-            identity.Setup(id => id.IsAuthenticated).Returns(true);
-            identity.Setup(id => id.Name).Returns("test");
+            context.Setup(ctx => ctx.User).Returns(Mock.Of<IPrincipal>(ip => ip.Identity == identity));
+            context.Setup(ctx => ctx.Items["owin.Environment"]).Returns(() => 
+            { 
+                var dict = new Dictionary<string, object>();
+                var mockDbContext = new Mock<ApplicationDbContext>();
+                var mockUserStore = new Mock<UserStoreIntPk>(mockDbContext.Object);
+                dict.Add("AspNet.Identity.Owin:FileUpload.App_Start.ApplicationUserManager, FileUpload, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", (new Mock<App_Start.ApplicationUserManager>(mockUserStore.Object).Object));
+                return dict;
+            });
+            //user.Setup(ctx => ctx.Identity).Returns(identity.Object);
+            
+            //identity.Setup(id => id.IsAuthenticated).Returns(true);
+            //identity.Setup(id => id.Name).Returns("test");
             request.Setup(req => req.Url).Returns(new Uri("http://www.google.com"));
             request.Setup(req => req.RequestContext).Returns(requestContext.Object);
             requestContext.Setup(x => x.RouteData).Returns(new RouteData());
@@ -252,11 +260,11 @@ namespace FileUpload.Tests
             //arrange
             UserAdministrationController target = new UserAdministrationController(UowData);
             target.ControllerContext = this.controllerContext;
-            
             //act
-            var result = target.ResetPassword(1, "/Home/Index","87654321");
+            RedirectResult result = target.ResetPassword(1, "/Home/Index","87654321") as RedirectResult;
             //assert
-            Assert.AreEqual(1, 1);
+            
+            Assert.AreEqual("/Home/Index",result.Url);
         }
     }
 }

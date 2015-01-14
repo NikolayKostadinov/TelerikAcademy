@@ -1,5 +1,0 @@
-﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated && (User.IsInRole("Administrator") || User.IsInRole("Upploader")))
-{
-        <li>@Html.ActionLink("Изпращане", "Index", "FileUppload")</li>
-}

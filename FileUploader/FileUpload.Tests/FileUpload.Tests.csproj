@@ -132,6 +132,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FileDescriptionRepositoryTests.cs" />
     <Compile Include="GenerycRepositoryTests.cs" />
+    <Compile Include="UnitOfWorkTest.cs" />
+    <Compile Include="FileUploadControllerTests.cs" />
     <Compile Include="UserAdministrationControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>

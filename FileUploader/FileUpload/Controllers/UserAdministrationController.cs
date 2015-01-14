@@ -1,30 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
 using FileUpload.Data;
+using FileUpload.Helpers;
 using FileUpload.Models;
 using FileUpload.Models.Identity;
 using FileUpload.Models.ViewModels;
+using FileUpload.Utility;
+using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
-using Kendo.Mvc.Extensions;
-using FileUpload.Helpers;
+using Newtonsoft.Json;
 
 namespace FileUpload.Controllers
 {
     [Authorize(Roles = "Administrator")]
     public class UserAdministrationController : Controller
     {
-        private IUowData db;
+
+        private readonly IUowData db;
         private IList<RoleIntPk> roles;
+        
         public UserAdministrationController(IUowData db)
         {
             this.db = db;
