@@ -1,0 +1,18 @@
+TRY{Set test = ##Class(Petrol.PetrolCarrier).%New(600,"Test6","BG","202920330","ОЛИМПИ ПАНОВ","14","7000","РУСЕ","RSE,RSE27,63427","","1234","07052014","06052019","PATENGINEERING AD","RUSE","OLIMPI PANOV")}CATCH obj{w obj.Name}
+
+	..Id_" | "_
+    ..TraderName_" | "_ 
+	..Language_" | "_ 
+	..TaxNumber_" | "_
+	..Street _" | "_
+	..NumberStreet_" | "_
+	..PostalCode _" | "_
+	..City_" | "_
+    ..Region _" | "_
+    ..Area _" | "_
+    ..SertificateMarkedFuel_" | "_
+    ..DateFrom _" | "_
+    ..DateTo_" | "_
+	..TraderNameEn _" | "_
+	..CityEn_" | "_
+	..AddressEn

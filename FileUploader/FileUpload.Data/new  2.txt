@@ -1,0 +1,9 @@
+?ano?neoa na ca Kendo UI MVC Wrappers na eco?eoe io aeaaia oi?ea ia aaoi?ee i?aaa e eeoaic.
+
+Ca aa noa?oe?aoa aaiioi:
+
+1. Einoaee?aeoa trial aa?neyoa ia i?iaoeoa Kendo UI Complete for ASP.NET MVC io http://www.kendoui.com/download.aspx
+2. Neaaaaeoa eino?oeoeeoa io http://docs.kendoui.com/getting-started/using-kendo-with/aspnet-mvc/introduction#using-kendo-ui-in-asp.net-mvc-4-application
+3. Ne?eioiaaoa na neaaao a iaiea ~/Scripts/Kendo/
+4. Oaieoa e noeeiaaoa na neaaao a iaiea ~/Content/Kendo
+5. Enjoy!

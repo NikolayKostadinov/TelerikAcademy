@@ -1,0 +1,71 @@
+	if (taxNumber'="")
+	{
+		if isLegalEntity
+		{//Собственика е юридическо лице
+			If '((taxNumber?9N)!(taxNumber?13N))
+			 {
+				 Quit 0
+			 }
+			 else
+			 {   
+			  Set checkSum=0
+			  Set length = $L(taxNumber) 
+			  For index=1:1:8 
+			  {
+				 Set checkSum = checkSum + ($E(taxNumber,index)*index)
+			  }
+			   Set checkSum = checkSum#11
+			   Set:checkSum=10 checkSum=0
+			   If $E(taxNumber,9)'=checkSum 
+			   {
+				   Quit 0
+			   }
+			   if length > 10
+			   {
+				 Set index=8 
+				 For miltiplier=2,7,3,5
+				 {
+					Set index=index+1
+					Set checkSum=checkSum+($E(taxNumber,index)*miltiplier)
+				 }
+				  Set checkSum = checkSum#11
+				  Set:checkSum=10 checkSum=0
+				  If $E(taxNumber,13)'=checkSum 
+				  {
+					Quit 0
+				  }
+				}
+			   Quit 1
+			 }
+		}
+		Else
+		{//Собственика е физическо лице
+		If ((taxNumber'="") & (taxNumber?10N))
+		{			
+			Set controlSum = 0
+			Set index = 0 
+			
+			For multiplier=2,4,8,5,10,9,7,3,6 
+			{
+				Set index=index+1
+				Set controlSum=controlSum+($E(taxNumber,index)*multiplier)
+			} 
+			
+			S controlSum = controlSum # 11
+			
+			Set:controlSum=10 controlSum = 0 
+
+			Set ^test = $E(taxNumber,10)_" | "_controlSum
+			If $E(taxNumber,10)=controlSum
+			{
+				 Quit 1
+			}
+		}
+		
+			Quit 0
+		}
+	} 
+	else
+	{
+		Quit 0
+	}
