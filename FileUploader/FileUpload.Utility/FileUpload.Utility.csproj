@@ -68,7 +68,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="WindowPosition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

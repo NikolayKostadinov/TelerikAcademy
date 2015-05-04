@@ -1,29 +1,30 @@
-﻿# define DEBUG
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Management;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Configuration;
 
 namespace FileUpload.Utility
 {
-    public class FileUploadHttpPostedFileWrapper 
+    public sealed class FileUploadHttpPostedFileWrapper 
     {
-        private int maxFileSize = Convert.ToInt32(WebConfigurationManager.AppSettings["maxRequestLength"]);
-        private HttpPostedFileWrapper postedFile;
+        private readonly int maxFileSize;
+        private readonly HttpPostedFileWrapper postedFile;
         public string FileName { get { return this.postedFile.FileName; } }
         
         public int ContentLength { get { return this.postedFile.ContentLength;} }
 
         public DateTime UpploadTime { get; set; }
 
-        public FileUploadHttpPostedFileWrapper(HttpPostedFileWrapper file) 
+        public FileUploadHttpPostedFileWrapper(HttpPostedFileWrapper file):this() 
         {
             this.postedFile = file;
+        }
+
+        public FileUploadHttpPostedFileWrapper() 
+        {
+            this.maxFileSize = Convert.ToInt32(WebConfigurationManager.AppSettings["maxRequestLength"]); 
         }
 
         /// <summary>
@@ -49,13 +50,12 @@ namespace FileUpload.Utility
                 }
 
             }
-#if !DEBUG
+
             if (!CheckForEnoughtFreeSpace(filename)) 
             {
 
                 throw new System.IO.IOException("Няма достатъчно дисково пространство за извършване на операцията!");
             }
-#endif
 
             if (System.IO.File.Exists(filename))
             {

@@ -20,15 +20,19 @@ using Moq;
 namespace FileUpload.Tests
 {
     [TestClass]
-    public class UserAdministrationControllerTests
+    public sealed class UserAdministrationControllerTests
     {
-        private IList<RoleIntPk> roles;
-        private IList<ApplicationUser> users;
-        private IRepository<RoleIntPk, int> rolesRepository;
-        private IRepository<ApplicationUser, int> usersRepository;
-        private IUowData UowData;
-        private ControllerContext controllerContext;
+        private readonly IList<RoleIntPk> roles;
+        private readonly IList<ApplicationUser> users;
+        private readonly IRepository<RoleIntPk, int> rolesRepository;
+        private readonly IRepository<ApplicationUser, int> usersRepository;
+        private readonly IUowData uowData;
+        private readonly ControllerContext controllerContext;
 
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserAdministrationControllerTests" /> class.
+        /// </summary>
         public UserAdministrationControllerTests()
         {
             this.roles = new List<RoleIntPk>()
@@ -71,7 +75,7 @@ namespace FileUpload.Tests
 
             mockUow.Setup(p => p.Roles).Returns(this.rolesRepository);
             mockUow.Setup(p => p.Users).Returns(this.usersRepository);
-            this.UowData = mockUow.Object;
+            this.uowData = mockUow.Object;
             var mockControllerContext = new Mock<ControllerContext>();
             mockControllerContext.Setup(x => x.HttpContext).Returns(GetMockedHttpContext());
             //mockControllerContext.Setup(x=>x.HttpContext.User).Returns(new GenericPrincipal(new GenericIdentity("Test"),new string[]{"test"}));
@@ -79,6 +83,10 @@ namespace FileUpload.Tests
             this.controllerContext = mockControllerContext.Object;
         }
 
+        /// <summary>
+        /// Gets mocked HttpContext
+        /// </summary>
+        /// <returns>HttpContext</returns>
         private HttpContextBase GetMockedHttpContext()
         {
             var context = new Mock<HttpContextBase>();
@@ -122,7 +130,6 @@ namespace FileUpload.Tests
         public void ReadAllUsersTest()
         {
             // Arrange - create the controller
-            UserAdministrationController target = new UserAdministrationController(UowData);
 
             // Act - add a product to the cart
             var result = target.ReadAllUsers(new DataSourceRequest());
@@ -145,7 +152,6 @@ namespace FileUpload.Tests
         public void ReadAllUsersTestPagind()
         {
             // Arrange - create the controller
-            UserAdministrationController target = new UserAdministrationController(UowData);
 
             // Act - add a product to the cart
             var result = target.ReadAllUsers(new DataSourceRequest() { PageSize = 2, Page = 1 });
@@ -168,7 +174,6 @@ namespace FileUpload.Tests
         public void GetRolesByUserTest()
         {
             // Arrange - create the controller
-            UserAdministrationController target = new UserAdministrationController(UowData);
 
             // Act - add a product to the cart
             var result = target.GetRolesByUser(1, new DataSourceRequest()) as JsonResult;
@@ -191,7 +196,6 @@ namespace FileUpload.Tests
         public void UpdateUserTest()
         {
             // Arrange - create the controller
-            UserAdministrationController target = new UserAdministrationController(UowData);
             var user = new AccountViewModel() { Id = 1 };
             string newEmail = "test@test.com";
             RoleViewModel removeRole = new RoleViewModel() { Id = roles[0].Id, Name = roles[0].Name };
@@ -219,7 +223,6 @@ namespace FileUpload.Tests
         public void UpdateUserWithInvalidEmailMustSendErrorMessageTest()
         {
             // Arrange - create the controller
-            UserAdministrationController target = new UserAdministrationController(UowData);
             var user = new AccountViewModel() { Id = 1 };
             string newEmail = "test";
             RoleViewModel removeRole = new RoleViewModel() { Id = roles[0].Id, Name = roles[0].Name };
@@ -245,7 +248,6 @@ namespace FileUpload.Tests
         {
             // Arrange - create the controller
             Mock.Get(this.usersRepository).Setup(x => x.All()).Returns(new List<ApplicationUser>() { users[1], users[2] }.AsQueryable());
-            UserAdministrationController target = new UserAdministrationController(UowData);
             target.ControllerContext = this.controllerContext;
             var user = new AccountViewModel() { Id = 1 };
             // Act - add a product to the cart
@@ -258,7 +260,7 @@ namespace FileUpload.Tests
         public void ResetPasswordTest() 
         {
             //arrange
-            UserAdministrationController target = new UserAdministrationController(UowData);
+            UserAdministrationController target = new UserAdministrationController(uowData);
             target.ControllerContext = this.controllerContext;
             //act
             RedirectResult result = target.ResetPassword(1, "/Home/Index","87654321") as RedirectResult;

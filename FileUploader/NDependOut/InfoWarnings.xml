@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<InfoWarnings>
+  <Info>Begin full analysis with NDepend v5.4.0.8391</Info>
+  <Warning>Can't load the assembly {Microsoft.AspNet.Identity.Core}:
+Several .NET assemblies have the name {Microsoft.AspNet.Identity.Core} but they are different.
+ - D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll   v0.0  165 024 bytes
+ - D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload.Utility\bin\Debug\Microsoft.AspNet.Identity.Core.dll   v0.0  165 024 bytes
+ - D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload\bin\Microsoft.AspNet.Identity.Core.dll   v0.0  165 024 bytes
+ - D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll   v0.0  171 168 bytes
+ - D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll   v0.0  171 168 bytes
+</Warning>
+  <Warning>Can't load the assembly {System.Web.Mvc}:
+Several .NET assemblies have the name {System.Web.Mvc} but they are different.
+ - D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload.Tests\bin\Debug\System.Web.Mvc.dll   v0.0  565 448 bytes
+ - D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload\bin\System.Web.Mvc.dll   v0.0  554 704 bytes
+</Warning>
+  <Warning>Can't load the assembly {Microsoft.VisualStudio.QualityTools.UnitTestFramework}:
+Can't find the .NET assembly {Microsoft.VisualStudio.QualityTools.UnitTestFramework} in specified folders. 
+Has it been compiled properly? 
+Is the NDepend project missing the containing folder of the .NET assembly?</Warning>
+  <Info>Concurrent mode</Info>
+  <Info>.NET Assemblies loaded from {C:\Windows\Microsoft.NET\Framework\v4.0.30319} 
+   mscorlib.dll   v4.0.0.0
+   System.Core.dll   v4.0.0.0
+   System.dll   v4.0.0.0
+   System.ComponentModel.DataAnnotations.dll   v4.0.0.0
+   System.Runtime.Serialization.dll   v4.0.0.0
+   System.ServiceModel.dll   v4.0.0.0
+   System.Web.dll   v4.0.0.0
+   System.Management.dll   v4.0.0.0
+   System.Transactions.dll   v4.0.0.0
+   Microsoft.CSharp.dll   v4.0.0.0</Info>
+  <Warning>No application or third party assembly found in directory {C:\Windows\Microsoft.NET\Framework\v4.0.30319\WPF}</Warning>
+  <Info>.NET Assemblies loaded from {D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload.Tests\bin\Debug} 
+   FileUpload.Tests.dll   v1.0.0.0
+   FileUpload.Models.dll   v1.0.0.0
+   FileUpload.Utility.dll   v1.0.0.0
+   FileUpload.dll   v1.0.0.0
+   FileUpload.Data.dll   v1.0.0.0
+   EntityFramework.dll   v6.0.0.0
+   Microsoft.AspNet.Identity.EntityFramework.dll   v2.0.0.0
+   System.Web.Optimization.dll   v1.1.0.0
+   Microsoft.AspNet.Identity.Owin.dll   v2.0.0.0
+   Microsoft.Owin.dll   v2.1.0.0
+   Ninject.Web.Common.dll   v3.2.0.0
+   Ninject.dll   v3.2.0.0
+   Owin.dll   v1.0.0.0
+   Kendo.Mvc.dll   v2014.1.528.340
+   WebActivatorEx.dll   v2.0.0.0
+   Microsoft.Owin.Security.dll   v2.1.0.0
+   Microsoft.Web.Infrastructure.dll   v1.0.0.0
+   Microsoft.Owin.Security.Cookies.dll   v2.1.0.0
+   Microsoft.Owin.Host.SystemWeb.dll   v2.1.0.0
+   Moq.dll   v4.2.1402.2112</Info>
+  <Warning>No application or third party assembly found in directory {D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload.Utility\bin\Debug}</Warning>
+  <Warning>No application or third party assembly found in directory {D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload\bin}</Warning>
+  <Warning>No application or third party assembly found in directory {D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload.Models\bin\Debug}</Warning>
+  <Warning>No application or third party assembly found in directory {D:\TelerikAcademyHomeworks\Homeworks\FileUploader\FileUpload.Data\bin\Debug}</Warning>
+  <Warning>No application or third party assembly found in directory {D:\TelerikAcademyHomeworks\Homeworks\FileUploader}</Warning>
+  <Warning>Assembly {System.Web.Mvc} is referenced by {FileUpload.Tests} but is not found.</Warning>
+  <Warning>Assembly {Microsoft.VisualStudio.QualityTools.UnitTestFramework} is referenced by {FileUpload.Tests} but is not found.</Warning>
+  <Warning>Assembly {Microsoft.AspNet.Identity.Core} is referenced by {FileUpload.Models} but is not found.</Warning>
+  <Warning>Assembly {Microsoft.AspNet.Identity.Core} is referenced by {FileUpload} but is not found.</Warning>
+  <Warning>Assembly {System.Web.Mvc} is referenced by {FileUpload} but is not found.</Warning>
+  <Warning>Assembly {Microsoft.AspNet.Identity.Core} is referenced by {FileUpload.Data} but is not found.</Warning>
+  <Info>56 source files parsed ; all source files found ; all source files in-sync with PDB</Info>
+  <Info>0 code rule has been extracted from code.</Info>
+  <Info>No dependency cycle detected in assemblies referencement graph.</Info>
+  <Info>08.23.2014 14:39:07 NDepend analysis done. Duration: 00:00</Info>
+</InfoWarnings>
